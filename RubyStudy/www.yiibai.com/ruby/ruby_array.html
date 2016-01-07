@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby数组</title>
+		<meta name="Keywords" content=" "/>
+		<meta name="Description" content="Ruby的数组array是有序的，任何对象的整数索引的集合。数组中的每个元素与指数。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby数组
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_array.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_array.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_array.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_array.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_syntax.html#ruby_syntax">Ruby语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_classes.html#ruby_classes">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_if_else.html#ruby_if_else">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_string.html#ruby_string">Ruby字符串</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_array.html">Ruby数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_hashes.html#ruby_hashes">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_input_output.html#ruby_input_output">Ruby文件 I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_exceptions.html#ruby_exceptions">Ruby异常处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_multithreading.html#ruby_multithreading">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby数组(Array)</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Ruby的数组array是有序的，任何对象的整数索引的集合。数组中的每个元素与指数。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p>
+	<span style="background-color:#FFFFFF;font-family:verdana, helvetica, arial, sans-serif;">Ruby的数组是有序的，任何对象的整数索引的集合。数组中的每个元素与指数。<br />
+数组索引从0开始，如C或Java。负指数假设数组的末尾---是，指数为-1表示最后一个元素，-2是数组中的最后一个元素，等等。<br />
+Ruby的数组能容纳的对象，如字符串，整数，Fixnum对象，哈希，符号，甚至其他的Array对象。 Ruby的数组是没有像在其他语言的阵列刚性。 Ruby的数组自动增长，同时增加他们的元素</span><span style="background-color:#FFFFFF;font-family:verdana, helvetica, arial, sans-serif;">.</span> 
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	创建数组:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	有许多方法来创建或初始化数组。一种方法是用新的类方法:
+</p>
+<pre>names = Array.new
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在创建阵列时，您可以设置一个数组的大小:
+</p>
+<pre>names = Array.new(20)
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	该数组的名称现在有一个的20元素的的的的的大小或的长度。你可以返回一个数组的大小与大小或长度的方法:
+</p>
+<pre>months.size  # This returns 20
+months.length # This also returns 20
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	您可以指定阵列中的每个元素值如下:
+</p>
+<pre>#!/usr/bin/ruby
+
+names = Array.new(4, "mac")
+
+puts "#{names}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	This will produce following result:
+</p>
+<pre>macmacmacmac
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	您还可以使用新块，填充块评估的每个元素:
+</p>
+<pre>#!/usr/bin/ruby
+
+nums = Array.new(10) { |e| e = e * 2 }
+
+puts "#{nums}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>024681012141618
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	还有另一个阵列的方法，[]。它是这样工作:
+</p>
+<pre>nums = Array.[](1, 2, 3, 4,5)
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	创建数组的形式如下 :
+</p>
+<pre>nums = Array[1, 2, 3, 4,5]
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	内核模块的核心Ruby，有一个阵列的方法，该方法只接受一个参数。这里的方法作为参数的范围，以创建一个数字数组:
+</p>
+<pre>#!/usr/bin/ruby
+
+digits = Array(0..9)
+
+puts "#{digits}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">这将产生以下结果</span>:
+</p>
+<pre>0123456789
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	数组内建方法:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	我们需要有一个Array对象的实例，调用一个数组的方法。正如我们所看到的，下面是创建一个Array对象的实例:
+</p>
+<pre>Array.[](...) [or] Array[...] [or] [...]
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将返回给定对象的填充一个新的数组。现在我们可以使用创建的对象调用任何可用的实例方法。例如:
+</p>
+<pre>#!/usr/bin/ruby
+
+digits = Array(0..9)
+
+num = digits.at(6)
+
+puts "#{num}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">这将产生以下结果</span>:
+</p>
+<pre>6
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以下是公共数组方法（假设数组是一个数组对象）:
+</p>
+<table cellpadding="5" cellspacing="5" border="1" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="5%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				SN
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				方法及描述
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				1
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array &amp; other_array</b><br />
+返回一个新数组，包含常见的两个数组的元素，没有重复.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				2
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array * int [or] array * str</b><br />
+返回一个新的阵列串联自我诠释副本建成。用一个字符串参数，相当于self.join(str).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				3
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array + other_array</b><br />
+返回两个数组串联在一起，建立一个新的数组产生第三个数组.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				4
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array . other_array</b><br />
+返回一个新数组，它是一个原始数组的副本，删除任何项目，也出现在other_array.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				5
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str &lt;=&gt; other_str</b><br />
+str和other_str比较，返回-1（小于），0（等于）或1（大于）。比较是大小写敏感的.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				6
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array | other_array</b><br />
+加入与other_array数组返回一个新的数组，删除重复.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				7
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array &lt;&lt; obj</b><br />
+给定的对象推入数组的末尾，该表达式返回数组本身，因此可能是一些附加链接在一起.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				8
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array &lt;=&gt; other_array</b><br />
+如果这个数组是小于，等于，或大于other_array，返回一个整数（-1，0，+1）.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				9
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array == other_array</b><br />
+两个数组相等，如果它们包含相同数量的元素，如果每个元素是等于（根据对象。==）在其他数组的相应元素.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				10
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array[index] [or] array[start, length] [or]<br />
+array[range] [or] array.slice(index) [or]<br />
+array.slice(start, length) [or] array.slice(range)</b><br />
+&nbsp;返回索引处的元素，或起开始和持续长度元素，返回一个子数组，或者返回一个子数组指定范围。负指数数落后从数组的末尾（-1是最后一个元素）。 Returnsnil指数（或起始索引），如果超出范围.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				11
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array[index] = obj [or]<br />
+array[start, length] = obj or an_array or nil [or]<br />
+array[range] = obj or an_array or nil</b><br />
+在指标设置的元素，或替换一个子阵开始启动和持续长度元素，或替换指定范围的一个子数组。如果指数大于阵列的电流容量，该数组自动增长。负指数从数组的末尾数落后。插入元素，如果长度为零。如果无用于在第二和第三的形式，删除元素fromself.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				12
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.abbrev(pattern = nil)</b><br />
+计算自我琴弦一套明确的缩写。如果通过一种模式或一个字符串，被认为是唯一的字符串匹配的模式或字符串开始.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				13
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.assoc(obj)</b><br />
+搜索通过一个数组，其元素也比较obj的使用obj的每个包含阵列的第一个元素的阵列.==。返回的匹配，或nil，如果没有找到匹配的第一载阵.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				14
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.at(index)</b><br />
+返回在索引的元素。从结尾的负指数计数。如果该指数超出范围，返回nil.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				15
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.clear</b><br />
+从数组中删除所有元素.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				16
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.collect { |item| block } [or]<br />
+array.map { |item| block }</b><br />
+调用块一次的每个元素。创建一个新的阵列，包含块的返回值.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				17
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.collect! { |item| block } [or]<br />
+array.map! { |item| block }</b><br />
+一次的每个元素调用块，逐块返回的值替换元素<span></span>.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				18
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.compact</b><br />
+返回一份删除所有零元素.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				19
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.compact!</b><br />
+从数组中删除零元素。如果没有变化，返回nil.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				20
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.concat(other_array)</b><br />
+将other_array元素追加到array.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				21
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.delete(obj) [or]&nbsp;<br />
+array.delete(obj) { block }</b><br />
+删除等于obj从自身的项。如果项没有被找到，返回nil。如果可选的代码块给定，如果该项目没有找到返回的块结果.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				22
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.delete_at(index)</b><br />
+在指定的索引删除元素，返回该元素，如果该指数超出范围nil.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				23
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.delete_if { |item| block }</b><br />
+Deletes every element of&nbsp;<i>self</i>&nbsp;for which&nbsp;<i>block</i>&nbsp;evaluates to true.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				24
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.each { |item| block }</b><br />
+Calls&nbsp;<i>block</i>&nbsp;once for each element in&nbsp;<i>self</i>, passing that element as a parameter.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				25
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.each_index { |index| block }</b><br />
+Same as Array#each, but passes the&nbsp;<i>index</i>&nbsp;of the element instead of the element itself.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				26
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.empty?</b><br />
+Returns true if the self array contains no elements.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				27
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.eql?(other)</b><br />
+Returns true if&nbsp;<i>array</i>&nbsp;and&nbsp;<i>other</i>&nbsp;are the same object, or are both arrays with the same content.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				28
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.fetch(index) [or]&nbsp;<br />
+array.fetch(index, default) [or]&nbsp;<br />
+array.fetch(index) { |index| block }</b><br />
+Tries to return the element at position&nbsp;<i>index</i>. If&nbsp;<i>index</i>&nbsp;lies outside the array, the first form throws an&nbsp;<i>IndexError</i>&nbsp;exception, the second form returns&nbsp;<i>default</i>, and the third form returns the value of invoking&nbsp;<i>block</i>, passing in&nbsp;<i>index</i>. Negative values of&nbsp;<i>index</i>&nbsp;count from the end of the array.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				29
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.fill(obj) [or]<br />
+array.fill(obj, start [, length]) [or]<br />
+array.fill(obj, range) [or]<br />
+array.fill { |index| block } [or]<br />
+array.fill(start [, length] ) { |index| block } [or]<br />
+array.fill(range) { |index| block }</b><br />
+前三种形式设置到obj的自身选定的元素。一个nil的开始，是相当于nil。一个nil长度是相当于self.length。过去三年formsfill的阵列块价值。通过该块以填补每个元素的绝对指数.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				30
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.first [or]&nbsp;<br />
+array.first(n)</b><br />
+Returns the first element, or the first&nbsp;<i>n</i>&nbsp;elements, of the array. If the array is empty, the first form returns&nbsp;<i>nil</i>, and the second form returns an empty array.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				31
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.flatten</b><br />
+Returns a new array that is a one-dimensional flattening of this array (recursively).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				32
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.flatten!</b><br />
+Flattens&nbsp;<i>array</i>&nbsp;in place. Returns&nbsp;<i>nil</i>&nbsp;if no modifications were made. (array contains no subarrays.)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				33
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.frozen?</b><br />
+Returns true if&nbsp;<i>array</i>&nbsp;is frozen (or temporarily frozen while being sorted).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				34
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.hash</b><br />
+Compute a hash-code for array. Two arrays with the same content will have the same hash code
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				35
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.include?(obj)</b><br />
+Returns true if&nbsp;<i>obj</i>&nbsp;is present in&nbsp;<i>self</i>, false otherwise.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				36
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.index(obj)</b><br />
+Returns the&nbsp;<i>index</i>&nbsp;of the first object in&nbsp;<i>self</i>&nbsp;that is == to obj. Returns&nbsp;<i>nil</i>&nbsp;if no match is found.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				37
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.indexes(i1, i2, ... iN) [or]<br />
+array.indices(i1, i2, ... iN)</b><br />
+This methods is deprecated in latest version of Ruby so please use Array#values_at.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				38
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.indices(i1, i2, ... iN) [or]<br />
+array.indexes(i1, i2, ... iN)</b><br />
+This methods is deprecated in latest version of Ruby so please use Array#values_at.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				39
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.insert(index, obj...)</b><br />
+Inserts the given values before the element with the given&nbsp;<i>index</i>&nbsp;(which may be negative).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				40
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.inspect</b><br />
+Creates a printable version of array.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				41
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.join(sep=$,)</b><br />
+Returns a string created by converting each element of the array to a string, separated by&nbsp;<i>sep</i>.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				42
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.last [or] array.last(n)</b><br />
+Returns the last element(s) of&nbsp;<i>self</i>. If array is&nbsp;<i>empty</i>, the first form returns&nbsp;<i>nil</i>.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				43
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.length</b><br />
+Returns the number of elements in&nbsp;<i>self</i>. May be zero.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				44
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.map { |item| block } [or]<br />
+array.collect { |item| block }</b><br />
+Invokes&nbsp;<i>block</i>&nbsp;once for each element of&nbsp;<i>self</i>. Creates a&nbsp;<i>new</i>&nbsp;array containing the values returned by the block.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				45
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.map! { |item| block } [or]<br />
+array.collect! { |item| block }</b><br />
+Invokes&nbsp;<i>block</i>&nbsp;once for each element of&nbsp;<i>array</i>, replacing the element with the value returned by block.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				46
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.nitems</b><br />
+Returns the number of non-nil elements in&nbsp;<i>self</i>. May be zero.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				47
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.pack(aTemplateString)</b><br />
+Packs the contents of array into a binary sequence according to the directives in aTemplateString. Directives A, a, and Z may be followed by a count, which gives the width of the resulting field. The remaining directives also may take a count, indicating the number of array elements to convert. If the count is an asterisk (*), all remaining array elements will be converted. Any of the directives sSiIlL may be followed by an underscore (_) to use the underlying platform's native size for the specified type; otherwise, they use a platformindependent size. Spaces are ignored in the template string. ( See templating Table below )
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				48
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.pop</b><br />
+Removes the last element from&nbsp;<i>array</i>&nbsp;and returns it, or&nbsp;<i>nil</i>&nbsp;if&nbsp;<i>array</i>&nbsp;is empty.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				49
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.push(obj, ...)</b><br />
+Pushes (appends) the given obj onto the end of this array. This expression returns the array itself, so several appends may be chained together.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				50
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.rassoc(key)</b><br />
+Searches through the array whose elements are also arrays. Compares&nbsp;<i>key</i>&nbsp;with the second element of each contained array using ==. Returns the first contained array that matches.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				51
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.reject { |item| block }</b><br />
+Returns a new array containing the items&nbsp;<i>array</i>&nbsp;for which the block is not&nbsp;<i>true</i>.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				52
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.reject! { |item| block }</b><br />
+Deletes elements from&nbsp;<i>array</i>&nbsp;for which the block evaluates to&nbsp;<i>true</i>, but returns&nbsp;<i>nil</i>if no changes were made. Equivalent to Array#delete_if.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				53
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.replace(other_array)</b><br />
+Replaces the contents of&nbsp;<i>array</i>&nbsp;with the contents of&nbsp;<i>other_array</i>, truncating or expanding if necessary.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				54
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.reverse</b><br />
+Returns a new array containing array's elements in reverse order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				55
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.reverse!</b><br />
+Reverses&nbsp;<i>array</i>&nbsp;in place.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				56
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.reverse_each {|item| block }</b><br />
+Same as Array#each, but traverses&nbsp;<i>array</i>&nbsp;in reverse order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				57
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.rindex(obj)</b><br />
+Returns the index of the last object in array == to obj. Returns&nbsp;<i>nil</i>&nbsp;if no match is found.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				58
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.select {|item| block }</b><br />
+Invokes the block passing in successive elements from array, returning an array containing those elements for which the block returns a&nbsp;<i>true</i>&nbsp;value.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				59
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.shift</b><br />
+返回的第一个元素，并删除它（所有其他元素，转向下一个）。如果数组为空，返回nil.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				60
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.size</b><br />
+Returns the length of&nbsp;<i>array</i>&nbsp;(number of elements). Alias for length.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				61
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.slice(index) [or] array.slice(start, length) [or]<br />
+array.slice(range) [or] array[index] [or]<br />
+array[start, length] [or] array[range]</b><br />
+Returns the element at&nbsp;<i>index</i>, or returns a subarray starting at&nbsp;<i>start</i>&nbsp;and continuing for&nbsp;<i>length</i>&nbsp;elements, or returns a subarray specified by&nbsp;<i>range</i>. Negative indices count backward from the end of the array (-1 is the last element). Returns<i>nil</i>&nbsp;if the&nbsp;<i>index</i>&nbsp;(or starting index) are out of range.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				62
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.slice!(index) [or] array.slice!(start, length) [or]<br />
+array.slice!(range)</b><br />
+Deletes the element(s) given by an&nbsp;<i>index</i>&nbsp;(optionally with a length) or by a&nbsp;<i>range</i>. Returns the deleted object, subarray, or&nbsp;<i>nil</i>&nbsp;if&nbsp;<i>index</i>&nbsp;is out of range.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				63
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.sort [or] array.sort { | a,b | block }</b><br />
+Returns a new array created by sorting self.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				64
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.sort! [or] array.sort! { | a,b | block }</b><br />
+对self排序.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				65
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.to_a</b><br />
+Returns&nbsp;<i>self</i>. If called on a subclass of&nbsp;<i>Array</i>, converts the receiver to an Array object.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				66
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.to_ary</b><br />
+返回 self.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				67
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.to_s</b><br />
+返回 self.join.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				68
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.transpose</b><br />
+Assumes that self is an array of arrays and transposes the rows and columns.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				69
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.uniq</b><br />
+Returns a new array by removing duplicate values in&nbsp;<i>array</i>.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				70
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.uniq!</b><br />
+Removes duplicate elements from&nbsp;<i>self</i>. Returns&nbsp;<i>nil</i>&nbsp;if no changes are made (that is, no duplicates are found).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				71
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.unshift(obj, ...)</b><br />
+前置阵列前端，达其他元素的对象.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				72
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.values_at(selector,...)</b><br />
+返回一个数组，包含自我的元素对应的givenselector（一个或多个）。选择可能是整数索引或范围.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				73
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>array.zip(arg, ...) [or]&nbsp;<br />
+array.zip(arg, ...){ | arr | block }</b><br />
+<span></span>转换任何参数数组，然后合并从每个参数对应的元素的数组元素.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	数组包指令:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下表列出了使用包数组指令＃包.
+</p>
+<table cellpadding="5" cellspacing="5" border="1" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="25%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Directive
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				@
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Moves to absolute position.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				A
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				ASCII string (space padded, count is width).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				a
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				ASCII string (null padded, count is width).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				B
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Bit string (descending bit order).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				b
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Bit string (ascending bit order).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				C
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Unsigned char.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				c
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Char.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				D, d
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Double-precision float, native format.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				E
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Double-precision float, little-endian byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				e
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Single-precision float, little-endian byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				F, f
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Single-precision float, native format.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				G
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Double-precision float, network (big-endian) byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				g
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Single-precision float, network (big-endian) byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				H
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Hex string (high nibble first).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				h
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Hex string (low nibble first).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				I
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Unsigned integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				i
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				L
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Unsigned long.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				l
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Long.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				M
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Quoted printable, MIME encoding (see RFC 2045).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				m
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Base64-encoded string.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				N
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Long, network (big-endian) byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				n
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Short, network (big-endian) byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				P
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Pointer to a structure (fixed-length string).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				p
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Pointer to a null-terminated string.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Q, q
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				64-bit number.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				S
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Unsigned short.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				s
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Short.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				U
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				UTF-8.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				u
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				UU-encoded string.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				V
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Long, little-endian byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				v
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Short, little-endian byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				w
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				BER-compressed integer \fnm.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				X
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Back up a byte.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				x
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Null byte.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Z
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Same as a, except that null is added with *.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	尝试下面的例子来包装各种数据<span></span>.
+</p>
+<pre>a = [ "a", "b", "c" ]
+n = [ 65, 66, 67 ]
+a.pack("A3A3A3")   #=&gt; "a  b  c  "
+a.pack("a3a3a3")   #=&gt; "a\000\000b\000\000c\000\000"
+n.pack("ccc")      #=&gt; "ABC"</pre>
+<p>
+	<br />
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Java基础数据类型</title>
+		<meta name="Keywords" content="Java基础数据类型 编程教程,例子教程,参考手册和代码 "/>
+		<meta name="Description" content="Java基础数据类型编程教程,例子教程,参考手册和代码-基于变量的数据类型，操作系统分配内存，并决定在保留内存可以存储。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../java">Java教程</a>  » Java基础数据类型
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../thinking">Java编程思想</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../javaio">java io类</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="java_overview.html#java_overview">Java概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_environment_setup.html#java_environment_setup">Java环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_syntax.html#java_basic_syntax">Java基本语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_object_classes.html#java_object_classes">Java对象和类</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="java_basic_datatypes.html">Java基础数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_variable_types.html#java_variable_types">Java变量类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_modifier_types.html#java_modifier_types">Java修饰符类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_operators.html#java_basic_operators">Java基本运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_loop_control.html#java_loop_control">Java循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_decision_making.html#java_decision_making">Java流程控制</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_numbers.html#java_numbers">Java Number类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_character.html#java_character">Java Character类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_string.html#java_string">Java String类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_oop_overview.html#java_oop_overview">Java面向对象基本概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_system_class.html#java_system_class">Java System类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_String/StringBuffer.html#java_string/stringbuffer">Java String/StringBuffer用法比较</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ClassLoader.html#classloader">Java Class, ClassLoader用法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_javaio.html#java_javaio">Java IO系统</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_sets.html#java_sets">Java集合类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ResourceBundle.html#resourcebundle">Java ResourceBundle, Properties</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="Exceptions.html#exceptions">Java Exceptions异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_jdbc.html#java_jdbc">Java JDBC类库</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Java基础数据类型</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Java基础数据类型编程教程,例子教程,参考手册和代码-基于变量的数据类型，操作系统分配内存，并决定在保留内存可以存储。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	变量是什么，但保留存储器位置来存储值。这意味着，当你创建一个变量，你在内存中预留一些空间.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	基于变量的数据类型，操作系统分配内存，并决定在保留内存可以存储。因此，通过分配不同的数据类型变量，这些变量可以存储整数，小数，或字符。<br />
+在Java有两种数据类型:
+</p>
+<ol style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			原始数据类型
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			引用/对象数据类型
+		</p>
+	</li>
+</ol>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;"><strong>原始数据类型</strong></span><strong>:</strong> 
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	有8个原始数据，由Java支持的类型。原始数据类型是预定义的语言和一个关键的字命名。现在让我们来看看有关的八个原始数据类型的详细.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	byte:
+</h2>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			字节的数据类型是签署一个8位二进制补码整数.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			最小值是 -128 (-2^7)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			最大值是&nbsp;127 (inclusive)(2^7 -1)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			默认值是 0
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			字节的数据类型用于保存在大型阵列的空间，主要是在的整数地方，因为一个字节是比int小的四倍.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			例子 : byte a = 100 , byte b = -50
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	short:
+</h2>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">短整型(s</span><span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">hort)</span>数据类型是16位有符号2的补码整数.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">最小值是</span> -32,768 (-2^15)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">最大值是</span> 32,767(inclusive) (2^15 -1)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			短整型(short)数据类型也可以用来保存内存字节的数据类型，比int小的2倍
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">默认值是</span> 0.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			例子: short s= 10000 , short r = -20000
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	int:
+</h2>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			int数据类型是一个32位签署两个补码整数.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">最小值是</span> - 2,147,483,648.(-2^31)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">最大值是</span> 2,147,483,647(inclusive).(2^31 -1)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			int是通常用来作为整数值的默认数据类型，除非有一个关于内存的关注.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">默认值是</span><span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">&nbsp;0</span>.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">例子</span>: int a = 100000, int b = -200000
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	long:
+</h2>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			Long数据类型是64位有符号2的补码整数.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">最小值是</span> -9,223,372,036,854,775,808.(-2^63)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">最大值是</span> 9,223,372,036,854,775,807 (inclusive). (2^63 -1)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			这需要更广泛的范围比int类型时使用.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">默认值是</span> 0L.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">例子</span>: int a = 100000L, int b = -200000L
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	float:
+</h2>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			float数据类型是单精度32位IEEE754浮点.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			浮动主要是用来保存在浮点数的大型阵列的存储器.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">默认值是</span> 0.0f.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			float数据类型是从未使用过的精确值，如货币.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">例子&nbsp;</span>: float f1 = 234.5f
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	double:
+</h2>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			双数据类型是双精度64位IEEE754浮点.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			此数据类型通常被用作默认的数据类型为十进制值。一般默认选择.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Double数据类型不应该被用于精确值，如货币.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">默认值是</span> 0.0d.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">例子&nbsp;</span>: double d1 = 123.4
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	boolean:
+</h2>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			布尔数据类型代表一个比特的信息.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			只有两个可能的值：true和false.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			此数据类型用于跟踪<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">&nbsp;true/false</span>条件的简单标志.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">默认值是</span> false.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">例子&nbsp;</span>: boolean one = true
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	char:
+</h2>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			char数据类型是一个16位的Unicode字符.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">最小值是</span> '\u0000' (or 0).
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">最大值是</span> '\uffff' (or 65,535 inclusive).
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			char数据类型用于存储任何字符.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">例子&nbsp;</span>. char letterA ='A'
+		</p>
+	</li>
+</ul>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	参考引用数据类型:
+</h1>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			引用变量使用的类定义的构造函数创建的。它们被用来访问对象。这些变量的声明是不能改变的一个特定类型。例如，员工，小狗等.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			类的对象，不同类型的数组变量来引用数据类型之下.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			任何引用变量的默认值是null.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			一个引用变量可以用来指任何对象声明的类型或任何兼容型.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			例子 : Animal animal = new Animal("giraffe");
+		</p>
+	</li>
+</ul>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	Java的常值:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	常值是一个固定值的源代码表示。他们表示，直接在没有任何计算的代码。<br />
+常值可以被分配到任何原始类型的变量。例如:
+</p>
+<pre>byte a = 68;
+char a = 'A'
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	字节，整数，长，短，可以表示十进制（基数为10），十六进制（基数为16）或八进制（基数为8），以及数字系统。<br />
+前缀0是用来表示八进制，前缀0x表示十六进制时使用这些文字系统。例如:
+</p>
+<pre>int decimal = 100;
+int octal = 0144;
+int hexa =  0x64;
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在Java中的字符串常量指定，就像他们在其他大多数语言是封闭的一对双引号之间的字符序列。字符串常量的例子:
+</p>
+<pre>"Hello World"
+"two\nlines"
+"\"This is in quotes\""
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	String和char类型的文字可以包含任何Unicode字符。例如:
+</p>
+<pre>char a = '\u0001';
+String a = "\u0001";
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Java语言支持为String和char文字，以及一些特殊的转义序列。他们是:
+</p>
+<table cellpadding="5" border="1" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Notation
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Character represented
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\n
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Newline (0x0a)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\r
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Carriage return (0x0d)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\f
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Formfeed (0x0c)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\b
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Backspace (0x08)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\s
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Space (0x20)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\t
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				tab
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\"
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Double quote
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\'
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Single quote
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\\
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				backslash
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\ddd
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Octal character (ddd)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\uxxxx
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Hexadecimal UNICODE character (xxxx)
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	下一步是什么 ?
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	本章解释各种数据类型，下一个主题介绍不同的变量类型和它们的用法。这会给你一个很好的理解他们如何可以使用Java类，接口等.
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

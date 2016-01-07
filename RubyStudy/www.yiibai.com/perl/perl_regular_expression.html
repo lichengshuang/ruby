@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl正则表达式</title>
+		<meta name="Keywords" content="Perl正则表达式 "/>
+		<meta name="Description" content="Perl正则表达式，匹配操作符，替换操作符修饰符，转换操作符，正则表达式是一个字符串的字符定义视图的模式或多模式"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl正则表达式
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="perl_introduction.html#perl_introduction">Perl简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_syntax.html#perl_syntax">Perl语法概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_variables.html#perl_variables">Perl变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_scalars.html#perl_scalars">Perl标量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_arrays.html#perl_arrays">Perl数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_hashes.html#perl_hashes">Perl哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_special_variables.html#perl_special_variables">Perl特殊变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_conditions.html#perl_conditions">Perl条件语句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_loops.html#perl_loops">Perl循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_operators.html#perl_operators">Perl内置操作符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_files.html#perl_files">Perl文件I/O</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_regular_expression.html">Perl正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_subroutines.html#perl_subroutines">Perl子例程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_format.html#perl_format">Perl格式-报表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_error_handeling.html#perl_error_handeling">Perl错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_coding_standard.html#perl_coding_standard">Perl编程标准</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl正则表达式</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl正则表达式，匹配操作符，替换操作符修饰符，转换操作符，正则表达式是一个字符串的字符定义视图的模式或多模式
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	正则表达式是一个字符串的字符定义视图的模式或多<span style="background-color:#FFFFFF;">模式</span>。在<a href="../perl" target="_blank">Per</a>l的正则表达式的语法是什么，你会发现在其他正则表达式，如<strong>sed</strong>，<strong>grep</strong>和<span></span><strong>awk</strong><span></span>的支持程序非常相似。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	运用正则表达式的基本方法是使用结合的经营模式=〜和！〜。第一个是一个测试操作符，第二是一个赋值操作符。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<br />
+</p>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		匹配正则表达式 - m//
+	</li>
+	<li>
+		替代正则表达式 - s///
+	</li>
+	<li>
+		直译（拼写）正则表达式 - tr///
+	</li>
+</ul>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在每种情况下斜线作为正则表达式（regex的），你指定的分隔符。如果你喜欢用任何其他分隔符，那么你可以代替使用斜线的位置。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<span style="background-color:#FFFFFF;"><strong>匹配操作符</strong></span> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	m//匹配操作符，用来匹配一个正则表达式字符串或语句。例如，要匹配的字符序列“foo”对标量$bar，你可能会使用这样的语句：
+</p>
+<pre>if ($bar =~ /foo/)
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	m//其实与同样功能的q//操作符。你可以使用任何自然匹配的字符作为分隔符表达式的组合，例如，{}，m()，和m&gt;&lt;都是有效的。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<span style="background-color:#FFFFFF;">如果分隔符是斜杠，你</span>可以<span style="background-color:#FFFFFF;">从m//</span>省略 成m，但所有其他的分隔符，你必须使用m前缀。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	请注意，整个匹配表达式表现出来。即=〜！或〜匹配操作符左边的表达式，返回true（在标量上下文）如果表达式匹配。因此，语句：<span></span> 
+</p>
+<pre>$true = ($foo =~ m/foo/);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	将会设置$true的值为1 如果$foo匹配正则表达式, 否则<span style="background-color:#FFFFFF;">$true</span>为0<span style="background-color:#FFFFFF;">匹配失败。</span> 
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	匹配在列表上下文中，返回任何分组表达式的内容。例如，从字符串中提取的小时，分钟和秒时，我们可以使用：
+</p>
+<pre>my ($hours, $minutes, $seconds) = ($time =~ m/(\d+):(\d+):(\d+)/);
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>匹配运算符修饰符</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	匹配的操作符支持其自己的一套修饰符。 /g的修饰符，使全局匹配，/i修饰符将匹配不区分大小写。这里是完整的修饰符列表：
+</p>
+<pre><b>Modifier	Description</b> i 	Makes the match case insensitive
+m 	Specifies that if the string has newline or carriage
+	return characters, the ^ and $ operators will now
+	match against a newline boundary, instead of a
+	string boundary
+o 	Evaluates the expression only once
+s 	Allows use of . to match a newline character
+x 	Allows you to use white space in the expression for clarity
+g 	Globally finds all matches
+cg 	Allows the search to continue even after a global match fails
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>只匹配</strong><strong>一次</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	还有一个简单的版本匹配操作符 - ？Pattern？<span style="background-color:#FFFFFF;">操作符</span>。这基本上是等同于m//运算符但它仅匹配一次在字符串之间的每个调用reset。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	例如，可以使用此列表内的第一个和最后一个元素：
+</p>
+<pre>#!/usr/bin/perl
+
+@list = qw/food foosball subeo footnote terfoot canic footbrdige/;
+
+foreach (@list)
+{
+   $first = $1 if ?(foo.*)?;
+   $last = $1 if /(foo.*)/;
+}
+print "First: $first, Last: $last\n";
+# by www.yiibai.com
+This will produce following result
+First: food, Last: footbrdige
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	替换操作符
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	替换操作符，s///确实是只是一个扩展，使您可以更换一些新的文本匹配的文本匹配运算符。此运算符基本形式是：
+</p>
+<pre>s/PATTERN/REPLACEMENT/;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<span style="background-color:#FFFFFF;"><strong>PATTERN&nbsp;</strong></span>是我们正在寻找的正则表达式的文本。<span style="background-color:#FFFFFF;"><strong>REPLACEMENT&nbsp;</strong></span>是一个规范，我们要用来替换找到的文字与文本或正则表达式。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	例如，我们可以使用<span style="background-color:#FFFFFF;">.cat.&nbsp;</span>替换所有出现的.dog。
+</p>
+<pre>$string =~ s/dog/cat/;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	另外一个例子：
+</p>
+<pre>#/user/bin/perl
+
+$string = 'The cat sat on the mat';
+$string =~ s/cat/dog/;
+
+print "Final Result is $string\n";
+
+This will produce following result
+
+The dog sat on the mat
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>替换操作符修饰符</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这里是替代操作符的所有修改的列表：
+</p>
+<pre><b>Modifier	Description</b> i 	Makes the match case insensitive
+m 	Specifies that if the string has newline or carriage
+	return characters, the ^ and $ operators will now
+	match against a newline boundary, instead of a
+	string boundary
+o 	Evaluates the expression only once
+s 	Allows use of . to match a newline character
+x 	Allows you to use white space in the expression
+	for clarity
+g 	Replaces all occurrences of the found expression
+	with the replacement text
+e 	Evaluates the replacement as if it were a Perl statement,
+	and uses its return value as the replacement text
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>转换</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	转换相似但不完全相同替换的原则，但不像<span style="background-color:#FFFFFF;">替换</span>，<span style="background-color:#FFFFFF;">转换</span>（翻译）不使用正则表达式搜索替换值。<span style="background-color:#FFFFFF;">转换操作符</span>是：
+</p>
+<pre>tr/SEARCHLIST/REPLACEMENTLIST/cds
+y/SEARCHLIST/REPLACEMENTLIST/cds
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	翻译替换在SEARCHLIST与在REPLACEMENTLIST相应出现的字符所有字符。例如，使用“The cat sat on the mat.”字符串我们已经在本章中使用：
+</p>
+<pre>#/user/bin/perl
+
+$string = 'The cat sat on the mat';
+$string =~ tr/a/o/;
+
+print "$string\n";
+
+This will produce following result
+
+The cot sot on the mot.
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<br />
+</p>
+<p>
+	<span style="line-height:normal;background-color:#FFFFFF;">也可用于标准的Perl范围，允许你指定字符的范围，由字母或数值。要改变字符串的情况下，您可以使用以下语法在位置的<span></span><strong>uc</strong><span></span>函数。</span> 
+</p>
+<p>
+	<span style="line-height:normal;background-color:#FFFFFF;"><br />
+</span> 
+</p>
+<span style="line-height:normal;background-color:#FFFFFF;"></span> 
+<pre>$string =~ tr/a-z/A-Z/;
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>转换操作符</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	以下是有关操作符的运算符名单
+</p>
+<pre>Modifier 	Description
+c 	Complement SEARCHLIST.
+d 	Delete found but unreplaced characters.
+s 	Squash duplicate replaced characters.
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	/ D的修饰符删除匹配<span style="background-color:#FFFFFF;">SEARCHLIST</span>的字符，不具备相应的条目在REPLACEMENTLIST。例如：
+</p>
+<pre>#!/usr/bin/perl 
+
+$string = 'the cat sat on the mat.';
+$string =~ tr/a-z/b/d;
+
+print "$string\n";
+
+This will produce following result
+b b   b.
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	最后的修饰符，/s删除被替换的字符的重复序列，因此：
+</p>
+<pre>#!/usr/bin/perl
+
+$string = 'food';
+$string = 'food';
+$string =~ tr/a-z/a-z/s;
+
+print $string;
+
+This will produce following result
+fod
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>更复杂的正则表达式</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	你不只是有固定的字符串匹配。事实上，你可以在任何可以使用更复杂的正则表达式只是匹配。这里有一个快速的小抄：
+</p>
+<pre><b>Character		Description</b> .              a single character
+\s             a whitespace character (space, tab, newline)
+\S             non-whitespace character # by www.yiibai.com
+\d             a digit (0-9)
+\D             a non-digit
+\w             a word character (a-z, A-Z, 0-9, _)
+\W             a non-word character
+[aeiou]        matches a single character in the given set
+[^aeiou]       matches a single character outside the given set
+(foo|bar|baz)  matches any of the alternatives specified
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	量词可以用来指定有多少以前的东西，你要匹配，其中“thing”是指一个原义字符，上面列出的元字符，或一组括号中的字符或元字符。
+</p>
+<pre><b>Character            Description</b> *              zero or more of the previous thing
++              one or more of the previous thing
+?              zero or one of the previous thing
+{3}            matches exactly 3 of the previous thing
+{3,6}          matches between 3 and 6 of the previous thing
+{3,}           matches 3 or more of the previous thing
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	^元字符匹配字符串的开头和<span style="background-color:#FFFFFF;">&nbsp;$ metasymbol&nbsp;</span>匹配字符串的结尾。<br />
+这里有一些简单的例子
+</p>
+<pre># nothing in the string (start and end are adjacent)
+/^$/   
+
+# a three digits, each followed by a whitespace
+# character (eg "3 4 5 ")
+/(\d\s){3}/  
+
+# matches a string in which every
+# odd-numbered letter is a (eg "abacadaf")
+/(a.)+/  
+
+# string starts with one or more digits
+/^\d+/
+
+# string that ends with one or more digits
+/\d+$/
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	让我们看看另一个例子
+</p>
+<pre>#!/usr/bin/perl
+
+$string = "Cats go Catatonic\nWhen given Catnip";
+($start) = ($string =~ /\A(.*?) /);
+@lines = $string =~ /^(.*?) /gm;
+print "First word: $start\n","Line starts: @lines\n";
+
+
+This will produce following result
+First word: Cats
+Line starts: Cats When
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>匹配边界</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	\b匹配任何单词边界，\w类和\W类之间的区别定义。&nbsp;因为\w一个字的字符，\W相反，这通常是指一个词的终止。&nbsp;\B断言不是一个单词边界匹配任何位置。例如：
+</p>
+<pre>/\bcat\b/ # Matches 'the cat sat' but not 'cat on the mat'
+/\Bcat\B/ # Matches 'verification' but not 'the cat on the mat'
+/\bcat\B/ # Matches 'catatonic' but not 'polecat'
+/\Bcat\b/ # Matches 'polecat' but not 'catatonic'
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>选择替代品</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	|字符是一样的标准或按位或在Perl。它指定一个正则表达式或组内的备用匹配。例如，以匹配表达式中的“cat”或“dog”，你可能会使用这个：
+</p>
+<pre>if ($string =~ /cat|dog/)
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	您可以将单个表达式的元素结合在一起，以支持复杂的匹配。寻找两个人的名字，可以实现两个独立的测试，像这样：
+</p>
+<pre>if (($string =~ /Martin Brown/) ||
+   ($string =~ /Sharon Brown/))
+
+This could be written as follows
+
+if ($string =~ /(Martin|Sharon) Brown/)
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>分组匹配</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	从一个角度的正则表达式看没有区别，也许前者是稍微更清晰。
+</p>
+<pre>$string =~ /(\S+)\s+(\S+)/;
+
+and 
+
+$string =~ /\S+\s+\S+/;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	然而，在分组的好处是，它使我们能够从一个正则表达式提取序列。返回一个列表的顺序，在他们出现在原来的分组。例如，在下面的片段中，我们已经从一个字符串取出小时，分钟和秒。
+</p>
+<pre>my ($hours, $minutes, $seconds) = ($time =~ m/(\d+):(\d+):(\d+)/);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	除了这种直接的方法，也可以在特殊的$x变量，其中x是该组内一些正则表达式匹配组。因此，我们可以重写前面的例子如下：
+</p>
+<pre>$time =~ m/(\d+):(\d+):(\d+)/;
+my ($hours, $minutes, $seconds) = ($1, $2, $3);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	当组用于替代表达式，$ x的语法，可以用来替换文本。因此，我们可以使用此格式化的日期字符串：
+</p>
+<pre>#!/usr/bin/perl
+
+$date = '03/26/1999';
+$date =~ s#(\d+)/(\d+)/(\d+)#$3/$1/$2#;
+
+print "$date";
+
+This will produce following result
+1999/03/26
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>使用\G断言</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	\G断言，让您可以继续搜索从最后一个匹配发生的点。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	例如，在下面的代码，我们使用的\G，使我们可以搜索到正确的位置，然后提取一些信息，而无需创建一个更复杂的，单一的正则表达式：
+</p>
+<pre>#!/usr/bin/perl
+
+$string = "The time is: 12:31:02 on 4/12/00";
+
+$string =~ /:\s+/g;
+($time) = ($string =~ /\G(\d+:\d+:\d+)/);
+$string =~ /.+\s+/g;
+($date) = ($string =~ m{\G(\d+/\d+/\d+)});
+
+print "Time: $time, Date: $date\n";
+
+This will produce following result
+Time: 12:31:02, Date: 4/12/00
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	\G断言，其实只是元符号相当于pos函数，所以正则表达式之间的调用，您可以继续使用pos，甚至修改pos的值（因此\ G）的使用<span style="background-color:#FFFFFF;">pos</span>作为一个lvalue子程序：
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>正则表达式中的变量</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	正则表达式的变量，包括$，包含匹配无论最后的分组匹配;&nbsp;<b>$&amp;</b>, 其中包含整个匹配的字符串;&nbsp;<b>$`</b>, 其中包含匹配字符串前的一切;&nbsp; 和<b>$'</b>, 其中包含匹配的字符串后的一切。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面的代码演示的结果：
+</p>
+<pre><span style="font-size:12px;line-height:18px;"><span>#!/usr/bin/perl
+
+$string = "The food is in the salad bar";
+$string =~ m/foo/;
+print "Before: $`\n";
+print "Matched: $&amp;\n";
+print "After: $'\n";
+# www.yiibai.com
+This code prints the following when executed:
+Before: The
+Matched: foo
+After: d is in the salad bar</span></span></pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

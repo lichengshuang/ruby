@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>JDBC数据类型</title>
+		<meta name="Keywords" content="JDBC数据类型实例代码教程 "/>
+		<meta name="Description" content="JDBC数据类型实例代码教程 - JDBC驱动程序Java数据类型转换到适当的JDBC类型然后再将它发送到数据库。它使用默认的大多数数据类型映射。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../jdbc">JDBC教程</a>  » JDBC数据类型
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">JDBC教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="example">JDBC例子</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="references">JDBC实用参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">JDBC有用资料</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">JDBC教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="jdbc_introduction.html#jdbc_introduction">JDBC简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_sql_syntax.html#jdbc_sql_syntax">JDBC SQL语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_environment_setup.html#jdbc_environment_setup">JDBC环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_sample_code.html#jdbc_sample_code">JDBC简单代码例子</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_driver_types.html#jdbc_driver_types">JDBC驱动类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_db_connections.html#jdbc_db_connections">JDBC连接数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_statements.html#jdbc_statements">JDBC Statements</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_result_sets.html#jdbc_result_sets">JDBC ResultSet</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="jdbc_data_types.html">JDBC数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_transactions.html#jdbc_transactions">JDBC事务</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_exceptions.html#jdbc_exceptions">JDBC异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_batch_processing.html#jdbc_batch_processing">JDBC批量处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_stored_procedure.html#jdbc_stored_procedure">JDBC存储过程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_streaming_data.html#jdbc_streaming_data">JDBC数据流</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">JDBC数据类型</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						JDBC数据类型实例代码教程 - JDBC驱动程序Java数据类型转换到适当的JDBC类型然后再将它发送到数据库。它使用默认的大多数数据类型映射。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	JDBC驱动程序Java数据类型转换到适当的JDBC类型然后再<span style="background-color:#FFFFFF;">将它发送到数据库</span>。它使用默认的大多数数据类型映射。例如，一个Java int转换成一个SQL INTEGER。创建默认映射驱动器之间提供一致性。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下表总结了默认的JDBC数据类型的Java数据类型转换，当调用setXXX()方法的PreparedStatement或CallableStatement对象或ResultSet.updateXXX()方法。
+</p>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				SQL
+			</th>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				JDBC/Java
+			</th>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				setXXX
+			</th>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				updateXXX
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				VARCHAR
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.lang.String
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setString
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateString
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				CHAR
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.lang.String
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setString
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateString
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				LONGVARCHAR
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.lang.String
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setString
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateString
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				BIT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				boolean
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBoolean
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateBoolean
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				NUMERIC
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.math.BigDecimal
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBigDecimal
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateBigDecimal
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				TINYINT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				byte
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setByte
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateByte
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				SMALLINT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				short
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setShort
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateShort
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				INTEGER
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				int
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setInt
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateInt
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				BIGINT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				long
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setLong
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateLong
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				REAL
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				float
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setFloat
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateFloat
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				FLOAT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				float
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setFloat
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateFloat
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				DOUBLE
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				double
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setDouble
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateDouble
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				VARBINARY
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				byte[ ]
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBytes
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateBytes
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				BINARY
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				byte[ ]
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBytes
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateBytes
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				DATE
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Date
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setDate
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateDate
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				TIME
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Time
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setTime
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateTime
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				TIMESTAMP
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Timestamp
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setTimestamp
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateTimestamp
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				CLOB
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Clob
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setClob
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateClob
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				BLOB
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Blob
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBlob
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateBlob
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				ARRAY
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Array
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setARRAY
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateARRAY
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				REF
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Ref
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				SetRef
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateRef
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				STRUCT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Struct
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				SetStruct
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				updateStruct
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	JDBC3.0的增强支持BLOB，CLOB，ARRAY，REF数据类型。ResultSet对象现在有UPDATEBLOB()，updateCLOB<span style="background-color:#FFFFFF;">()，</span>updateArray<span style="background-color:#FFFFFF;">()</span>和updateRef<span style="background-color:#FFFFFF;">()</span>方法，使您可以在服务器上直接操作相应的数据。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	setXXX()和updateXXX<span style="background-color:#FFFFFF;">()</span>方法，使您可以转换成特定的Java类型到特定的JDBC数据类型。setObject<span style="background-color:#FFFFFF;">()</span>和updateObject<span style="background-color:#FFFFFF;">()</span>方法，使您能够几乎所有的Java类型映射到JDBC数据类型。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	ResultSet对象提供相应的getXXX()方法为每个数据类型来检索列值。每一种方法，可以使用与列名或由它的序号位置。
+</p>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				SQL
+			</th>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				JDBC/Java
+			</th>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				setXXX
+			</th>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				getXXX
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				VARCHAR
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.lang.String
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setString
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getString
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				CHAR
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.lang.String
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setString
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getString
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				LONGVARCHAR
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.lang.String
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setString
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getString
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				BIT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				boolean
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBoolean
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getBoolean
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				NUMERIC
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.math.BigDecimal
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBigDecimal
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getBigDecimal
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				TINYINT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				byte
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setByte
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getByte
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				SMALLINT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				short
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setShort
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getShort
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				INTEGER
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				int
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setInt
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getInt
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				BIGINT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				long
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setLong
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getLong
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				REAL
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				float
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setFloat
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getFloat
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				FLOAT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				float
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setFloat
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getFloat
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				DOUBLE
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				double
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setDouble
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getDouble
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				VARBINARY
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				byte[ ]
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBytes
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getBytes
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				BINARY
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				byte[ ]
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBytes
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getBytes
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				DATE
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Date
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setDate
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getDate
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				TIME
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Time
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setTime
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getTime
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				TIMESTAMP
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Timestamp
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setTimestamp
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getTimestamp
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				CLOB
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Clob
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setClob
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getClob
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				BLOB
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Blob
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setBlob
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getBlob
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				ARRAY
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Array
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				setARRAY
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getARRAY
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				REF
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Ref
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				SetRef
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getRef
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				STRUCT
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				java.sql.Struct
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				SetStruct
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				getStruct
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>日期 &amp; 时间数据类型</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	java.sql.Date类映射到SQL DATE类型，并在java.sql.Time的java.sql.Timestamp类，分别映射到SQL和SQL TIMESTAMP数据类型。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	以下示例显示了如何的格式的日期和时间类标准的Java日期和时间值相匹配的SQL数据类型需求。
+</p>
+<pre>import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.util.*;
+
+public class SqlDateTime {
+   public static void main(String[] args) {
+      //Get standard date and time
+      java.util.Date javaDate = new java.util.Date();
+      long javaTime = javaDate.getTime();
+      System.out.println("The Java Date is:" + 
+             javaDate.toString());
+
+      //Get and display SQL DATE by www.yiibai.com
+      java.sql.Date sqlDate = new java.sql.Date(javaTime);
+      System.out.println("The SQL DATE is: " + 
+             sqlDate.toString());
+
+      //Get and display SQL TIME
+      java.sql.Time sqlTime = new java.sql.Time(javaTime);
+      System.out.println("The SQL TIME is: " + 
+             sqlTime.toString());
+      //Get and display SQL TIMESTAMP
+      java.sql.Timestamp sqlTimestamp =
+      new java.sql.Timestamp(javaTime);
+      System.out.println("The SQL TIMESTAMP is: " + 
+             sqlTimestamp.toString());
+     }//end main
+}//end SqlDateTime
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	现在让我们来编译上面的例子如下：
+</p>
+<pre>C:\&gt;javac SqlDateTime.java
+C:\&gt;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	当你运行JDBCExample的，它会产生以下结果：
+</p>
+<pre>C:\&gt;java SqlDateTime
+The Java Date is:Tue Aug 18 13:46:02 GMT+04:00 2009
+The SQL DATE is: 2009-08-18
+The SQL TIME is: 13:46:02
+The SQL TIMESTAMP is: 2009-08-18 13:46:02.828
+C:\&gt;
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	处理NULL值:
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	SQL使用NULL值和Java的使用null是不同的概念。那么如何在Java中处理SQL NULL值呢？有三种方法可以使用：
+</p>
+<ol style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			避免使用getXXX()方法返回的原始数据类型。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			使用原始数据类型的包装类，并使用ResultSet对象的wasNull()方法来测试的getXXX()方法返回的包装类变量的值是否应被设置为null。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			使用原始数据类型和ResultSet对象的wasNull()方法来测试是否收到原始变量，返回的值的getXXX()方法将被设置为选择一个可接受的值代表一个NULL。
+		</p>
+	</li>
+</ol>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是一个例子来处理NULL值：
+</p>
+<pre><span style="font-size:12px;line-height:17px;"><span>Statement stmt = conn.createStatement( );
+String sql = "SELECT id, first, last, age FROM Employees";
+ResultSet rs = stmt.executeQuery(sql);
+
+int id = rs.getInt(1);
+if( rs.wasNull( ) ) {
+   id = 0;
+}</span></span></pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

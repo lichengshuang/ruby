@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby字符串</title>
+		<meta name="Keywords" content="Ruby 字符串 string "/>
+		<meta name="Description" content="Ruby的​​String对象拥有和操纵的一个典型代表，代表人类语言的字符的一个或多个字节的任意序列。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby字符串
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_string.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_string.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_string.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_string.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_syntax.html#ruby_syntax">Ruby语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_classes.html#ruby_classes">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_if_else.html#ruby_if_else">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_string.html">Ruby字符串</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_array.html#ruby_array">Ruby数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_hashes.html#ruby_hashes">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_input_output.html#ruby_input_output">Ruby文件 I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_exceptions.html#ruby_exceptions">Ruby异常处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_multithreading.html#ruby_multithreading">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby字符串</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Ruby的​​String对象拥有和操纵的一个典型代表，代表人类语言的字符的一个或多个字节的任意序列。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Ruby的String对象拥有和操纵的一个典型代表，代表人类语言的字符的一个或多个字节的任意序列。
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	最简单的字符串括在单引号（撇号字符）。引号内的文字是字符串值：
+</p>
+<pre>'This is a simple Ruby string literal'
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果您需要将一个单引号内的单引号的字符串文字，前面加上一个反斜杠，这样的<a href="../ruby.2" target="_blank">Ruby</a>解释器不认为它会终止字符串：
+</p>
+<pre>'Won\'t you read O\'Reilly\'s book?'
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	反斜杠也可以逃脱另一个反斜杠，所以第二个反斜线本身并不解释为转义字符。<br />
+以下是字符串相关的Ruby特性。
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	表达式<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">置换</span>:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	表达式置换是嵌入到一个使用＃{和}字符串任何Ruby表达式的值的一种手段：
+</p>
+<pre>#!/usr/bin/ruby
+
+x, y, z = 12, 36, 72
+puts "The value of x is #{ x }."
+puts "The sum of x and y is #{ x + y }."
+puts "The average was #{ (x + y + z)/3 }."
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>The value of x is 12.
+The sum of x and y is 48.
+The average was 40.
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	生成分隔字符串:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	与一般的分隔字符串，你可以创建一对匹配的任意分隔符，例如，虽然里面的字符串（{，&lt;等，在此之前由百分号（％）。Q，Q和X有特殊的含义一般分隔的字符串可以嵌套：
+</p>
+<pre>%{Ruby is fun.}  equivalent to "Ruby is fun."
+%Q{ Ruby is fun. } equivalent to " Ruby is fun. "
+%q[Ruby is fun.]  equivalent to a single-quoted string
+%x!ls! equivalent to back tick command output `ls`
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	转义字符:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下表是一个转义或反斜线符号可以代表的非打印字符的列表。
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<b>注:</b>&nbsp;在双引号字符串，转义字符的解释;在单引号字符串，转义字符被保留。
+</p>
+<table border="1" cellpadding="5" cellspacing="5" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;" width="25%">
+				Backslash<br />
+notation
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Hexadecimal<br />
+character
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\a
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x07
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Bell or alert
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\b
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x08
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Backspace
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\cx
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Control-x
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\C-x
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Control-x
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\e
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x1b
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Escape
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\f
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x0c
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Formfeed
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\M-\C-x
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Meta-Control-x
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\n
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x0a
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				新行
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\nnn
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Octal notation, where n is in the range 0.7
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\r
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x0d
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Carriage return
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\s
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x20
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				空格
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\t
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x09
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Tab
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\v
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0x0b
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Vertical tab
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\x
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				字符 x
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				\xnn
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Hexadecimal notation, where n is in the range 0.9, a.f, or A.F
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	字符编码:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	为Ruby的默认字符集是ASCII，可以由单个字节表示的字符。如果你使用UTF-8，或另一种现代的字符集，字符可能会在一至四个字节表示。<br />
+你可以改变你的字符集，这样，在你的程序开始时使用$ KCODE：
+</p>
+<pre>$KCODE = 'u'
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以下是$ KCODE的可能值：
+</p>
+<table border="1" cellpadding="5" cellspacing="5" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;" width="25%">
+				Code
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				a
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				ASCII (same as none). This is the default.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				e
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				EUC.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				n
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				None (same as ASCII).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				u
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				UTF-8.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2>
+	<span style="font-size:16px;">String 内建函数/方法:</span> 
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	我们需要有一个String对象的实例，调用String方法。以下的方式来创建String对象的一个实例：
+</p>
+<pre>new [String.new(str="")]
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将返回一个新的字符串对象，其中包含str的副本。现在使用str的对象，我们可以提供任何实例方法。例如：
+</p>
+<pre>#!/usr/bin/ruby
+
+myStr = String.new("THIS IS TEST")
+foo = myStr.downcase
+
+puts "#{foo}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果：
+</p>
+<pre>this is test
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以下是公开的String方法（假设str是一个String对象）：
+</p>
+<table border="1" cellpadding="5" cellspacing="5" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;" width="5%">
+				编号
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				方法和描述
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				1
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str % arg</b><br />
+<span></span>使用格式规范的格式字符串。参数必须是一个数组，如果它包含多个替代。有关格式规范的信息。看到下sprintf的“内核模块”<span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				2
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str * integer</b><br />
+返回一个新的str字符串，其中包含的整数倍。换句话说，str是重复的整数倍。
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				3
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str + other_str</b><br />
+串连other_str。<br />
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				4
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str &lt;&lt; obj</b><br />
+<span></span>串连到str对象。如果对象是一个Fixnum的范围在0.255，它被转换为字符。 Concat的比较。<span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				5
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str &lt;=&gt; other_str</b><br />
+比较str和other_str，返回-1（小于），0（等于）或1（大于）。比较是大小写敏感的.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				6
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str == obj</b><br />
+测试str和obj相等。如果obj是一个字符串，返回false;返回str&lt;=&gt; obj的返回0，如果真.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				7
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str =~ obj</b><br />
+对正则表达式模式obj的str匹配。返回匹配开始的位置，否则为false.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				8
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>null</b> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				9
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.capitalize</b><br />
+<span></span>大写字符串.<span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				10
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.capitalize!</b><br />
+和capitalize一样, 但有一些地方改变.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				11
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.casecmp</b><br />
+使一个字符串区分大小写的比较<span></span>.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				12
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.center</b><br />
+中心化一个字符串.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				13
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.chomp</b><br />
+Removes the record separator ($/), usually \n, from the end of a string. If no record separator exists, does nothing.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				14
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.chomp!</b><br />
+Same as chomp, but changes are made in place.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				15
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.chop</b><br />
+Removes the last character in str.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				16
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.chop!</b><br />
+Same as chop, but changes are made in place.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				17
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.concat(other_str)</b><br />
+Concatenates other_str to str.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				18
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.count(str, ...)</b><br />
+计数的一个或多个字符集。如果有一个以上的字符集，计算这些集合的交集.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				19
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.crypt(other_str)</b><br />
+适用于单向加密哈希STR。这个论点是salt的字符串，应是两个字符长，范围AZ排列，0.9，每个字符或/.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				20
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.delete(other_str, ...)</b><br />
+返回str的副本在其删除参数的交叉点与所有字符.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				21
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.delete!(other_str, ...)</b><br />
+删除相同，但有一些<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#F1F1F1;">位置有</span>变化.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				22
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.downcase</b><br />
+所有大写字母换成小写返回str的副本.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				23
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.downcase!</b><br />
+Same as downcase, but changes are made in place.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				24
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.dump</b><br />
+Returns a version of str with all nonprinting characters replaced by \nnn notation and all special characters escaped.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				25
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.each(separator=$/) { |substr| block }</b><br />
+Splits str using argument as the record separator ($/ by default), passing each substring to the supplied block.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				26
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.each_byte { |fixnum| block }</b><br />
+传递str每个字节的块，返回每个字节一个字节的十进制表示.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				27
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.each_line(separator=$/) { |substr| block }</b><br />
+str分割使用的记录分隔符（默认/美元）的说法，通过每个子提供的块.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				28
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.empty?</b><br />
+如果str是空的（返回true，有一个零长度）.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				29
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.eql?(other)</b><br />
+Two strings are equal if the have the same length and content.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				30
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.gsub(pattern, replacement) [or]<br />
+str.gsub(pattern) { |match| block }</b><br />
+Returns a copy of str with all occurrences of pattern replaced with either replacement or the value of the block. The pattern will typically be a Regexp; if it is a String then no regular expression metacharacters will be interpreted (that is, /\d/ will match a digit, but '\d' will match a backslash followed by a 'd')
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				31
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str[fixnum] [or] str[fixnum,fixnum] [or] str[range] [or] str[regexp] [or] str[regexp, fixnum] [or] str[other_str]</b><br />
+References str, using the following arguments: one Fixnum, returns a character code at fixnum; two Fixnums, returns a substring starting at an offset (first fixnum) to length (second fixnum); range, returns a substring in the range; regexp returns portion of matched string; regexp with fixnum, returns matched data at fixnum; other_str returns substring matching other_str. A negative Fixnum starts at end of string with -1.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				32
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str[fixnum] = fixnum [or] str[fixnum] = new_str [or] str[fixnum, fixnum] = new_str [or] str[range] = aString [or] str[regexp] =new_str [or] str[regexp, fixnum] =new_str [or] str[other_str] = new_str ]</b><br />
+Replace (assign) all or part of a string. Synonym of slice!.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				33
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.gsub!(pattern, replacement) [or] str.gsub!(pattern) { |match| block }</b><br />
+Performs the substitutions of String#gsub in place, returning str, or nil if no substitutions were performed.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				34
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.hash</b><br />
+Returns a hash based on the string's length and content.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				35
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.hex</b><br />
+Treats leading characters from str as a string of hexadecimal digits (with an optional sign and an optional 0x) and returns the corresponding number. Zero is returned on error.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				36
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.include? other_str [or] str.include? fixnum</b><br />
+Returns true if str contains the given string or character.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				37
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.index(substring [, offset]) [or]<br />
+str.index(fixnum [, offset]) [or]<br />
+str.index(regexp [, offset])</b><br />
+Returns the index of the first occurrence of the given substring, character (fixnum), or pattern (regexp) in str. Returns nil if not found. If the second parameter is present, it specifies the position in the string to begin the search.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				38
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.insert(index, other_str)</b><br />
+Inserts other_str before the character at the given index, modifying str. Negative indices count from the end of the string, and insert after the given character. The intent is to insert a string so that it starts at the given index.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				39
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.inspect</b><br />
+Returns a printable version of str, with special characters escaped.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				40
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.intern [or] str.to_sym</b><br />
+Returns the Symbol corresponding to str, creating the symbol if it did not previously exist.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				41
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.length</b><br />
+Returns the length of str. Compare size.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				42
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.ljust(integer, padstr=' ')</b><br />
+If integer is greater than the length of str, returns a new String of length integer with str left-justified and padded with padstr; otherwise, returns str.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				43
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.lstrip</b><br />
+Returns a copy of str with leading whitespace removed.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				44
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.lstrip!</b><br />
+Removes leading whitespace from str, returning nil if no change was made.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				45
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.match(pattern)</b><br />
+Converts pattern to a Regexp (if it isn't already one), then invokes its match method on str.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				46
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.oct</b><br />
+Treats leading characters of str as a string of octal digits (with an optional sign) and returns the corresponding number. Returns 0 if the conversion fails.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				47
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.replace(other_str)</b><br />
+用other_str相应的值取代str的内容.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				48
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.reverse</b><br />
+Returns a new string with the characters from str in reverse order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				49
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.reverse!</b><br />
+Reverses str in place.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				50
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.rindex(substring [, fixnum]) [or]<br />
+str.rindex(fixnum [, fixnum]) [or]<br />
+str.rindex(regexp [, fixnum])</b><br />
+Returns the index of the last occurrence of the given substring, character (fixnum), or pattern (regexp) in str. Returns nil if not found. If the second parameter is present, it specifies the position in the string to end the search.characters beyond this point won't be considered.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				51
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.rjust(integer, padstr=' ')</b><br />
+If integer is greater than the length of str, returns a new String of length integer with str right-justified and padded with padstr; otherwise, returns str.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				52
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.rstrip</b><br />
+Returns a copy of str with trailing whitespace removed.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				53
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.rstrip!</b><br />
+Removes trailing whitespace from str, returning nil if no change was made.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				54
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.scan(pattern) [or]<br />
+str.scan(pattern) { |match, ...| block }</b><br />
+Both forms iterate through str, matching the pattern (which may be a Regexp or a String). For each match, a result is generated and either added to the result array or passed to the block. If the pattern contains no groups, each individual result consists of the matched string, $&amp;. If the pattern contains groups, each individual result is itself an array containing one entry per group.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				55
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.slice(fixnum) [or] str.slice(fixnum, fixnum) [or]<br />
+str.slice(range) [or] str.slice(regexp) [or]<br />
+str.slice(regexp, fixnum) [or] str.slice(other_str)<br />
+See str[fixnum], etc.<br />
+str.slice!(fixnum) [or] str.slice!(fixnum, fixnum) [or] str.slice!(range) [or] str.slice!(regexp) [or] str.slice!(other_str)</b><br />
+Deletes the specified portion from str, and returns the portion deleted. The forms that take a Fixnum will raise an IndexError if the value is out of range; the Range form will raise a RangeError, and the Regexp and String forms will silently ignore the assignment.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				56
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.split(pattern=$;, [limit])</b><br />
+				<p style="text-align:justify;">
+					分为基于分隔符的子串str中，返回这些子字符串的数组。<br />
+如果模式是一个字符串，那么它的内容被用作分隔符时，分裂STR。如果模式是一个单独的空间，str是分割上的空白，与前导空白和运行连续的空白字符忽略。<br />
+如果模式是一个Regexp，str分成模式匹配的地方。每当模式匹配零长度的字符串，str是分成单个字符。<br />
+如果模式被省略，美元的价值;使用。如果美元;是零（这是默认），str是分割上的空白，如果`指定。<br />
+如果限制参数被省略，尾部空字段被抑制。如果限制是一个正数最多，该领域将返回（如果限额是1，整个字符串被返回数组中的唯一条目）。如果是负数，返回的字段的数量没有限制，和结尾的空字段不抑制
+				</p>
+				<p style="text-align:justify;">
+					<i></i>.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				57
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.squeeze([other_str]*)</b><br />
+Builds a set of characters from the other_str parameter(s) using the procedure described for String#count. Returns a new string where runs of the same character that occur in this set are replaced by a single character. If no arguments are given, all runs of identical characters are replaced by a single character.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				58
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.squeeze!([other_str]*)</b><br />
+Squeezes str in place, returning either str, or nil if no changes were made.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				59
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.strip</b><br />
+Returns a copy of str with leading and trailing whitespace removed.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				60
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.strip!</b><br />
+Removes leading and trailing whitespace from str. Returns nil if str was not altered.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				61
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.sub(pattern, replacement) [or]<br />
+str.sub(pattern) { |match| block }</b><br />
+Returns a copy of str with the first occurrence of pattern replaced with either replacement or the value of the block. The pattern will typically be a Regexp; if it is a String then no regular expression metacharacters will be interpreted.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				62
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.sub!(pattern, replacement) [or]<br />
+str.sub!(pattern) { |match| block }</b><br />
+Performs the substitutions of String#sub in place, returning str, or nil if no substitutions were performed.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				63
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.succ [or] str.next</b><br />
+Returns the successor to str.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				64
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.succ! [or] str.next!</b><br />
+Equivalent to String#succ, but modifies the receiver in place.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				65
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.sum(n=16)</b><br />
+Returns a basic n-bit checksum of the characters in str, where n is the optional Fixnum parameter, defaulting to 16. The result is simply the sum of the binary value of each character in str modulo 2n - 1. This is not a particularly good checksum.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				66
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.swapcase</b><br />
+Returns a copy of str with uppercase alphabetic characters converted to lowercase and lowercase characters converted to uppercase.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				67
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.swapcase!</b><br />
+Equivalent to String#swapcase, but modifies the receiver in place, returning str, or nil if no changes were made.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				68
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.to_f</b><br />
+Returns the result of interpreting leading characters in str as a floating-point number. Extraneous characters past the end of a valid number are ignored. If there is not a valid number at the start of str, 0.0 is returned. This method never raises an exception.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				69
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.to_i(base=10)</b><br />
+Returns the result of interpreting leading characters in str as an integer base (base 2, 8, 10, or 16). Extraneous characters past the end of a valid number are ignored. If there is not a valid number at the start of str, 0 is returned. This method never raises an exception.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				70
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.to_s [or] str.to_str</b><br />
+Returns the receiver.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				71
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.tr(from_str, to_str)</b><br />
+Returns a copy of str with the characters in from_str replaced by the corresponding characters in to_str. If to_str is shorter than from_str, it is padded with its last character. Both strings may use the c1.c2 notation to denote ranges of characters, and from_str may start with a ^, which denotes all characters except those listed.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				72
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.tr!(from_str, to_str)</b><br />
+Translates str in place, using the same rules as String#tr. Returns str, or nil if no changes were made.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				73
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.tr_s(from_str, to_str)</b><br />
+处理下的String＃tr描述str的副本，然后删除重复的字符被翻译的影响位置.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				74
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.tr_s!(from_str, to_str)</b><br />
+执行字符串＃tr_s处理到位str，str或无返回，如果没有变化.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				75
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.unpack(format)</b><br />
+解码str（其中可能包含二进制数据）根据格式字符串，返回一个数组每个值提取。格式字符串由一个单字符指令序列，总结在表18。每个指令可以后跟一个数字，表示多次重复这个指令。一个星号（*）将使用所有剩余的元素。指令sSiIlL可能每个人都可以遵循一个下划线（_）用于指定类型的底层平台的本机大小，否则，它使用一个平台独立的大小一致。格式字符串中的空格被忽略.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				76
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.upcase</b><br />
+全部换成小写字母的大写返回str的副本。操作语言环境insensitive.only字符a到z受到影响.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				77
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.upcase!</b><br />
+str的内容更改为大写，返回nil，如果没有变化.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				78
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>str.upto(other_str) { |s| block }</b><br />
+遍历连续值，开始str和other_str包容的结束，通过每个值反过来块。被用来产生每个值的String＃succ方法.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	字符串解压缩指令:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下表列出了<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">方法的</span>String＃解压解压指令。
+</p>
+<table border="1" cellpadding="5" cellspacing="5" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;" width="25%">
+				Directive
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Returns
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				A
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				With trailing nulls and spaces removed.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				a
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				B
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Extract bits from each character (most significant bit first).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				b
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Extract bits from each character (least significant bit first).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				C
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Fixnum
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Extract a character as an unsigned integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				c
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Fixnum
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Extract a character as an integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				D, d
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Float
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(double) characters as a native double.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				E
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Float
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(double) characters as a double in littleendian byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				e
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Float
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(float) characters as a float in littleendian byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				F, f
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Float
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(float) characters as a native float.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				G
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Float
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(double) characters as a double in network byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				g
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(float) characters as a float in network byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				H
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				提取每个字符的十六进制半字节（最高位在前）
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				h
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Extract hex nibbles from each character (least significant bit first).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				I
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(int) (modified by _) successive characters as an unsigned native integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				i
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(int) (modified by _) successive characters as a signed native integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				L
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat four (modified by _) successive characters as an unsigned native long integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				l
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat four (modified by _) successive characters as a signed native long integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				M
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Quoted-printable.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				m
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Base64编码.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				N
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat four characters as an unsigned long in network byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				n
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Fixnum
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat two characters as an unsigned short in network byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				P
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(char *) characters as a pointer, and return \emph{len} characters from the referenced location.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				p
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat sizeof(char *) characters as a pointer to a nullterminated string.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Q
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat eight characters as an unsigned quad word (64 bits).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				q
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat eight characters as a signed quad word (64 bits).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				S
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Fixnum
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat two (different if _ used) successive characters as an unsigned short in native byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				s
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Fixnum
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat two (different if _ used) successive characters as a signed short in native byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				U
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				UTF-8 characters as unsigned integers.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				u
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				UU-encoded.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				V
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Fixnum
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat four characters as an unsigned long in little-endian byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				v
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Fixnum
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Treat two characters as an unsigned short in little-endian byte order.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				w
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Integer
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				BER-compressed integer.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				X
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Skip backward one character.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				x
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Skip forward one character.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Z
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				String
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				With trailing nulls removed up to first null with *.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				@
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Skip to the offset given by the length argument.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	尝试下面的例子来解开各种数据。
+</p>
+<pre><span><span style="font-size:12px;line-height:18px;">"abc \0\0abc \0\0".unpack('A6Z6')   #=&gt; ["abc", "abc "]
+"abc \0\0".unpack('a3a3')           #=&gt; ["abc", " \000\000"]
+"abc \0abc \0".unpack('Z*Z*')       #=&gt; ["abc ", "abc "]
+"aa".unpack('b8B8')                 #=&gt; ["10000110", "01100001"]
+"aaa".unpack('h2H2c')               #=&gt; ["16", "61", 97]
+"\xfe\xff\xfe\xff".unpack('sS')     #=&gt; [-2, 65534]
+"now=20is".unpack('M*')             #=&gt; ["now is"]
+"whole".unpack('xax2aX2aX1aX2a')    #=&gt; ["h", "e", "l", "l", "o"]</span></span></pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

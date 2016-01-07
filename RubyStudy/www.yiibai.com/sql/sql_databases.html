@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>SQL 数据库</title>
+		<meta name="Keywords" content="SQL RDBMS数据库比较 "/>
+		<meta name="Description" content="SQL RDBMS数据库比较 - 有许多流行的RDBMS可以使用。本教程简要介绍一些最流行的RDBMS。这将帮助你比较的基本特征："/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../sql">SQL教程</a>  » SQL 数据库
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">SQL教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">高级SQL</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="functions">SQL函数</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">SQL学习有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">SQL教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="sql_overview.html#sql_overview">SQL概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_rdbms_concepts.html#sql_rdbms_concepts">SQL RDBMS概念</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="sql_databases.html">SQL 数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_syntax.html#sql_syntax">SQL语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_data_types.html#sql_data_types">SQL数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_operators.html#sql_operators">SQL运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_expressions.html#sql_expressions">SQL表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_create_database.html#sql_create_database">SQL创建数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_drop_database.html#sql_drop_database">SQL DROP或删除数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_select_database.html#sql_select_database">SQL选择数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_create_table.html#sql_create_table">SQL创建表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_drop_table.html#sql_drop_table">SQL丢弃或删除表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_insert_query.html#sql_insert_query">SQL插入查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_select_query.html#sql_select_query">SQL SELECT查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_where_clause.html#sql_where_clause">SQL WHERE子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_and_or_clauses.html#sql_and_or_clauses">SQL AND和OR运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_update_query.html#sql_update_query">SQL UPDATE查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_delete_query.html#sql_delete_query">SQL DELETE查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_like_clause.html#sql_like_clause">SQL LIKE子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_top_clause.html#sql_top_clause">SQL TOP, LIMIT或ROWNUM</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_order_by.html#sql_order_by">SQL ORDER BY子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_group_by.html#sql_group_by">SQL GROUP BY子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_distinct_keyword.html#sql_distinct_keyword">SQL DISTINCT关键字</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_sorting_results.html#sql_sorting_results">SQL结果排序</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_quick_guide.html#sql_quick_guide">SQL快速指南</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">SQL 数据库</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						SQL RDBMS数据库比较 - 有许多流行的RDBMS可以使用。本教程简要介绍一些最流行的RDBMS。这将帮助你比较的基本特征：
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	有许多流行的RDBMS可以使用。本教程简要介绍一些最流行的RDBMS。这将帮助你比较的基本特征：
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	MySQL
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	MySQL是开源SQL数据库，它是由瑞典公司MySQL AB。 MySQL是明显“<span style="background-color:#FFFFFF;">my ess-que-ell,“</span>，对比SQL，发音为”<span style="background-color:#FFFFFF;">sequel</span>“。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	MySQL是支持许多不同的平台，包括主要的Linux发行版，微软的Windows，UNIX和Mac OS X。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	MySQL有免费和付费版本，这取决于它的使用（non-commercial/commercial）和功能。 MySQL有一个非常快速的，多线程，多用户和健壮的SQL数据库服务器。
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	历史:
+</h2>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			迈克尔·维德纽斯和David Axmark MySQL发展开始于1994年。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1995年5月23日第一次内部发布。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1998年1月8日发布了Windows 95和NT的Windows版本。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			版本3.23: 2000年6月发布<span style="background-color:#FFFFFF;">测试</span>, 生产版本于2001年1月发布。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="background-color:#FFFFFF;">版本</span>4.0: beta 2002年8月, <span style="background-color:#FFFFFF;">生产版本于</span>2003年3月发布 (unions).
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="background-color:#FFFFFF;">版本</span>4.01: beta 2003年8月,&nbsp;乔蒂（<span style="background-color:#FFFFFF;">Jyoti</span>）采用MySQL的数据库跟踪功能。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="background-color:#FFFFFF;">版本</span>4.1: beta 2004年6月, <span style="background-color:#FFFFFF;">生产版本于</span>2004年10月发布.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="background-color:#FFFFFF;">版本</span>5.0: beta&nbsp;2005年3月起, <span style="background-color:#FFFFFF;">生产版本于</span>200510月发布.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Sun Microsystems公司在2008年2月26日收购MySQL AB
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<span style="background-color:#FFFFFF;">版本</span> 5.1: <span style="background-color:#FFFFFF;">生产版本于</span>2008年11月27日发布.
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	特点:
+</h2>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			高性能。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			高可用性。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			可扩展性和灵活性运行任何东西。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			健壮的事务支持。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Web和数据仓库的优势。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			强大的数据保护。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			综合应用开发。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			轻松的管理。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			开放源码的自由和24×7支持。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			最低的总拥有成本。
+		</p>
+	</li>
+</ul>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	MS SQL Server
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	MS SQL Server是一个关系数据库管理系统，由Microsoft公司开发，其主要的查询语言是：
+</p>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			T-SQL.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			ANSI SQL.
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	历史:
+</h2>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			1987 - SYBASE版本<span style="background-color:#FFFFFF;">UNIX上的</span>SQL Server.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1988 - Microsoft, Sybase, and Aston-Tate port SQL Server to OS/2.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1989 - Microsoft, Sybase, and Aston-Tate release SQL Server 1.0 for OS/2.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1990 - SQL Server 1.1 is released with support for Windows 3.0 clients.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Aston-Tate drops out of SQL Server development.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			2000 - Microsoft releases SQL Server 2000.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			2001 - Microsoft releases XML for SQL Server Web Release 1 (download).
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			2002 - Microsoft releases SQLXML 2.0 (renamed from XML for SQL Server).
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			2002 - Microsoft releases SQLXML 3.0.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			2005 - Microsoft releases SQL Server 2005 on November 7th, 2005.
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	特点:
+</h2>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			高性能。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			高可用性。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			数据库镜像。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			数据库快照。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			CLR集成。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			服务代理。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			DDL触发器。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			排序函数。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			行版本为基础的隔离级别。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			XML集成。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			TRY...CATCH.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Database Mail.
+		</p>
+	</li>
+</ul>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	ORACLE
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	它是非常大的，和多用户的数据库管理系统。 Oracle是关系型数据库管理系统，由“甲骨文公司”<span style="background-color:#FFFFFF;">开发</span>。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	甲骨文致力于高效地管理其资源，数据库信息，可以由多个客户端请求和发送数据网络中。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这是一个很好的数据库服务器<span style="background-color:#FFFFFF;">选择由</span>客户机/服务器计算。 Oracle支持所有主要的操作系统，客户端和服务器，包括MS-DOS，NetWare上，UnixWare的，OS / 2，UNIX风格。
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	历史:
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	甲骨文开始于1977年，在行业内32年提供优秀的解决方案<span style="background-color:#FFFFFF;">（1977至2009年）</span>。
+</p>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			1977 - Larry Ellison, Bob Miner and Ed Oates founded Software Development Laboratories to undertake development work.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1979 - Version 2.0 of Oracle was released and it became first commercial relational database and first SQL database. The company changed its name to Relational Software Inc. (RSI).
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1981 - RSI started developing tools for Oracle.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1982 - RSI was renamed to Oracle Corporation.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1983 - Oracle released version 3.0, rewritten in C language and ran on multiple platforms.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1984 - Oracle version 4.0 was released. It contained features like concurrency control - multi-version read consistency etc.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1985 - Oracle version 4.0 was released. It contained features like concurrency control - multi-version read consistency etc.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			2007 - Oracle has released Oracle11g. The new version focused on better partitioning, easy migration etc.
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	特点:
+</h2>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			Concurrency
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Concurrency
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Read Consistency
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Locking Mechanisms
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Quiesce Database
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Portability
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Self managing database
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			SQL*Plus
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			ASM
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Scheduler
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Resource Manager
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Data Warehousing
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Materialized views
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Bitmap indexes
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Table compression
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Parallel Execution
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Analytic SQL
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Data mining
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Partitioning
+		</p>
+	</li>
+</ul>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	MS- ACCESS
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这是一个最流行的微软产品。 Microsoft Access是入门级的数据库管理软件。 MS Access数据库不仅是价格便宜，但功能强大的数据库为小规模的项目。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	MS Access使用的Jet数据库引擎，它采用了特定的SQL语言方言（有时也被称为喷气SQL）。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	MS访问带有专业版的MS Office套件。 MS Access具有易于使用的直观的图形界面。
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	历史:
+</h2>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			1992 -Access版本1.0发布。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			1993年 - 访问1.1版本提高兼容性，包括Access Basic编程语言。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			最重要是从Access 97<span style="background-color:#FFFFFF;">转变</span>Access 2000
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			2007 - Access 2007中，引入一个新的数据库格式，支持复杂的数据类型，如多值和附件字段的ACCDB。
+		</p>
+	</li>
+</ul>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	特性:
+</h2>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			用户可以创建表，查询，窗体和报表，并与宏将它们连接在一起。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			数据的导入和导出<span style="background-color:#FFFFFF;">包括&nbsp;</span>Excel，Outlook，ASCII，DBASE，Paradox，FoxPro，SQL Server，Oracle，ODBC等多种格式
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			也有Jet数据库格式（MDB或ACCDB在Access 2007中的），它可以在一个文件中包含的应用程序和数据。这使得它非常方便，整个应用程序分配给其他用户，可以在断开连接的环境中运行。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			微软Access提供了参数化查询。这些查询和访问表，从VB6。通过DAO或ADO NET的其他程序一样，可以被引用。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			可用于Microsoft SQL Server与Access的<span style="background-color:#FFFFFF;">桌面版本，</span>Jet数据库引擎作为替代。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			Microsoft Access是一个基于文件服务器的数据库。不同于客户端 - 服务器的关系数据库管理系统（RDBMS），Microsoft Access将无法实现数据库触发器，存储过程，事务日志。
+		</p>
+	</li>
+</ul>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

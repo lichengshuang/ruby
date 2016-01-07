@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Java JDBC类库</title>
+		<meta name="Keywords" content="Java JDBC类库用法实例DriverManagerConnecti "/>
+		<meta name="Description" content="Java JDBC类库用法实例
+DriverManager
+Connection
+Statement
+PreparedStatement
+CallableStatement
+ResultSet"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../java">Java教程</a>  » Java JDBC类库
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../thinking">Java编程思想</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../javaio">java io类</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="java_overview.html#java_overview">Java概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_environment_setup.html#java_environment_setup">Java环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_syntax.html#java_basic_syntax">Java基本语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_object_classes.html#java_object_classes">Java对象和类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_datatypes.html#java_basic_datatypes">Java基础数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_variable_types.html#java_variable_types">Java变量类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_modifier_types.html#java_modifier_types">Java修饰符类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_operators.html#java_basic_operators">Java基本运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_loop_control.html#java_loop_control">Java循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_decision_making.html#java_decision_making">Java流程控制</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_numbers.html#java_numbers">Java Number类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_character.html#java_character">Java Character类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_string.html#java_string">Java String类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_oop_overview.html#java_oop_overview">Java面向对象基本概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_system_class.html#java_system_class">Java System类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_String/StringBuffer.html#java_string/stringbuffer">Java String/StringBuffer用法比较</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ClassLoader.html#classloader">Java Class, ClassLoader用法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_javaio.html#java_javaio">Java IO系统</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_sets.html#java_sets">Java集合类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ResourceBundle.html#resourcebundle">Java ResourceBundle, Properties</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="Exceptions.html#exceptions">Java Exceptions异常</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="java_jdbc.html">Java JDBC类库</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Java JDBC类库</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Java JDBC类库用法实例
+DriverManager
+Connection
+Statement
+PreparedStatement
+CallableStatement
+ResultSet
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<h3>
+	JDBC类库
+</h3>
+<p>
+	有了&nbsp;JDBC，向各种关系数据库发送&nbsp;SQL&nbsp;语句就是一件很容易的事。换言之，有了&nbsp;JDBC&nbsp;API，就不必为访问&nbsp;Sybase&nbsp;数据库专门写一个程序，为访问&nbsp;Oracle&nbsp;数据库又专门写一个程序，为访问&nbsp;Informix&nbsp;数据库又写另一个程序，等等。您只需用&nbsp;JDBC&nbsp;API&nbsp;写一个程序就够了，它可向相应数据库发送&nbsp;SQL&nbsp;语句。而且，使用&nbsp;Java&nbsp;编程语言编写的应用程序，就无须去忧虑要为不同的平台编写不同的应用程序。将&nbsp;Java&nbsp;和&nbsp;JDBC&nbsp;结合起来将使程序员只须写一遍程序就可让它在任何平台上运行。
+</p>
+<p>
+	下面为常用的处理流程：
+</p>
+<table style="padding:0pt;">
+	<tbody>
+		<tr>
+			<td width="553" valign="center" style="border:31.8750pt none #FFFFFF;">
+				<p>
+					<span style="font-size:10.0000pt;font-family:'Times New Roman';">DriverManager</span> 
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table style="padding:0pt;">
+	<tbody>
+		<tr>
+			<td width="553" valign="center" style="border:31.8750pt none #FFFFFF;">
+				<p>
+					<span style="font-size:10.0000pt;font-family:'Times New Roman';">Connection</span> 
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table style="padding:0pt;">
+	<tbody>
+		<tr>
+			<td width="553" valign="center" style="border:31.8750pt none #FFFFFF;">
+				<p>
+					<span style="font-size:10.0000pt;font-family:'Times New Roman';">Statement</span> 
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table style="padding:0pt;">
+	<tbody>
+		<tr>
+			<td width="553" valign="center" style="border:31.8750pt none #FFFFFF;">
+				<p>
+					<span style="font-size:10.0000pt;font-family:'Times New Roman';">PreparedStatement</span> 
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table style="padding:0pt;">
+	<tbody>
+		<tr>
+			<td width="553" valign="center" style="border:31.8750pt none #FFFFFF;">
+				<p>
+					<span style="font-size:10.0000pt;font-family:'Times New Roman';">CallableStatement</span> 
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table style="padding:0pt;">
+	<tbody>
+		<tr>
+			<td width="553" valign="center" style="border:31.8750pt none #FFFFFF;">
+				<p>
+					<span style="font-size:10.0000pt;font-family:'Times New Roman';">ResultSet</span> 
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	简单地说，JDBC&nbsp;可做三件事：
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与数据库建立连接
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发送&nbsp;SQL&nbsp;语句
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理结果
+</p>
+<p>
+	下列代码段给出了以上三步的基本示例：
+</p>
+<p style="text-indent:17.95pt;">
+	Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
+</p>
+<p style="text-indent:17.95pt;">
+	Connection&nbsp;conn&nbsp;=&nbsp;DriverManager.getConnection&nbsp;(
+</p>
+<p style="margin-left:126pt;text-indent:42pt;">
+	"jdbc:oracle:thin:@eai-sol:1521:eai_db",&nbsp;"csc2",&nbsp;"csc2");
+</p>
+<p style="text-indent:17.95pt;">
+	Statement&nbsp;stmt&nbsp;=&nbsp;conn.createStatement();
+</p>
+<p style="text-indent:17.95pt;">
+	ResultSet&nbsp;rs&nbsp;=&nbsp;stmt.executeQuery("SELECT&nbsp;CONTACTID&nbsp;FROM&nbsp;CONTACTINFO");
+</p>
+<p style="text-indent:17.95pt;">
+	while&nbsp;(rs.next())&nbsp;{long&nbsp;contactID&nbsp;=&nbsp;rs.getLong("CONTACTID");}
+</p>
+<p>
+	下面对常用的几个类和接口做些简单的说明。
+</p>
+<p>
+	DriverManager:
+</p>
+<p>
+	DriverManager类是&nbsp;JDBC&nbsp;的管理层，作用于用户和驱动程序之间。它跟踪可用的驱动程序，并在数据库和相应驱动程序之间建立连接。另外，DriverManager&nbsp;类也处理诸如驱动程序登录时间限制及登录和跟踪消息的显示等事务。对于简单的应用程序，一般程序员需要在此类中直接使用的唯一方法是&nbsp;DriverManager.getConnection。正如名称所示，该方法将建立与数据库的连接。
+</p>
+<p style="text-indent:17.95pt;">
+	Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
+</p>
+<p style="text-indent:17.95pt;">
+	Connection&nbsp;conn&nbsp;=&nbsp;DriverManager.getConnection&nbsp;(
+</p>
+<p style="margin-left:126pt;text-indent:42pt;">
+	"jdbc:oracle:thin:@eai-sol:1521:eai_db",&nbsp;"csc2",&nbsp;"csc2");
+</p>
+<p>
+	其中第一句话的作用是在当前的环境中load一个DB&nbsp;Driver，&nbsp;有人可能觉得奇怪，&nbsp;这句话执行完之后，&nbsp;后面怎么知道去用这个Driver呢？&nbsp;其实DriverManager可以从load的classes里面找到注册过的driver，然后使用它所找到的第一个可以成功连接到给定&nbsp;URL&nbsp;的驱动程序。&nbsp;第二句话的三个参数分别是URL,&nbsp;User,&nbsp;Password。Ｄriver不一样，　URL可能也不一样。
+</p>
+<p>
+	<br />
+</p>
+<p>
+	Statement:
+</p>
+<p>
+	Statement&nbsp;对象用于将&nbsp;SQL&nbsp;语句发送到数据库中。实际上有三种&nbsp;Statement&nbsp;对象，它们都为在给定连接上执行&nbsp;SQL&nbsp;语句的包容器：Statement、PreparedStatement（它从&nbsp;Statement&nbsp;承而来）和&nbsp;CallableStatement（它从&nbsp;PreparedStatement&nbsp;继承而来）。它们都专用于发送定类型的&nbsp;SQL&nbsp;语句：&nbsp;Statement&nbsp;对象用于执行不带参数的简单&nbsp;SQL&nbsp;语句；PreparedStatement&nbsp;对象用于执行带或不带&nbsp;IN&nbsp;参数的预编译&nbsp;SQL&nbsp;语句；CallableStatement&nbsp;对象用于执行对数据库已存储过程的调用。
+</p>
+<p>
+	Statement&nbsp;接口提供了执行语句和获取结果的基本方法。PreparedStatement&nbsp;接口添加了处理&nbsp;IN&nbsp;参数的方法；而&nbsp;CallableStatement&nbsp;添加了处理&nbsp;OUT&nbsp;参数的方法。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建&nbsp;Statement&nbsp;对象<br />
+建立了到特定数据库的连接之后，就可用该连接发送&nbsp;SQL&nbsp;语句。Statement&nbsp;对象用&nbsp;Connection&nbsp;的方法&nbsp;createStatement&nbsp;创建，如下列代码段中所示：<br />
+Statement&nbsp;stmt&nbsp;=&nbsp;conn.createStatement();<br />
+<br />
+为了执行&nbsp;Statement&nbsp;对象，被发送到数据库的&nbsp;SQL&nbsp;语句将被作为参数提供给&nbsp;Statement&nbsp;的方法：&nbsp;<br />
+ResultSet&nbsp;rs&nbsp;=&nbsp;stmt.executeQuery("SELECT&nbsp;a,&nbsp;b,&nbsp;c&nbsp;FROM&nbsp;table1");
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用&nbsp;Statement&nbsp;对象执行语句
+</p>
+<p>
+	Statement&nbsp;接口提供了三种执行&nbsp;SQL&nbsp;语句的方法：executeQuery、executeUpdate&nbsp;和execute。使用哪一个方法由&nbsp;SQL&nbsp;语句所产生的内容决定。<br />
+方法&nbsp;executeQuery&nbsp;用于产生单个结果集的语句，例如&nbsp;SELECT&nbsp;语句。
+</p>
+<p>
+	方法&nbsp;executeUpdate&nbsp;用于执行&nbsp;INSERT、UPDATE&nbsp;或&nbsp;DELETE&nbsp;语句以及&nbsp;SQL&nbsp;DDL（数据定义语言）语句，例如&nbsp;CREATE&nbsp;TABLE&nbsp;和&nbsp;DROP&nbsp;TABLE。INSERT、UPDATE&nbsp;或&nbsp;DELETE&nbsp;语句的效果是修改表中零行或多行中的一列或多列。executeUpdate&nbsp;的返回值是一个整数，指示受影响的行数（即更新计数）。对于&nbsp;CREATE&nbsp;TABLE&nbsp;或&nbsp;DROP&nbsp;TABLE&nbsp;等不操作行的语句，executeUpdate&nbsp;的返回值总为零。
+</p>
+<p>
+	方法&nbsp;execute&nbsp;用于执行返回多个结果集、多个更新计数或二者组合的语句。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语句完成
+</p>
+<p>
+	当连接处于自动提交模式时，其中所执行的语句在完成时将自动提交或还原。语句在已执行且所有结果返回时，即认为已完成。对于返回一个结果集的&nbsp;executeQuery&nbsp;方法，在检索完&nbsp;ResultSet&nbsp;对象的所有行时该语句完成。对于方法&nbsp;executeUpdate，当它执行时语句即完成。但在少数调用方法&nbsp;execute&nbsp;的情况中，在检索所有结果集或它生成的更新计数之后语句才完成。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关闭&nbsp;Statement&nbsp;对象
+</p>
+<p>
+	Statement&nbsp;对象将由&nbsp;Java&nbsp;垃圾收集程序自动关闭。而作为一种好的编程风格，应在不需要&nbsp;Statement&nbsp;对象时显式地关闭它们。这将立即释放&nbsp;DBMS&nbsp;资源，有助于避免潜在的内存问题。&nbsp;关闭Statement用&nbsp;stmt.close()　方法。
+</p>
+<p>
+	<br />
+</p>
+<p>
+	ResultSet:
+</p>
+<p>
+	ResultSet&nbsp;包含符合&nbsp;SQL&nbsp;语句中条件的所有行，并且它通过一套&nbsp;get&nbsp;方法（这些&nbsp;get&nbsp;方法可以访问当前行中的不同列）提供了对这些行中数据的访问。ResultSet.next&nbsp;方法用于移动到&nbsp;ResultSet&nbsp;中的下一行，使下一行成为当前行。
+</p>
+<p>
+	结果集一般是一个表，其中有查询所返回的列标题及相应的值。例如，如果查询为&nbsp;SELECT&nbsp;a,&nbsp;b,&nbsp;c&nbsp;FROM&nbsp;Table1，则结果集将具有如下形式：
+</p>
+<p>
+	a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c
+</p>
+<p>
+	--------&nbsp;---------&nbsp;--------
+</p>
+<p>
+	12345&nbsp;&nbsp;&nbsp;&nbsp;Cupertino&nbsp;CA
+</p>
+<p>
+	83472&nbsp;&nbsp;&nbsp;&nbsp;Redmond&nbsp;&nbsp;&nbsp;WA
+</p>
+<p>
+	83492&nbsp;&nbsp;&nbsp;&nbsp;Boston&nbsp;&nbsp;&nbsp;&nbsp;MA<br />
+下面的代码段是执行&nbsp;SQL&nbsp;语句的示例。该&nbsp;SQL&nbsp;语句将返回行集合，其中列&nbsp;1&nbsp;为&nbsp;int，列&nbsp;2&nbsp;为&nbsp;String，而列&nbsp;3&nbsp;则为日期型：
+</p>
+<p style="text-indent:17.95pt;">
+	Statement&nbsp;stmt&nbsp;=&nbsp;conn.createStatement();
+</p>
+<p style="text-indent:17.95pt;">
+	ResultSet&nbsp;rs&nbsp;=&nbsp;stmt.executeQuery("SELECT&nbsp;a,&nbsp;b,&nbsp;c&nbsp;FROM&nbsp;Table1");
+</p>
+<p style="text-indent:17.95pt;">
+	while&nbsp;(rs.next())&nbsp;{
+</p>
+<p style="text-indent:17.95pt;">
+	int&nbsp;i&nbsp;=&nbsp;rs.getInt("a");
+</p>
+<p style="text-indent:17.95pt;">
+	String&nbsp;s&nbsp;=&nbsp;rs.getString("b");
+</p>
+<p style="text-indent:17.95pt;">
+	Timestamp&nbsp;t&nbsp;=&nbsp;rs.getTimestamp("c");
+</p>
+<p style="text-indent:17.95pt;">
+	}
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;行和光标
+</p>
+<p>
+	ResultSet&nbsp;维护指向其当前数据行的光标。每调用一次&nbsp;next&nbsp;方法，光标向下移动一行。最初它位于第一行之前，因此第一次调用&nbsp;next&nbsp;将把光标置于第一行上，使它成为当前行。随着每次调用&nbsp;next&nbsp;导致光标向下移动一行，按照从上至下的次序获取&nbsp;ResultSet&nbsp;行。在&nbsp;ResultSet&nbsp;对象或其父辈&nbsp;Statement&nbsp;对象关闭之前，光标一直保持有效。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;列
+</p>
+<p>
+	方法&nbsp;getXXX&nbsp;提供了获取当前行中某列值的途径。在每一行内，可按任何次序获取列值。但为了保证可移植性，应该从左至右获取列值，并且一次性地读取列值。列名或列号可用于标识要从中获取数据的列。例如，如果&nbsp;ResultSet&nbsp;对象&nbsp;rs&nbsp;的第二列名为“title”，并将值存储为字符串，则下列任一代码将获取存储在该列中的值：
+</p>
+<p>
+	String&nbsp;s&nbsp;=&nbsp;rs.getString("title");
+</p>
+<p>
+	String&nbsp;s&nbsp;=&nbsp;rs.getString(2);
+</p>
+<p>
+	注意列是从左至右编号的，并且从列&nbsp;1&nbsp;开始。同时，用作&nbsp;getXXX&nbsp;方法的输入的列名不区分大小写。&nbsp;为了代码的可维护性与可读性，　应该禁止用index的方法来取值，　要用读列名的方法，　如上面的第一行取值方法。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据类型和转换
+</p>
+<p>
+	对于&nbsp;getXXX&nbsp;方法，JDBC&nbsp;驱动程序试图将基本数据转换成指定&nbsp;Java&nbsp;类型，然后返回适合的&nbsp;Java&nbsp;值。例如，如果&nbsp;getXXX&nbsp;方法为&nbsp;getString，而基本数据库中数据类型为&nbsp;VARCHAR，则&nbsp;JDBC&nbsp;驱动程序将把&nbsp;VARCHAR&nbsp;转换成&nbsp;Java&nbsp;String。getString&nbsp;的返回值将为&nbsp;Java&nbsp;String&nbsp;对象。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL&nbsp;结果值
+</p>
+<p>
+	要确定给定结果值是否是&nbsp;JDBC&nbsp;NULL，必须先读取该列，然后使用&nbsp;ResultSet.wasNull&nbsp;方法检查该次读取是否返回&nbsp;JDBC&nbsp;NULL。
+</p>
+<p>
+	PreparedStatement:
+</p>
+<p>
+	该&nbsp;PreparedStatement&nbsp;接口继承&nbsp;Statement，并与之在两方面有所不同：
+</p>
+<p>
+	PreparedStatement&nbsp;实例包含已编译的&nbsp;SQL&nbsp;语句。这就是使语句“准备好”。&nbsp;包含于&nbsp;PreparedStatement&nbsp;对象中的&nbsp;SQL&nbsp;语句可具有一个或多个&nbsp;IN&nbsp;参数。IN&nbsp;参数的值在&nbsp;SQL&nbsp;语句创建时未被指定。相反的，该语句为每个&nbsp;IN&nbsp;参数保留一个问号（“？”）作为占位符。每个问号的值必须在该语句执行之前，通过适当的&nbsp;setXXX&nbsp;方法来提供。
+</p>
+<p>
+	由于&nbsp;PreparedStatement&nbsp;对象已预编译过，所以其执行速度要快于&nbsp;Statement&nbsp;对象。因此，多次执行的&nbsp;SQL&nbsp;语句经常创建为&nbsp;PreparedStatement&nbsp;对象，以提高效率。
+</p>
+<p>
+	作为&nbsp;Statement&nbsp;的子类，PreparedStatement&nbsp;继承了&nbsp;Statement&nbsp;的所有功能。另外它还添加了一整套方法，用于设置发送给数据库以取代&nbsp;IN&nbsp;参数占位符的值。同时，三种方法&nbsp;execute、&nbsp;executeQuery&nbsp;和&nbsp;executeUpdate&nbsp;已被更改以使之不再需要参数。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建&nbsp;PreparedStatement&nbsp;对象
+</p>
+<p>
+	以下的代码段（其中&nbsp;conn&nbsp;是&nbsp;Connection&nbsp;对象）创建包含带两个&nbsp;IN&nbsp;参数占位符的&nbsp;SQL&nbsp;语句的&nbsp;PreparedStatement&nbsp;对象：
+</p>
+<p>
+	PreparedStatement&nbsp;pstmt=conn.prepareStatement("UPDATE&nbsp;table1&nbsp;SET&nbsp;a&nbsp;=&nbsp;?&nbsp;WHERE&nbsp;b&nbsp;=&nbsp;?");
+</p>
+<p>
+	pstmt&nbsp;对象包含语句&nbsp;"&nbsp;UPDATE&nbsp;table1&nbsp;SET&nbsp;a&nbsp;=&nbsp;?&nbsp;WHERE&nbsp;b&nbsp;=&nbsp;?"，它已发送给&nbsp;DBMS，并为执行作好了准备。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;传递&nbsp;IN&nbsp;参数
+</p>
+<p>
+	在执行&nbsp;PreparedStatement&nbsp;对象之前，必须设置每个&nbsp;?&nbsp;参数的值。这可通过调用&nbsp;setXXX&nbsp;方法来完成，其中&nbsp;XXX&nbsp;是与该参数相应的类型。例如，如果参数具有&nbsp;Java&nbsp;类型&nbsp;long，则使用的方法就是&nbsp;setLong。setXXX&nbsp;方法的第一个参数是要设置的参数的序数位置，第二个参数是设置给该参数的值。例如，以下代码将第一个参数设为&nbsp;123456789，第二个参数设为&nbsp;100000000：
+</p>
+<p style="text-indent:42pt;">
+	pstmt.setLong(1,&nbsp;123456789);
+</p>
+<p style="text-indent:42pt;">
+	pstmt.setLong(2,&nbsp;100000000);
+</p>
+<p>
+	CallableStatement:
+</p>
+<p>
+	CallableStatement&nbsp;对象为所有的&nbsp;DBMS&nbsp;提供了一种以标准形式调用已储存过程(也就是ＳＰ)的方法。已储存过程储存在数据库中。对已储存过程的调用是&nbsp;CallableStatement&nbsp;对象所含的内容。有两种形式：一种形式带结果参数，另一种形式不带结果参数。结果参数是一种输出&nbsp;(OUT)&nbsp;参数，是已储存过程的返回值。两种形式都可带有数量可变的输入（IN&nbsp;参数）、输出（OUT&nbsp;参数）或输入和输出（INOUT&nbsp;参数）的参数。问号将用作参数的占位符。
+</p>
+<p>
+	在&nbsp;JDBC&nbsp;中调用已储存过程的语法如下所示。注意，方括号表示其间的内容是可选项；方括号本身并不是语法的组成部份。
+</p>
+<p>
+	{call&nbsp;过程名[(?,&nbsp;?,&nbsp;...)]}
+</p>
+<p>
+	返回结果参数的过程的语法为：
+</p>
+<p>
+	{?&nbsp;=&nbsp;call&nbsp;过程名[(?,&nbsp;?,&nbsp;...)]}
+</p>
+<p>
+	不带参数的已储存过程的语法类似：
+</p>
+<p>
+	{call&nbsp;过程名}
+</p>
+<p>
+	通常，创建&nbsp;CallableStatement&nbsp;对象的人应当知道所用的&nbsp;DBMS&nbsp;是支持已储存过程的，并且知道这些过程都是些什么。然而，如果需要检查，多种&nbsp;DatabaseMetaData&nbsp;方法都可以提供这样的信息。例如，如果&nbsp;DBMS&nbsp;支持已储存过程的调用，则&nbsp;supportsStoredProcedures&nbsp;方法将返回&nbsp;true，而&nbsp;getProcedures&nbsp;方法将返回对已储存过程的描述。
+</p>
+<p>
+	CallableStatement&nbsp;继承&nbsp;Statement&nbsp;的方法（它们用于处理一般的&nbsp;SQL&nbsp;语句），还继承了&nbsp;PreparedStatement&nbsp;的方法（它们用于处理&nbsp;IN&nbsp;参数）。CallableStatement&nbsp;中定义的所有方法都用于处理&nbsp;OUT&nbsp;参数或&nbsp;INOUT&nbsp;参数的输出部分：注册&nbsp;OUT&nbsp;参数的&nbsp;JDBC&nbsp;类型（一般&nbsp;SQL&nbsp;类型）、从这些参数中检索结果，或者检查所返回的值是否为&nbsp;JDBC&nbsp;NULL。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建&nbsp;CallableStatement&nbsp;对象
+</p>
+<p>
+	CallableStatement&nbsp;对象是用&nbsp;Connection&nbsp;方法&nbsp;prepareCall&nbsp;创建的。下例创建&nbsp;CallableStatement&nbsp;的实例，其中含有对已储存过程&nbsp;Csc_&nbsp;GetCustomId调用。该过程有两个变量，但不含结果参数：
+</p>
+<p>
+	CallableStatement&nbsp;cstmt&nbsp;=&nbsp;con.prepareCall("{call&nbsp;CSC_GetCustomId&nbsp;(?,&nbsp;?,&nbsp;?)}");
+</p>
+<p>
+	其中&nbsp;?&nbsp;占位符为&nbsp;IN、&nbsp;OUT&nbsp;还是&nbsp;INOUT&nbsp;参数，取决于已储存过程&nbsp;Csc_&nbsp;GetCustomId。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN&nbsp;和&nbsp;OUT&nbsp;参数
+</p>
+<p>
+	将IN&nbsp;参数传给&nbsp;CallableStatement&nbsp;对象是通过&nbsp;setXXX&nbsp;方法完成的。该方法继承自&nbsp;PreparedStatement。所传入参数的类型决定了所用的&nbsp;setXXX&nbsp;方法（例如，用&nbsp;setFloat&nbsp;来传入&nbsp;float&nbsp;值等）。
+</p>
+<p>
+	如果已储存过程返回&nbsp;OUT&nbsp;参数，则在执行&nbsp;CallableStatement&nbsp;对象以前必须先注册每个&nbsp;OUT&nbsp;参数的&nbsp;JDBC&nbsp;类型（这是必需的，因为某些&nbsp;DBMS&nbsp;要求&nbsp;JDBC&nbsp;类型）。注册&nbsp;JDBC&nbsp;类型是用&nbsp;registerOutParameter&nbsp;方法来完成的。语句执行完后，CallableStatement&nbsp;的&nbsp;getXXX&nbsp;方法将取回参数值。正确的&nbsp;getXXX&nbsp;方法是为各参数所注册的&nbsp;JDBC&nbsp;类型所对应的&nbsp;Java&nbsp;类型也就是说，&nbsp;registerOutParameter&nbsp;使用的是&nbsp;JDBC&nbsp;类型（因此它与数据库返回的&nbsp;JDBC&nbsp;类型匹配），而&nbsp;getXXX&nbsp;将之转换为&nbsp;Java&nbsp;类型。下面给出CSC中的一个例子：
+</p>
+<p style="text-indent:17.95pt;">
+	String&nbsp;sqlSp&nbsp;=&nbsp;"{call&nbsp;CSC_GetCustomId(?,&nbsp;?,&nbsp;?)}";
+</p>
+<p style="text-indent:17.95pt;">
+	cstmt&nbsp;=&nbsp;conn.prepareCall(sqlSp.toString());
+</p>
+<p style="text-indent:17.95pt;">
+	cstmt.registerOutParameter(1,&nbsp;Types.NUMERIC);
+</p>
+<p style="text-indent:17.95pt;">
+	cstmt.registerOutParameter(2,&nbsp;Types.NUMERIC);
+</p>
+<p style="text-indent:17.95pt;">
+	cstmt.registerOutParameter(3,&nbsp;Types.VARCHAR);
+</p>
+<p style="text-indent:17.95pt;">
+	cstmt.execute();
+</p>
+<p style="text-indent:17.95pt;">
+	long&nbsp;customerID&nbsp;=&nbsp;cstmt.getLong(1);
+</p>
+<p style="text-indent:17.95pt;">
+	long&nbsp;lRet&nbsp;=&nbsp;cstmt.getLong(2);
+</p>
+<p style="text-indent:17.95pt;">
+	String&nbsp;sErr&nbsp;=&nbsp;cstmt.getString(3);
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INOUT&nbsp;参数
+</p>
+<p>
+	既支持输入又接受输出的参数（INOUT&nbsp;参数）除了调用&nbsp;registerOutParameter&nbsp;方法外，还要求调用适当的&nbsp;setXXX&nbsp;方法（该方法是从&nbsp;PreparedStatement&nbsp;继承来的）。setXXX&nbsp;方法将参数值设置为输入参数，而&nbsp;registerOutParameter&nbsp;方法将它的&nbsp;JDBC&nbsp;类型注册为输出参数。setXXX&nbsp;方法提供一个&nbsp;Java&nbsp;值，而驱动程序先把这个值转换为&nbsp;JDBC&nbsp;值，然后将它送到数据库中。这种&nbsp;IN&nbsp;值的&nbsp;JDBC&nbsp;类型和提供给&nbsp;registerOutParameter&nbsp;方法的&nbsp;JDBC&nbsp;类型应该相同。然后，要检索输出值，就要用对应的&nbsp;getXXX&nbsp;方法。例如，Java&nbsp;类型为&nbsp;byte&nbsp;的参数应该使用方法&nbsp;setByte&nbsp;来赋输入值。应该给&nbsp;registerOutParameter&nbsp;提供类型为&nbsp;TINYINT&nbsp;的&nbsp;JDBC&nbsp;类型，同时应使用&nbsp;getByte&nbsp;来检索输出值。下例假设有一个已储存过程&nbsp;reviseTotal，其唯一参数是&nbsp;INOUT&nbsp;参数。方法&nbsp;setByte&nbsp;把此参数设为&nbsp;25，驱动程序将把它作为&nbsp;JDBC&nbsp;TINYINT&nbsp;类型送到数据库中。接着，registerOutParameter&nbsp;将该参数注册为&nbsp;JDBC&nbsp;TINYINT。执行完该已储存过程后，将返回一个新的&nbsp;JDBC&nbsp;TINYINT&nbsp;值。方法&nbsp;getByte&nbsp;将把这个新值作为&nbsp;Java&nbsp;byte&nbsp;类型检索。
+</p>
+<p style="text-indent:17.95pt;">
+	CallableStatement&nbsp;cstmt&nbsp;=&nbsp;con.prepareCall("{call&nbsp;reviseTotal(?)}");
+</p>
+<p style="text-indent:17.95pt;">
+	cstmt.setByte(1,&nbsp;25);
+</p>
+<p style="text-indent:17.95pt;">
+	cstmt.registerOutParameter(1,&nbsp;java.sql.Types.TINYINT);
+</p>
+<p style="text-indent:17.95pt;">
+	cstmt.executeUpdate();
+</p>
+<p style="text-indent:17.95pt;">
+	byte&nbsp;x&nbsp;=&nbsp;cstmt.getByte(1);
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<base href="" />
+<title>JAVA IO使用教程</title>
+<link rel="STYLESHEET" type="text/css" href="http://www.yiibai.com/javaio/images/style.css">
+<link rel="STYLESHEET" type="text/css" href="http://www.yiibai.com/javaio/images/docsafari.css">
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td><div STYLE="MARGIN-LEFT: 0.15in;">
+<a href="http://www.yiibai.com/javaio/javaio2-COLOPHON-2-SECT-1.html"><img src="http://www.yiibai.com/javaio/images/prev.gif" width="60" height="17" border="0" align="absmiddle" alt="Previous Page"></a>
+<td align="right"><div STYLE="MARGIN-LEFT: 0.15in;">
+<a href="http://www.yiibai.com/javaio/A.html"><img src="http://www.yiibai.com/javaio/images/next.gif" width="60" height="17" border="0" align="absmiddle" alt="Next Page"></a>
+</div></td></tr></table>
+<br><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top" class="v2"><br><h2 class="docGlossaryTitle">Index</h2><br>
+										[<a class="v1" href="http://www.yiibai.com/javaio/A.html">A</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/B.html">B</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/C.html">C</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/D.html">D</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/E.html">E</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/F.html">F</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/G.html">G</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/H.html">H</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/I.html">I</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/J.html">J</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/K.html">K</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/L.html">L</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/M.html">M</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/N.html">N</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/O.html">O</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/P.html">P</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/R.html">R</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/S.html">S</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/T.html">T</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/U.html">U</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/V.html">V</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/W.html">W</a>]
+									
+										[<a class="v1" href="http://www.yiibai.com/javaio/Z.html">Z</a>]
+									<br><br><br></td></tr></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td><div STYLE="MARGIN-LEFT: 0.15in;">
+<a href="http://www.yiibai.com/javaio/javaio2-COLOPHON-2-SECT-1.html"><img src="http://www.yiibai.com/javaio/images/prev.gif" width="60" height="17" border="0" align="absmiddle" alt="Previous Page"></a>
+<td align="right"><div STYLE="MARGIN-LEFT: 0.15in;">
+<a href="http://www.yiibai.com/javaio/A.html"><img src="http://www.yiibai.com/javaio/images/next.gif" width="60" height="17" border="0" align="absmiddle" alt="Next Page"></a>
+</div></td></tr></table>
+</body></html>

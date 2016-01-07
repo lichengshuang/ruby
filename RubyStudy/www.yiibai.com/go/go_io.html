@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Go语言I/O包</title>
+		<meta name="Keywords" content="Go语言I/O包实例代码教程 "/>
+		<meta name="Description" content="Go语言I/O包实例代码教程 - 接下来我们使用open/close/read/write等基本的系统调用实现一个用于文件IO的包。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../go">go语言教程</a>  » Go语言I/O包
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../go">go语言教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../go">go语言</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../go">go语言</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="go_install.html#go_install">安装Go语言开发环境</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_start.html#go_start">Go语言入门</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_echo.html#go_echo">Go语言实现Echo</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_type.html#go_type">Go语言中类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_new_make.html#go_new_make">Go语言申请内存</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_const.html#go_const">Go语言常量</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="go_io.html">Go语言I/O包</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_rotting_cats.html#go_rotting_cats">Go语言Rotting cats</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_Sorting.html#go_sorting">Go语言Sorting</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_Printf.html#go_printf">Go语言打印输出</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_sieve.html#go_sieve">Go语言生成素数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_Multiplexing.html#go_multiplexing">Go语言管道Multiplexing</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_multiplexing.html#go_multiplexing">Go语言-高效语言</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_comment.html#go_comment">Go语言注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_named.html#go_named">Go语言命名</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_fallthrough.html#go_fallthrough">Go语言分号</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_if_for_switch.html#go_if_for_switch">Go语言控制流</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_function.html#go_function">Go语言函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_data.html#go_data">Go语言数据</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_array.html#go_array">Go语言数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_slices.html#go_slices">Go语言Slices切片</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_maps.html#go_maps">Go语言Maps字典</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_printfs.html#go_printfs">Go语言打印printf</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_Append.html#go_append">Go语言Append</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_init_constants.html#go_init_constants">Go语言初始化</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_methods.html#go_methods">Go语言方法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_interface.html#go_interface">Go语言接口</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_generality.html#go_generality">Go语言Generality(泛化)</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_interface_and_method.html#go_interface_and_method">Go语言接口和方法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_Internal.html#go_internal">Go语言内置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_Complicating.html#go_complicating">Go语言并发</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_error_handle.html#go_error_handle">Go语言错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_webserver.html#go_webserver">Go语言Web服务器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_howto.html#go_howto">如何编写Go程序</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_web_programe.html#go_web_programe">Go语言编写Web程序</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_cplusplus.html#go_cplusplus">针对C++程序员指南</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_memery.html#go_memery">Go语言内存模型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_Synchronization.html#go_synchronization">Go语言同步(Synchronization)</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_synchronize_error.html#go_synchronize_error">Go语言错误的同步方式</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Go语言I/O包</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Go语言I/O包实例代码教程 - 接下来我们使用open/close/read/write等基本的系统调用实现一个用于文件IO的包。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<h2 style="font-family:Simsun;">
+	Go语言I/O包
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	接下来我们使用open/close/read/write等基本的系统调用实现一个用于文件IO的包。 让我们从文件file.go开始：
+</p>
+<pre>  05    package file
+  
+  07    import (
+  08        "os"
+  09        "syscall"
+  10    )
+  
+  
+  12    type File struct {
+  13        fd   int    // file descriptor number
+  14        name string // file name at Open time
+  15    }
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	文件的第一行声明当前代码对应—"file"—包，然后导入os和syscall两个包。 包os封装了不同操作系统底层的实现，例如将文件抽象成相同的类型。我们将在系统接口基础 上封装一个基本的文件IO接口。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	另外还有其他一些比较底层的syscall包，它提供一些底层的系统调用(system's calls)。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	接下来是一个类型(type)定义：用"type"这个关键字来声明一个类。在这个例子里数据结构(data structure) 名为"File"。为了让这事变的有趣些，我们的File包含了一个这个文件的名字(name)用来描述这个文件。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	因为结构体名字"File"的首字母是大写，所以这个类型包(package)可以被外部访问。在GO中访问规则的处理 是非常简单的：如果顶极类型名字首字母(包括：function, method, constant or variable, or of a structure field or method)是大写，那么引用了这个包(package)的使用者就可以访问到它。不然 名称和被命名的东西将只能有package内部看到。这是一个要严格遵循的规则，因为这个访问规则是由 编译器(compiler)强制规范的。在GO中，一组公开可见的名称是"exported"。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	在这个File例子中，所有的字段(fields)都是小写所以从包外部是不能访问的，不过我们在下面将会一个 一个对外访问的出口(exported) —— 一个以大写字母开头的方法。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	首先是一个创建File结构体的函数：
+</p>
+<pre>  17    func newFile(fd int, name string) *File {
+  18        if fd &lt; 0 {
+  19            return nil
+  20        }
+  21        return &amp;File{fd, name}
+  22    }
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	这将返回一个指向新File结构体的指针，结构体存有文件描述符和文件名。这段代码使用了GO的复合变量(composite literal)的概念，和创建内建的maps和arrays类型变量一样。要创建在堆（heap-allocated）中创建一个新的 对象，我们可以这样写：
+</p>
+<pre>          n := new(File);
+          n.fd = fd;
+          n.name = name;
+          return n
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	如果结构比较简单的话，我们可以直接在返回结构体变量地址的时候初始化成员字段，如前面例子的 21行代码所示。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	我们可以用前面的函数（newFile）构造一些File类型的变量，返回File：
+</p>
+<pre>  24    var (
+  25        Stdin  = newFile(0, "/dev/stdin")
+  26        Stdout = newFile(1, "/dev/stdout")
+  27        Stderr = newFile(2, "/dev/stderr")
+  28    )
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	这里的newFile是内部函数，真正包外部可以访问的函数是Open：
+</p>
+<pre>  30    func Open(name string, mode int, perm uint32) (file *File, err os.Error) {
+  31        r, e := syscall.Open(name, mode, perm)
+  32        if e != 0 {
+  33            err = os.Errno(e)
+  34        }
+  35        return newFile(r, name), err
+  36    }
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	在这几行里出现了一些新的东西。首先，函数Open返回多个值(multi-value)：一个File指针和一个error( 等一下会介绍errors)》我们用括号来表来声明返回多个变量值(multi-value)，语法上它看 起来像第二个参数列表。syscall.Open系统调用同样也是返回多个值multi-value。接着我们能在31行 创建了r和e两个变量用于保存syscall.Open的返回值。函数最终也是返回2个值，分别为File指针和一个error。 如果syscall.Open打开失败，文件描述r将会是个负值，newFile将会返回nil。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	关于错误：os包包含了一些常见的错误类型。在用户自己的代码中也尽量使用这些通用的错误。 在Open函数中，我们用os.Error函数将Unix的整数错误代码转换为<a href="../go" target="_blank">go语言</a>的错误类型。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	现在我们可以创建Files,我们为它定义了一些常用的方法(methods)。要给一个类型定义一个方法(method)， 需要在函数名前增加一个用于访问当前类型的变量。这些是为*File类型创建的一些方法：
+</p>
+<pre>  38    func (file *File) Close() os.Error {
+  39        if file == nil {
+  40            return os.EINVAL
+  41        }
+  42        e := syscall.Close(file.fd)
+  43        file.fd = -1 // so it can't be closed again
+  44        if e != 0 {
+  45            return os.Errno(e)
+  46        }
+  47        return nil
+  48    }
+  
+  50    func (file *File) Read(b []byte) (ret int, err os.Error) {
+  51        if file == nil {
+  52            return -1, os.EINVAL
+  53        }
+  54        r, e := syscall.Read(file.fd, b)
+  55        if e != 0 {
+  56            err = os.Errno(e)
+  57        }
+  58        return int(r), err
+  59    }
+  
+  
+  61    func (file *File) Write(b []byte) (ret int, err os.Error) {
+  62        if file == nil {
+  63            return -1, os.EINVAL
+  64        }
+  65        r, e := syscall.Write(file.fd, b)
+  66        if e != 0 {
+  67            err = os.Errno(e)
+  68        }
+  69        return int(r), err
+  70    }
+  
+  
+  72    func (file *File) String() string {
+  73        return file.name
+  74    }
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	这些并没有隐含的this指针（参考C＋＋类），而且类型的方法(methods)也不是定义在struct内部——struct结构 只声明数据成员(data members)。事实上，我们可以给任意数据类型定义方法，例如：整数(integer)，数组(array) 等。后面我们会有一个给数组定义方法的例子。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	String这个方法之所以会被调用是为了更好的打印信息，我们稍后会详细说明。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	方法(methods)使用os.EINVAL来表示(os.Error的版本)Unix错误代码EINVAL。 在os包中针对标准的error变量定义各种错误常量。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	现在我们可以使用我们自己创建的包(package)了：
+</p>
+<pre>  05    package main
+  
+  07    import (
+  08        "./file"
+  09        "fmt"
+  10        "os"
+  11    )
+  
+  
+  13    func main() {
+  14        hello := []byte("hello, world\n")
+  15        file.Stdout.Write(hello)
+  16        file, err := file.Open("/does/not/exist",  0,  0)
+  17        if file == nil {
+  18            fmt.Printf("can't open file; err=%s\n",  err.String())
+  19            os.Exit(1)
+  20        }
+  21    }
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	这个"./"在导入(import)"./file"时告诉编译器(compiler)使用我们自己的package，而不是在 默认的package路径中找。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	最后，我们来执行这个程序：
+</p>
+<pre>      $ 6g file.go                       # compile file package
+      $ 6g helloworld3.go                # compile main package
+      $ 6l -o helloworld3 helloworld3.6  # link - no need to mention "file"
+      $ helloworld3
+      hello, world
+      can't open file; err=No such file or directory
+      $</pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

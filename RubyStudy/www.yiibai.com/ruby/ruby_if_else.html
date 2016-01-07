@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby if else</title>
+		<meta name="Keywords" content=" "/>
+		<meta name="Description" content="Ruby提供contional是很常见的现代语言的结构。在这里，我们将解释所有Ruby中条件语句和修饰符"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby if else
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_if_else.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_if_else.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_if_else.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_if_else.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_syntax.html#ruby_syntax">Ruby语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_classes.html#ruby_classes">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_if_else.html">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_string.html#ruby_string">Ruby字符串</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_array.html#ruby_array">Ruby数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_hashes.html#ruby_hashes">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_input_output.html#ruby_input_output">Ruby文件 I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_exceptions.html#ruby_exceptions">Ruby异常处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_multithreading.html#ruby_multithreading">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby if else</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Ruby提供contional是很常见的现代语言的结构。在这里，我们将解释所有Ruby中条件语句和修饰符
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<h2>
+	Ruby if...else语句：
+</h2>
+<p>
+	<strong>语法：</strong> 
+</p>
+<pre>if conditional [then]
+	  code...
+[elsif conditional [then]
+	  code...]...
+[else
+	  code...]
+end
+</pre>
+如果表达式是用于条件执行。值false和nil是假的，一切是真实的。公告Ruby使用ELSIF，不是别的，如果也不ELIF。
+<p>
+	如果条件为真执行代码。如果条件是不正确的，执行else子句中指定的代码。
+</p>
+一个表达的条件是从代码分离的保留字，那么，一个换行符或分号。<br />
+<p>
+	<strong>例如：</strong> 
+</p>
+<pre>#!/usr/bin/ruby
+
+x=1
+if x &gt; 2
+   puts "x is greater than 2"
+elsif x &lt;= 2 and x!=0
+   puts "x is 1"
+else
+   puts "I can't guess the number"
+end
+</pre>
+这将输出结果如下：
+<pre>x is 1
+</pre>
+<h2>
+	Ruby if&nbsp;修饰符：
+</h2>
+<p>
+	<strong>语法：</strong> 
+</p>
+<pre>code if condition
+</pre>
+如果条件为真执行代码。<br />
+<br />
+<strong>例如：</strong><br />
+<pre>#!/usr/bin/ruby
+
+$debug=1
+print "debug\n" if $debug
+</pre>
+<p>
+	这将输出结果如下：
+</p>
+<pre>debug
+</pre>
+<h2>
+	Ruby unless语句：
+</h2>
+<strong>语法：</strong><br />
+<pre>unless conditional [then]
+   code
+[else
+   code ]
+end
+</pre>
+执行代码，如果有条件的话是假的。如果条件为真，执行else子句中指定的代码。<br />
+<br />
+<strong>例如：</strong><br />
+<pre>#!/usr/bin/ruby
+
+x=1
+unless x&gt;2
+   puts "x is less than 2"
+ else
+  puts "x is greater than 2"
+end
+</pre>
+<span>这将输出结果如下：</span> 
+<pre>x is less than 2
+</pre>
+<h2>
+	Ruby unless修饰符：
+</h2>
+<strong>语法：</strong> 
+<pre>code unless conditional
+</pre>
+执行代码，如果有条件的话是假的。
+<p>
+	<strong>例子：</strong> 
+</p>
+<pre>#!/usr/bin/ruby
+
+$var =  1
+print "1 -- Value is set\n" if $var
+print "2 -- Value is set\n" unless $var
+
+$var = false
+print "3 -- Value is set\n" unless $var
+</pre>
+<p>
+	这将输出结果如下：
+</p>
+<pre>1 -- Value is set
+3 -- Value is set
+</pre>
+<h2>
+	Ruby case 声明:
+</h2>
+<strong>语法：</strong> 
+<pre>case expression
+[when expression [, expression ...] [then]
+   code ]...
+[else
+   code ]
+end
+</pre>
+比较的情况下由指定的表达和使用===运算符时，指定的执行代码时，比赛的第。<br />
+子句评估作为左操作数时，由指定的表达。如果没有条款匹配时，案件执行else子句中的代码。<br />
+一个语句的表达时从代码中分离出来，由保留字，一个换行符或分号。<br />
+因此：
+<pre>case expr0
+when expr1, expr2
+   stmt1
+when expr3, expr4
+   stmt2
+else
+   stmt3
+end
+</pre>
+基本上是类似于以下内容：
+<pre>_tmp = expr0
+if expr1 === _tmp || expr2 === _tmp
+   stmt1
+elsif expr3 === _tmp || expr4 === _tmp
+   stmt2
+else
+   stmt3
+end
+</pre>
+<strong>例如：</strong> 
+<pre>#!/usr/bin/ruby
+
+$age =  5
+case $age
+when 0 .. 2
+    puts "baby"
+when 3 .. 6
+    puts "little child"
+when 7 .. 12
+    puts "child"
+when 13 .. 18
+    puts "youth"
+else
+    puts "adult"
+end
+</pre>
+这将输出结果如下：
+<pre>little child</pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby多线程</title>
+		<meta name="Keywords" content="Ruby多线程教程,编程教程,例子教程,参考手册和代码 "/>
+		<meta name="Description" content="Ruby多线程教程,编程教程,例子教程,参考手册和代码 - 传统程序有一个执行线程，包括程序的语句或指令顺序执行，直到程序终止."/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby多线程
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_multithreading.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_multithreading.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_multithreading.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_multithreading.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_syntax.html#ruby_syntax">Ruby语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_classes.html#ruby_classes">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_if_else.html#ruby_if_else">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_string.html#ruby_string">Ruby字符串</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_array.html#ruby_array">Ruby数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_hashes.html#ruby_hashes">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_input_output.html#ruby_input_output">Ruby文件 I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_exceptions.html#ruby_exceptions">Ruby异常处理</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_multithreading.html">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby多线程</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Ruby多线程教程,编程教程,例子教程,参考手册和代码 - 传统程序有一个执行线程，包括程序的语句或指令顺序执行，直到程序终止.
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	传统程序中有一个执行线程，包括程序的语句或指令顺序执行，直到程序终止.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一个多线程程序中有多个执行线程。在每个线程中，语句顺序执行，但可parallel.on执行线程本身多核的CPU，例如。多个线程往往在一个单CPU的机器，不实际执行并行，但并行交错执行的线程模拟.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<a href="../ruby.2" target="_blank"><u>Ruby</u></a>可以很容易地写Thread类的多线程程序。 Ruby线程是一个轻量级的和有效的方式，以实现在你的代码的并行.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	创建Ruby线程:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	要开始一个新的线程，只是关联与以Thread.new调用块。将创建一个新线程执行的代码块，并从Thread.new原来的线程将立即返回，并恢复执行的下一条语句:
+</p>
+<pre># Thread #1 is running here
+Thread.new {
+  # Thread #2 runs this code
+}
+# Thread #1 runs this code
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这里是一个例子，它表明，我们可以使用多线程的Ruby程序.
+</p>
+<pre>#!/usr/bin/ruby
+# by www.yiibai.com
+def func1
+   i=0
+   while i&lt;=2
+      puts "func1 at: #{Time.now}"
+      sleep(2)
+      i=i+1
+   end
+end
+
+def func2
+   j=0
+   while j&lt;=2
+      puts "func2 at: #{Time.now}"
+      sleep(1)
+      j=j+1
+   end
+end
+
+puts "Started At #{Time.now}"
+t1=Thread.new{func1()}
+t2=Thread.new{func2()}
+t1.join
+t2.join
+puts "End at #{Time.now}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>Press ENTER or type command to continue
+Started At Wed May 14 08:21:54 -0700 2008
+func1 at: Wed May 14 08:21:54 -0700 2008
+func2 at: Wed May 14 08:21:54 -0700 2008
+func2 at: Wed May 14 08:21:55 -0700 2008
+func1 at: Wed May 14 08:21:56 -0700 2008
+func2 at: Wed May 14 08:21:56 -0700 2008
+func1 at: Wed May 14 08:21:58 -0700 2008
+End at Wed May 14 08:22:00 -0700 2008
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	线程的生命周期:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一个新的线程创建与Thread.new。您还可以使用同义词Thread.start和Thread.fork<i></i>.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	有没有必要启动后创建一个线程，它开始自动运行时，CPU资源成为可用。<br />
+Thread类定义了一些方法，查询和操纵线程运行时。线程运行在与调用Thread.new关联块中的代码，然后停止运行.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在该块中的最后一个表达式的值是线程的值，可以通过调用Thread对象的值的方法获得。如果线程已经运行完毕，则该值马上返回线程的值。否则，值的方法块和不返回，直到该线程已完成.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	类的方法Thread.current返回表示当前线程的Thread对象。这使得线程来操纵自己类方法返回的Thread对象代表主要thread.this. Thread.main是Ruby程序的开始，开始时的初始线程的执行.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以等待一个特定的线程通过调用该线程的Thread.join方法来完成。调用线程将阻塞，直到给定的线程完成<span></span>.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	线程和异常:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果在主线程中，提出了一个异常没有被处理的任何地方，Ruby解释器打印一个消息，并退出。在主线程以外的线程，未处理的异常导致线程停止运行.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果一个线程ţ退出，因为未处理的异常，而另一个线程s调用t.join或t.value，然后在T发生的异常提出在线程s<b></b>.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果Thread.abort_on_exception是假的，默认情况下，出现未处理的异常简单杀死(kill)当前线程和所有其余的继续运行.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果你想在任何线程中任何未处理的异常导致退出该解释器，类方法Thread.abort_on_exception设置为true<i></i>.
+</p>
+<pre>t = Thread.new { ... }
+t.abort_on_exception = true
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	线程变量:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一个线程可以正常访问，线程被创建时该范围是任何变量。一个线程块的局部变量是线程局部的，不共享.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Thread类提供一个特殊的功能，允许通过名字创建和访问线程局部变量。您只需把线程对象，就好像它是一个Hash，写入元素使用[]=读取他们回到使用[].
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在这个例子中，每个线程都记录在一个关键mycount ThreadLocal变量变量计数当前值<i></i>.
+</p>
+<pre>#!/usr/bin/ruby
+#by www.yiibai.com
+count = 0
+arr = []
+
+10.times do |i|
+   arr[i] = Thread.new {
+      sleep(rand(0)/10.0)
+      Thread.current["mycount"] = count
+      count += 1
+   }
+end
+
+arr.each {|t| t.join; print t["mycount"], ", " }
+puts "count = #{count}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>8, 0, 3, 7, 2, 1, 6, 5, 4, 9, count = 10
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">主线程等待子线程完成，然后打印出每个捕获ofcount<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">的值</span></span><span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;"></span>.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	线程优先级:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	影响线程调度的首要因素是线程的优先级：高优先级线程的低优先级线程之前预定。更确切地说，一个线程将只得到CPU时间，如果有没有更高优先级的线程等待运行.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以设置和查询与Ruby的Thread对象的优先级=和优先的优先级。新创建的线程开始创建它的线程的优先级相同。主线程在优先级0启动.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	有没有办法设置一个线程的优先级之前开始运行。然而，一个线程可以提高或降低其作为第一项行动，它需要自己的优先级.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	线程互斥:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果两个线程共享相同的数据的访问，以及至少一个线程修改数据，你必须要特别小心，以确保没有线程所能看到的数据处于不一致的状态。这被称为线程互斥.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<b>Mutex</b>是一个类，它实现了一个简单的一些共享资源的互斥访问的信号锁定。也就是说，只有一个线程可以持有锁在一个给定的时间。其他线程可能会选择等待锁线，变为可用，或者可能干脆选择错误，指示立即得到锁不能使用.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	通过将所有访问一个互斥的控制下共享数据，我们可以确保一致性和原子操作。让我们尝试的例子，第一个先不使用mutax而第二个使用mutax:
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	不使用Mutax例子:
+</h2>
+<pre>#!/usr/bin/ruby
+require 'thread'
+
+count1 = count2 = 0
+difference = 0
+counter = Thread.new do
+   loop do
+      count1 += 1
+      count2 += 1
+   end
+end
+spy = Thread.new do
+   loop do
+      difference += (count1 - count2).abs
+   end
+end
+sleep 1
+puts "count1 :  #{count1}"
+puts "count2 :  #{count2}"
+puts "difference : #{difference}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>count1 :  1583766
+count2 :  1583766
+difference : 637992
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	使用Mutax例子:
+</h2>
+<pre>#!/usr/bin/ruby
+require 'thread'
+mutex = Mutex.new
+
+count1 = count2 = 0
+difference = 0
+counter = Thread.new do
+   loop do
+      mutex.synchronize do
+         count1 += 1
+         count2 += 1
+      end
+    end
+end
+spy = Thread.new do
+   loop do
+       mutex.synchronize do
+          difference += (count1 - count2).abs
+       end
+   end
+end
+sleep 1
+mutex.lock
+puts "count1 :  #{count1}"
+puts "count2 :  #{count2}"
+puts "difference : #{difference}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>count1 :  696591
+count2 :  696591
+difference : 0
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	处理死锁:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	当我们开始使用互斥对象的线程排斥，我们必须小心地避免死锁。死锁条件时所发生的所有线程正在等待获取另一个线程持有的资源。因为所有的线程被阻塞，他们不能释放持有的锁。因为他们不能释放的锁，没有其他线程可以获取这些锁.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这是条件变量的图片来。条件变量是一个简单的相关资源和用于特定互斥锁的保护范围内的信号。当你需要的资源是不可用的，你等待一个条件变量。这一操作释放相应的互斥锁。当其他一些线程信号的资源是可用的，原来的线程来等待，同时恢复对临界区锁.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<pre>#!/usr/bin/ruby
+require 'thread'
+mutex = Mutex.new
+
+cv = ConditionVariable.new
+a = Thread.new {
+   mutex.synchronize {
+      puts "A: I have critical section, but will wait for cv"
+      cv.wait(mutex)
+      puts "A: I have critical section again! I rule! - by www.yiibai.com"
+   }
+}
+
+puts "(Later, back at the ranch...)"
+
+b = Thread.new {
+   mutex.synchronize {
+      puts "B: Now I am critical, but am done with cv"
+      cv.signal
+      puts "B: I am still critical, finishing up"
+   }
+}
+a.join
+b.join
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>A: I have critical section, but will wait for cv
+(Later, back at the ranch...)
+B: Now I am critical, but am done with cv
+B: I am still critical, finishing up
+A: I have critical section again! I rule!
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	线程状态:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	有五个可能的返回值相应的5个可能的状态如下表所示。status方法返回线程的状态.
+</p>
+<table cellpadding="5" cellspacing="5" border="1" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="50%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Thread state
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Return value
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Runnable
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				run
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Sleeping
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Sleeping
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Aborting
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				aborting
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Terminated normally
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				false
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Terminated with exception
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				nil
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	线程类方法:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Thread类提供下列方法和适用程序中提供的所有线程。这些方法将被调用Thread类的名称，使用如下:
+</p>
+<pre>Thread.abort_on_exception = true
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这里是所有类方法的完整列表:
+</p>
+<table cellpadding="5" cellspacing="5" border="1" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="5%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				SN
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Methods with Description
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				1
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.abort_on_exception</b><br />
+Returns the status of the global&nbsp;<i>abort on exception</i>&nbsp;condition. The default is&nbsp;<i>false</i>. When set to&nbsp;<i>true</i>, will cause all threads to abort (the process will exit(0)) if an exception is raised in any thread.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				2
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.abort_on_exception=</b><br />
+When set to&nbsp;<i>true</i>, all threads will abort if an exception is raised. Returns the new state.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				3
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.critical</b><br />
+Returns the status of the global&nbsp;<i>thread critical</i>&nbsp;condition.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				4
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.critical=</b><br />
+Sets the status of the global&nbsp;<i>thread critical</i>&nbsp;condition and returns it. When set to<i>true</i>, prohibits scheduling of any existing thread. Does not block new threads from being created and run. Certain thread operations (such as stopping or killing a thread, sleeping in the current thread, and raising an exception) may cause a thread to be scheduled even when in a critical section.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				5
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.current</b><br />
+Returns the currently executing thread.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				6
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.exit</b><br />
+Terminates the currently running thread and schedules another thread to be run. If this thread is already marked to be killed,&nbsp;<i>exit</i>&nbsp;returns the&nbsp;<i>Thread.</i>&nbsp;If this is the main thread, or the last thread, exit the process.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				7
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.fork { block }</b><br />
+Synonym for Thread.new .
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				8
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.kill( aThread )</b><br />
+Causes the given&nbsp;<i>aThread</i>&nbsp;to exit
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				9
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.list</b><br />
+Returns an array of&nbsp;<i>Thread</i>&nbsp;objects for all threads that are either runnable or stopped. Thread.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				10
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.main</b><br />
+Returns the main thread for the process.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				11
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.new( [ arg ]* ) {| args | block }</b><br />
+Creates a new thread to execute the instructions given in block, and begins running it. Any arguments passed to&nbsp;<i>Thread.new</i>&nbsp;are passed into the block.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				12
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.pass</b><br />
+Invokes the thread scheduler to pass execution to another thread.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				13
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.start( [ args ]* ) {| args | block }</b><br />
+Basically the same as&nbsp;<i>Thread.new</i>&nbsp;. However, if class&nbsp;<i>Thread</i>&nbsp;is subclassed, then calling&nbsp;<i>start</i>&nbsp;in that subclass will not invoke the subclass's&nbsp;<i>initialize</i>&nbsp;method.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				14
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<b>Thread.stop</b><br />
+Stops execution of the current thread, putting it into a&nbsp;<i>sleep</i>&nbsp;state, and schedules execution of another thread. Resets the&nbsp;<i>critical</i>&nbsp;condition to false.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	线程实例方法:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这些方法适用于线程的一个实例。这些方法将被称为使用如下线程的一个实例:
+</p>
+<pre>#!/usr/bin/ruby
+
+thr = Thread.new do   # Calling a class method <i>new</i> puts "In second thread"
+   raise "Raise exception"
+end
+thr.join   # Calling an instance method <i>join</i> </pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这里是所有的实例方法的完整列表:
+</p>
+<table cellpadding="5" cellspacing="5" border="1" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="5%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span><span style="font-weight:normal;line-height:18px;"><span><span><span><span><span><span><span>SN</span> </span> </span> </span> </span> </span> </span> </span></span> 
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span><span style="font-weight:normal;line-height:18px;"><span><span><span><span><span><span><span>Methods with Description</span> </span> </span> </span> </span> </span> </span> </span></span> 
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>1</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr[ aSymbol ]<br />
+Attribute Reference - Returns the value of a thread-local variable, using either a symbol or a&nbsp;aSymbol&nbsp;name. If the specified variable does not exist, returns&nbsp;nil.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>2</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr[ aSymbol ] =<br />
+Attribute Assignment - Sets or creates the value of a thread-local variable, using either a symbol or a string.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>3</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.abort_on_exception<br />
+Returns the status of the&nbsp;abort on exception&nbsp;condition for&nbsp;thr. The default is&nbsp;false.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>4</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.abort_on_exception=<br />
+When set to&nbsp;true, causes all threads (including the main program) to abort if an exception is raised in&nbsp;thr. The process will effectively&nbsp;exit(0).</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>5</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.alive?<br />
+Returns&nbsp;true&nbsp;if&nbsp;thr&nbsp;is running or sleeping.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>6</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.exit<br />
+Terminates&nbsp;thr&nbsp;and schedules another thread to be run. If this thread is already marked to be killed,&nbsp;exit&nbsp;returns the&nbsp;Thread. If this is the main thread, or the last thread, exits the process.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>7</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.join<br />
+The calling thread will suspend execution and run&nbsp;thr. Does not return until&nbsp;threxits. Any threads not joined will be killed when the main program exits.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>8</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.key?<br />
+Returns&nbsp;true&nbsp;if the given string (or symbol) exists as a thread-local variable.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>9</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.kill<br />
+Synonym for&nbsp;Thread.exit&nbsp;.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>10</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.priority<br />
+Returns the priority of&nbsp;thr. Default is zero; higher-priority threads will run before lower priority threads.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>11</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.priority=<br />
+Sets the priority of&nbsp;thr&nbsp;to an Integer. Higher-priority threads will run before lower priority threads.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>12</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.raise( anException )<br />
+Raises an exception from&nbsp;thr. The caller does not have to be&nbsp;thr.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>13</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.run<br />
+Wakes up&nbsp;thr, making it eligible for scheduling. If not in a critical section, then invokes the scheduler.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>14</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.safe_level<br />
+Returns the safe level in effect for&nbsp;thr.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>15</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.status<br />
+Returns the status of&nbsp;thr:&nbsp;sleep&nbsp;if&nbsp;thr&nbsp;is sleeping or waiting on I/O,&nbsp;run&nbsp;if&nbsp;thr&nbsp;is executing, false if&nbsp;thr&nbsp;terminated normally, and&nbsp;nil&nbsp;if&nbsp;thr&nbsp;terminated with an exception.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>16</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.stop?<br />
+Returns&nbsp;true&nbsp;if&nbsp;thr&nbsp;is dead or sleeping.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>17</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.value<br />
+Waits for thr to complete via&nbsp;Thread.join&nbsp;and returns its value.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>18</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>thr.wakeup<br />
+Marks&nbsp;thr&nbsp;as eligible for scheduling, it may still remain blocked on I/O, however.</span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

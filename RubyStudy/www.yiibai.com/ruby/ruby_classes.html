@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby类和对象</title>
+		<meta name="Keywords" content="Ruby 类 对象 "/>
+		<meta name="Description" content="Ruby是一个完美的面向对象编程语言。面向对象编程语言的功能包括：数据封装、数据抽象、多态性、继承。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby类和对象
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_classes.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_classes.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_classes.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_classes.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_syntax.html#ruby_syntax">Ruby语法</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_classes.html">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_if_else.html#ruby_if_else">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_string.html#ruby_string">Ruby字符串</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_array.html#ruby_array">Ruby数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_hashes.html#ruby_hashes">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_input_output.html#ruby_input_output">Ruby文件 I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_exceptions.html#ruby_exceptions">Ruby异常处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_multithreading.html#ruby_multithreading">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby类和对象</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Ruby是一个完美的面向对象编程语言。面向对象编程语言的功能包括：数据封装、数据抽象、多态性、继承。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<div>
+	<div>
+		<span><span>这些</span><span>功能已被</span><span>讨论了</span><span>面向对象</span><span>的<a href="../ruby.2" target="_blank">Ruby</a></span><span>。</span><br />
+<br />
+<span>一个</span><span>面向对象的程序</span><span>，</span><span>涉及</span><span>到</span><span>的类和对象</span><span>。</span><span>一类是</span><span>从</span><span>个别</span><span>对象的创建</span><span>蓝图</span><span>。</span><span>在</span><span>面向对象</span><span>的</span><span>条件</span><span>，</span><span>我们</span><span>说</span><span>，</span><span>你</span><span>的</span><span>自行车</span><span>是</span><span>自行车</span><span>作为</span><span>已知</span><span>的</span><span>对象</span><span>类</span><span>的</span><span>一个</span><span>实例</span><span>。</span><br />
+<br />
+<span>采取</span><span>的</span><span>任何车辆</span><span>的</span><span>例子</span><span>。</span><span>它包括</span><span>车轮</span><span>，马力</span><span>，</span><span>燃油或</span><span>燃气</span><span>罐容量</span><span>。</span><span>这些特点</span><span>形成</span><span>的类</span><span>车辆</span><span>的数据成员</span><span>。</span><span>帮助</span><span>这些特点</span><span>可以</span><span>区别于</span><span>其他</span><span>一辆车</span><span>。</span><br />
+<br />
+<span>车辆</span><span>也</span><span>有</span><span>一定的</span><span>功能</span><span>，</span><span>如</span><span>制止</span><span>，驾驶</span><span>，加快</span><span>。</span><span>即使</span><span>这些功能</span><span>形成</span><span>类</span><span>车辆</span><span>的数据成员</span><span>。</span><span>因此</span><span>，</span><span>您可以</span><span>定义</span><span>类</span><span>的</span><span>特点和功能</span><span>相</span><span>结合</span><span>。</span><br />
+<br />
+<span>A级</span><span>车</span><span>可以</span><span>被定义为：</span></span><br />
+<pre><span><span>Class Vehicle
+{
+   Number no_of_wheels
+   Number horsepower
+   Characters type_of_tank
+   Number Capacity
+   Function speeding{
+
+   }
+   Function driving{
+
+   }
+   Function halting{
+
+   }
+} </span></span></pre>
+	</div>
+</div>
+<div>
+	<div>
+		<span><span>通过</span><span>这些数据成员</span><span>分配</span><span>不同的值</span><span>，可以</span><span>形成</span><span>类</span><span>车辆</span><span>的</span><span>几个实例</span><span>。</span><span>例如</span><span>，</span><span>飞机上</span><span>有</span><span>三个轮子</span><span>，</span><span>1000</span><span>马力</span><span>，</span><span>燃油</span><span>型</span><span>坦克</span><span>，</span><span>和一个</span><span>100升</span><span>的</span><span>容量</span><span>。</span><span>以同样的方式</span><span>，</span><span>有车有</span><span>四个轮子</span><span>，</span><span>200马力</span><span>，天然气</span><span>作为</span><span>坦克</span><span>的</span><span>类型</span><span>，</span><span>容量</span><span>为25</span><span>升</span><span>。</span></span><br />
+<br />
+		<div>
+			<h2>
+				<span><span><span><span>Ruby中定义&nbsp;</span></span><span>类</span><span>：</span></span></span>
+			</h2>
+			<div>
+				<br />
+<span><span><span><span>通过</span><span>使用Ruby</span><span>来实现</span><span>面向对象编程</span><span>，</span><span>你</span><span>需要</span><span>先</span><span>学习如何创建</span><span>对象</span><span>和</span><span>Ruby类</span><span>。</span><br />
+<span>在Ruby中</span><span>的</span><span>类</span><span>总是启动</span><span>关键字</span><span>类</span><span>与</span><span>类的名称</span><span>。</span><span>这个名字</span><span>应该总是</span><span>在最初的</span><span>资本</span><span>。</span><span>一流的定制</span><span>可以</span><span>显示如下：</span></span></span></span><br />
+<pre><span><span><span><span>lass Customer
+end </span></span></span></span></pre>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<div>
+		<div>
+			<div>
+				&nbsp;
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<div>
+		<h2>
+			<span><span>Ruby类</span><span>的</span><span>变量</span><span>：</span></span>
+		</h2>
+		<div>
+			<br />
+<span><span>Ruby提供了</span><span>四种</span><span>类型</span><span>的变量</span><span>：</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<strong><span>* </span></strong><span><strong>局部变量</strong>：</span><span>局部变量</span><span>是</span><span>在一个方法中</span><span>定义的变量</span><span>。</span><span>局部变量</span><span>以外的</span><span>方法</span><span>。</span><span>你会看到</span><span>更多有关</span><span>方法</span><span>在</span><span>后续章节</span><span>的</span><span>细节</span><span>。</span><span>局部变量</span><span>用</span><span>小写字母</span><span>或_</span><span>开始</span><span>。</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<strong><span>* </span></strong><span><strong>实例变量</strong>：</span><span>实例变量</span><span>是</span><span>在</span><span>任何特定</span><span>的</span><span>实例或</span><span>对象</span><span>的</span><span>方法</span><span>。</span><span>这意味着</span><span>，</span><span>从对象到对象</span><span>的实例变量</span><span>改变</span><span>。</span><span>实例变量</span><span>的</span><span>变量名</span><span>的</span><span>符号</span><span>（@）</span><span>之前</span><span>。</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<strong><span>* </span><span>类变量</span></strong><span>：</span><span>类变量</span><span>是</span><span>在不同的</span><span>对象</span><span>。</span> <span>A类</span><span>变量</span><span>属于类</span><span>是</span><span>类的一个</span><span>特点</span><span>。</span><span>他们</span><span>都是由</span><span>前面</span><span>的符号</span><span>@ @</span><span>变量名</span><span>。</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<strong><span>* </span><span>全局变量</span></strong><span>：</span><span>类变量</span><span>是</span><span>不能</span><span>跨</span><span>类</span><span>。</span><span>如果你想</span><span>有一个单独的</span><span>变量</span><span>，</span><span>这是</span><span>可</span><span>跨</span><span>类</span><span>，</span><span>你</span><span>需要定义</span><span>一个全局变量</span><span>。</span><span>全局变量</span><span>总是</span><span>先</span><span>用美元符号</span><span>（$）</span><span>。</span></span><br />
+			<div>
+				<h6>
+					<span><span><span><span>例如：</span></span></span></span>
+				</h6>
+				<div>
+					<span><span><span><span>使用</span><span>类变量</span><span>@</span><span>@</span> <span>no_of_customers</span><span>，</span><span>你</span><span>可确定</span><span>正在</span><span>创建的对象</span><span>的</span><span>数量</span><span>。</span><span>这</span><span>使</span><span>中获得</span><span>的客户数量</span><span>。</span></span></span></span>
+				</div>
+			</div>
+<pre><span><span>class Customer
+   @@no_of_customers=0
+end </span></span></pre>
+		</div>
+	</div>
+</div>
+<div>
+	<h3>
+		<br />
+<span><span>在Ruby中</span><span>创建</span><span>的</span><span>对象</span><span>使用new</span><span>方法</span><span>：</span></span>
+	</h3>
+	<div>
+		<br />
+<span><span>对象是</span><span>类的实例</span><span>。</span><span>现在，您将</span><span>学习如何创建</span><span>一个</span><span>Ruby类</span><span>的</span><span>对象</span><span>。</span><span>在Ruby中</span><span>，</span><span>你</span><span>可以</span><span>通过使用</span><span>新的类</span><span>的</span><span>方法</span><span>创建</span><span>对象</span><span>。</span><br />
+<span>新</span><span>的方法</span><span>是</span><span>一个</span><span>独特的</span><span>方法</span><span>，这是</span><span>Ruby库</span><span>中</span><span>的</span><span>预定</span><span>义</span><span>类型</span><span>。</span><span>新的</span><span>方法属于</span><span>类的方法</span><span>。</span><br />
+<span>下面</span><span>是</span><span>创建两个</span><span>对象</span><span>cust1</span><span>和</span><span>一流的客户</span><span>cust2</span><span>的例子</span><span>：</span></span><br />
+<pre><span><span>cust1 = Customer. new
+cust2 = Customer. new </span></span></pre>
+		<div>
+			<div>
+				<span><span><span><span>在这里</span><span>，</span><span>cust1</span><span>和</span><span>cust2</span><span>是</span><span>两个对象的</span><span>名字</span><span>。</span><span>等于</span><span>符号（=</span><span>）后</span><span>的类的名称</span><span>将按照</span><span>你写的</span><span>对象的名称</span><span>。</span><span>然后</span><span>，</span><span>点运算</span><span>和</span><span>新的</span><span>关键字</span><span>将随之而来。</span></span></span></span><br />
+				<div>
+					<div>
+						&nbsp;
+					</div>
+					<h3>
+						<span><span><span><span><span>自定义的方法</span><span>来创建</span><span>Ruby对象</span><span>：</span></span></span></span></span>
+					</h3>
+					<div>
+						<br />
+<span><span><span><span><span><span>您可以通过</span><span>新</span><span>方法</span><span>的</span><span>参数</span><span>，</span><span>这些</span><span>参数</span><span>可以</span><span>被用来初始化</span><span>类变量</span><span>。</span><br />
+<span>当你计划</span><span>申报</span><span>与</span><span>参数的</span><span>新</span><span>方法</span><span>，您需要</span><span>申报</span><span>的方法</span><span>初始化</span><span>类的创建</span><span>时间</span><span>。</span><br />
+<span>initialize方法</span><span>是</span><span>特殊类型</span><span>的</span><span>方法</span><span>，将</span><span>类的新</span><span>方法与</span><span>参数调用</span><span>时执行</span><span>。</span><br />
+<span>下面</span><span>是</span><span>创建</span><span>初始化</span><span>方法</span><span>的例子</span><span>：</span></span></span></span></span></span>
+					</div>
+				</div>
+<pre><span><span><span><span>class Customer
+   @@no_of_customers=0
+   def initialize(id, name, addr)
+      @cust_id=id
+      @cust_name=name
+      @cust_addr=addr
+   end
+end </span></span></span></span></pre>
+				<div>
+					<div>
+						<span><span><span><span><span><span>在这个例子中</span><span>，</span><span>你</span><span>声明</span><span>为局部变量</span><span>initialize方法</span><span>的ID</span><span>，name</span><span>，</span><span>addr</span><span>。</span><span>这里</span><span>def和</span><span>结束</span><span>被用来定义</span><span>一个Ruby</span><span>方法Initialize</span><span>。</span><span>您将了解</span><span>在以后的章节中</span><span>的</span><span>方法</span><span>。</span><br />
+<br />
+<span>在</span><span>initialize方法</span><span>，</span><span>通过</span><span>对</span><span>这些</span><span>局部变量</span><span>的值</span><span>的</span><span>实例变量</span><span>@</span> <span>CUST_ID</span><span>，</span><span>CUST_NAME</span><span>，</span><span>@</span> <span>cust_addr</span><span>。</span><span>这里</span><span>的局部变量</span><span>持有</span><span>值</span><span>，</span><span>通过</span><span>用新的方法</span><span>。</span><br />
+<br />
+<span>现在你可以创建</span><span>对象</span><span>如下</span><span>：</span></span></span></span></span></span>
+					</div>
+				</div>
+<pre><span><span><span><span>cust1=Customer.new("1", "John", "Wisdom Apartments, Ludhiya")
+cust2=Customer.new("2", "Poul", "New Empire road, Khandala")</span></span></span></span></pre>
+			</div>
+		</div>
+		<div>
+			<h3>
+				<span><span><span>Ruby类</span><span>的</span><span>成员函数：</span></span></span>
+			</h3>
+			<div>
+				<br />
+<span><span><span><span>在Ruby中，</span><span>函数</span><span>调用的方法</span><span>。</span><span>每一</span><span>类中的方法</span><span>，</span><span>方法名称</span><span>关键字def</span><span>开始</span><span>。</span><br />
+<span>总是首选</span><span>的方法名称</span><span>以小写字母</span><span>。</span><span>你</span><span>在Ruby中</span><span>的</span><span>方法</span><span>使用</span><span>关键字</span><span>年底</span><span>结束</span><span>。</span><br />
+<span>下面</span><span>是</span><span>定义</span><span>一个Ruby</span><span>方法</span><span>的例子</span><span>：</span></span></span></span><br />
+<pre><span><span><span><span>class Sample
+   def function
+      statement 1
+      statement 2
+   end
+end </span></span></span></span></pre>
+				<div>
+					<div>
+						<span><span><span><span><span><span>这里</span><span>语句1</span><span>和语句</span><span>2</span><span>类</span><span>内</span><span>样本</span><span>的</span><span>方法</span><span>函数</span><span>体</span><span>的</span><span>一部分</span><span>。</span><span>这些</span><span>statments</span><span>可以</span><span>是</span><span>任何有效</span><span>的</span><span>Ruby</span><span>语句</span><span>。</span><span>例如，我们可以</span><span>提出</span><span>一个方法</span><span>使</span><span>打印</span><span>您好</span><span>红宝石</span><span>如下</span><span>：</span></span></span></span></span></span><br />
+<pre><span><span><span><span><span><span>class Sample
+   def hello
+      puts "Hello Ruby!"
+   end
+end </span></span></span></span></span></span></pre>
+					</div>
+				</div>
+				<div>
+					<div>
+						<span><span><span><span><span><span>现在</span><span>在</span><span>下面的例子</span><span>创建</span><span>Sample类</span><span>的</span><span>一个</span><span>对象</span><span>，</span><span>并</span><span>调用</span><span>hello方法</span><span>和</span><span>看到的结果</span><span>：</span></span></span></span></span></span><br />
+<pre><span><span><span><span><span><span>#!/usr/bin/ruby
+
+class Sample
+   def hello
+      puts "Hello Ruby!"
+   end
+end
+
+# Now using above class to create objects
+object = Sample. new
+object.hello </span></span></span></span></span></span></pre>
+<span><span><span><span><span><span>以上代码将输出结果如下：</span></span></span></span></span></span><br />
+<pre><span><span><span><span><span><span>Hello Ruby! </span></span></span></span></span></span></pre>
+						<h3>
+							<br />
+<span><span><span><span><span><span>简单的实例学习:</span></span></span></span></span></span>
+						</h3>
+						<p>
+							<br />
+						</p>
+						<div>
+							<div>
+								<span><span><span><span><span><span><span><span>下面是</span><span>一个案例研究</span><span>，</span><span>如果</span><span>你想要做</span><span>更多的练习</span><span>与</span><span>类</span><span>和对象</span><span>：</span></span></span></span></span></span></span></span>
+							</div>
+						</div>
+						<p>
+							<a href="http://www.yiibai.com/ruby/ruby_class_case_study" target="_blank"><span><span><span><span><span><span><b>Ruby类学习</b></span></span></span></span></span></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

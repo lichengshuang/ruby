@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby语法</title>
+		<meta name="Keywords" content="ruby 语法 "/>
+		<meta name="Description" content="让我们写一个简单的ruby程序。所有的Ruby文件将具有扩展.rb。下面的源代码所以把在test.rb文件的。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby语法
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_syntax.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_syntax.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_syntax.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_syntax.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_syntax.html">Ruby语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_classes.html#ruby_classes">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_if_else.html#ruby_if_else">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_string.html#ruby_string">Ruby字符串</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_array.html#ruby_array">Ruby数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_hashes.html#ruby_hashes">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_input_output.html#ruby_input_output">Ruby文件 I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_exceptions.html#ruby_exceptions">Ruby异常处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_multithreading.html#ruby_multithreading">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby语法</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						让我们写一个简单的ruby程序。所有的Ruby文件将具有扩展.rb。下面的源代码所以把在test.rb文件的。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						让我们写一个简单的ruby程序。所有的Ruby文件将具有扩展.rb。下面的源代码所以把在test.rb文件的。<br />
+<pre>
+#!/usr/bin/ruby -w
+
+puts &quot;Hello, Ruby!&quot;;
+</pre>
+<div class="almost_half_cell" closure_uid_p7o7mw="186" id="gt-res-content">
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="622">在这里，我</span><span closure_uid_p7o7mw="623">假设你有</span><span closure_uid_p7o7mw="624">/</span><span class="hps" closure_uid_p7o7mw="625">usr/bin目录</span><span closure_uid_p7o7mw="626">中</span><span closure_uid_p7o7mw="627">提供</span><span closure_uid_p7o7mw="628">的<a href="../ruby.2" target="_blank">Ruby</a>解释</span><span closure_uid_p7o7mw="629">。</span><span closure_uid_p7o7mw="630">现在</span><span closure_uid_p7o7mw="631">尝试运行</span><span closure_uid_p7o7mw="632">这个程序</span><span closure_uid_p7o7mw="633">如下</span><span closure_uid_p7o7mw="634">：</span></span><br />
+<pre>
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="634">$ ruby test.rb
+</span></span></pre>
+</div>
+</div>
+这将输出结果如下：<br />
+<pre>
+Hello, Ruby!
+</pre>
+<div class="almost_half_cell" closure_uid_p7o7mw="186" id="gt-res-content">
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="645">您已经看到了</span><span closure_uid_p7o7mw="646">一个简单的Ruby</span><span closure_uid_p7o7mw="647">程序</span><span closure_uid_p7o7mw="648">，</span><span closure_uid_p7o7mw="649">现在</span><span closure_uid_p7o7mw="650">让我们看看</span><span closure_uid_p7o7mw="651">Ruby语法</span><span closure_uid_p7o7mw="652">有关</span><span closure_uid_p7o7mw="653">的</span><span closure_uid_p7o7mw="654">几个基本</span><span closure_uid_p7o7mw="655">概念</span><span closure_uid_p7o7mw="656">：</span></span><br />
+<div class="almost_half_cell" closure_uid_p7o7mw="186" id="gt-res-content">
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1">&nbsp;</div>
+<h3><span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="656"><span closure_uid_p7o7mw="667">Ruby程序</span><span closure_uid_p7o7mw="668">中的空白</span><span closure_uid_p7o7mw="669">：</span></span></span></h3>
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><br closure_uid_p7o7mw="704" />
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="656"><span a="undefined" closure_uid_p7o7mw="88" f="4" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="670">在</span><span closure_uid_p7o7mw="671">Ruby代码</span><span closure_uid_p7o7mw="672">中</span><span closure_uid_p7o7mw="673">的空白字符</span><span closure_uid_p7o7mw="674">，</span><span closure_uid_p7o7mw="675">如</span><span closure_uid_p7o7mw="676">空格和制表符</span><span closure_uid_p7o7mw="677">一般</span><span closure_uid_p7o7mw="678">被</span><span closure_uid_p7o7mw="679">忽略</span><span closure_uid_p7o7mw="680">，</span><span closure_uid_p7o7mw="681">除非当他们</span><span closure_uid_p7o7mw="682">出现</span><span closure_uid_p7o7mw="683">在字符串中</span><span closure_uid_p7o7mw="684">。</span><span closure_uid_p7o7mw="685">然而</span><span closure_uid_p7o7mw="686">，</span><span closure_uid_p7o7mw="687">有时候，</span><span closure_uid_p7o7mw="688">他们</span><span closure_uid_p7o7mw="689">用来解释</span><span closure_uid_p7o7mw="690">模棱两可的</span><span closure_uid_p7o7mw="691">语句</span><span closure_uid_p7o7mw="692">。</span> <span class="hps" closure_uid_p7o7mw="693">-w选项</span><span closure_uid_p7o7mw="694">启用</span><span closure_uid_p7o7mw="695">时</span><span closure_uid_p7o7mw="696">，</span><span closure_uid_p7o7mw="697">这种</span><span closure_uid_p7o7mw="698">解释</span><span closure_uid_p7o7mw="699">产生</span><span closure_uid_p7o7mw="700">警告。</span><br closure_uid_p7o7mw="705" />
+<br closure_uid_p7o7mw="706" />
+<strong><span closure_uid_p7o7mw="701">例如：</span></strong></span></span></span></div>
+</div>
+</div>
+</div>
+<pre>
+a + b is interpreted as a+b ( Here a is a local variable)
+a  +b is interpreted as a(+b) ( Here a is a method call)
+</pre>
+<div class="almost_half_cell" closure_uid_p7o7mw="186" id="gt-res-content">
+<h3><span a="undefined" closure_uid_p7o7mw="88" f="4" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="715">Ruby程序</span><span closure_uid_p7o7mw="716">中</span><span closure_uid_p7o7mw="717">的</span><span closure_uid_p7o7mw="718">行结尾</span><span closure_uid_p7o7mw="719">：</span></span></h3>
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><br closure_uid_p7o7mw="805" />
+<span a="undefined" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="720">Ruby的</span><span closure_uid_p7o7mw="721">解释</span><span closure_uid_p7o7mw="722">分号</span><span closure_uid_p7o7mw="723">作为</span><span closure_uid_p7o7mw="724">语句</span><span closure_uid_p7o7mw="725">的</span><span closure_uid_p7o7mw="726">结尾</span><span closure_uid_p7o7mw="727">换行符</span><span closure_uid_p7o7mw="728">。</span><span closure_uid_p7o7mw="729">但是，如果</span><span closure_uid_p7o7mw="730">红宝石</span><span closure_uid_p7o7mw="731">遭遇</span><span closure_uid_p7o7mw="732">运营商</span><span closure_uid_p7o7mw="733">，</span><span closure_uid_p7o7mw="734">如+</span><span closure_uid_p7o7mw="735">，</span><span closure_uid_p7o7mw="736"> - ，</span><span closure_uid_p7o7mw="737">或</span><span closure_uid_p7o7mw="738">在</span><span closure_uid_p7o7mw="739">一行的末尾</span><span closure_uid_p7o7mw="740">的反斜杠</span><span closure_uid_p7o7mw="741">，</span><span closure_uid_p7o7mw="742">他们</span><span closure_uid_p7o7mw="743">的</span><span closure_uid_p7o7mw="744">一份声明中</span><span closure_uid_p7o7mw="745">表示</span><span closure_uid_p7o7mw="746">的</span><span closure_uid_p7o7mw="747">延续</span><span closure_uid_p7o7mw="748">。</span></span><br closure_uid_p7o7mw="806" />
+&nbsp;</div>
+<h3><span closure_uid_p7o7mw="749">Ruby的</span><span closure_uid_p7o7mw="750">标识符</span><span closure_uid_p7o7mw="751">：</span></h3>
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><br closure_uid_p7o7mw="808" />
+<span a="undefined" closure_uid_p7o7mw="88" f="4" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="752">标识符</span><span closure_uid_p7o7mw="753">名称</span><span closure_uid_p7o7mw="754">的</span><span closure_uid_p7o7mw="755">变量</span><span closure_uid_p7o7mw="756">，常量和</span><span closure_uid_p7o7mw="757">方法</span><span closure_uid_p7o7mw="758">。</span> <span class="hps" closure_uid_p7o7mw="759">Ruby的</span><span closure_uid_p7o7mw="760">标识符是大小写敏感</span><span closure_uid_p7o7mw="761">。</span><span closure_uid_p7o7mw="762">这</span><span closure_uid_p7o7mw="763">意味着</span><span closure_uid_p7o7mw="764">RAM</span><span closure_uid_p7o7mw="765">和RAM</span><span closure_uid_p7o7mw="766">是</span><span closure_uid_p7o7mw="767">在Ruby中</span><span closure_uid_p7o7mw="768">的</span><span closure_uid_p7o7mw="769">两个</span><span closure_uid_p7o7mw="770">不同的</span><span closure_uid_p7o7mw="771">itendifiers</span><span closure_uid_p7o7mw="772">。</span><br closure_uid_p7o7mw="809" />
+<span closure_uid_p7o7mw="773">Ruby的</span><span closure_uid_p7o7mw="774">标识符名称</span><span closure_uid_p7o7mw="775">可以包含</span><span closure_uid_p7o7mw="776">字母数字字符</span><span closure_uid_p7o7mw="777">和</span><span closure_uid_p7o7mw="778">下划线（_</span><span closure_uid_p7o7mw="779">）</span><span closure_uid_p7o7mw="780">。</span></span><br closure_uid_p7o7mw="811" />
+&nbsp;</div>
+<h3><span closure_uid_p7o7mw="781">保留字</span><span closure_uid_p7o7mw="782">：</span></h3>
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><br closure_uid_p7o7mw="813" />
+<span a="undefined" closure_uid_p7o7mw="88" f="4" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="783">以下列表显示了</span><span closure_uid_p7o7mw="784">在Ruby</span><span closure_uid_p7o7mw="785">中的保留字</span><span closure_uid_p7o7mw="786">。</span><span closure_uid_p7o7mw="787">作为</span><span closure_uid_p7o7mw="788">常量或变量</span><span closure_uid_p7o7mw="789">的</span><span closure_uid_p7o7mw="790">名称</span><span closure_uid_p7o7mw="791">，</span><span closure_uid_p7o7mw="792">不得使用</span><span closure_uid_p7o7mw="793">这些</span><span closure_uid_p7o7mw="794">保留字</span><span closure_uid_p7o7mw="795">。</span><span closure_uid_p7o7mw="796">然而</span><span closure_uid_p7o7mw="797">，</span><span closure_uid_p7o7mw="798">他们可以</span><span closure_uid_p7o7mw="799">被用来</span><span closure_uid_p7o7mw="800">作为</span><span closure_uid_p7o7mw="801">方法名称</span><span closure_uid_p7o7mw="802">。</span></span><br />
+&nbsp;</div>
+</div>
+<div id="spell-place-holder" style="DISPLAY: none; HEIGHT: 44px">&nbsp;</div>
+<table border="1" cellpadding="5" class="src">
+<tbody>
+	<tr>
+	<td><strong>BEGIN</strong></td>
+	<td><strong>do</strong></td>
+	<td><strong>next</strong></td>
+	<td><strong>then</strong></td>
+	</tr>
+	<tr>
+	<td><strong>END</strong></td>
+	<td><strong>else</strong></td>
+	<td><strong>nill</strong></td>
+	<td><strong>true</strong></td>
+	</tr>
+	<tr>
+	<td><strong>alias</strong></td>
+	<td><strong>elsif</strong></td>
+	<td><strong>not</strong></td>
+	<td><strong>undef</strong></td>
+	</tr>
+	<tr>
+	<td><strong>and</strong></td>
+	<td><strong>end</strong></td>
+	<td><strong>or</strong></td>
+	<td><strong>unless</strong></td>
+	</tr>
+	<tr>
+	<td><strong>begin</strong></td>
+	<td><strong>ensure</strong></td>
+	<td><strong>redo</strong></td>
+	<td><strong>until</strong></td>
+	</tr>
+	<tr>
+	<td><strong>break</strong></td>
+	<td><strong>false</strong></td>
+	<td><strong>rescue</strong></td>
+	<td><strong>when</strong></td>
+	</tr>
+	<tr>
+	<td><strong>case</strong></td>
+	<td><strong>for</strong></td>
+	<td><strong>retry</strong></td>
+	<td><strong>while</strong></td>
+	</tr>
+	<tr>
+	<td><strong>class</strong></td>
+	<td><strong>if</strong></td>
+	<td><strong>return</strong></td>
+	<td><strong>while</strong></td>
+	</tr>
+	<tr>
+	<td><strong>def</strong></td>
+	<td><strong>in</strong></td>
+	<td><strong>self</strong></td>
+	<td><strong>__FILE__</strong></td>
+	</tr>
+	<tr>
+	<td><strong>defined?</strong></td>
+	<td><strong>module</strong></td>
+	<td><strong>super</strong></td>
+	<td><strong>__LINE__</strong></td>
+	</tr>
+</tbody>
+</table>
+<br />
+<div class="almost_half_cell" closure_uid_p7o7mw="186" id="gt-res-content">
+<h3><span a="undefined" closure_uid_p7o7mw="88" f="4" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="824" wc="null">Ruby的&ldquo;Here Document&rdquo;</span><span closure_uid_p7o7mw="825" wc="null">：</span></span></h3>
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><br closure_uid_p7o7mw="878" wc="null" />
+<span a="undefined" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="829" wc="null">&quot;Here Document&quot;是</span><span closure_uid_p7o7mw="830" wc="null">指</span><span closure_uid_p7o7mw="831" wc="null">建立</span><span closure_uid_p7o7mw="832" wc="null">多行</span><span closure_uid_p7o7mw="833" wc="null">字符串</span><span closure_uid_p7o7mw="834" wc="null">。</span> <span class="hps" closure_uid_p7o7mw="835" wc="null">&lt;&lt;</span><span closure_uid_p7o7mw="836" wc="null">你</span><span closure_uid_p7o7mw="837" wc="null">可以指定</span><span closure_uid_p7o7mw="838" wc="null">一个字符串或</span><span closure_uid_p7o7mw="839" wc="null">的</span><span closure_uid_p7o7mw="840" wc="null">标识符</span><span closure_uid_p7o7mw="841" wc="null">终止</span><span closure_uid_p7o7mw="842" wc="null">字符串文字</span><span closure_uid_p7o7mw="843" wc="null">，</span><span closure_uid_p7o7mw="844" wc="null">终结</span><span closure_uid_p7o7mw="845" wc="null">后，</span><span closure_uid_p7o7mw="846" wc="null">当前行</span><span closure_uid_p7o7mw="847" wc="null">的所有行</span><span closure_uid_p7o7mw="848" wc="null">是</span><span closure_uid_p7o7mw="849" wc="null">字符串值</span><span closure_uid_p7o7mw="850" wc="null">。</span><br closure_uid_p7o7mw="879" wc="null" />
+<span closure_uid_p7o7mw="851" wc="null">如果</span><span closure_uid_p7o7mw="852" wc="null">终结者</span><span closure_uid_p7o7mw="853" wc="null">被引用</span><span closure_uid_p7o7mw="854" wc="null">，</span><span closure_uid_p7o7mw="855" wc="null">引号</span><span closure_uid_p7o7mw="856" wc="null">的</span><span closure_uid_p7o7mw="857" wc="null">类型</span><span closure_uid_p7o7mw="858" wc="null">确定</span><span closure_uid_p7o7mw="859" wc="null">的</span><span closure_uid_p7o7mw="860" wc="null">面向行的</span><span closure_uid_p7o7mw="861" wc="null">字符串文字</span><span closure_uid_p7o7mw="862" wc="null">的</span><span closure_uid_p7o7mw="863" wc="null">类型</span><span closure_uid_p7o7mw="864" wc="null">。</span><span closure_uid_p7o7mw="865" wc="null">注意</span><span closure_uid_p7o7mw="866" wc="null">必须有</span><span closure_uid_p7o7mw="867" wc="null">&lt;&lt;和</span><span closure_uid_p7o7mw="868" wc="null">终止</span><span closure_uid_p7o7mw="869" wc="null">之间</span><span closure_uid_p7o7mw="870" wc="null">没有</span><span closure_uid_p7o7mw="871" wc="null">空格</span><span closure_uid_p7o7mw="872" wc="null">。</span><br closure_uid_p7o7mw="881" wc="null" />
+<span closure_uid_p7o7mw="873" wc="null">这里有</span><span closure_uid_p7o7mw="874" wc="null">不同的例子</span><span closure_uid_p7o7mw="875" wc="null">：</span></span></div>
+</div>
+<pre>
+#!/usr/bin/ruby -w
+
+print &lt;&lt;EOF
+    This is the first way of creating
+    here document ie. multiple line string.
+EOF
+
+print &lt;&lt;&quot;EOF&quot;;                # same as above
+    This is the second way of creating
+    here document ie. multiple line string.
+EOF
+
+print &lt;&lt;`EOC`                 # execute commands
+	echo hi there
+	echo lo there
+EOC
+
+print &lt;&lt;&quot;foo&quot;, &lt;&lt;&quot;bar&quot;  # you can stack them
+	I said foo.
+foo
+	I said bar.
+bar
+</pre>
+这将输出结果如下：<br />
+<pre>
+This is the first way of creating
+    her document ie. multiple line string.
+    This is the second way of creating
+    her document ie. multiple line string.
+hi there
+lo there
+        I said foo.
+        I said bar.
+</pre>
+<h3><br />
+<strong>Ruby的Begin语句：</strong></h3>
+<br />
+<strong>语法：</strong><br />
+<pre>
+BEGIN {
+   code
+}
+</pre>
+<p><span closure_uid_p7o7mw="897">声明</span><span closure_uid_p7o7mw="898">将</span><span closure_uid_p7o7mw="899">在程序</span><span closure_uid_p7o7mw="900">的开始</span><span closure_uid_p7o7mw="901">调用</span><span closure_uid_p7o7mw="902">的</span><span closure_uid_p7o7mw="903">代码</span><span closure_uid_p7o7mw="904">。</span></p>
+<p><strong>例子：</strong></p>
+<pre>
+#!/usr/bin/ruby
+
+puts &quot;This is main Ruby Program&quot;
+
+BEGIN {
+   puts &quot;Initializing Ruby Program&quot;
+}
+</pre>
+<p>这将输出结果如下：</p>
+<pre>
+Initializing Ruby Program
+This is main Ruby Program
+</pre>
+<br />
+<h3><strong>Ruby的End语句：</strong></h3>
+<br />
+<strong>语法：</strong><br />
+<pre>
+END {
+   code
+}
+</pre>
+<div class="almost_half_cell" closure_uid_p7o7mw="186" id="gt-res-content">
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="897">声明</span><span closure_uid_p7o7mw="898">将</span><span closure_uid_p7o7mw="899">在程序</span><span closure_uid_p7o7mw="900">的最后</span><span closure_uid_p7o7mw="901">调用</span><span closure_uid_p7o7mw="902">的</span><span closure_uid_p7o7mw="903">代码</span><span closure_uid_p7o7mw="904">。<br />
+<br />
+<strong>例子：</strong></span></span><br />
+<pre>
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="904">#!/usr/bin/ruby
+
+puts &quot;This is main Ruby Program&quot;
+
+END {
+   puts &quot;Terminating Ruby Program&quot;
+}
+BEGIN {
+   puts &quot;Initializing Ruby Program&quot;
+}
+</span></span></pre>
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="904">这将输出结果如下：</span></span><br />
+<pre>
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="904">Initializing Ruby Program
+This is main Ruby Program
+Terminating Ruby Program</span></span></pre>
+</div>
+<h3><br />
+<span closure_uid_p7o7mw="916">Ruby的注释：</span></h3>
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><br closure_uid_p7o7mw="939" />
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="904"><span closure_uid_p7o7mw="917">注释</span><span closure_uid_p7o7mw="918">隐藏</span><span closure_uid_p7o7mw="919">一条线，</span><span closure_uid_p7o7mw="920">一条线</span><span closure_uid_p7o7mw="921">的</span><span closure_uid_p7o7mw="922">一部分</span><span closure_uid_p7o7mw="923">，</span><span closure_uid_p7o7mw="924">或</span><span closure_uid_p7o7mw="925">从</span><span closure_uid_p7o7mw="926">Ruby解释器</span><span closure_uid_p7o7mw="927">的</span><span closure_uid_p7o7mw="928">几行</span><span closure_uid_p7o7mw="929">。</span><span closure_uid_p7o7mw="930">在</span><span closure_uid_p7o7mw="931">一行的开头</span><span closure_uid_p7o7mw="932">，</span><span closure_uid_p7o7mw="933">您可以使用</span><span closure_uid_p7o7mw="934">散列符</span><span closure_uid_p7o7mw="935">（＃）</span></span></span><br />
+<pre>
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="904"><span closure_uid_p7o7mw="935"># I am a comment. Just ignore me.
+</span></span></span></pre>
+</div>
+</div>
+<span closure_uid_p7o7mw="948" wc="null">或注释</span><span closure_uid_p7o7mw="950" wc="null">可能会</span><span closure_uid_p7o7mw="951" wc="null">后</span><span closure_uid_p7o7mw="952" wc="null">的声明</span><span closure_uid_p7o7mw="953" wc="null">或</span><span closure_uid_p7o7mw="954" wc="null">表达</span><span closure_uid_p7o7mw="955" wc="null">同一行</span><br />
+<pre>
+name = &quot;Madisetti&quot; # This is again comment
+</pre>
+<div class="almost_half_cell" closure_uid_p7o7mw="186" id="gt-res-content">
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="968">你</span><span closure_uid_p7o7mw="969">可以注释</span><span closure_uid_p7o7mw="971">多行</span><span closure_uid_p7o7mw="972">如下：</span></span><br />
+<pre>
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="972"># This is a comment.
+# This is a comment, too.
+# This is a comment, too.
+# I said that already.
+</span></span></pre>
+</div>
+</div>
+<div class="almost_half_cell" closure_uid_p7o7mw="186" id="gt-res-content">
+<div closure_uid_p7o7mw="185" dir="ltr" style="ZOOM: 1"><span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="982">这里</span><span closure_uid_p7o7mw="983">是</span><span closure_uid_p7o7mw="984">另一种形式</span><span closure_uid_p7o7mw="985">。</span><span closure_uid_p7o7mw="986">此</span><span closure_uid_p7o7mw="987">块注释</span><span closure_uid_p7o7mw="988">隐瞒</span><span closure_uid_p7o7mw="989">几行</span><span closure_uid_p7o7mw="990">解释</span><span closure_uid_p7o7mw="991">=begin</span><span closure_uid_p7o7mw="993">/</span><span closure_uid_p7o7mw="994">=end</span><span closure_uid_p7o7mw="995">：</span></span><br />
+<pre>
+<span a="undefined" class="short_text" closure_uid_p7o7mw="88" f="4" id="result_box" lang="zh-CN" wc="null"><span closure_uid_p7o7mw="995">=begin
+This is a comment.
+This is a comment, too.
+This is a comment, too.
+I said that already.
+=end
+</span></span></pre>
+</div>
+</div>
+
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

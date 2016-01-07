@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby哈希</title>
+		<meta name="Keywords" content=" "/>
+		<meta name="Description" content="哈希是这样一个键 - 值对的集合：“雇员”=>“工资”。它是一个数组类似，除了通过任何类型的对象，不是一个整数索引的任意键进行索引。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby哈希
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_hashes.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_hashes.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_hashes.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_hashes.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_syntax.html#ruby_syntax">Ruby语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_classes.html#ruby_classes">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_if_else.html#ruby_if_else">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_string.html#ruby_string">Ruby字符串</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_array.html#ruby_array">Ruby数组</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_hashes.html">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_input_output.html#ruby_input_output">Ruby文件 I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_exceptions.html#ruby_exceptions">Ruby异常处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_multithreading.html#ruby_multithreading">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby哈希(Hashe)</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						哈希是这样一个键 - 值对的集合：“雇员”=>“工资”。它是一个数组类似，除了通过任何类型的对象，不是一个整数索引的任意键进行索引。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	哈希是这样一个键 - 值对的集合：“雇员”=&gt;“工资”。它是一个数组类似，除了通过任何类型的对象，不是一个整数索引的任意键进行索引。
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以便在其中任一键或值遍历哈希看似随意，一般不会在插入顺序。如果您尝试访问一个不存在一个关键的哈希值，该方法将返回nil<i></i> 
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	创建哈希:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	阵列，有各种各样的方式来创建哈希。你可以创建一个新的类方法的空哈希:
+</p>
+<pre>months = Hash.new
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	您还可以使用新创建一个默认值，否则只是nil:
+</p>
+<pre>months = Hash.new( "month" )
+or
+months = Hash.new "month"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	当您访问任何一个哈希键有一个默认值，如果键或值不存在，访问哈希将返回默认值:
+</p>
+<pre><span></span>#!/usr/bin/ruby
+
+months = Hash.new( "month" )
+
+puts "#{months[0]}"
+puts "#{months[72]}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生结果如下:
+</p>
+<pre>month
+month
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这里是一个简单的方式创建和访问哈希的键/值:
+</p>
+<pre>#!/usr/bin/ruby
+
+H = Hash["a" =&gt; 100, "b" =&gt; 200]
+
+puts "#{H['a']}"
+puts "#{H['b']}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">这将产生结果如下</span>:
+</p>
+<pre>100
+200
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以使用任何一个键或值，甚至数组Ruby对象，所以下面的例子是一个有效的:
+</p>
+<pre>[1,"jan"] =&gt; "January"
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>哈希内建方法</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	我们需要有一个Hash对象的实例，调用哈希方法。正如我们已经看到，下面的方式来创建一个Hash对象的实例:
+</p>
+<pre>Hash[[key =&gt;|, value]* ] or
+
+Hash.new [or] Hash.new(obj) [or]
+
+Hash.new { |hash, key| block }
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将返回给定对象的填充一个新的哈希。现在我们可以使用创建的对象调用任何可用的实例方法。例如:
+</p>
+<pre>#!/usr/bin/ruby
+
+$, = ", "
+months = Hash.new( "month" )
+
+months = {"1" =&gt; "January", "2" =&gt; "February"}
+
+keys = months.keys
+
+puts "#{keys}"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生结果如下:
+</p>
+<pre>1, 2
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以下是公众的哈希方法（假设哈希是一个数组对象）:
+</p>
+<table border="1" cellpadding="5" cellspacing="5" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;" width="10%">
+				<span><span style="font-weight:normal;line-height:18px;"><span><span><span><span><span><span>编号 </span> </span> </span> </span> </span> </span> </span></span>
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span><span style="font-weight:normal;line-height:18px;"><span><span><span><span><span><span>方法及描述 </span> </span> </span> </span> </span> </span> </span></span>
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>1</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash == other_hash<br />
+测试是否两个散列都是平等的基础上，他们是否有相同数量的键 - 值对，键 - 值对是否符合相应的对每个哈希.<span></span><br />
+</span></span></span></span></span></span></span></span></span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>2</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.[key]<br />
+使用一键，引用了一个从哈希值。如果关键是没有找到，返回默认值.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>3</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.[key]=value<br />
+相关联的值给定键给出键的值<span></span>.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>4</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.clear<br />
+从hash清除所有键-值对.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>5</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.default(key = nil)<br />
+返回的哈希，如果没有设置默认值,&nbsp;默认值就nil.（[]返回一个默认值，如果该键不存在的散列.)</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>6</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.default = obj<br />
+设置为默认值哈希.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>7</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.default_proc<br />
+返回一个块，如果块创建哈希.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>8</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.delete(key) [or]<br />
+array.delete(key) { |key| block }<br />
+从哈希中删除键 - 值对的关键。如果使用块，返回一个块的结果，如果没有找到对。比较delete_if.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>9</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.delete_if { |key,value| block }<br />
+Deletes a key-value pair from&nbsp;hash&nbsp;for every pair the block evaluates to&nbsp;true.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>10</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.each { |key,value| block }<br />
+Iterates over&nbsp;hash, calling the block once for each key, passing the key-value as a two-element array.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>11</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.each_key { |key| block }<br />
+Iterates over&nbsp;hash, calling the block once for each key, passing&nbsp;key&nbsp;as a parameter.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>12</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.each_key { |key_value_array| block }<br />
+Iterates over&nbsp;hash, calling the block once for each&nbsp;key, passing the&nbsp;key&nbsp;and&nbsp;valueas parameters.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>13</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.each_key { |value| block }<br />
+Iterates over&nbsp;hash, calling the block once for each&nbsp;key, passing&nbsp;value&nbsp;as a parameter.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>14</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.empty?<br />
+Tests whether hash is empty (contains no key-value pairs), returning&nbsp;true&nbsp;orfalse.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>15</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.fetch(key [, default] ) [or]<br />
+hash.fetch(key) { | key | block }<br />
+Returns a value from&nbsp;hash&nbsp;for the given&nbsp;key. If the&nbsp;key&nbsp;can't be found, and there are no other arguments, it raises an&nbsp;IndexError&nbsp;exception; if&nbsp;default&nbsp;is given, it is returned; if the optional block is specified, its result is returned.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>16</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.has_key?(key) [or] hash.include?(key) [or]<br />
+hash.key?(key) [or] hash.member?(key)<br />
+Tests whether a given&nbsp;key&nbsp;is present in hash, returning&nbsp;true&nbsp;or&nbsp;false.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>17</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.has_value?(value)<br />
+Tests whether hash contains the given&nbsp;value.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>18</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.index(value)<br />
+Returns the&nbsp;key&nbsp;for the given&nbsp;value&nbsp;in hash,&nbsp;nil&nbsp;if no matching value is found.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>19</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.indexes(keys)<br />
+Returns a new array consisting of values for the given key(s). Will insert the default value for keys that are not found. This method is deprecated. Use select.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>20</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.indices(keys)<br />
+Returns a new array consisting of values for the given key(s). Will insert the default value for keys that are not found. This method is deprecated. Use select.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>21</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.inspect<br />
+Returns a pretty print string version of hash.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>22</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.invert<br />
+Creates a new&nbsp;hash, inverting&nbsp;keys&nbsp;and&nbsp;values&nbsp;from&nbsp;hash; that is, in the new hash, the keys from&nbsp;hash&nbsp;become values, and values become keys.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>23</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.keys<br />
+Creates a new array with keys from&nbsp;hash.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>24</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.length<br />
+Returns the size or length of&nbsp;hash&nbsp;as an integer.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>25</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.merge(other_hash) [or]<br />
+hash.merge(other_hash) { |key, oldval, newval| block }<br />
+Returns a new hash containing the contents of&nbsp;hash&nbsp;and&nbsp;other_hash, overwriting pairs in hash with duplicate keys with those from&nbsp;other_hash.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>26</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.merge!(other_hash) [or]<br />
+hash.merge!(other_hash) { |key, oldval, newval| block }<br />
+Same as merge, but changes are done in place.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>27</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.rehash<br />
+Rebuilds&nbsp;hash&nbsp;based on the current values for each&nbsp;key. If values have changed since they were inserted, this method reindexes&nbsp;hash.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>28</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.reject { |key, value| block }<br />
+Creates a new&nbsp;hash&nbsp;for every pair the&nbsp;block&nbsp;evaluates to&nbsp;true</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>29</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.reject! { |key, value| block }<br />
+Same as&nbsp;reject, but changes are made in place.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>30</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.replace(other_hash)<br />
+Replaces the contents of&nbsp;hash&nbsp;with the contents of&nbsp;other_ hash.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>31</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.select { |key, value| block }<br />
+Returns a new array consisting of key-value pairs from&nbsp;hash&nbsp;for which the&nbsp;blockreturns&nbsp;true.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>32</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.shift<br />
+Removes a key-value pair from&nbsp;hash, returning it as a two-element array.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>33</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.size<br />
+Returns the&nbsp;size&nbsp;or length of&nbsp;hash&nbsp;as an integer.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>34</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.sort<br />
+Converts&nbsp;hash&nbsp;to a two-dimensional array containing arrays of key-value pairs, then sorts it as an array.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>35</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.store(key, value)<br />
+Stores a key-value pair in&nbsp;hash.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>36</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.to_a<br />
+Creates a two-dimensional array from hash. Each key/value pair is converted to an array, and all these arrays are stored in a containing array.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>37</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.to_hash<br />
+返回哈希 (self).</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>38</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.to_s<br />
+Converts&nbsp;hash&nbsp;to an array, then converts that array to a string.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>39</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.update(other_hash) [or]<br />
+hash.update(other_hash) {|key, oldval, newval| block}<br />
+Returns a new hash containing the contents of&nbsp;hash&nbsp;and&nbsp;other_hash, overwriting pairs in&nbsp;hash&nbsp;with duplicate keys with those from&nbsp;other_hash.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>40</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.value?(value)<br />
+测试哈希是否包含给定值.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>41</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.values<br />
+Returns a new array containing all the values of&nbsp;hash.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>42</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>hash.values_at(obj, ...)<br />
+返回一个新数组，包含哈希值与给定的一个或多个键关联.</span></span> </span></span> </span></span> </span></span> </span></span></span> </span></span> </span></span></span> </span></span> </span></span> </span></span> </span></span>
+			</td>
+		</tr>
+	</tbody>
+</table>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

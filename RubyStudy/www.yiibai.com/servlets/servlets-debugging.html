@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<title>Servlets Debugging</title>
+		<meta name="Keywords" content="Servlets,Servlets Debugging,ServletsDebugging"/>
+		<meta name="Description" content="Servlets Debugging"/>
+		<!--//tutorial/base.view.html-->
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<link rel="stylesheet" href="http://www.yiibai.com/static/redactor/css/redactor.css" />
+		<script src="http://www.yiibai.com/static/redactor/redactor.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var buttons = ['formatting', '|', 'bold', 'italic', '|', 'button1'];
+				$('#comment_textarea').redactor({
+					focus: false, 
+					buttons: buttons, 					
+				});
+			});
+		</script>
+		<style>
+			table {
+				border: 1px solid #DDD;
+				border-collapse: separate;
+				border-left: 0;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				max-width: 90%;
+				background-color: transparent;
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			thead {
+				display: table-header-group;
+				vertical-align: middle;
+				border-color: inherit;
+				border-left: 1px solid #DDD;
+			}
+			th {
+				font-weight: bold;
+				border-left: 1px solid #DDD;
+				line-height: 28px;
+			}
+			tbody {
+				display: table-row-group;
+				vertical-align: middle;
+				border-color: inherit;
+			}
+			tr {
+				display: table-row;
+				vertical-align: inherit;
+				border-color: inherit;
+				border-left: 1px solid #DDD;
+			}
+			td {
+				padding: 8px;
+				line-height: 20px;
+				text-align: left;
+				vertical-align: top;
+				border-top: 1px solid #DDD;
+				border-left: 1px solid #DDD;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a> » <a href="index.html">Servlet教程</a> » 
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+						<li class="">
+							<a href="index.html" style="font-size:12pt;">Servlet教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+														<a href="servlets-overview.html">Servlets 概述</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-environment-setup.html">Servlets环境设置</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-life-cycle.html">Servlets Life Cycle</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-first-example.html">Servlets First Examples</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-form-data.html">Servlets Form Data</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-client-reques.html">Servlets Client HTTP Request</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-server-response.html">Servlets Server HTTP Response</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-http-status-codes.html">Servlets HTTP 1.1 Status Codes</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-writing-filters.html">Servlets Filters</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-exception-handling.html">Servlet Exception Handling</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-cookies-handling.html">Servlets Cookies Handling</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-session-tracking.html">Servlet Session Tracking</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-database-access.html">Servlets - Database Access</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-file-uploading.html">Servlet File Uploading</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-handling-date.html">Servlet Date Handling</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-page-redirec.html">Servlets Page Redirection</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-hits-counter.html">Servlets Page Hits Counter</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-auto-refres.html">Auto Page Refresh using Servlets</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-sending-email.html">Sending email using Servlets</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-packaging.html">Servlets Packaging</a>
+													</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+														<a href="servlets-debugging.html">Servlets Debugging</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-internationalization.html">Servlets Internationalization| i18n| l10n| Servlets Localization</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="../index.html">Servlets Quick Guide</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-useful-resources.html">Servlets Useful Resources, Sites and Books</a>
+													</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 760px;height:48px; padding: 2px 18px 2px 18px;text-align: left;border-bottom: 1px dashed #CCC;clear:both; ">
+						<h1 style="font-size: 13.5pt;width: 645px;float:left; overflow: hidden;">Servlets Debugging</h1>
+						<span style="float:left;padding: 18px;margin-left: 12px;"><a href="servlets-debugging.html#comment" title="我要去评论">评论</a>&nbsp;&nbsp;<a href="http://www.yiibai.com/index.php?r=tutorial/updateVersion&id=3640" title="完善此教程实例">编辑</a></span>
+						<input type="hidden" id="tid" value="3640"/>
+					</div>
+
+					<!--
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+					<script type="text/javascript">
+					<!--
+					google_ad_client ="ca-pub-1090193214637198";
+					/* yiibai上方 */
+					google_ad_slot = "7899237394";
+					google_ad_width = 728;
+					google_ad_height = 90;
+					//->
+					</script>
+					<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					-->
+					<div id="baidu-ad" style="float:left;clear:both; width: 800px;padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+						/*文章详细页上方628*90*/
+						var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+						
+					</div>
+					<div style="padding:8px 22px 8px 24px;" id="content">
+						<p>It is always difficult to testing/debugging a servlets. Servlets tend to involve a large amount of client/server interaction, making errors likely but hard to reproduce.</p>
+<p>Here are a few hints and suggestions that may aid you in your debugging.</p>
+<h2>System.out.println()</h2>
+<p>System.out.println() is easy to use as a marker to test whether a certain piece of code is being executed or not. We can print out variable values as well. Additionally:</p>
+<ul class="list">
+<li><p>Since the System object is part of the core Java objects, it can be used everywhere without the need to install any extra classes. This includes Servlets, JSP, RMI, EJB's, ordinary Beans and classes, and standalone applications.</p></li>
+<li><p>Compared to stopping at breakpoints, writing to System.out doesn't interfere much with the normal execution flow of the application, which makes it very valuable when timing is crucial.</p></li>
+</ul>
+<p>Following is the syntax to use System.out.println():</p>
+<pre class="prettyprint">
+System.out.println("Debugging message");
+</pre>
+<p>All the messages generated by above syntax would be logged in web server log file.</p>
+<h2>Message Logging:</h2>
+<p>It is always great idea to use proper logging method to log all the debug, warning and error messages using a standard logging method. I use <a href="http://www.yiibai.com/log4j/index.html">log4J</a> to log all the messages.</p>
+<p> The Servlet API also provides a simple way of outputting information by using the log() method as follows:</p>
+<pre class="prettyprint">
+// Import required java libraries
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class ContextLog extends HttpServlet {
+  public void doGet(HttpServletRequest request, 
+      HttpServletResponse response) throws ServletException,
+         java.io.IOException {
+    
+      String par = request.getParameter("par1");
+      //Call the two ServletContext.log methods
+      ServletContext context = getServletContext( );
+
+      if (par == null || par.equals(""))
+      //log version with Throwable parameter
+      context.log("No message received:",
+          new IllegalStateException("Missing parameter"));
+      else
+          context.log("Here is the visitor's message: " + par);
+      
+      response.setContentType("text/html");
+      java.io.PrintWriter out = response.getWriter( );
+      String title = "Context Log";
+      String docType =
+      "&lt;!doctype html public \"-//w3c//dtd html 4.0 " +
+      "transitional//en\"&gt;\n";
+      out.println(docType +
+        "&lt;html&gt;\n" +
+        "&lt;head&gt;&lt;title&gt;" + title + "&lt;/title&gt;&lt;/head&gt;\n" +
+        "&lt;body bgcolor=\"#f0f0f0\"&gt;\n" +
+        "&lt;h1 align=\"center\"&gt;" + title + "&lt;/h1&gt;\n" +
+        "&lt;h2 align=\"center\"&gt;Messages sent&lt;/h2&gt;\n" +
+        "&lt;/body&gt;&lt;/html&gt;");
+    } //doGet
+}
+</pre>
+<p>The ServletContext logs its text messages to the servlet container's log file. With Tomcat these logs are found in &lt;Tomcat-installation-directory&gt;/logs. </p>
+<p>The log files do give an indication of new emerging bugs or the frequency of problems. For that reason it's good to use the log() function in the catch clause of exceptions which should normally not occur.</p>
+<h2>Using JDB Debugger:</h2>
+<p>You can debug servlets with the same jdb commands you use to debug an applet or an application.</p>
+<p>To debug a servlet, we can debug sun.servlet.http.HttpServer, then watch as HttpServer executes servlets in response to HTTP requests we make from a browser. This is very similar to how applets are debugged. The difference is that with applets, the actual program being debugged is sun.applet.AppletViewer.</p>
+<p>Most debuggers hide this detail by automatically knowing how to debug applets. Until they do the same for servlets, you have to help your debugger by doing the following: </p>
+<ul class="list">
+<li><p>Set your debugger's classpath so that it can find sun.servlet.http.Http-Server and associated classes. </p></li>
+<li><p>Set your debugger's classpath so that it can also find your servlets and support classes, typically server_root/servlets and server_root/classes. </p></li>
+</ul>
+<p>You normally wouldn't want server_root/servlets in your classpath because it disables servlet reloading. This inclusion, however, is useful for debugging. It allows your debugger to set breakpoints in a servlet before the custom servlet loader in HttpServer loads the servlet.</p>
+<p>Once you have set the proper classpath, start debugging sun.servlet.http.HttpServer. You can set breakpoints in whatever servlet you're interested in debugging, then use a web browser to make a request to the HttpServer for the given servlet (http://localhost:8080/servlet/ServletToDebug). You should see execution stop at your breakpoints.</p>
+<h2>Using Comments:</h2>
+<p>Comments in your code can help the debugging process in various ways. Comments can be used in lots of other ways in the debugging process.</p>
+<p>The Servlet uses Java comments and single line (// ...) and multiple line (/* ... */) comments can be used to temporarily remove parts of your Java code. If the bug disappears, take a closer look at the code you just commented and find out the problem.</p>
+<h2>Client and Server Headers:</h2>
+<p>Sometimes when a servlet doesn't behave as expected, it's useful to look at the raw HTTP request and response. If you're familiar with the structure of HTTP, you can read the request and response and see exactly what exactly is going with those headers.</p>
+<h2>Important Debugging Tips:</h2>
+<p>Here is a list of some more debugging tips on servlet debugging:</p>
+<ul class="list">
+<li><p>Be aware that server_root/classes doesn't reload and that server_root/servlets probably does. </p></li>
+<li><p>Ask a browser to show the raw content of the page it is displaying. This can help identify formatting problems. It's usually an option under the View menu.</p></li>
+<li><p>Make sure the browser isn't caching a previous request's output by forcing a full reload of the page. With Netscape Navigator, use Shift-Reload; with Internet Explorer use Shift-Refresh.</p></li>
+<li><p>Verify that your servlet's init() method takes a ServletConfig parameter and calls super.init(config) right away. </p></li>
+</ul>
+					</div>
+					<!--// google ad -->
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+							<!--
+							google_ad_client ="ca-pub-1090193214637198";
+							/* yiibai下方 */
+							google_ad_slot = "6494738921";
+							google_ad_width = 728;
+							google_ad_height = 90;
+							//-->
+						</script>
+						<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+				</div><!--/span-->
+				<!--// demos -->
+				
+				<div class="span9" style="width:800px; margin:12px 8px 12px 12px; padding: 8px 22px 8px 24px; border: 1px solid #DDDDDD;float:right;">
+					<div style="width: 740px;height: 48px; margin:0px; padding: 0px; border-bottom: 1px solid #DDDDDD;">
+						<h2 style="float:left;font-size: 13pt;width:490px;">贡献/合作者</h2>
+					</div>
+					<div style="text-align: left;float:left;width:660px;">
+						正在开放中...
+					</div>
+				</div>
+
+				<div class="span9" style="width:800px; margin:12px 8px 12px 12px; padding:0px; float:right;">
+					<div style="float:left;width:780px;height: 160px;clear:both;">
+						<div style="float:left;width:40px;height: 160px;">
+							<img src="http://www.yiibai.com/static/ico/deault_user_icon.gif" width="32px;" height="32px;"/>
+						</div>
+						<div style="float:left;width:680px;height: 160px; margin-left:12px; clear:right;">
+							<form action="servlets-debugging.html" method="post">
+								<a name="comment"></a>
+								<textarea id="comment_textarea" name="comment_content" style="height: 120px;">&nbsp;</textarea>
+								<input type="button" class="btn btn-success" id="comment_submit" value="提交评论"/><span id="submit_tips" style="margin-left: 22px;padding-top: 2px;" class=""></span>
+							</form>
+						</div>
+					</div>
+					<div style="clear: both;padding:14px;">&nbsp;</div>
+					<h2 style="float:left;font-size: 13pt;width:780px;border-bottom: 1px solid #DDDDDD;">评论(0条)</h2>
+
+					<div style="width:780px;  float: left;">
+						<ul style="margin: 5px 0 15px 0;padding: 5px 0 5px 0px;">
+														<li style="border-bottom: 1px dashed #ddd; margin-top: 8px;margin-bottom: 8px;">
+								<p>
+									<span style="font-size: 10.5pt;">还没有评论！</span>
+								</p>
+							</li>
+														
+						</ul>
+					</div>
+				</div>
+
+			</div><!--/row-->
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		<!--
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+		-->
+	</body>
+	<script type="text/javascript" src="http://www.yiibai.com/static/js/tutorial.js"></script>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>MySQL ALTER命令</title>
+		<meta name="Keywords" content="MySQL ALTER命令实例代码教程 "/>
+		<meta name="Description" content="MySQL ALTER命令实例代码教程-教你怎么使用MySQL ALTER命令。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../mysql">MySQL</a>  » MySQL ALTER命令
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../mysql">MySQL</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../mysql">MySQL教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="http://www.yiibai.com/mysqlfunction">MySQL函数</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../mysql">MySQL教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="mysql_introduction.html#mysql_introduction">MySQL介绍</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_installation.html#mysql_installation">MySQL安装(Window&Linux)</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_administration.html#mysql_administration">MySQL管理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_php_syntax.html#mysql_php_syntax">MySQL PHP语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_connection.html#mysql_connection">MySQL数据库连接</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_create_database.html#mysql_create_database">MySQL创建数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_drop_database.html#mysql_drop_database">MySQL删除数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_select_database.html#mysql_select_database">MySQL选择数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_data_types.html#mysql_data_types">MySQL数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_create_tables.html#mysql_create_tables">MySQL创建表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_drop_tables.html#mysql_drop_tables">MySQL删除表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_insert_query.html#mysql_insert_query">MySQL插入查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_select_query.html#mysql_select_query">MySQL查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_where_clause.html#mysql_where_clause">MySQL WHERE子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_update_query.html#mysql_update_query">MySQL更新查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_delete_query.html#mysql_delete_query">MySQL删除DELETE</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_like_clause.html#mysql_like_clause">MySQL LIKE子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_sorting_results.html#mysql_sorting_results">MySQL结果集排序</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_using_joins.html#mysql_using_joins">MySQL连接Joins</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_null_values.html#mysql_null_values">MySQL处理NULL值</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_regexps.html#mysql_regexps">MySQL正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_transactions.html#mysql_transactions">MySQL事务</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="mysql_alter_command.html">MySQL ALTER命令</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_indexes.html#mysql_indexes">MySQL索引</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_temporary_tables.html#mysql_temporary_tables">MySQL临时表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_clone_tables.html#mysql_clone_tables">MySQL克隆表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_database_info.html#mysql_database_info">MySQL数据库信息</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_using_sequences.html#mysql_using_sequences">MySQL序列</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_handling_duplicates.html#mysql_handling_duplicates">MySQL处理重复</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_sql_injection.html#mysql_sql_injection">MySQL&SQL注入</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_database_export.html#mysql_database_export">MySQL导出备份方法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_database_import.html#mysql_database_import">MySQL导入恢复方法</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">MySQL ALTER命令</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						MySQL ALTER命令实例代码教程-教你怎么使用MySQL ALTER命令。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	MySQL的ALTER命令是非常有用的，当想改变表的名称，表的字段，或者如果要添加或删除一个现有的表中的列。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	让我们开始创建一个表名为testalter_tbl的用例：<b></b> 
+</p>
+<pre>root@host# mysql -u root -p password;
+Enter password:*******
+mysql&gt; use TUTORIALS;
+Database changed
+mysql&gt; create table testalter_tbl
+    -&gt; (
+    -&gt; i INT,
+    -&gt; c CHAR(1)
+    -&gt; );
+Query OK, 0 rows affected (0.05 sec)
+mysql&gt; SHOW COLUMNS FROM testalter_tbl;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| i     | int(11) | YES  |     | NULL    |       |
+| c     | char(1) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+</pre>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	丢弃，添加或重新定位字段：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	假设要删除一个现有的第i列从上面的MySQL表，那么使用DROP子句一起使用ALTER命令如下
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl  DROP i;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果该表中剩下唯一的一个字段，DROP命令是不起作用的。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要添加一列，使用“添加”ADD“指定的列定义。下面的语句恢复İ列的testalter_tbl
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl ADD i INT;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	testalter将包含相同的两列，当第一次创建表不会有相同的结构。这是因为新列添加到默认情况下，该表结束。即使ioriginally是第一列MYTBL，现在是最后一条：
+</p>
+<pre>mysql&gt; SHOW COLUMNS FROM testalter_tbl;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| c     | char(1) | YES  |     | NULL    |       |
+| i     | int(11) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	想指定的<span style="background-color:#FFFFFF;">表中的一列</span>位置，可以使用第一个它的第一列，，或ALTER COL_NAME到指示新列应该放在后COL_NAME。请尝试以下ALTER TABLE语句中，使用SHOW COLUMNS后，每个人都有不同的<span></span>影响：
+</p>
+<pre>ALTER TABLE testalter_tbl DROP i;
+ALTER TABLE testalter_tbl ADD i INT FIRST;
+ALTER TABLE testalter_tbl DROP i;
+ALTER TABLE testalter_tbl ADD i INT AFTER c;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	第一和AFTER符只能与ADD子句。这意味着，如果要重新定位现有的列在一个表中，必须先删除它，然后将它添加在新的位置。
+</p>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	更改列定义或名称：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要更改列的定义，修改或变更条款，连同ALTER命令。例如，要更改列c从CHAR(1)为CHAR(10)，这样做：
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl MODIFY c CHAR(10);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	CHANGE语法是有点不同。变更后的关键字，要更改的列的<span style="background-color:#FFFFFF;">名字</span>，然后指定新的定义，其中包括新的名称。试试下面的例子：
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl CHANGE i j BIGINT;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果现在使用转换j字段的BIGINT为int而不改变列名，该声明应该是：
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl CHANGE j j INT;
+</pre>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	ALTER TABLE的影响，NULL和默认值属性：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	当修改或更改列，也可以指定是否该列可以包含NULL值，它的默认值是什么。事实上，如果不这样做，MySQL会自动分配给这些属性的值。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是示例默认情况下，NOT NULL列的值将是100。
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl 
+    -&gt; MODIFY j BIGINT NOT NULL DEFAULT 100;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果不使用上面的命令，那么MySQL将填补所有的列中的NULL值。
+</p>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	更改列的默认值：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	可以<span style="background-color:#FFFFFF;">使用ALTER命令</span>更改<span style="background-color:#FFFFFF;">任何列的</span>默认值。试试下面的例子。
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl ALTER i SET DEFAULT 1000;
+mysql&gt; SHOW COLUMNS FROM testalter_tbl;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| c     | char(1) | YES  |     | NULL    |       |
+| i     | int(11) | YES  |     | 1000    |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	可以从任何一列中删除默认约束通过使用DROP子句一起使用ALTER命令。
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl ALTER i DROP DEFAULT;
+mysql&gt; SHOW COLUMNS FROM testalter_tbl;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| c     | char(1) | YES  |     | NULL    |       |
+| i     | int(11) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+</pre>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	更改表类型：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	可以使用ALTER命令及TYPE子句<span style="background-color:#FFFFFF;">一起使用</span>的修改表类型。试试下面的示例中，改变testalter_tbl 为MyISAM类型。<span></span> 
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要找出一个表的当前类型，使用SHOW TABLE STATUS语句。
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl TYPE = MYISAM;
+mysql&gt;  SHOW TABLE STATUS LIKE 'testalter_tbl'\G
+*************************** 1. row ****************
+           Name: testalter_tbl
+           Type: MyISAM
+     Row_format: Fixed
+           Rows: 0
+ Avg_row_length: 0
+    Data_length: 0
+Max_data_length: 25769803775
+   Index_length: 1024
+      Data_free: 0
+ Auto_increment: NULL
+    Create_time: 2007-06-03 08:04:36
+    Update_time: 2007-06-03 08:04:36
+     Check_time: NULL
+ Create_options:
+        Comment:
+1 row in set (0.00 sec)
+</pre>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	重命名表:
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要重命名表，使用ALTER TABLE语句中RENAME选项。试试下面的例子，重命名testalter_tbl为alter_tbl
+</p>
+<pre>mysql&gt; ALTER TABLE testalter_tbl RENAME TO alter_tbl;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	可以使用ALTER命令来创建和删除索引在MySQL文件。在下一章中，我们将看到此功能。
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

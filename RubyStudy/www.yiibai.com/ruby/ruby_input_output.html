@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby文件 I/O</title>
+		<meta name="Keywords" content=" "/>
+		<meta name="Description" content="Ruby提供了一整套的I/O相关的内核模块中实现的方法。所有的I / O方法都来源于IO类。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby文件 I/O
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_input_output.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_input_output.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_input_output.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_input_output.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_syntax.html#ruby_syntax">Ruby语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_classes.html#ruby_classes">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_if_else.html#ruby_if_else">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_string.html#ruby_string">Ruby字符串</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_array.html#ruby_array">Ruby数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_hashes.html#ruby_hashes">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_input_output.html">Ruby文件 I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_exceptions.html#ruby_exceptions">Ruby异常处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_multithreading.html#ruby_multithreading">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby文件操作I/O</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Ruby提供了一整套的I/O相关的内核模块中实现的方法。所有的I / O方法都来源于IO类。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Ruby提供了一整套的I / O相关的内核模块中实现的方法。所有的I / O方法都来源于类IO。<br />
+IO<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">类</span>提供所有的基本方法，如读，写，获取，readline时，getc和printf.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	本章将覆盖所有ithe基本I/O功能，在Ruby中，更多的功能，请引用一个Ruby的IO类<span></span><i></i>.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<i>puts</i>&nbsp;语句:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在前面的章节中，您指定的值到变量，然后打印输出使用了puts语句.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	puts语句指示的程序来显示存储在变量中的值。这将添加一个新行，在每行写入结束.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<pre>#!/usr/bin/ruby
+
+val1 = "This is variable one"
+val2 = "This is variable two"
+puts val1
+puts val2
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>This is variable one
+This is variable two
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<i>gets</i>&nbsp;语句:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	gets语句可用于任何输入，从用户称为stdin标准屏幕.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的代码显示了如何使用获得的声明。此代码将提示用户输入一个值，将存储在变量val，终于将stdout（标准输出）上打印.
+</p>
+<pre>#!/usr/bin/ruby
+
+puts "Enter a value :"
+val = gets
+puts val
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">这将产生以下结果</span>:
+</p>
+<pre>Enter a value :
+This is entered value
+This is entered value
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<i>putc</i>&nbsp;语句:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	不同于puts语句，输出到屏幕上的整个字符串，的putc可以用来输出一个字符.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的代码的输出仅仅是字符H:
+</p>
+<pre>#!/usr/bin/ruby
+
+str="Hello Ruby!"
+putc str
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">这将产生以下结果</span>:
+</p>
+<pre>H
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<i>print</i>&nbsp;语句:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	print语句是类似puts语句。唯一不同的是，puts到下一行，而与print光标定位在同一行上打印的内容后.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<pre>#!/usr/bin/ruby
+
+print "Hello World"
+print "Good Morning"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">这将产生以下结果</span>:
+</p>
+<pre>Hello WorldGood Morning
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	打开和关闭文件:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	到现在为止，您已经阅读和写作的标准输入和输出。现在，我们将看到如何发挥与实际的数据文件.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	<i>File.new</i>&nbsp;方法:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以创建一个文件对象，读，写，或同时使用File.new方法，根据模式字符串。最后可以使用File.close的方法来关闭该文件.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	语法:
+</h2>
+<pre>aFile = File.new("filename", "mode")
+   # ... process the file
+aFile.close
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	<i>File.open</i>&nbsp;方法:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以使用File.Open方法创建一个新的文件对象，并分配到一个文件，文件对象。然而，有一个的File.Open和File.new方法之间的差异。所不同的是File.Open方法可以用块，而你不能这样做的同时使用File.new方法.
+</p>
+<pre>File.open("filename", "mode") do |aFile|
+   # ... process the file
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这里是一个不同的模式打开一个文件列表:
+</p>
+<table cellpadding="5" cellspacing="5" border="1" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:592px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				模式
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				描述
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				r
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				只读模式. 文件指针放置在文件的开头,这是默认模式.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				r+
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				<span></span>读写模式。文件指针将会在文件的开头<span></span>.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				w
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				只写模式。如果该文件存在，覆盖该文件。如果该文件不存在，创建一个新的书面文件.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				w+
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				读写模式。如果该文件存在，将覆盖现有的文件。如果该文件不存在，创建一个新的文件读和写.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				a
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				只写模式。文件指针是在结束的文件，如果该文件存在。也就是说，该文件是在追加模式。如果该文件不存在，它创建了一个新的书面文件.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				a+
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				读写模式。文件指针是在结束的文件，如果该文件存在。在追加模式打开该文件。如果该文件不存在，它会创建一个新的文件阅读和写作.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	读和写文件:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	同样的方法，我们一直在使用“简单”的I / O可用于所有文件对象。因此，获取从标准输入中读取行，aFile.gets读取的文件对象aFile行.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	然而，I/O对象的访问方法提供了另外一组，以使我们的更轻松.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	<i>sysread</i>&nbsp;方法:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以使用该方法sysread读文件的内容。你可以在任何模式中打开文件时使用的方法sysread。例如 :
+</p>
+<pre>#!/usr/bin/ruby
+
+aFile = File.new("/var/www/yiibai.com/ruby/test", "r")
+if aFile
+   content = aFile.sysread(20)
+   puts content
+else
+   puts "Unable to open file!"
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这条语句将输出文件的前20个字符。文件指针将被放置在文件中的第21字符.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	<i>syswrite</i>&nbsp;方法:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以使用方法syswrite，写入到一个文件的内容。你需要在写入模式打开文件使用方法syswrite时。例如 :
+</p>
+<pre>#!/usr/bin/ruby
+
+aFile = File.new("/var/www/yiibai.com/ruby/test", "r+")
+if aFile
+   aFile.syswrite("ABCDEF")
+else
+   puts "Unable to open file!"
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	本声明将写入文件“ABCDEF的”.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	<i>each_byte</i>&nbsp;方法:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这种方法属于类文件。方法each_byte总是与一个块。请看下面的代码示例：:
+</p>
+<pre>#!/usr/bin/ruby
+
+aFile = File.new("/var/www/yiibai.com/ruby/test", "r")
+if aFile
+   aFile.syswrite("ABCDEF")
+   aFile.each_byte {|ch| putc ch; putc ?. }
+else
+   puts "Unable to open file!"
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	字符通过一个个变量ch，然后如下的屏幕上显示:
+</p>
+<pre>T.h.i.s. .i.s. .l.i.n.e. .o.n.e.
+.T.h.i.s. .i.s. .l.i.n.e. .t.w.o.
+.T.h.i.s. .i.s. .l.i.n.e. .t.h.r.e.e.
+.A.n.d. .s.o. .o.n.......
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	<i>IO.readlines</i>&nbsp;方法:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	类文件的类IO的一个子类。类IO也有一些方法可用于对文件进行操作.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	IO类的方法之一是IO.readlines。此方法返回行的文件的内容，下面的代码显示使用方法IO.readlines<i></i>:
+</p>
+<pre>#!/usr/bin/ruby
+
+arr = IO.readlines("/var/www/yiibai.com/ruby/test")
+puts arr[0]
+puts arr[1]
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在这段代码中，变量arr是一个数组。文件测试的每一行，将是一个数组arr的元素。因此，<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">arr</span>[0]将包含首行，而<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">arr</span>[1]将包含文件的第二行.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	<i>IO.foreach</i>&nbsp;方法:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这种方法也返回逐行输出。该方法之间的差异foreachand readlines方法的方法是该方法的foreach块。然而，不同的方法readlines方法，该方法的foreach不返回一个数组。例如:
+</p>
+<pre>#!/usr/bin/ruby
+
+IO.foreach("test"){|block| puts block}
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	此代码将通过的文件测试线，由线到可变块的内容，然后输出将显示在屏幕上.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	重命名和删除文件:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以重命名和删除文件与红宝石，重命名和删除方法编程。<br />
+以下是示例重命名现有的文件test1.txt:
+</p>
+<pre>#!/usr/bin/ruby
+
+# Rename a file from test1.txt to test2.txt
+File.rename( "test1.txt", "test2.txt" )
+
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以下是示例删除一个现有的文件test2.txt的<i></i>:
+</p>
+<pre>#!/usr/bin/ruby
+
+# Delete file test2.txt
+File.delete("text2.txt")
+
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	文件模式和所有权:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	使用掩码的的CHMOD方法改变的模式或文件的权限/访问列表：<br />
+以下是示例模式，以改变现有的文件test.txt一个掩码值:
+</p>
+<pre>#!/usr/bin/ruby
+
+file = File.new( "test.txt", "w" )
+file.chmod( 0755 )
+
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以下为表中，它可以帮助您选择不同的面具chmod的方法:
+</p>
+<table cellpadding="5" cellspacing="5" border="1" style="font-family:verdana, helvetica, arial, sans-serif;font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="25%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Mask
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0700
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				rwx mask for owner
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0400
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				r for owner
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0200
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				w for owner
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0100
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				x for owner
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0070
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				rwx mask for group
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0040
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				r for group
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0020
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				w for group
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0010
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				x for group
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0007
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				rwx mask for other
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0004
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				r for other
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0002
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				w for other
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				0001
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				x for other
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				4000
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Set user ID on execution
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				2000
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Set group ID on execution
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				1000
+			</td>
+			<td style="vertical-align:top;font-family:verdana, helvetica, arial, sans-serif;border:1px solid #AAAAAA;">
+				Save swapped text, even after use
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	文件查询:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的命令测试文件是否存在打开它之前:
+</p>
+<pre>#!/usr/bin/ruby
+
+File.open("file.rb") if File::exists?( "file.rb" )
+
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的命令查询文件是否是一个真正的文件:
+</p>
+<pre>#!/usr/bin/ruby
+
+# This returns either <i>true</i> or <i>false</i> File.file?( "text.txt" ) 
+
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的命令找出，是否给定的文件名是一个目录:
+</p>
+<pre>#!/usr/bin/ruby
+
+# a directory
+File::directory?( "/usr/local/bin" ) # =&gt; true
+
+# a file
+File::directory?( "file.rb" ) # =&gt; false
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">下面的命令找出，<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">是否给定的文件可读</span></span>, 可写或可执行:
+</p>
+<pre>#!/usr/bin/ruby
+
+File.readable?( "test.txt" )   # =&gt; true
+File.writable?( "test.txt" )   # =&gt; true
+File.executable?( "test.txt" ) # =&gt; false
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的命令查找该文件是否有大小为零或非:
+</p>
+<pre>#!/usr/bin/ruby
+
+File.zero?( "test.txt" )      # =&gt; true
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以下的命令查找返回文件的大小 :
+</p>
+<pre>#!/usr/bin/ruby
+
+File.size?( "text.txt" )     # =&gt; 1002
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的命令可以用来找出一个文件类型 :
+</p>
+<pre>#!/usr/bin/ruby
+
+File::ftype( "test.txt" )     # =&gt; file
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	ftype方法识别的文件类型返回下列之一：文件，目录，characterSpecial，blockSpecial，fifo，link，socket，或未知<span></span><i>.</i> 
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的命令可以用来发现，当一个文件被创建，修改或上次访问 :
+</p>
+<pre>#!/usr/bin/ruby
+
+File::ctime( "test.txt" ) # =&gt; Fri May 09 10:06:37 -0700 2008
+File::mtime( "text.txt" ) # =&gt; Fri May 09 10:44:44 -0700 2008
+File::atime( "text.txt" ) # =&gt; Fri May 09 10:45:01 -0700 2008
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	Ruby 中的目录:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	所有文件都包含在不同的目录，Ruby没有处理这些问题。而File类处理文件，目录与Dirclass处理.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	通过目录浏览:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	要改变在一个Ruby程序的目录，使用如下Dir.chdir。这个例子改变当前目录到/usr/bin中<i></i>.
+</p>
+<pre>Dir.chdir("/usr/bin")
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以用<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">Dir.pwd</span>找出哪些当前目录:
+</p>
+<pre>puts Dir.pwd # This will return something like /usr/bin
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以得到特定使用Dir.entries目录内的文件和目录列表<i></i>:
+</p>
+<pre>puts Dir.entries("/usr/bin").join(' ')
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<i>dir.entries返回一个数组指定的目录内的所有条目。 Dir.foreachprovides的相同的功能</i>:
+</p>
+<pre>Dir.foreach("/usr/bin") do |entry|
+   puts entry
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一个更简洁的方式是使用目录类数组的方法得到目录列表:
+</p>
+<pre>Dir["/usr/bin/*"]
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	创建一个目录:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Dir.mkdir可以用来创建目录:
+</p>
+<pre>Dir.mkdir("mynewdir")
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	您还可以用mkdir设置一个新的目录（不是一个已经存在的权限）:
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<b>注:</b>&nbsp;面具755设置权限，所有者，组，word[anyone] rwxr-XR-X，r=读，w=写，x=执行.
+</p>
+<pre>Dir.mkdir( "mynewdir", 755 )
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	删除目录:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Dir.delete可以用来删除一个目录。 Dir.unlink和Dir.rmdir执行完全相同的功能，并提供了方便.
+</p>
+<pre>Dir.delete("testdir")
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	创建文件和临时目录:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	临时文件，可能会创建程序的执行过程中短暂的，但不是永久存储的信息。<br />
+dir.tmpdir提供对当前系统的临时目录的路径，虽然方法不是默认可用的。到使Dir.tmpdir可用它有必要使用规定“tmpdir”.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	可以使用与File.join Dir.tmpdir，创建一个平台独立的临时文件<span></span>:
+</p>
+<pre>require 'tmpdir'
+   tempfilename = File.join(Dir.tmpdir, "tingtong")
+   tempfile = File.new(tempfilename, "w")
+   tempfile.puts "This is a temporary file"
+   tempfile.close
+   File.delete(tempfilename)
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	此代码创建一个临时文件，写入数据，并删除它。 Ruby的标准库还包括称为Tempfile必须是一个库，可以为您创建的临时文件:
+</p>
+<pre>require 'tempfile'
+   f = Tempfile.new('tingtong')
+   f.puts "Hello"
+   puts f.path
+   f.close
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>内建函数:</strong> 
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这里是完整的Ruby内建函数处理文件和目录列表:
+</p>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			<a href="http://www.yiibai.com/ruby/ruby_file_methods" target="_blank">文件类和方法</a>.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<a href="http://www.yiibai.com/ruby/ruby_dir_methods" target="_blank">目录类和方法</a>.
+		</p>
+	</li>
+</ul>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

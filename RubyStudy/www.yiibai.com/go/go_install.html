@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>安装Go语言开发环境</title>
+		<meta name="Keywords" content="安装Go语言开发环境实例代码 "/>
+		<meta name="Description" content="安装Go语言开发环境实例代码 - 详述Go语言安装所在需要的工作：安装C语言工具，安装Mercurial，更新go到新版本等操作实例。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../go">go语言教程</a>  » 安装Go语言开发环境
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../go">go语言教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../go">go语言</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../go">go语言</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="go_install.html">安装Go语言开发环境</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_start.html#go_start">Go语言入门</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_echo.html#go_echo">Go语言实现Echo</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_type.html#go_type">Go语言中类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_new_make.html#go_new_make">Go语言申请内存</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_const.html#go_const">Go语言常量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_io.html#go_io">Go语言I/O包</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_rotting_cats.html#go_rotting_cats">Go语言Rotting cats</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_Sorting.html#go_sorting">Go语言Sorting</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_Printf.html#go_printf">Go语言打印输出</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_sieve.html#go_sieve">Go语言生成素数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="go_Multiplexing.html#go_multiplexing">Go语言管道Multiplexing</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_multiplexing.html#go_multiplexing">Go语言-高效语言</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_comment.html#go_comment">Go语言注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_named.html#go_named">Go语言命名</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_fallthrough.html#go_fallthrough">Go语言分号</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_if_for_switch.html#go_if_for_switch">Go语言控制流</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_function.html#go_function">Go语言函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_data.html#go_data">Go语言数据</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_array.html#go_array">Go语言数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_slices.html#go_slices">Go语言Slices切片</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_maps.html#go_maps">Go语言Maps字典</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_printfs.html#go_printfs">Go语言打印printf</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_Append.html#go_append">Go语言Append</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_init_constants.html#go_init_constants">Go语言初始化</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_methods.html#go_methods">Go语言方法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_interface.html#go_interface">Go语言接口</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_generality.html#go_generality">Go语言Generality(泛化)</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_interface_and_method.html#go_interface_and_method">Go语言接口和方法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_Internal.html#go_internal">Go语言内置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_Complicating.html#go_complicating">Go语言并发</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_error_handle.html#go_error_handle">Go语言错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_webserver.html#go_webserver">Go语言Web服务器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_howto.html#go_howto">如何编写Go程序</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_web_programe.html#go_web_programe">Go语言编写Web程序</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_cplusplus.html#go_cplusplus">针对C++程序员指南</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_memery.html#go_memery">Go语言内存模型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_Synchronization.html#go_synchronization">Go语言同步(Synchronization)</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="http://www.yiibai.com/go/go_synchronize_error.html#go_synchronize_error">Go语言错误的同步方式</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">安装Go语言开发环境</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						安装Go语言开发环境实例代码 - 详述Go语言安装所在需要的工作：安装C语言工具，安装Mercurial，更新go到新版本等操作实例。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<h1 style="font-family:Simsun;">
+	安装go环境
+</h1>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	1、简介
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	Go是一个开源项目，采用<a href="http://golang.org/LICENSE">BSD授权协议</a>。 该文档介绍如何获取Go源代码，如何编译，以及如何运行Go程序。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	目前有两种方式使用Go语言。这里主要讲述如何使用Go专用的gc系列工具 （6g、8g等）。另一个可选的编译器是 基于gcc后端的 gccgo编译器。关于gccgo的细节清参考<a href="http://golang.org/doc/gccgo_install.html">安装并使用gccgo编译器</a>&nbsp;。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	Go编译器可以支持三种指令集。不同体系结构生成的代码质量有一些差别：
+</p>
+amd64 (a.k.a. x86-64); 6g,6l,6c,6a
+<p>
+	<br />
+</p>
+最成熟的实现，编译器在寄存器级别优化，可以生成高质量的目标代码（有时候gccgo可能更优）。
+<p>
+	<br />
+</p>
+386 (a.k.a. x86 or x86-32); 8g,8l,8c,8a
+<p>
+	<br />
+</p>
+amd64平台的的完整移植。
+<p>
+	<br />
+</p>
+arm (a.k.a. ARM); 5g,5l,5c,5a
+<p>
+	<br />
+</p>
+在完善中。目前只支持生成Linux的二进制文件，浮点支持比较匮乏，并且生成目标代码时还存在bug。还没有完全通过测试集，也没有任何优化。
+<p style="font-family:Simsun;font-size:medium;">
+	除了系统级的接口，go需要的运行时环境对各个平台都是一致的。包含 mark-and-sweep 垃圾内存自动回收（更高效的算法实现正在开发中）， 数组、字符串、智能堆栈 以及 goroutine 等。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	目前支持以下系统：FreeBSD、Linux、Native Client 和 OS X (a.k.a. Darwin)。Microsoft Windows 目前正在移植中， 功能还不完整。关于各个系统平台的详细说明，可以参考后面的 [环境变量] 一节。
+</p>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	2. 安装C语言工具
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	Go的工具链采用C语言编写，构建需要安装以下开发工具：
+</p>
+<ul style="font-family:Simsun;font-size:medium;">
+	<li>
+		GCC,
+	</li>
+	<li>
+		C语言标准库,
+	</li>
+	<li>
+		Bison,
+	</li>
+	<li>
+		make,
+	</li>
+	<li>
+		awk, 和
+	</li>
+	<li>
+		ed （编辑器）.
+	</li>
+</ul>
+<p style="font-family:Simsun;font-size:medium;">
+	对于 OS X 系统，以上工具是<a href="http://developer.apple.com/TOOLS/Xcode/">Xcode</a>的一部分。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	对于 Ubuntu/Debian 系统，运行安装命令：&nbsp;sudo apt-get install bison ed gawk gcc libc6-dev make
+</p>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	3. 安装Mercurial
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	在进行后面的操作之前需要安装Mercurial版本管理系统（可以输出hg名字检测是否安装）。安装输入以下命令：
+</p>
+<pre>  sudo easy_install mercurial
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	对于 Ubuntu/Debian 系统，easy_install 命令可以用&nbsp;apt-get install python-setuptools python-dev build-essential&nbsp;安装。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	如果上述命令安装失败的话，还可以从&nbsp;<a href="http://mercurial.selenic.com/wiki/Download">Mercurial Download</a>&nbsp;下载。
+</p>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	4. 获取代码
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	以下命令会创建一个go目录。切换到相应目录，并且确保当前位置不存在go目录，运行命令：
+</p>
+<pre>  $ hg clone -r release https://go.googlecode.com/hg/ go</pre>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	5. 安装Go
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	编译go环境：
+</p>
+<pre>  $ cd go/src
+  $ ./all.bash
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	编译完成后，结尾会打印以下信息。
+</p>
+<pre>  --- cd ../test
+  
+  ---
+  Installed Go for linux/amd64 in /home/you/go.
+  Installed commands in /home/you/go/bin.
+  *** You need to add /home/you/go/bin to your $PATH. ***
+  The compiler is 6g.
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	其中N对于不同的版本会有差异，表示没有通过测试的数目。
+</p>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	6. 编写程序
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	以file.go代码为例，用以下命令编译：
+</p>
+<pre>  $ 6g file.go
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	6g是针对amd64指令的编译器，它的输出文件为 file.6。其中 ‘6’ 表示文件是 amd64指令的输出文件。 如果是386和arm 处理器，后缀则为&nbsp;8&nbsp;和&nbsp;5。 也就是说，如果你用的是386处理器，那么应该用8g命令编译， 输出的文件为file.8。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	然后用以下命令连接：
+</p>
+<pre>  $ 6l file.6
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	运行程序：
+</p>
+<pre>  $ ./6.out
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	一个完整的例子：
+</p>
+<pre>  $ cat &gt;hello.go &lt;&lt;EOF
+  package main
+  
+  import "fmt"
+  
+  func main() {
+          fmt.Printf("hello, world\n")
+  }
+  EOF
+  $ 6g hello.go
+  $ 6l hello.6
+  $ ./6.out
+  hello, world
+  $
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	在连接的时候，没有必要列出hello.6引用的包（这里用到了fmt包）。 连接器（这里是6l）会自动从hello.6文件获取包的引用信息。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	如果是编译更复杂的过程，那么可能需要使用Makefile。相关的例子可以 参考&nbsp;$GOROOT/src/cmd/godoc/Makefile&nbsp;和&nbsp;$GOROOT/src/pkg/*/Makefile。
+</p>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	7. 进一步学习
+</h2>
+<ul style="font-family:Simsun;font-size:medium;">
+	<li>
+		开始阅读&nbsp;<a href="http://golang.org/doc/go_tutorial.html">Go语言入门</a>&nbsp;教程。
+	</li>
+	<li>
+		参考&nbsp;<a href="http://golang.org/doc/codelab/wiki/">Wiki Codelab</a>&nbsp;编写一个web程序。
+	</li>
+	<li>
+		阅读&nbsp;<a href="http://golang.org/doc/effective_go.html">Effective Go</a> 
+	</li>
+	<li>
+		阅读&nbsp;<a href="http://golang.org/doc/docs.html">Go语言文档</a> 
+	</li>
+</ul>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	8. 更新go到新版本
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	当有新版本发布的时候，会在<a href="http://groups.google.com/group/golang-nuts">Go Nuts</a>邮件列表中通知。可以用以下命令获取最新的发布版本：
+</p>
+<pre>  $ cd go/src
+  $ hg pull
+  $ hg update release
+  $ ./all.bash</pre>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	9. 社区资源
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	在&nbsp;<a href="http://freenode.net/">Freenode</a>&nbsp;IRC 上，可能有很多#go-nuts的开发人员和用户，你可以获取即时的帮助。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	还可以访问Go语言的官方邮件列表&nbsp;<a href="http://groups.google.com/group/golang-nuts">Go Nuts</a>。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	Bug可以在&nbsp;<a href="http://code.google.com/p/go/issues/list">Go issue tracker</a>&nbsp;提交。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	对于开发Go语言用户，有令一个专门的邮件列表&nbsp;<a href="http://groups.google.com/group/golang-checkins">golang-checkins</a>。 这里讨论的是Go语言仓库代码的变更。
+</p>
+<p style="font-family:Simsun;font-size:medium;">
+	如果是中文用户，请访问：<a href="http://bbs.golang-china.org/">Go语言中文论坛</a>。
+</p>
+<span style="font-family:Simsun;font-size:medium;line-height:normal;background-color:#FFFFFF;"></span> 
+<h2 style="font-family:Simsun;">
+	10. 环境变量
+</h2>
+<p style="font-family:Simsun;font-size:medium;">
+	Go编译器需要三个必须的环境变量和一个可选的环境变量。环境变量在.bashrc 或其他配置文件中设置。
+</p>
+$GOROOT
+<p>
+	<br />
+</p>
+Go安装包的根目录。通常是放在$HOME/go，当然也可以是其他位置。
+<p>
+	<br />
+</p>
+$GOOS and 和 $GOARCH
+<p>
+	<br />
+</p>
+这两个环境变量表示目标代码的操作系统和CPU类型。$GOOS选项有linux、 freebsd、darwin (Mac OS X 10.5 or 10.6) 和 nacl (Chrome的Native Client接口，还未完成)。$GOARCH的 选项有amd64 (64-bit x86，目前最成熟)、386 (32-bit x86)、 和arm (32-bit ARM，还未完成)。下面是$GOOS和 $GOARCH的可能组合：
+<p>
+	<br />
+</p>
+<pre>  $GOOS       $GOARCH	
+  darwin      386
+  darwin      amd64
+  freebsd     386
+  freebsd     amd64
+  linux       386
+  linux       amd64
+  linux       arm          incomplete
+  nacl        386
+  windows     386          incomplete
+</pre>
+<p>
+	<br />
+</p>
+$GOBIN (optional) （可选）
+<p>
+	<br />
+</p>
+指明用于存放go的二进制程序目录。如果是没设置$GOBIN环境变量， 则默认是安装在$HOME/bin。如果设置了该变量，需要确保$PATH 变量也包含这个路径，这样编译器可以找到正确的执行文件。
+<p>
+	<br />
+</p>
+$GOARM (optional, arm, default=6)
+<p>
+	<br />
+</p>
+ARM处理器（待补充）。
+<p style="font-family:Simsun;font-size:medium;">
+	需要说明的是$GOARCH和$GOOS环境变量表示的是目标代码 运行环境，和当前使用的平台是无关的。这个对于交叉编译是很方便的。在.bashrc文件中设置以下环境变量：
+</p>
+<pre>  export GOROOT=$HOME/go
+  export GOARCH=amd64
+  export GOOS=linux
+  export PATH=.:$PATH:$GOBIN
+</pre>
+<p style="font-family:Simsun;font-size:medium;">
+	检查是否能正常使用:
+</p>
+<pre>  source ~/.bashrc
+  cd ~
+  8g -V</pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

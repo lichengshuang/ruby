@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl循环</title>
+		<meta name="Keywords" content="Perl循环语句while,for,until,foreach，实例，使用例子教 "/>
+		<meta name="Description" content="Perl循环语句while,for,until,foreach，实例，使用例子教程，Perl条件语句if和unless，它们允许你控制脚本的执行。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl循环
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="perl_introduction.html#perl_introduction">Perl简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_syntax.html#perl_syntax">Perl语法概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_variables.html#perl_variables">Perl变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_scalars.html#perl_scalars">Perl标量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_arrays.html#perl_arrays">Perl数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_hashes.html#perl_hashes">Perl哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_special_variables.html#perl_special_variables">Perl特殊变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_conditions.html#perl_conditions">Perl条件语句</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_loops.html">Perl循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_operators.html#perl_operators">Perl内置操作符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_files.html#perl_files">Perl文件I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_regular_expression.html#perl_regular_expression">Perl正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_subroutines.html#perl_subroutines">Perl子例程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_format.html#perl_format">Perl格式-报表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_error_handeling.html#perl_error_handeling">Perl错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_coding_standard.html#perl_coding_standard">Perl编程标准</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl循环</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl循环语句while,for,until,foreach，实例，使用例子教程，Perl条件语句if和unless，它们允许你控制脚本的执行。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;">
+	Perl支持四个主循环类型：
+</p>
+<ol>
+	<li>
+		<p style="text-align:justify;">
+			while
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			for
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			until
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			foreach
+		</p>
+	</li>
+</ol>
+<p style="text-align:justify;">
+	在每一种情况下，继续执行循环，直到表达计算值发生变化。
+</p>
+<ul>
+	<li>
+		表达式的值为true时，一个<strong><em>while</em></strong>循环<span>执行</span>继续进行。
+	</li>
+	<li>
+		<strong><em>until </em></strong>循环执行，而循环的表达式是假的（false），只有停止时表达式计算为一个真值(true)。
+	</li>
+	<li>
+		列表形式和<strong><em>foreach</em></strong>循环的特殊情况。他们继续下去，直到结束为止所提供的列表。
+	</li>
+</ul>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	while循环
+</h1>
+<p style="text-align:justify;">
+	while循环有三种形式：
+</p>
+<pre>while EXPRLABEL
+while (EXPR) BLOCKLABEL
+while (EXPR) BLOCK continue BLOCK
+</pre>
+<p style="text-align:justify;">
+	在第一种形式，表达的是首先计算，然后它适用的声明被求值。例如，以下行增加了<span>$linecount的值和</span>我们将继续从一个给定的文件中读取行：
+</p>
+<p style="text-align:justify;">
+	例如，以下行增加了$linecount的值和我们将继续从一个给定的文件中读取行：
+</p>
+<pre>$linecount++ while ();</pre>
+<p style="text-align:justify;">
+	要创建一个循环，先执行语句，然后测试一个表达式，你需要结合起来，而前面执行{}语句。例如：
+</p>
+<pre>do
+{
+   $calc += ($fact*$ivalue);
+} while $calc &lt;100;
+</pre>
+<p style="text-align:justify;">
+	在这种情况下，首先执行的代码块，条件表达式只在每次循环结束时计算。
+</p>
+<p style="text-align:justify;">
+	第二个while循环的形式反复执行代码块由于条件表达式的结果是真的(<em><strong>true</strong></em>)。例如，您可以重写前面的例子：
+</p>
+<pre>while($calc &lt; 100)
+{
+   $calc += ($fact*$ivalue);
+}
+</pre>
+<p style="text-align:justify;">
+	<span></span>主块主要用于为每个迭代执行一个给定的语句（或语句）后<span>continue块<span>立即执行</span></span>，不论怎样终止当前迭代方法。这是某种相当于循环：
+</p>
+<pre>{
+   my $i = 0;
+   while ($i &lt;100)
+   { ... }
+   continue
+   {
+      $i++;
+   }
+}
+
+This is equivalent to 
+for (my $i = 0; $i &lt; 100; $i++)
+{ ... }
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	for循环
+</h1>
+<p style="text-align:justify;">
+	循环基本上是一个while循环重新计算原有的条件表达式使用一个额外的表达。基本格式是：
+</p>
+<pre>LABEL for (EXPR; EXPR; EXPR) BLOCK
+</pre>
+<p style="text-align:justify;">
+	第一个expr是初始化 - 变量值在循环开始之前迭代。第二是要作为一个测试循环的每次迭代执行的表达。第三个表达式为每个迭代执行，应该是一个循环变量修饰符。
+</p>
+<p style="text-align:justify;">
+	因此，你可以写一个循环来遍历类似下面100次：
+</p>
+<pre>for ($i=0;$i&lt;100;$i++)
+{
+...
+}
+</pre>
+<p style="text-align:justify;">
+	可以放入多个变量的表达式，使用标准的列表操作符（逗号）：
+</p>
+<pre>for ($i=0, $j=0;$i&lt;100;$i++,$j++)
+</pre>
+<p style="text-align:justify;">
+	你可以创建一个类似这样的无限循环：
+</p>
+<pre>for(;;)
+{
+...
+}
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	until循环
+</h1>
+<p style="text-align:justify;">
+	while循环相反的是，until循环<span>仅在表达式返回假，</span>计算条件表达式并重申过的循环。一旦表达式返回true，循环结束。
+</p>
+<p style="text-align:justify;">
+	在一个do.until循环的案例下，条件表达式只计算在代码块的结束。<span><strong><em>until</em></strong></span>（表达式）块循环，在计算表达式之前块执行。使用<span><em><strong>until</strong></em></span>循环，你可以重写前面的例子：
+</p>
+<pre>do
+{
+  $calc += ($fact*$ivalue);
+} until $calc &gt;= 100;
+
+This is equivalent to 
+
+do
+{
+  $calc += ($fact*$ivalue);
+} while $calc &lt;100;
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>foreach循环</strong> 
+</h1>
+<p style="text-align:justify;">
+	最后的循环类型是foreach循环中，其中有一个类似这样的格式：
+</p>
+<pre>LABEL foreach VAR (LIST) BLOCK
+LABEL foreach VAR (LIST) BLOCK continue BLOCK
+</pre>
+<p style="text-align:justify;">
+	使用for循环，你可以遍历使用列表：
+</p>
+<pre>for ($index=0;$index&lt;@months;$index++)
+{
+   print "$months[$index]\n";
+}
+</pre>
+<p style="text-align:justify;">
+	这是混乱的，因为你手动选择从数组的单个元素和使用一个额外的变量$index提取信息。使用foreach循环，可以简化这一过程：
+</p>
+<pre>foreach (@months)
+{
+   print "$_\n";
+}
+</pre>
+<p style="text-align:justify;">
+	甚至可以被用来foreach循环遍历哈希，为您提供返回值或从列表的哈希键列表：
+</p>
+<pre>foreach $key (keys %monthstonum)
+{
+   print "Month $monthstonum{$key} is $key\n";
+}
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>标签循环</strong> 
+</h1>
+<p style="text-align:justify;">
+	标签可应用于任何块，但它们使的在循环最有意义的。由您给定循环<span>名称</span>，使闭环控制关键字指定操作，应适用于这样循环。标记循环的格式是：
+</p>
+<pre>LABEL: loop (EXPR) BLOCK ...
+</pre>
+<p style="text-align:justify;">
+	例如，标签循环：
+</p>
+<pre>ITERATE: for (my $i=1; $i&lt;100; $i++)
+{
+   print "Count: $i\n";
+}
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>循环控制</strong><strong> - 下一步, 上一步和重做</strong> 
+</h1>
+<p style="text-align:justify;">
+	有三个循环控制关键字: <em>next, last, and redo.</em> 
+</p>
+<p style="text-align:justify;">
+	<b><em>next&nbsp;</em></b>关键字跳过余下的代码块，强制循环进行循环中的下一个值。例如：
+</p>
+<pre>while (&lt;DATA&gt;)
+{
+   next if /^#/;
+}
+</pre>
+<p style="text-align:justify;">
+	上面的代码将跳过文件中的行，如果他们与一个hash符号开始。如果有一个continue块，它执行之前继续执行下一轮循环。<br />
+<strong><em>last</em></strong>关键字完全结束循环，跳过代码块中的剩余的语句，以及循环丢弃。因此，最后的关键字与C和Shellscript break关键字相同。例如：
+</p>
+<p style="text-align:justify;">
+	<b></b> 
+</p>
+<pre>while ()
+{
+   last if ($found);
+}</pre>
+<p style="text-align:justify;">
+	将退出循环，如果发现$found的值是真的（true），该文件的末尾是否实际上已达到或没有。不执行continue块。
+</p>
+<p style="text-align:justify;">
+	<strong><em>redo</em></strong>关键字重新执行不重新计算循环的条件语句的代码块。这将跳过余下的代码块和<em><strong>continue</strong></em>块之前重新执行主代码块。例如，下面的代码会从文件中读取下一行，如果当前行以反斜杠终止：
+</p>
+<pre>while(&lt;DATA&gt;)
+{
+   if (s#\\$#)
+   {
+      $_ .= &lt;DATA&gt;;
+      redo;
+   }
+}
+</pre>
+<p style="text-align:justify;">
+	下面是一个例子展示如何在内部和外部的循环使用标签：
+</p>
+<pre>OUTER:
+   while(&lt;DATA&gt;)
+   {
+      chomp;
+      @linearray=split;
+      foreach $word (@linearray)
+      {
+         next OUTER if ($word =~ /next/i)
+      }
+   }
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>goto语句</strong> 
+</h1>
+<p style="text-align:justify;">
+	有三种基本形式：<b>goto LABEL, goto EXPR&nbsp;</b>和&nbsp;<b>goto &amp;NAME，</b>在每一种情况下，执行从当前位置到目的地。
+</p>
+<p style="text-align:justify;">
+	在GOTO标签的情况下，停止执行在当前点和恢复点指定的标签。
+</p>
+<p style="text-align:justify;">
+	<b>goto &amp;NAME</b><span>&nbsp;语句更为复杂。它允许你指定的子程序，而不是取代与当前执行的子程序调用。</span> 
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

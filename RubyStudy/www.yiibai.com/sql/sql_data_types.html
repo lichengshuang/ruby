@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>SQL数据类型</title>
+		<meta name="Keywords" content="SQL数据类型实例代码教程 "/>
+		<meta name="Description" content="SQL数据类型实例代码教程 - SQL数据类型是一个属性，该属性指定的任何对象的数据类型。在SQL中的每一列，变量和表达式相关的数据类型。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../sql">SQL教程</a>  » SQL数据类型
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">SQL教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">高级SQL</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="functions">SQL函数</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">SQL学习有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">SQL教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="sql_overview.html#sql_overview">SQL概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_rdbms_concepts.html#sql_rdbms_concepts">SQL RDBMS概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_databases.html#sql_databases">SQL 数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_syntax.html#sql_syntax">SQL语法</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="sql_data_types.html">SQL数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_operators.html#sql_operators">SQL运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_expressions.html#sql_expressions">SQL表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_create_database.html#sql_create_database">SQL创建数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_drop_database.html#sql_drop_database">SQL DROP或删除数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_select_database.html#sql_select_database">SQL选择数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_create_table.html#sql_create_table">SQL创建表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_drop_table.html#sql_drop_table">SQL丢弃或删除表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_insert_query.html#sql_insert_query">SQL插入查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_select_query.html#sql_select_query">SQL SELECT查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_where_clause.html#sql_where_clause">SQL WHERE子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_and_or_clauses.html#sql_and_or_clauses">SQL AND和OR运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_update_query.html#sql_update_query">SQL UPDATE查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_delete_query.html#sql_delete_query">SQL DELETE查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_like_clause.html#sql_like_clause">SQL LIKE子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_top_clause.html#sql_top_clause">SQL TOP, LIMIT或ROWNUM</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_order_by.html#sql_order_by">SQL ORDER BY子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_group_by.html#sql_group_by">SQL GROUP BY子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_distinct_keyword.html#sql_distinct_keyword">SQL DISTINCT关键字</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_sorting_results.html#sql_sorting_results">SQL结果排序</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="sql_quick_guide.html#sql_quick_guide">SQL快速指南</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">SQL数据类型</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						SQL数据类型实例代码教程 - SQL数据类型是一个属性，该属性指定的任何对象的数据类型。在SQL中的每一列，变量和表达式相关的数据类型。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	SQL数据类型是一个属性，该属性指定的任何对象的数据类型。在<a href="../sql" target="_blank">SQL</a>中的每一列，变量和表达式相关的数据类型。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在创建表时，你会使用这些数据类型。会根据需要为表列中选择一个特定的数据类型。<br />
+SQL Server提供的数据类型供您使用的六大类：
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	精确数字数据类型：
+</h2>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				数据类型
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				FROM
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				TO
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				bigint
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-9,223,372,036,854,775,808
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				9,223,372,036,854,775,807
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				int
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-2,147,483,648
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				2,147,483,647
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				smallint
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-32,768
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				32,767
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				tinyint
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				0
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				255
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				bit
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				0
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				1
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				decimal
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-10^38 +1
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				10^38 .1
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				numeric
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-10^38 +1
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				10^38 .1
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				money
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-922,337,203,685,477.5808
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				+922,337,203,685,477.5807
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				smallmoney
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-214,748.3648
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				+214,748.3647
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	近似数值数据类型：
+</h2>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				DATA TYPE
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				FROM
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				TO
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				float
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-1.79E + 308
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				1.79E + 308
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				real
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-3.40E + 38
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				3.40E + 38
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	日期和时间数据类型：
+</h2>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:bold;line-height:normal;background-color:#CDCDCD;">数据类型</span> 
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				FROM
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				TO
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				datetime<br />
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Jan 1, 1753
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Dec 31, 9999
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				smalldatetime
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Jan 1, 1900
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Jun 6, 2079
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				date
+			</td>
+			<td colspan="2" style="vertical-align:top;border:1px solid #AAAAAA;">
+				Stores a date like June 30, 1991
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				time
+			</td>
+			<td colspan="2" style="vertical-align:top;border:1px solid #AAAAAA;">
+				Stores a time of day like 12:30 P.M.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<b>注:</b>&nbsp;在此日期时间3.33毫秒精度为smalldatetime有1分钟的准确性。
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	字符串数据类型：
+</h2>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="20%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:bold;line-height:normal;background-color:#CDCDCD;">数据类型</span> 
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				FROM
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				TO
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				char
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				char
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 8,000 characters.( Fixed length non-Unicode characters)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				varchar
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				varchar
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum of 8,000 characters.(Variable-length non-Unicode data).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				varchar(max)
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				varchar(max)
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 231characters, Variable-length non-Unicode data (SQL Server 2005 only).
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				text
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				text
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Variable-length non-Unicode data with a maximum length of 2,147,483,647 characters.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	Unicode字符串数据类型：
+</h2>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="30%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:bold;line-height:normal;background-color:#CDCDCD;">数据类型</span> 
+			</th>
+			<th width="70%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:bold;line-height:normal;background-color:#CDCDCD;">描述</span> 
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				nchar
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 4,000 characters.( Fixed length Unicode)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				nvarchar
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 4,000 characters.(Variable length Unicode)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				nvarchar(max)
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 231characters (SQL Server 2005 only).( Variable length Unicode)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				ntext
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 1,073,741,823 characters. ( Variable length Unicode )
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	二进制数据类型：
+</h2>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="30%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:bold;line-height:normal;background-color:#CDCDCD;">数据类型</span> 
+			</th>
+			<th width="70%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				描述
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				binary
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 8,000 bytes(Fixed-length binary data )
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				varbinary
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 8,000 bytes.(Variable length binary data)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				varbinary(max)
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 231 bytes (SQL Server 2005 only). ( Variable length Binary data)
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				image
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Maximum length of 2,147,483,647 bytes. ( Variable length Binary Data)
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	其他数据类型：
+</h2>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="30%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:normal;line-height:18px;"><span><span style="background-color:#CDCDCD;">数据类型</span></span> </span> 
+			</th>
+			<th width="70%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:normal;line-height:18px;"><span><span style="background-color:#CDCDCD;">描述</span></span> </span> 
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>sql_variant</span></span> </span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>存储各种SQL Server支持的数据类型值，除了text，ntext，和时间戳</span></span></span></span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>timestamp</span></span> </span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>存储一个数据库范围内的唯一号码得到更新，每一次一行得到更新</span></span> </span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>uniqueidentifier</span></span> </span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>存储一个全局唯一标识符（GUID）</span></span> </span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>xml</span></span> </span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>存储XML数据。可以将XML实例存储在一列或变量（只在SQL Server 2005）</span></span></span></span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>cursor</span></span> </span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>引用一个游标对象</span></span> </span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><span>table</span></span> </span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span>引用一个游标对象<br />
+</span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

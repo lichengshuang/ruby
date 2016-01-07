@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>系统提示 - 易百教程</title>
+		<meta name="description" content=""/>
+		<meta name="author" content=""/>
+		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript" src="static/js/jquery.js"></script>
+		<script type="text/javascript" src="static/js/bootstrap-modal.js"></script>
+		<link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			var url='/index.php?r=login&gourl=http://www.yiibai.com/ruby';
+			setTimeout("window.location.href='"+url+"';", 3000);
+		</script>
+	</head>
+	<body>
+		<div class="header">
+	<a href="index.html" class="logo"> <img src="static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="index.php?r=login" class="user-login">登陆</a>
+	<a href="index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="container" style="">
+			<div class="mini-layout" style="height: 245px;">
+				<input type="hidden" name="cate_id" id="cate_id"/>
+				<fieldset>
+					<legend>
+						系统提示 
+					</legend>
+					<p style="text-align: center; color:#FF9600">
+						<br/>
+						<br/>
+						<span style="font-size: 14pt;">登陆才能发起教程文章分享</span><br/>
+						<br/>
+						
+						<br/>
+						<br/>
+						<a href="index.php?r=tutorial%252Fcreate" style="margin-top:32px;">如果没有反应，请点击这里跳转！</a>
+					</p>
+				</fieldset>
+			</div>
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="static/img/contact_mail.png"></span>	
+</div>
+
+	</body>
+</html>

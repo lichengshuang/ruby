@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+	<head>
+		<title>登陆 - 易百教程</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="zh-CN" />
+		<meta name="keywords" content=""/>
+		<meta name="description" content="" />
+		<script src="static/js/jquery.js"></script>
+		<link rel="stylesheet" href='static/css/bootstrap.css'/>
+		<link rel="stylesheet" href='static/css/tutorial.css'/>
+		<style type="text/css">
+			/* Custom container */
+			.container-narrow {
+				margin: 0 auto;
+				max-width: 700px;
+			}
+			.container-narrow > hr {
+				margin: 14px 0;
+			}
+
+			/* Main marketing message and sign up button */
+			.jumbotron {
+				margin: 60px 0;
+				text-align: center;
+			}
+
+			.jumbotron .btn {
+				font-size: 21px;
+				padding: 14px 24px;
+			}
+
+			/* Supporting marketing content */
+			.marketing {
+				margin: 60px 0;
+			}
+			.marketing p + h4 {
+				margin-top: 28px;
+			}
+			.form-signin {
+				max-width: 900px;
+				padding: 19px 29px 29px;
+				margin: 0 auto 20px;
+				background-color: #fff;
+				border: 1px solid #e5e5e5;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+				-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+				box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			}
+			.form-signin .form-signin-heading, .form-signin .checkbox {
+				margin-bottom: 10px;
+			}
+			.form-signin input[type="text"], .form-signin input[type="password"] {
+				font-size: 16px;
+				height: auto;
+				margin-bottom: 15px;
+				padding: 7px 9px;
+			}
+			.error-tips {
+				color: #B94A48;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-narrow">
+			<div class="masthead" style="margin-top: 16px;">
+				<ul class="nav-pills pull-right" style="margin-top:20px;">
+					<li>
+						<a href="index.php?r=register">注册</a>
+					</li>
+					<li>
+						<a href="http://www.yiibai.com/index.php?r=login/findpasswd">忘记密码？</a>
+					</li>
+				</ul>
+				<a href="index.html"><img src="static/img/logo.png" title="易百教程首页"/></a>
+			</div>
+			<hr>
+			<form class="form-signin bs-docs-example form-horizontal" method="post" id="form">
+				<input type="hidden" name="gourl" value="http://www.yiibai.com/ruby"/>
+				<h3 class="form-signin-heading" style="padding-bottom: 12px;">登陆</h3>
+				
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">用户名：</label>
+					<div class="controls">
+						<input type="text" id="username" name="username" placeholder="Email地址" value="Email地址">
+												<span id="username_tips" class="help-inline error-tips" style="display:none;"></span>
+											</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword">密&nbsp;&nbsp;码：</label>
+					<div class="controls">
+						<input type="password" name="password" id="password" placeholder="">
+												<span id="password_tips" class="help-inline error-tips" style="display:none;"></span>
+											</div>
+				</div>
+								<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-success" id="submit">
+							登陆
+						</button>
+						<span style="padding-left: 28px;font-size: 14px; text-decoration: underline;"><a href="index.php?r=register" title="注册用户">注册</a></span>
+					</div>
+				</div>
+				<span style="margin-left: 24px;">其它登陆方式：<a href="index.php?r=login%252Fqq" title="QQ绑定登陆"><img src="static/images/connect_logo_7.png"/></a></span>&nbsp;&nbsp;
+			</form>
+			<div style="margin-top: 64px;"></div>
+			<!-- /container -->
+			<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="static/img/contact_mail.png"></span>	
+</div>
+
+		</div>
+	</body>
+	<script>
+		$(document).ready(function() {
+			$("#username").click(function() {
+				var username = $(this).val();
+				if (username == 'Email地址') {
+					$(this).val('');
+					return false;
+				}
+			})
+			$("#username").blur(function() {
+				var username = $(this).val();
+				if (username == '') {
+					$(this).val('Email地址');
+					$("#username_tips").html('请输入Email地址！');
+					$("#username_tips").show();
+					return;
+				}else{
+					$("#username_tips").hide();
+					return;
+				}
+			})
+			$("#img_captcha").click(function() {
+				var src = "/index.php?r=register/captcha&xrange=" + Math.floor((Math.random() * 100) + 1);
+				$('#img_captcha').attr("src", src);
+			})
+			$("#changeCaptcha").click(function() {
+				var src = "/index.php?r=register/captcha&xrange=" + Math.floor((Math.random() * 100) + 1);
+				$('#img_captcha').attr("src", src);
+			})
+			// 提交
+			$("#submit").click(function() {
+				var username = $.trim($("#username").val());
+				var isValid = true;
+
+				if (username == 'Email地址' || username == '') {
+					$("#username_tips").html('用户名必须填写！');
+					$("#username_tips").show();
+					isValid = false;
+				} else {
+					$("#username_tips").hide();
+				}
+
+				var password = $.trim($("#password").val());
+				if (password == '') {
+					$("#password_tips").html('密码必须填写！');
+					$("#password_tips").show();
+					isValid = false;
+				} else {
+					$("#password_tips").hide();
+				}
+
+				if (isValid == true) {
+					$("#form").submit();
+				}
+				return false;
+			})
+		})
+	</script>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl子例程</title>
+		<meta name="Keywords" content="Perl子例程编程教程,例子教程,参考手册和代码 "/>
+		<meta name="Description" content="Perl子例程编程教程,例子教程,参考手册和代码 - 这两个术语可以在Perl函数和子程序互换使用。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl子例程
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="perl_introduction.html#perl_introduction">Perl简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_syntax.html#perl_syntax">Perl语法概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_variables.html#perl_variables">Perl变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_scalars.html#perl_scalars">Perl标量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_arrays.html#perl_arrays">Perl数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_hashes.html#perl_hashes">Perl哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_special_variables.html#perl_special_variables">Perl特殊变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_conditions.html#perl_conditions">Perl条件语句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_loops.html#perl_loops">Perl循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_operators.html#perl_operators">Perl内置操作符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_files.html#perl_files">Perl文件I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_regular_expression.html#perl_regular_expression">Perl正则表达式</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_subroutines.html">Perl子例程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_format.html#perl_format">Perl格式-报表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_error_handeling.html#perl_error_handeling">Perl错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_coding_standard.html#perl_coding_standard">Perl编程标准</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl子例程(函数)</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl子例程编程教程,例子教程,参考手册和代码 - 这两个术语可以在Perl函数和子程序互换使用。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	这两个术语可以在Perl函数和子程序互换使用。函数是一个命名的代码块，通常是用于处理指定到的输出值的输入值，虽然这并不总是这样。例如，打印函数需要变量和静态文本，并打印在屏幕上的值。
+</p>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		像许多的其它语言，Perl提供了为用户自定义子程序。
+	</li>
+	<li>
+		这些可以位于在主程序中的任何地方。
+	</li>
+	<li>
+		通过从其他文件加载，要求（require），也可以使用关键字。
+	</li>
+	<li>
+		任何传入的参数显示在数组@_<span style="background-color:#FFFFFF;">。</span> 
+	</li>
+	<li>
+		return语句可用于退出子程序。
+	</li>
+	<li>
+		如果没有返回，如果最后的语句是一个表达式，那么就返回它的值。
+	</li>
+	<li>
+		如果最后语句是像一个foreach或while循环控制结构，返回的值是不确定的。
+	</li>
+	<li>
+		子程序可以返回标量，数组或哈希。
+	</li>
+</ul>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	子程序，如变量，可以声明（不用定义他们来做了什么<span style="background-color:#FFFFFF;">）</span>或声明和定义。简单地声明一个子程序，可以使用下列形式之一：
+</p>
+<pre>sub NAME
+sub NAME PROTO
+sub NAME ATTRS
+sub NAME PROTO ATTRS
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	其中，NAME是您所创建的子程序的名称，Proto是期望的子程序调用时的参数的原型，ATTRS是一个属性的子程序呈现。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果你想声明和定义一个函数，那么你就需要包括块定义其操作：
+</p>
+<pre>sub NAME BLOCK
+sub NAME PROTO BLOCK
+sub NAME ATTRS BLOCK
+sub NAME PROTO ATTRS BLOCK
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	您还可以创建匿名函数 - 没有名字的子程序省略NAME组件：
+</p>
+<pre>sub BLOCK
+sub PROTO BLOCK
+sub ATTRS BLOCK
+sub PROTO ATTRS BLOCK
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要调用一个函数，你可以使用下列形式之一：
+</p>
+<pre>NAME
+NAME LIST
+NAME (LIST)
+&amp;NAME
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	举一个简单的例子，一个简单的子程序：
+</p>
+<pre>sub message
+{
+   print "Hello!\n"; # by www.yiibai.com
+}
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>函数参数</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	第一个参数传递给子程序是在函数的$_[0]，第二个参数是$_[1]等等。这个简单的函数例如，将两个数相加并输出结果：
+</p>
+<pre>sub add
+{
+   $result = $_[0] + $_[1];
+   print "The result was: $result\n";
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要调用的子程序，得到的结果：
+</p>
+<pre>add(1,2);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	前面的子程序是相当简单的，但如果你想已经命名参数吗？ 简单的答案是指定的值@_的变量列表：
+</p>
+<pre>sub add
+{
+   ($numbera, $numberb) = @_;
+
+   $result = $numbera + $numberb;
+   print "The result was: $result\n";
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<b>shift </b>函数是一个堆栈，操作数由Perl支持。shift <span style="background-color:#FFFFFF;">函数</span>返回一个数组的第一个元素（删除）。例如：
+</p>
+<pre>sub add
+{
+   my $numbera = shift;
+   my $numberb = shift;
+   #by www.yiibai.com
+   my $result = $numbera + $numberb;
+   print "The result was: $result\n";
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	效果是完全一样的，因为我们已经证明，但以不同的方式，我们刚刚得到的参数。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>函数返回值</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	任何块的返回值，包括那些在子程序中使用，作为最后计算的表达式的值。 对于为例，这里的返回值是计算结果。
+</p>
+<pre>sub myfunc
+{
+   $_[0]+$_[1];
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	您也可以显式地返回一个值，使用return关键字：
+</p>
+<pre>sub myfunc
+{
+   if (@_)
+   {
+      return $_[0]+$_[1];
+   }
+   else
+   {
+      return 0;
+   }
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	调用时，立即返回，而终止当前的子程序并返回值给调用者。如果你不指定一个值，则返回值是<strong>undef</strong>。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>函数调用的上下文</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	一个子程序或语句的上下文中被定义为预期的返回值的类型。这使您可以使用一个单一的函数，返回不同的值，根据用户期望接收。例如，下面的两个调用的<strong>getpwent</strong>函数返回一个列表或一个标量，根据分配使用：
+</p>
+<pre>$name = getpwent();
+($name, $passwd, $uid, $gid, $quota,
+$comment, %gcos, $dir, $shell) = getpwent();
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在第一种情况下，用户的期望由该函数返回一个标量值，因为返回值将被赋值。在第二种情况下，用户期望的阵列作为返回值再次由于已被指定为要插入到的信息的标量的列表。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是另一个例子，从内置Perl函数显示灵活性：
+</p>
+<pre>my $timestr = localtime(time);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在这个例子中，当前的日期和时间所组成的字串<span style="background-color:#FFFFFF;">$timestr</span>的值。例如，<span style="background-color:#FFFFFF;">2000年</span>11月30日15时21分33秒，<span style="background-color:#FFFFFF;">星期四</span>。相反的：
+</p>
+<pre>($sec,$min,$hour,$mday,$mon,
+                $year,$wday,$yday,$isdst) = localtime(time);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	现在，单个变量包含相应的值返回的本地时间。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>左值子程序</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<b>注:&nbsp;</b>左值的子程序仍然是实验性的实施可能会在未来<span style="background-color:#FFFFFF;">Perl</span>版本中有所<span style="background-color:#FFFFFF;">改变</span>。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	从子程序返回一个可修改的值是有可能的。要做到这一点，你必须声明的子程序返回一个左值。参见下面的例子
+</p>
+<pre>    my $val;
+    sub canmod : lvalue {
+	# return $val; this doesn't work, don't say "return"
+	$val;
+    }
+    sub nomod {
+	$val;
+    }
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	现在看到以下结果：
+</p>
+<pre>    canmod() = 5;   # assigns to $val in the above subroutine
+    nomod()  = 5;   # ERROR
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>将列表传递给子程序</strong>
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	因为@_变量是一个数组，它可以被用来提供列表子程序。然而，因为在其中Perl接受并解析列表和数组的方式，它可以是难以提取从@_的单个元素。以下是有效的。
+</p>
+<pre>mysub(1,2,3);
+@args = (2,3);
+mysub(1,@args);
+@args = (1,2,3);
+mysub(@args);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	最后，当我们收到的值@_变量，我们可以不承认如果我们通过一个数组或两个值数组，因为它最后要合并成一个。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果你想使用并确定传递给Perl的个别列表，那么你需要使用参考：
+</p>
+<pre>(@listc, @listd) = simplesort(\@lista, \@listb);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	开头的\字符告诉Perl提供参考，指针，数组的。 引用是实际上只是一个标量，因此，我们可以找出每个列表分配给每个阵列在我们的子程序。现在，你可以写子程序如下：
+</p>
+<pre>sub simplesort
+{
+   my ($listaref, $listbref ) = @_;
+
+   # De-reference the array list - by www.yiibai.com
+   my (@lista) = @$listaref;
+   my (@listb) = @$listbref;
+   #by www.yiibai.com
+   # Now you can play with both arrays.
+}
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>将列表传递给子程序</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	当你提供了一个散列到一个子程序或运算符接受一个列表，哈希会自动翻译成键/值对的列表。例如：
+</p>
+<pre>%hash = ('name' =&gt; 'Tom', 'age' =&gt; 19);
+print %hash;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这将输出 .nameTomage19.&nbsp;然而，同样的过程相反的，这样我们就可以提取一个列表，将其转换为一个哈希：
+</p>
+<pre>sub display_hash
+{
+   my (%hash) = @_;
+   foreach (%hash)
+   {
+      print "$_ =&gt; $hash{$_}\n";
+   }
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在这种情况下，我们输出的键/值对的哈希正常，显示每对它自己的行。正如数组，如果你希望挑选出一个单一的哈希值的参数列表。下面的工作，因为我们提取的哈希最后一个元素：
+</p>
+<pre>sub display_has_regexp
+{
+   my ($regex, %hash) = @_;
+   ...
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	而这不会，因为我们尝试提取的哈希（有将是一个额外的元素，和Perl会不知道如何分配到哈希）：
+</p>
+<pre>sub display_has_regexp
+{
+   my (%hash, $regex) = @_;
+   ...
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果你想使用多个哈希值，然后使用引用。例如，下面的子程序返回的关键相交的两个哈希：
+</p>
+<pre>sub intersection
+{
+   my ($hasha, $hashb) = @_;
+   my %newhash;
+   foreach my $key (keys %{$hasha})
+   {
+      $newhash{$key} = $$hasha{$key} if (exists $$hashb{$key});
+   }
+   #by www.yiibai.com
+   return %newhash;
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要使用子程序：
+</p>
+<pre><span style="font-size:12px;line-height:18px;"><span>%hasha = ('a' =&gt; 'b',
+          'b' =&gt; 'b',
+          'c' =&gt; 'b');
+%hashb = ('b' =&gt; 'b',
+          'c' =&gt; 'b',
+          'd' =&gt; 'b');
+%newhash = intersection(\%hasha, \%hashb);</span></span></pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

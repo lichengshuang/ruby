@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Java对象和类</title>
+		<meta name="Keywords" content="Java对象 类 编程教程 例子教程 参考手册 代码 "/>
+		<meta name="Description" content="Java对象和类编程教程,例子教程,参考手册和代码-Java是一种面向对象语言。作为一种语言，具有面向对象特征，Java支持以下的基本概念。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../java">Java教程</a>  » Java对象和类
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../thinking">Java编程思想</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../javaio">java io类</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="java_overview.html#java_overview">Java概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_environment_setup.html#java_environment_setup">Java环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_syntax.html#java_basic_syntax">Java基本语法</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="java_object_classes.html">Java对象和类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_datatypes.html#java_basic_datatypes">Java基础数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_variable_types.html#java_variable_types">Java变量类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_modifier_types.html#java_modifier_types">Java修饰符类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_operators.html#java_basic_operators">Java基本运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_loop_control.html#java_loop_control">Java循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_decision_making.html#java_decision_making">Java流程控制</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_numbers.html#java_numbers">Java Number类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_character.html#java_character">Java Character类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_string.html#java_string">Java String类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_oop_overview.html#java_oop_overview">Java面向对象基本概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_system_class.html#java_system_class">Java System类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_String/StringBuffer.html#java_string/stringbuffer">Java String/StringBuffer用法比较</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ClassLoader.html#classloader">Java Class, ClassLoader用法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_javaio.html#java_javaio">Java IO系统</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_sets.html#java_sets">Java集合类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ResourceBundle.html#resourcebundle">Java ResourceBundle, Properties</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="Exceptions.html#exceptions">Java Exceptions异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_jdbc.html#java_jdbc">Java JDBC类库</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Java对象和类</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Java对象和类编程教程,例子教程,参考手册和代码-Java是一种面向对象语言。作为一种语言，具有面向对象特征，Java支持以下的基本概念。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Java是一种面向对象语言。作为一种语言，具有面向对象特征，Java支持以下的基本概念:
+</p>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		多态性(Polymorphism)
+	</li>
+	<li>
+		<span></span>继承权(Inheritance)<span></span> 
+	</li>
+	<li>
+		封装(Encapsulation)
+	</li>
+	<li>
+		抽象化(Abstraction)
+	</li>
+	<li>
+		类(Classes)
+	</li>
+	<li>
+		对象(Objects)
+	</li>
+	<li>
+		实例(Instance)
+	</li>
+	<li>
+		方法(Method)
+	</li>
+	<li>
+		消息解析(Message Parsing)
+	</li>
+</ul>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在本章中，我们会考虑类和对象的概念.
+</p>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			<b>对象 -</b>&nbsp;对象具有状态和行为。例如：狗有颜色，名称，品种以及行为摇摆，吠叫，吃。对象是类的一个实例.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>类 -</b>&nbsp;一个类可以被定义为描述行为/状态模板/蓝印花布，其类型支持的对象.
+		</p>
+	</li>
+</ul>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	Java对象:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	让我们更深入看看什么是对象。如果我们考虑现实世界中，我们可以发现我们周围的许多对象，汽车，狗，人类等所有这些对象的状态和行为.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果我们考虑了一只狗，那么它的状态。名称，品种，颜色和行为。吠叫，摇摆，跑步
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果你比较与现实世界对象的软件对象，他们有非常相似的特点.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	软件对象也有状态和行为。软件对象的状态被存储在字段和行为是通过方法所示。<br />
+所以操作一个对象的内部状态，并在软件开发方法的对象到对象的通信是通过方法做.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	Java类:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一类是从个别对象的创建蓝图(blue print).
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面给出一类的例子:
+</p>
+<pre>public class Dog{
+   String breed;
+   int age;
+   String color;
+
+   void barking(){
+   }
+   
+   void hungry(){
+   }
+   
+   void sleeping(){
+   }
+}
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一个类可以包含任何以下变量类型.
+</p>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			<b>局部变量.&nbsp;</b>方法，构造或块内定义的变量称为局部变量。该方法已经完成时声明和初始化变量将在方法和变量将被销毁时.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>实例变量 .&nbsp;</b>实例变量是变量在类以外的任何方法。这些变量被实例化的类被加载时。实例变量可以从特定类别的任何方法，构造或块内.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>类变量.&nbsp;</b>类变量以外的任何方法，在一个类中声明的变量，static关键字.
+		</p>
+	</li>
+</ul>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一个类可以有任意数量的方法来访问各类方法的价值。在上面的例子，如：barking(), hungry() 和 sleeping() 都是变量.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面提到的一些需要讨论的重要主题Java语言类.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>构造方法</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	类讨论的最重要的子课题之一是构造。每个类有一个构造方法。如果我们不明确地写了一个类的构造Java编译器建立一个类的默认构造函数.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	每创建一个新的对象至少有一个构造时将被调用。构造函数的主要规则是，他们应该具有与类相同的名称。一个类可以有多个构造函数.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	例子下面给出一个构造:
+</p>
+<pre>class Puppy{
+   public puppy(){
+   }
+
+   public puppy(String name){
+      // This constructor has one parameter, <i>name</i>.
+   }
+}
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Java也支持<a href="http://www.yiibai.com/java/java_using_singleton.html" target="_blank"><u>单例类</u></a>的地方，你就可以创建一个类只有一个实例.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>创建对象</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	正如前面提到的一类为对象提供的蓝图。所以基本上创建一个对象从一个类。在Java中的新的关键的词是用来创建新的对象。<br />
+从类创建一个对象时，有三个步骤:
+</p>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			<b>声明. &nbsp;</b>一个对象类型的变量声明变量名.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>实例 .&nbsp;</b>用于创建对象的'<strong>new</strong>'的关键字.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>初始化.&nbsp;</b>随后通过调用o构造的'<strong>new</strong>'的关键字。这个调用初始化新对象.
+		</p>
+	</li>
+</ul>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	创建对象的实例下面给出:
+</p>
+<pre>class Puppy{
+   public Puppy(String name){
+      // This constructor has one parameter, <i>name</i>.
+      System.out.println("Passed Name is :" + name ); 
+   }
+   public static void main(String []args){
+      // Following statement would create an object myPuppy - by www.yiibai.com
+      Puppy myPuppy = new Puppy( "tommy" );
+   }
+}
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果我们编译并运行上述程序，那么这将产生以下结果:
+</p>
+<pre>Passed Name is :tommy
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>访问实例变量和方法</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	通过创建对象的实例变量和方法的访问。要访问一个实例变量的完全限定路径应该如下:
+</p>
+<pre>/* First create an object */
+ObjectReference = new Constructor();
+
+/* Now call a variable as follows */
+ObjectReference.variableName;
+
+/* Now you can call a class method as follows */
+ObjectReference.MethodName();
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这个例子说明了如何访问一个类的实例变量和方法:
+</p>
+<pre>class Puppy{
+   
+   int puppyAge;
+
+   public Puppy(String name){
+      // This constructor has one parameter, <i>name</i>. by www.yiibai.com
+      System.out.println("Passed Name is :" + name ); 
+   }
+   public setAge( int age ){
+       puppyAge = age;
+   }
+
+   public getAge( ){
+       System.out.println("Puppy's age is :" + puppyAge ); 
+       return puppyAge;
+   }
+   public static void main(String []args){
+      /* Object creation */
+      Puppy myPuppy = new Puppy( "tommy" );
+
+      /* Call class method to set puppy's age */
+      myPuppy.setAge( 2 );
+
+      /* Call another class method to get puppy's age */
+      myPuppy.getAge( );
+
+      /* You can access instance variable as follows as well */
+      System.out.println("Variable Value :" + myPuppy.puppyAge ); 
+   }
+}
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果我们编译并运行上述程序，那么这将产生以下结果:
+</p>
+<pre>Passed Name is :tommy
+Puppy's age is :2
+Variable Value :2
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>源文件声明规则</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	作为本节的最后一部分，现在让我们看到源文件声明规则。这些规则是必不可少的，当在源文件中声明类，import语句和包声明.
+</p>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			每个源文件只能有一个public类.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			一个源文件可以有多个非公共类.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			公共类的名称应该是源文件的名称，以及应在末尾追加<b>.java</b>。例如：类名。公共类Employee{}，然后源文件应该Employee.java.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			如果类定义一个包内，然后包语句应该在源文件中的第一条语句.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			如果import语句存在，那么他们之间的package语句和类声明必须写。如果没有包声明，import语句应该是在源文件中的第一行<span></span>.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			导入(<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;"><strong>Import</strong></span>)和包声明将意味着目前在源文件中的所有类。这是不可能的声明在源文件中的不同阶层不同的导入和/或包声明.
+		</p>
+	</li>
+</ul>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	类具有几个访问级别，有不同类型的类，抽象类，final类等我将所有这些访问修饰符一章中解释.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	除了上面提到的类型的类，Java还具有一些特殊的类称为内部类和匿名类.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	Java 包:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	简单的，它是一个分类的类和接口的方式。在开发Java应用程序中，数百的类和接口将被写入，因此，归类这些类是必须的，以及使轻松得多.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	Import 语句:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果给出一个完全合格的名称，其中包括包和类的名称，然后在Java编译器可以很容易地找到源代码或类。 import语句是给编译器的正确位置的方法，找到特定的类.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	例如行会要求编译器加载Java安装目录中的所有类java/io :
+</p>
+<pre>import java.io.*;
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>一个简单的例子学习</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	对于我们的案例研究，我们将创建两个类。他们是Employee <span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">和</span>EmployeeTest.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	首先打开记事本，并添加下面的代码。记住，这是Employee类和类是一个公共类。现在保存这个源文件的名称Employee.java.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Employee类的有4类变量<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">name, age, designation 和salary</span>。这个类有一个明确定义的构造函数需要一个参数.
+</p>
+<pre>import java.io.*;
+public class Employee{
+   String name;
+   int age;
+   String designation;
+   double salary;
+	
+   // This is the constructor of the class Employee
+   public Employee(String name){
+      this.name = name;
+   }
+   // Assign the age of the Employee  to the variable age.
+   public void empAge(int empAge){
+      age =  empAge;
+   }
+   /* Assign the designation to the variable designation.*/
+   public void empDesignation(String empDesig){
+      designation = empDesig;
+   }
+   /* Assign the salary to the variable	salary.*/
+   public void empSalary(double empSalary){
+      salary = empSalary;
+   }
+   /* Print the Employee details - by www.yiibai.com */
+   public void printEmployee(){
+      System.out.println("Name:"+ name );
+      System.out.println("Age:" + age );
+      System.out.println("Designation:" + designation );
+      System.out.println("Salary:" + salary);
+   }
+}
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如前面提到在本教程中处理，从主体(<strong>main</strong>)方法。因此，在我们运行这个Employee类的顺序应该是<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;"><strong>main</strong></span>的方法，应该创建对象。我们将创建一个单独类为这些任务.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面给出的是EmployeeTest类而创建的Employee类的两个实例，并调用每个对象的方法，为每个变量指定值。<br />
+EmployeeTest.java文件保存下面的代码:
+</p>
+<pre>import java.io.*;
+public class EmployeeTest{
+   public static void main(String args[]){
+      /* Create two objects using constructor */
+      Employee empOne = new Employee("James Smith");
+      Employee empTwo = new Employee("Mary Anne");
+
+      // Invoking methods for each object created. by www.yiibai.com
+      empOne.empAge(26);
+      empOne.empDesignation("Senior Software Engineer");
+      empOne.empSalary(1000);
+      empOne.printEmployee();
+
+      empTwo.empAge(21);
+      empTwo.empDesignation("Software Engineer");
+      empTwo.empSalary(500);
+      empTwo.printEmployee();
+   }
+}
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	现在编译的类和然后运行EmployeeTest看到的结果如下：
+</p>
+<pre>C :&gt; javac Employee.java
+C :&gt; vi EmployeeTest.java
+C :&gt; javac  EmployeeTest.java
+C :&gt; java EmployeeTest
+Name:James Smith
+Age:26
+Designation:Senior Software Engineer
+Salary:1000.0
+Name:Mary Anne
+Age:21
+Designation:Software Engineer
+Salary:500.0
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	下一步是什么 ?
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下届会议将讨论在Java基本数据类型，以及他们如何可以用来开发Java应用程序时.
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

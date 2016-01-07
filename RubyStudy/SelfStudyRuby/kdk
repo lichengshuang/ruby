@@ -1,0 +1,9 @@
+#!/usr/bin/ruby
+
+#include Math
+
+#p PI
+#p sqrt(2)
+
+
+p Math::PI

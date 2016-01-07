@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl数组</title>
+		<meta name="Keywords" content="Perl数组变量 实例 使用例子教程 "/>
+		<meta name="Description" content="Perl数组变量,实例，使用例子教程：标量变量简单变量只包含一个元素 - 一个字符串或数字。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl数组
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="perl_introduction.html#perl_introduction">Perl简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_syntax.html#perl_syntax">Perl语法概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_variables.html#perl_variables">Perl变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_scalars.html#perl_scalars">Perl标量</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_arrays.html">Perl数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_hashes.html#perl_hashes">Perl哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_special_variables.html#perl_special_variables">Perl特殊变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_conditions.html#perl_conditions">Perl条件语句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_loops.html#perl_loops">Perl循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_operators.html#perl_operators">Perl内置操作符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_files.html#perl_files">Perl文件I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_regular_expression.html#perl_regular_expression">Perl正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_subroutines.html#perl_subroutines">Perl子例程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_format.html#perl_format">Perl格式-报表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_error_handeling.html#perl_error_handeling">Perl错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_coding_standard.html#perl_coding_standard">Perl编程标准</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl数组</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl数组变量,实例，使用例子教程：标量变量简单变量只包含一个元素 - 一个字符串或数字。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;">
+	一个数组只是一组标量.。它是由个别标量存储在一个单一变量的列表。你可以参考每个标内，使用数字索引列表。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>数组创建:</strong> 
+</h1>
+<p style="text-align:justify;">
+	数组变量的前缀@符号和填充使用任何括号或qw操作符，例如:
+</p>
+<pre>@array = (1, 2, 'Hello');
+@array = qw/This is an array/;
+</pre>
+<p style="text-align:justify;">
+	第二条生产线使用的qw//运算符，它返回一个字符串列表，由空格分隔的字符串分开。在这个例子中，这导致了四元素的数组第一个元素是“this”和最后（四）是“array”。这意味着你可以使用规范内的换行符:
+</p>
+<pre>@days = qw/Monday
+Tuesday
+...
+Sunday/;
+</pre>
+<p style="text-align:justify;">
+	我们也可以单独指定每个值填充数组:
+</p>
+<pre>$array[0] = 'Monday';
+...
+$array[6] = 'Sunday';
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>提取个别指数</strong> 
+</h1>
+<p style="text-align:justify;">
+	从数组中提取单个元素时，你必须在前面加上一个美元符号变量，然后追加后，方括号内的元素的索引的名称。例如:
+</p>
+<pre>#!/usr/bin/perl
+
+@shortdays = qw/Mon Tue Wed Thu Fri Sat Sun/;
+print $shortdays[1];
+
+This will print
+Tue
+</pre>
+数组索引从零开始，所以在前面的例子实际上we.ve印有“星期二”。你也可以给，而不是开始一个负index.in这种情况下，你选择从最后的数组元素。
+<pre>print $shortdays[0]; # Outputs Mon
+print $shortdays[6]; # Outputs Sun
+print $shortdays[-1]; # Also outputs Sun
+print $shortdays[-7]; # Outputs Mon
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	序列数字阵列
+</h1>
+<p style="text-align:justify;">
+	Perl提供了一个连续的数字和字母的捷径。而不是键入每个元素，例如，以100计数时，我们可以这样做:
+</p>
+<pre>#!/usr/bin/perl
+
+@10 = (1 .. 10);
+@100 = (1 .. 100;
+@1000 = (100 .. 1000);
+@abc = (a .. z);
+
+print "@10";   # Prints number starting from 1 to 10
+print "@100";  # Prints number starting from 1 to 100
+print "@1000"; # Prints number starting from 1 to 1000
+print "@abc";  # Prints number starting from a to z
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>数组的大小</strong> 
+</h1>
+<p style="text-align:justify;">
+	数组的大小可以决定在阵列上使用标量上下文 - 返回值将数组中的元素数量:
+</p>
+<pre>@array = (1,2,3);
+print "Size: ",scalar @array,"\n";
+</pre>
+<p style="text-align:justify;">
+	返回的值总是会阵列的物理尺寸，而不是有效的元素数量。可以证明这一点，标量，@array和$#array之间的区别，使用此片段:
+</p>
+<pre>#!/uer/bin/perl
+
+@array = (1,2,3);
+$array[50] = 4;
+
+print "Size: ",scalar @array,"\n";
+print "Max Index: ", $#array,"\n";
+
+This will return
+Size: 51
+Max Index: 50
+</pre>
+<p style="text-align:justify;">
+	只有四个元素的数组中包含的信息，但数组是51元素长50指数（索引）最高，.
+</p>
+<table style="font-size:12px;">
+	<tbody>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				<img src="http://www.yiibai.com/static/images/bulb.gif" width="20" height="24" alt="" /> 
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				这里标量函数是用来执行标量上下文，使@数组可以返回数组的大小，否则将返回@阵列的所有在它contacined的元素的列表.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>数组中添加和删除元素</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	使用添加/删除以下功能和元素:
+</p>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			<b>push():&nbsp;</b>数组的末尾添加一个元素.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>unshift():</b>&nbsp;添加一个元素的数组的开头.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>pop():&nbsp;</b>删除数组中最后一个元素.
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>shift() :</b>&nbsp;删除数组的第一个元素.
+		</p>
+	</li>
+</ul>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	使用push()或shift()添加元素时，你必须指定两个参数，第一个数组名和第二个元素的名称添加。pop()或shift()删除一个元素，只需要您发送数组作为参数.
+</p>
+<pre>#!/usr/bin/perl
+
+# Define an array
+@coins = ("Quarter","Dime","Nickel");
+print "First Statement : @coins";
+print "\n";
+
+# Add one element at the end of the array <b>push</b>(@coins, "Penny");
+print "Second Statement : @coins - by www.yiibai.com";
+print "\n";
+# Add one element at the beginning of the array <b>unshift</b>(@coins, "Dollar");
+print "Third Statement : @coins";
+print "\n";
+
+# Remove one element from the last of the array. <b>pop</b>(@coins);
+print "Fourth Statement : @coins";
+print "\n";
+# Remove one element from the beginning of the array. <b>shift</b>(@coins);
+print "Fifth Statement : @coins";
+print "@coins";
+
+
+Now this will produce following result
+First Statement : Quarter Dime Nickel
+Second Statement : Quarter Dime Nickel Penny 
+Third Statement : Dollar Quarter Dime Nickel Penny
+Fourth Statement : Dollar Quarter Dime Nickel
+Fifth Statement : Quarter Dime Nickel
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>切片数组元素</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	你也可以从一个数组中提取的“切片” - 也就是说，你可以选择多个项目，从一个数组，以产生另一个数组.
+</p>
+<pre>@weekdays = @shortdays[0,1,2,3,4];
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	的一个有效的指标清单，积极或消极的，每个片的规格必须以逗号分隔。为了操作速度，你也可以使用......范围操作符:
+</p>
+<pre>@weekdays = @shortdays[0..4];
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	范围也可以在列表:
+</p>
+<pre>@weekdays = @shortdays[0..2,6,7];
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>更换数组元素</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	更换元素可能是<span style="background-color:#FFFFFF;">splice()</span>函数。 splice()的需要少数的参数和公式如下:
+</p>
+<pre><i>splice(@array,first-element,sequential_length, new elements)</i> </pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	从本质上讲，你送PERL的一个数组拼接，然后直接到起始元素计算通过，以取代有多少元素，然后填写缺少的元素与新的信息.
+</p>
+<pre>#!/usr/bin/perl
+
+@nums = (1..20);
+splice(@nums, 5,5,21..25); 
+print "@nums";
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这里实际更换后开始的第五元素，与6号开始。五个元素，然后替换从6-10号码21-25
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>转换字符串到数组</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	与split函数，它是可以转换成一个字符串数组。要做到这一点，只需定义一个数组，并设置它等于一个分裂的功能。 Split函数需要两个参数，第一个字符的分裂和字符串变量.
+</p>
+<pre>#!/usr/bin/perl
+
+# Define Strings
+$astring = "Rain-Drops-On-Roses-And-Whiskers-On-Kittens";
+$namelist = "Larry,David,Roger,Ken,Michael,Tom";
+
+# Strings are now arrays. Here '-' and ',' works as delimeter -by www.yiibai.com
+@array = split('-',$astring);
+@names = split(',',$namelist);
+
+print $array[3];  # This will print Roses
+print "\n";       # This is a new line
+print $names[4];  # This will print Michael
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	同样，我们可以使用join()函数归队数组元素，形成一个长的串标.
+</p>
+<pre>#!/usr/bin/perl
+
+# Define Strings
+$astring = "Rain-Drops-On-Roses-And-Whiskers-On-Kittens";
+$namelist = "Larry,David,Roger,Ken,Michael,Tom";
+
+# Strings are now arrays. Here '-' and ',' works as delimeter
+@array = split('-',$astring);
+@names = split(',',$namelist);
+
+$string1 = join(",", @array);
+$string2 = join("-", @names);
+
+print $string1;
+print "\n" ;
+print $string2;
+
+
+This will produce following result
+Rain,Drops,On,Roses,And,Whiskers,On,Kittens
+Larry-David-Roger-Ken-Michael-Tom
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>数组排序</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	sort()函数排序每个元素数组按照ASCII数字标准.
+</p>
+<pre>#!/usr/bin/perl
+
+# Define an array
+@foods = qw(pizza steak chicken burgers);
+print "Before sorting: @foods\n";
+
+# Sort this array
+@foods = sort(@foods);
+print "After sorting: @foods\n -by www.yiibai.com";
+
+This will produce following result
+Before sorting: pizza steak chicken burgers
+After sorting: burgers chicken pizza steak
+</pre>
+<table style="font-size:12px;background-color:#FFFFFF;">
+	<tbody>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				<img src="http://www.yiibai.com/static/images/bulb.gif" width="20" height="24" alt="" /> 
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				<p style="text-align:justify;">
+					请注意，基于ASCII的话数值进行排序。所以最好的办法是先转换成小写字母数组的每个元素，然后执行排序功能.
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>特殊变量$ [</strong> 
+</h1>
+<p style="text-align:justify;">
+	$[是一个特殊的变量。这个特别的变量是一个标量，包含所有阵列的第一个索引。因为Perl数组从零开始的索引，几乎始终为0。但是，如果你设置$[1，那么你所有的阵列将使用的索引。建议不要使用除零以外的任何其他索引.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>列表</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	名单实际上是一种特殊的数组类型 - 基本上，列表是一个临时的结构，拥有一系列值。列表清单中可以使用括号和逗号运算符生成的“手”,
+</p>
+<pre>@array = (1,2,3);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	或者它可以是一个函数或变量返回的值时，在列表环境计算:
+</p>
+<pre>print join(',' @array);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在这里，@array正在计算在列表上下文中，因为连接函数预期的列表.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>合并列表（或数组）</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	因为仅仅是一个逗号分隔的值的序列的列表，你可以结合列表的同时并:
+</p>
+<pre>@numbers = (1,3,(4,5,6));
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	嵌入的清单只是成为主要list.this的一部分，也意味着我们可以结合在一起阵列:
+</p>
+<pre>@numbers = (@odd,@even);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	返回列表也可以嵌入到产生一个单一的，最终名单的功能:
+</p>
+<pre>@numbers = (primes(),squares());
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>从列表中选择元素</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	列表符号是相同的阵列 - 你可以从数组中提取元素，由方括号内追加到列表中，并给予一个或多个索引:
+</p>
+<pre>#!/usr/bin/perl
+
+$one = (5,4,3,2,1)[4];
+
+print "Value of \$one is $one\n - by www.yiibai.com "
+
+This will produce follwoing result
+Value of $one is 1
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	同样，我们可以提取片，虽然没有领先@<strong>character</strong>的要求:
+</p>
+<pre><span style="font-size:12px;line-height:18px;"><span>#!/usr/bin/perl
+
+@newlist = (5,4,3,2,1)[1..3];
+
+print "value of new list is @newlist\n";
+
+This will produce follwoing result
+value of new list is 4 3 2</span></span></pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

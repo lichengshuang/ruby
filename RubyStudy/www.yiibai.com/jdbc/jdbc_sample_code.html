@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>JDBC简单代码例子</title>
+		<meta name="Keywords" content="JDBC简单代码例子实例教程 "/>
+		<meta name="Description" content="JDBC简单代码例子实例教程 - 本教程提供了如何创建一个简单的JDBC应用程序的一个例子。这将告诉你如何打开一个数据库连接，执行SQL查询，并显示结果。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../jdbc">JDBC教程</a>  » JDBC简单代码例子
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">JDBC教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="example">JDBC例子</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="references">JDBC实用参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">JDBC有用资料</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">JDBC教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="jdbc_introduction.html#jdbc_introduction">JDBC简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_sql_syntax.html#jdbc_sql_syntax">JDBC SQL语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_environment_setup.html#jdbc_environment_setup">JDBC环境设置</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="jdbc_sample_code.html">JDBC简单代码例子</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_driver_types.html#jdbc_driver_types">JDBC驱动类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_db_connections.html#jdbc_db_connections">JDBC连接数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_statements.html#jdbc_statements">JDBC Statements</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_result_sets.html#jdbc_result_sets">JDBC ResultSet</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_data_types.html#jdbc_data_types">JDBC数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_transactions.html#jdbc_transactions">JDBC事务</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_exceptions.html#jdbc_exceptions">JDBC异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_batch_processing.html#jdbc_batch_processing">JDBC批量处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_stored_procedure.html#jdbc_stored_procedure">JDBC存储过程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_streaming_data.html#jdbc_streaming_data">JDBC数据流</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">JDBC简单代码例子</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						JDBC简单代码例子实例教程 - 本教程提供了如何创建一个简单的JDBC应用程序的一个例子。这将告诉你如何打开一个数据库连接，执行SQL查询，并显示结果。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	本教程提供了如何创建一个简单的JDBC应用程序的一个例子。这将告诉你如何打开一个数据库连接，执行SQL查询，并显示结果。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在这个模板的例子中提到的步骤，将在本教程后面的章节解释。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>创建JDBC应用程序:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	有以下六个步骤中建立一个JDBC应用程序：
+</p>
+<ol style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			<b>导入包.</b>&nbsp;要求包括软件包包含了数据库编程所需的JDBC类。大多数情况下，使用导入<span style="background-color:#FFFFFF;">&nbsp;</span><i>import java.sql.*&nbsp;</i>就足够了。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>注册JDBC驱动程序 .</b>&nbsp;要求您初始化驱动程序，这样就可以打开与数据库的通信通道。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>打开一个连接.</b>&nbsp;需要使用DriverManager.getConnection()方法来创建一个Connection对象，它代表一个实体与数据库的连接。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>执行一个查询.</b>&nbsp;需要使用的对象的类型声明为建设和提交一个SQL语句到数据库。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>从结果集中提取数据.</b>&nbsp;，您需要使用适当的ResultSet.getXXX()方法来检索结果集的数据。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>清理环境.</b>&nbsp;需要明确关闭所有的数据库资源，对依赖于JVM的垃圾收集。
+		</p>
+	</li>
+</ol>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>简单代码</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	此示例的例子可以作为一个模板，当你需要创建自己的JDBC应用场景。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	基于对环境和数据库设置在前面的章节中做此示例代码已经写好。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	复制下面的例子中FirstExample.java过去，编译和运行如下：
+</p>
+<pre>//STEP 1. Import required packages
+import java.sql.*;
+
+public class FirstExample {
+   // JDBC driver name and database URL
+   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+   static final String DB_URL = "jdbc:mysql://localhost/EMP";
+
+   //  Database credentials
+   static final String USER = "username";
+   static final String PASS = "password";
+   
+   public static void main(String[] args) {
+   Connection conn = null;
+   Statement stmt = null;
+   try{
+      //STEP 2: Register JDBC driver
+      Class.forName("com.mysql.jdbc.Driver");
+
+      //STEP 3: Open a connection
+      System.out.println("Connecting to database...");
+      conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+      //STEP 4: Execute a query
+      System.out.println("Creating statement...");
+      stmt = conn.createStatement();
+      String sql;
+      sql = "SELECT id, first, last, age FROM Employees";
+      ResultSet rs = stmt.executeQuery(sql);
+
+      //STEP 5: Extract data from result set
+      while(rs.next()){
+         //Retrieve by column name
+         int id  = rs.getInt("id");
+         int age = rs.getInt("age");
+         String first = rs.getString("first");
+         String last = rs.getString("last");
+
+         //Display values
+         System.out.print("ID: " + id);
+         System.out.print(", Age: " + age);
+         System.out.print(", First: " + first);
+         System.out.println(", Last: " + last);
+      }
+      //STEP 6: Clean-up environment
+      rs.close();
+      stmt.close();
+      conn.close();
+   }catch(SQLException se){
+      //Handle errors for JDBC
+      se.printStackTrace();
+   }catch(Exception e){
+      //Handle errors for Class.forName
+      e.printStackTrace();
+   }finally{
+      //finally block used to close resources
+      try{
+         if(stmt!=null)
+            stmt.close();
+      }catch(SQLException se2){
+      }// nothing we can do
+      try{
+         if(conn!=null)
+            conn.close();
+      }catch(SQLException se){
+         se.printStackTrace();
+      }//end finally try
+   }//end try
+   System.out.println("Goodbye!");
+}//end main www.yiibai.com
+}//end FirstExample
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	现在让我们来编译上面的例子如下：
+</p>
+<pre>C:\&gt;javac FirstExample.java
+C:\&gt;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	当你运行FirstExample的，它会产生以下结果：
+</p>
+<pre><span style="font-size:12px;line-height:18px;"><span>C:\&gt;java FirstExample
+Connecting to database...
+Creating statement...
+ID: 100, Age: 18, First: Zara, Last: Ali
+ID: 101, Age: 25, First: Mahnaz, Last: Fatma
+ID: 102, Age: 30, First: Zaid, Last: Khan
+ID: 103, Age: 28, First: Sumit, Last: Mittal
+C:\&gt;</span></span></pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>JDBC批量处理</title>
+		<meta name="Keywords" content="JDBC批量处理实例代码教程 "/>
+		<meta name="Description" content="JDBC批量处理实例代码教程 - 异常处理例如程序定义的错误，可以让你以可控的方式来处理异常情况。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../jdbc">JDBC教程</a>  » JDBC批量处理
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">JDBC教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="example">JDBC例子</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="references">JDBC实用参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">JDBC有用资料</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">JDBC教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="jdbc_introduction.html#jdbc_introduction">JDBC简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_sql_syntax.html#jdbc_sql_syntax">JDBC SQL语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_environment_setup.html#jdbc_environment_setup">JDBC环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_sample_code.html#jdbc_sample_code">JDBC简单代码例子</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_driver_types.html#jdbc_driver_types">JDBC驱动类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_db_connections.html#jdbc_db_connections">JDBC连接数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_statements.html#jdbc_statements">JDBC Statements</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_result_sets.html#jdbc_result_sets">JDBC ResultSet</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_data_types.html#jdbc_data_types">JDBC数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_transactions.html#jdbc_transactions">JDBC事务</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_exceptions.html#jdbc_exceptions">JDBC异常</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="jdbc_batch_processing.html">JDBC批量处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_stored_procedure.html#jdbc_stored_procedure">JDBC存储过程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_streaming_data.html#jdbc_streaming_data">JDBC数据流</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">JDBC批量处理</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						JDBC批量处理实例代码教程 - 异常处理例如程序定义的错误，可以让你以可控的方式来处理异常情况。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	批处理允许一个批处理组相关的SQL语句，并将其提交的一个调用到数据库。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	当几个SQL语句一次发送到数据库可以减少通信开销，从而提高性能。
+</p>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			JDBC驱动程序不支持此功能。应该使用DatabaseMetaData.supportsBatchUpdates()方法来确定目标数据库支持批量更新处理。如果JDBC驱动程序支持此功能，则该方法返回true。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			addBatch()方法声明，PreparedStatement 和 CallableStatementis用于添加单个语句的批处理。 executeBatch()将开始执行的所有语句组合到一起。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			executeBatch()将返回一个整数数组，每个数组元素的表示为相应的更新语句的更新计数。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			正如你可以添加语句进行处理一批，你可以<span style="background-color:#FFFFFF;">用clearBatch()方法</span>删除它们。此方法将删除<span style="background-color:#FFFFFF;">addBatch()方法</span>添加的所有语句。但是，不能有选择性地选择语句来删除。
+		</p>
+	</li>
+</ul>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>Statement对象的批处理：</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是一个典型的步骤来使用批处理<span style="background-color:#FFFFFF;">Statment&nbsp;</span>对象：
+</p>
+<ol style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			可以使用的createStatement()方法创建一个Statement对象。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			设置自动提交为false，使用的setAutoCommit()。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			添加尽可能多的SQL语句，批量使用addBatch()方法创建的语句对象。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			执行的所有SQL语句使用executeBatch()方法创建的语句对象。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			最后，使用commit()方法提交的所有更改。
+		</p>
+	</li>
+</ol>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面的代码片段提供了一个批处理更新使用Statement对象的一个例子：
+</p>
+<pre>// Create statement object
+Statement stmt = conn.createStatement();
+
+// Set auto-commit to false
+conn.setAutoCommit(false);
+
+// Create SQL statement
+String SQL = "INSERT INTO Employees (id, first, last, age) " +
+             "VALUES(200,'Zia', 'Ali', 30)";
+// Add above SQL statement in the batch.
+stmt.addBatch(SQL);
+
+// Create one more SQL statement
+String SQL = "INSERT INTO Employees (id, first, last, age) " +
+             "VALUES(201,'Raj', 'Kumar', 35)";
+// Add above SQL statement in the batch.
+stmt.addBatch(SQL);
+
+// Create one more SQL statement
+String SQL = "UPDATE Employees SET age = 35 " +
+             "WHERE id = 100";
+// Add above SQL statement in the batch.
+stmt.addBatch(SQL);
+
+// Create an int[] to hold returned values
+int[] count = stmt.executeBatch();
+
+//Explicitly commit statements to apply changes
+conn.commit();
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	为了更好地理解，易百IT教程网建议研究学习&nbsp;<a href="http://www.tutorialspoint.com/jdbc/statement-batching-example.htm">Batching - 例</a><a href="http://www.tutorialspoint.com/jdbc/statement-batching-example.htm">子</a><span style="background-color:#FFFFFF;">代码</span>.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>PrepareStatement对象批处理:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是一个典型序列的步骤来使用批处理PrepareStatement对象：
+</p>
+<ol style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			创建SQL语句占位符。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			创建PrepareStatement对象，可以使用prepareStatement()方法
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			设置自动提交为false，使用setAutoCommit()
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			添加尽可能多的SQL语句批量使用addBatch()方法创建的语句对象。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			执行所有SQL语句使用executeBatch()方法创建的语句对象。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			最后，使用commit()方法提交的所有更改。
+		</p>
+	</li>
+</ol>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面的代码片段使用PrepareStatement对象的批量更新提供了一个例子：
+</p>
+<pre>// Create SQL statement
+String SQL = "INSERT INTO Employees (id, first, last, age) " +
+             "VALUES(?, ?, ?, ?)";
+
+// Create PrepareStatement object
+PreparedStatemen pstmt = conn.prepareStatement(SQL);
+
+//Set auto-commit to false
+conn.setAutoCommit(false);
+
+// Set the variables
+pstmt.setInt( 1, 400 );
+pstmt.setString( 2, "Pappu" );
+pstmt.setString( 3, "Singh" );
+pstmt.setInt( 4, 33 );
+// Add it to the batch
+pstmt.addBatch();
+
+// Set the variables
+pstmt.setInt( 1, 401 );
+pstmt.setString( 2, "Pawan" );
+pstmt.setString( 3, "Singh" );
+pstmt.setInt( 4, 31 );
+// Add it to the batch
+pstmt.addBatch();
+
+//add more batches
+.
+.
+.
+.
+//Create an int[] to hold returned values
+int[] count = stmt.executeBatch();
+// http://www.yiibai.com/jdbc
+//Explicitly commit statements to apply changes
+conn.commit();
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	为了更好地理解，易百IT教程建议研究&nbsp;<a href="http://www.tutorialspoint.com/jdbc/preparestatement-batching-example.htm">Batching - 代码例子</a> 
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

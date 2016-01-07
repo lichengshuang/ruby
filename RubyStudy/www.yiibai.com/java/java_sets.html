@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Java集合类</title>
+		<meta name="Keywords" content="Java集合类 "/>
+		<meta name="Description" content="Java集合类- Vector(矢量)， BitSet(位集)， Stack(堆栈)， Hashtable(散列表)。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../java">Java教程</a>  » Java集合类
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../thinking">Java编程思想</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../javaio">java io类</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="java_overview.html#java_overview">Java概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_environment_setup.html#java_environment_setup">Java环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_syntax.html#java_basic_syntax">Java基本语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_object_classes.html#java_object_classes">Java对象和类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_datatypes.html#java_basic_datatypes">Java基础数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_variable_types.html#java_variable_types">Java变量类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_modifier_types.html#java_modifier_types">Java修饰符类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_operators.html#java_basic_operators">Java基本运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_loop_control.html#java_loop_control">Java循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_decision_making.html#java_decision_making">Java流程控制</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_numbers.html#java_numbers">Java Number类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_character.html#java_character">Java Character类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_string.html#java_string">Java String类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_oop_overview.html#java_oop_overview">Java面向对象基本概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_system_class.html#java_system_class">Java System类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_String/StringBuffer.html#java_string/stringbuffer">Java String/StringBuffer用法比较</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ClassLoader.html#classloader">Java Class, ClassLoader用法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_javaio.html#java_javaio">Java IO系统</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="java_sets.html">Java集合类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ResourceBundle.html#resourcebundle">Java ResourceBundle, Properties</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="Exceptions.html#exceptions">Java Exceptions异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_jdbc.html#java_jdbc">Java JDBC类库</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Java集合类</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Java集合类- Vector(矢量)， BitSet(位集)， Stack(堆栈)， Hashtable(散列表)。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<h3>
+	Java集合类
+</h3>
+<p>
+	在写程序的时候并不是每次只使用一个对象，&nbsp;更多的是对一组对象进行操作，&nbsp;就需要知道如何组合这些对象，&nbsp;还有在编码的时候我们有时并不知道到底有多少对象，它们需要进行动态的分配存放。
+</p>
+<p>
+	Java的集合类只能容纳对象句柄，&nbsp;对于简单类型的数据存放，&nbsp;只能通过数据来存放，&nbsp;数组可以存放简单类型的数据也能存放对象。
+</p>
+<p>
+	Java提供了四种类型的集合类：&nbsp;Vector(矢量)，&nbsp;BitSet(位集)，&nbsp;Stack(堆栈)，&nbsp;Hashtable(散列表)。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;矢量：&nbsp;一组有序的元素，&nbsp;可以通过index进行访问。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位集：&nbsp;其实就是由二进制位构成的Vector，&nbsp;用来保存大量”开-关”信息，&nbsp;它所占的空间比较小，&nbsp;但是效率不是很高，&nbsp;如果想高效率访问，&nbsp;还不如用固定长度的数组。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;堆栈：&nbsp;先入后出（LIFO）集合，&nbsp;java.util.Stack类其实就是从Vector继承下来的，&nbsp;实现了pop,&nbsp;push方法。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;散列表：&nbsp;由一组组“键--值”组成，&nbsp;这里的键必须是Object类型。&nbsp;通过Object的hashCode进行高效率的访问。
+</p>
+<p>
+	对于这些集合之间的关联关系见下图，&nbsp;其中标色的部分为我们常用的类。
+</p>
+<p>
+	由上图可以看出，&nbsp;基本接口有两个：
+</p>
+<p>
+	Collection：&nbsp;所有的矢量集合类都从它继承下去的，&nbsp;但并不直接从它继承下去的。&nbsp;List与Set这两个接口直接继承了Collection，&nbsp;他们的区别是List里面可以保存相同的对象句柄，&nbsp;而Set里面的值是不重复的。&nbsp;我们经常用的Vector与ArrayList就是从List继承下去的，&nbsp;而HashSet是从Set继承的。
+</p>
+<p>
+	Map：散列表的接口，&nbsp;Hashtable与HashMap继承了这个接口。
+</p>
+<p>
+	下面给出常用集合类的常用方法。
+</p>
+<p style="text-indent:17.95pt;">
+	/**
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*&nbsp;Vector&nbsp;与&nbsp;ArrayList的操作几乎是一样的
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*&nbsp;常用的追加元素用add(),&nbsp;删除元素用remove()
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*&nbsp;取元素用get(),&nbsp;遍历它可以循环用get()取.&nbsp;或者
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*&nbsp;先得到一个Iterator,&nbsp;然后通过遍历Iterator的方法
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*&nbsp;遍历Vector或ArrayList
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*/
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;生成一个空的Vector
+</p>
+<p style="text-indent:17.95pt;">
+	Vector&nbsp;vector&nbsp;=&nbsp;new&nbsp;Vector();
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;在最后追加一个元素。
+</p>
+<p style="text-indent:17.95pt;">
+	vector.add("one");
+</p>
+<p style="text-indent:17.95pt;">
+	vector.add("two");
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;在指定的地方设置一个值
+</p>
+<p style="text-indent:17.95pt;">
+	vector.set(0,&nbsp;"new&nbsp;one");
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;移走一个元素或移走指定位置的元素
+</p>
+<p style="text-indent:17.95pt;">
+	vector.remove(0);
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;用for循环遍历这个Vector
+</p>
+<p style="text-indent:17.95pt;">
+	for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;vector.size();&nbsp;i++)&nbsp;{
+</p>
+<p style="text-indent:17.95pt;">
+	String&nbsp;element&nbsp;=&nbsp;(String)&nbsp;vector.get(i);&nbsp;}
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;用枚举器(Enumeration)遍历它(只有Vector有，ArrayList没有)
+</p>
+<p style="text-indent:17.95pt;">
+	Enumeration&nbsp;enu&nbsp;=&nbsp;vector.elements();
+</p>
+<p style="text-indent:17.95pt;">
+	while&nbsp;(enu.hasMoreElements())&nbsp;{
+</p>
+<p style="text-indent:17.95pt;">
+	enu.nextElement();}
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;用反复器(Iterator)遍历它
+</p>
+<p style="text-indent:17.95pt;">
+	Iterator&nbsp;it&nbsp;=&nbsp;vector.iterator();
+</p>
+<p style="text-indent:17.95pt;">
+	while&nbsp;(it.hasNext())&nbsp;{it.next();}
+</p>
+<p style="text-indent:17.95pt;">
+	/**
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*&nbsp;Hashtable与HashMap的操作,&nbsp;追加元素用put(不是add)
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*&nbsp;删除元素用remove,&nbsp;遍历可以用Iterator&nbsp;既可以遍历
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*&nbsp;它的key,&nbsp;也可以是value
+</p>
+<p style="text-indent:17.95pt;">
+	&nbsp;*/
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;生成一个空的Hashtable或HashMap
+</p>
+<p style="text-indent:17.95pt;">
+	Hashtable&nbsp;hashtable&nbsp;=&nbsp;new&nbsp;Hashtable();
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;追加一个元素
+</p>
+<p style="text-indent:17.95pt;">
+	hashtable.put("one",&nbsp;"one&nbsp;object&nbsp;value");
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;删除一个元素
+</p>
+<p style="text-indent:17.95pt;">
+	hashtable.remove("one");
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;用Iterator遍历
+</p>
+<p style="text-indent:17.95pt;">
+	Iterator&nbsp;keyIt&nbsp;=&nbsp;hashtable.keySet().iterator();
+</p>
+<p style="text-indent:17.95pt;">
+	while&nbsp;(keyIt.hasNext())&nbsp;{
+</p>
+<p style="text-indent:17.95pt;">
+	Object&nbsp;keyName&nbsp;=&nbsp;keyIt.next();
+</p>
+<p style="text-indent:17.95pt;">
+	String&nbsp;value&nbsp;=&nbsp;(String)&nbsp;hashtable.get(keyName);&nbsp;}
+</p>
+<p style="text-indent:17.95pt;">
+	Iterator&nbsp;valueIt&nbsp;=&nbsp;hashtable.values().iterator();
+</p>
+<p style="text-indent:17.95pt;">
+	while&nbsp;(valueIt.hasNext())&nbsp;{
+</p>
+<p style="text-indent:17.95pt;">
+	valueIt.next();}
+</p>
+<p style="text-indent:17.95pt;">
+	<br />
+</p>
+<p style="text-indent:17.95pt;">
+	//&nbsp;用Enumeration遍历,&nbsp;只有Hashtable有,&nbsp;HashMap没有.
+</p>
+<p style="text-indent:17.95pt;">
+	Enumeration&nbsp;enu&nbsp;=&nbsp;hashtable.elements();
+</p>
+<p style="text-indent:17.95pt;">
+	while&nbsp;(enu.hasMoreElements())&nbsp;{
+</p>
+<p style="text-indent:17.95pt;">
+	enu.nextElement();}
+</p>
+<p style="text-indent:17.95pt;">
+	<br />
+</p>
+<p>
+	说明：&nbsp;Enumeration是老集合库中的接口，&nbsp;而Iterator是新集合（1.2）中出现的，&nbsp;而Vector与Hashtable也都是老集合中的类，&nbsp;所以只有Vector与Hashtable可以用Enumeration。
+</p>
+<p>
+	<br />
+</p>
+<p>
+	Vector与ArrayList对比：
+</p>
+<p>
+	虽然在使用的时候好象这两个类没什么区别，&nbsp;它们都是从List继承下来的，&nbsp;拥有相同的方法，&nbsp;但它们的内部还是有些不同的，
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先Vector在内部的一些方法作了线程同步(synchronized)。&nbsp;同步的代价就是降低了执行效率，&nbsp;但提高了安全性。而ArrayList则是线程不同步的，&nbsp;可以多线程并发读写它。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内部数据增长率。&nbsp;所有的这些矢量集合在内部都是用Object的数组进行存储和操作的。&nbsp;所以也就明白了为什么它可以接受任何类型的Object，&nbsp;但取出来的时候需要进行类型再造。&nbsp;Vector与ArrayList具有自动伸缩的功能，&nbsp;我们不用管它size多大，&nbsp;我们都可以在它的后面追加元素。&nbsp;Vector与ArrayList内部的数组增长率是不一样的，&nbsp;当内部的数组不能容纳更多元素的时候，&nbsp;Vector会自动增长到原两倍大小，&nbsp;ArrayList会变为原一倍半大小，&nbsp;而不是我们所想象的一个元素一个元素的增长。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	<br />
+</p>
+<p>
+	Hashtable与HashMap对比：
+</p>
+<p>
+	Hashtable与HashMap都是从Map继承下来的，&nbsp;方法几乎都一样，&nbsp;它们内部有两个不同点：
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与Vector和ArrayList一样，&nbsp;它们在线程同步是不同的，&nbsp;Hashtable在内部做了线程同步，&nbsp;而HashMap是线程不同步的。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HashMap的键与值都可以为null，&nbsp;而Hashtable不可以，&nbsp;如果你试图将一个null值放到Hashtable里面去，&nbsp;会抛一个NullPointException的。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	<br />
+</p>
+<p>
+	性能对比：
+</p>
+<p>
+	抛开不常用的集合不讲，&nbsp;每种集合都应该有一个我们常用的集合类，&nbsp;而在不同的场合下应该使用效率最高的一个。&nbsp;一般来说我推荐尽量使用新的集合类，&nbsp;除非不得已，&nbsp;比如说需要用用了老集合类写的产品的程序。&nbsp;也就是说尽量使用ArrayList与HashMap，&nbsp;而少使用Vector与Hashtable。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在单线程中使用ArrayList与HashMap，&nbsp;而在多线程中如果需要进行线程同步可以使用Vector与Hashtable，&nbsp;但也可以用synchronized对ArrayList与HashMap进行同步，&nbsp;不过同步后的ArrayList与HashMap是比Vector与Hashtable慢的。&nbsp;不过我认为需要进行线程同步的地方并不多。&nbsp;如果一个变量定义在方法内部同时只可能有一个线程对之进行操作，&nbsp;就不必要进行同步，&nbsp;如果定义在类的内部并且不是静态的，&nbsp;属于实例变量，&nbsp;而这个类并没有被多线程使用也就不必要同步。<br />
+一般自己写的程序很少会自己去另开线程的，&nbsp;但在Web开发的时候，&nbsp;如果用了Servlet，&nbsp;则每个request都是一个线程，&nbsp;也就是说每个Servlet都是在多线程环境下运行的，&nbsp;如果Servlet中使用了全局静态的成员变量就得小心点儿，&nbsp;如果需要同步就得在方法上加上synchronized修饰符，&nbsp;如果允许多个线程操作它，&nbsp;并且你知道不会有什么冲突问题就可以大胆的使用ArrayList与HashMap。&nbsp;另外如果在多线程中有线程在对ArrayList或HashMap进行修改（结构上的修改），&nbsp;而有一个线程在用Iterator进行读取操作，&nbsp;这个时候就有可能会抛ConcurrentModificationException,&nbsp;因为用Iterator的时候，&nbsp;不允许原List的结构改变。但可以用get方法来取。
+</p>
+<p style="margin-left:21pt;text-indent:-21pt;">
+	<br />
+</p>
+<p>
+	常用技巧：
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;采用面向接口的编程技巧，&nbsp;比如现在需要写一个共通函数，对矢量集合类诸如Vector，ArrayList，HashSet等等进行操作，&nbsp;但我并不知道最终用户会具体传给我什么类型的类，&nbsp;这个时候我们可以使用Collection接口，&nbsp;从而使代码具有很大的灵活性。&nbsp;代码示例如下：
+</p>
+<p style="text-indent:53.95pt;">
+	/**
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;*&nbsp;将list里面的所有元素用sep连接起来，
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;*&nbsp;list可以为Vector,&nbsp;ArrayList,&nbsp;HashSet等。
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;*/
+</p>
+<p style="text-indent:53.95pt;">
+	public&nbsp;static&nbsp;String&nbsp;join(String&nbsp;sep,&nbsp;Collection&nbsp;list)&nbsp;{
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;StringBuffer&nbsp;sb&nbsp;=&nbsp;new&nbsp;StringBuffer();
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;Iterator&nbsp;iterator&nbsp;=&nbsp;list.iterator();
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;while&nbsp;(iterator.hasNext())&nbsp;{
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append(iterator.next());
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(iterator.hasNext())&nbsp;{&nbsp;sb.append(sep);&nbsp;}
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;}
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;return&nbsp;sb.toString();
+</p>
+<p style="text-indent:53.95pt;">
+	}
+</p>
+<p style="text-indent:53.95pt;">
+	<br />
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;利用Set进行Unique，&nbsp;比如有一组对象（其中有对象是重复的），&nbsp;但我们只对不同的对象感兴趣，&nbsp;这个时候可以使用HashSet这个集合类，&nbsp;然后可以通过覆盖Object的equals方法来选择自定义判断相等的rule。&nbsp;缺省的是地址判断。&nbsp;例：
+</p>
+<p style="text-indent:53.95pt;">
+	class&nbsp;DataClass&nbsp;{
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;private&nbsp;String&nbsp;code&nbsp;=&nbsp;null;
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;private&nbsp;String&nbsp;name&nbsp;=&nbsp;null;
+</p>
+<p style="text-indent:53.95pt;">
+	<br />
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setCode(String&nbsp;code)&nbsp;{this.code&nbsp;=&nbsp;code;&nbsp;}
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;public&nbsp;String&nbsp;getCode()&nbsp;{return&nbsp;this.code;&nbsp;}
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setName(String&nbsp;name)&nbsp;{this.name&nbsp;=&nbsp;name;&nbsp;}
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;public&nbsp;String&nbsp;getName()&nbsp;{return&nbsp;this.name;&nbsp;}
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;equals(DataClass&nbsp;otherData)&nbsp;{
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(otherData&nbsp;!=&nbsp;null)&nbsp;{
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.getCode()&nbsp;!=&nbsp;null&amp;&amp;&nbsp;this.getCode().equals(otherData.getCode())&nbsp;{
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+</p>
+<p style="text-indent:53.95pt;">
+	&nbsp;&nbsp;&nbsp;}}
+</p>
+<p style="text-indent:53.95pt;">
+	DataClass&nbsp;data1&nbsp;=&nbsp;new&nbsp;DataClass();
+</p>
+<p style="text-indent:53.95pt;">
+	DataClass&nbsp;data2&nbsp;=&nbsp;new&nbsp;DataClass();
+</p>
+<p style="text-indent:53.95pt;">
+	data1.setCode("1");
+</p>
+<p style="text-indent:53.95pt;">
+	data2.setCode("1");
+</p>
+<p style="text-indent:53.95pt;">
+	HashSet&nbsp;singleSet&nbsp;=&nbsp;new&nbsp;HashSet();
+</p>
+<p style="text-indent:53.95pt;">
+	singleSet.add(data1);
+</p>
+<p style="text-indent:53.95pt;">
+	singleSet.add(data2);
+</p>
+<p style="text-indent:35.9pt;">
+	结果singleSet里面只有data1，&nbsp;因为data2.equals(data1)，&nbsp;所以data2并没有加进去。
+</p>
+<p style="text-indent:35.9pt;">
+	<br />
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;灵活的设计集合的存储方式，&nbsp;以获得较高效的处理。&nbsp;集合里面可以再嵌套集合，&nbsp;例：在ArrayList里面存放HashMap，&nbsp;HashMap里面再嵌套HashMap。
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Java基本运算符</title>
+		<meta name="Keywords" content="Java基本运算符 "/>
+		<meta name="Description" content="Java基本运算符-Java提供了一套丰富的运算符对变量进行操作。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../java">Java教程</a>  » Java基本运算符
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../thinking">Java编程思想</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../javaio">java io类</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="java_overview.html#java_overview">Java概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_environment_setup.html#java_environment_setup">Java环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_syntax.html#java_basic_syntax">Java基本语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_object_classes.html#java_object_classes">Java对象和类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_datatypes.html#java_basic_datatypes">Java基础数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_variable_types.html#java_variable_types">Java变量类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_modifier_types.html#java_modifier_types">Java修饰符类型</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="java_basic_operators.html">Java基本运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_loop_control.html#java_loop_control">Java循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_decision_making.html#java_decision_making">Java流程控制</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_numbers.html#java_numbers">Java Number类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_character.html#java_character">Java Character类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_string.html#java_string">Java String类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_oop_overview.html#java_oop_overview">Java面向对象基本概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_system_class.html#java_system_class">Java System类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_String/StringBuffer.html#java_string/stringbuffer">Java String/StringBuffer用法比较</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ClassLoader.html#classloader">Java Class, ClassLoader用法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_javaio.html#java_javaio">Java IO系统</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_sets.html#java_sets">Java集合类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ResourceBundle.html#resourcebundle">Java ResourceBundle, Properties</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="Exceptions.html#exceptions">Java Exceptions异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_jdbc.html#java_jdbc">Java JDBC类库</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Java基本运算符</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Java基本运算符-Java提供了一套丰富的运算符对变量进行操作。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	Java提供了一套丰富的运算符对变量进行操作。我们可以把所有的Java操作分成以下几组：
+</p>
+<ul style="background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			算术运算符
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			关系运算符
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			按位运算符
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			逻辑运算符
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			赋值运算符
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			其他<span style="background-color:#FFFFFF;">运算符</span> 
+		</p>
+	</li>
+</ul>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<span style="background-color:#FFFFFF;">算术运算符</span>:
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Arithmetic operators are used in mathematical expressions in the same way that they are used in algebra. The following table lists the arithmetic operators:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Assume integer variable A holds 10 and variable B holds 20 then:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<a href="http://www.yiibai.com/java/java_arithmatic_operators_examples.html" target="_blank">查看实例</a> 
+</p>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;">
+	<tbody>
+		<tr>
+			<th width="10%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Operator
+			</th>
+			<th width="45%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Example
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				+
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Addition - Adds values on either side of the operator
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				A + B will give 30
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Subtraction - Subtracts right hand operand from left hand operand
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				A - B will give -10
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				*
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Multiplication - Multiplies values on either side of the operator
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				A * B will give 200
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				/
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Division - Divides left hand operand by right hand operand
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				B / A will give 2
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				%
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Modulus - Divides left hand operand by right hand operand and returns remainder
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				B % A will give 0
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				++
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Increment - Increase the value of operand by 1
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				B++ gives 21
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				--
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Decrement - Decrease the value of operand by 1
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				B-- gives 19
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<strong>关系运算符：</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	There are following relational operators supported by Java language
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Assume variable A holds 10 and variable B holds 20 then:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<a href="http://www.yiibai.com/java/java_relational_operators_examples.html" target="_blank">查看实例</a> 
+</p>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;">
+	<tbody>
+		<tr>
+			<th width="10%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Operator
+			</th>
+			<th width="45%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Example
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				==
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Checks if the value of two operands are equal or not, if yes then condition becomes true.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A == B) is not true.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				!=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Checks if the value of two operands are equal or not, if values are not equal then condition becomes true.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A != B) is true.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&gt;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A &gt; B) is not true.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&lt;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A &lt; B) is true.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&gt;=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A &gt;= B) is not true.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&lt;=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A &lt;= B) is true.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<strong>按位运算符：</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Java defines several bitwise operators which can be applied to the integer types, long, int, short, char, and byte.
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Bitwise operator works on bits and perform bit by bit operation. Assume if a = 60; and b = 13; Now in binary format they will be as follows:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	a = 0011 1100
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	b = 0000 1101
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	-----------------
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	a&amp;b = 0000 1100
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	a|b = 0011 1101
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	a^b = 0011 0001
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	~a&nbsp; = 1100 0011
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	The following table lists the bitwise operators:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Assume integer variable A holds 60 and variable B holds 13 then:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<a href="http://www.yiibai.com/java/java_bitwise_operators_examples.html" target="_blank">查看实例</a> 
+</p>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;">
+	<tbody>
+		<tr>
+			<th width="10%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Operator
+			</th>
+			<th width="45%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Example
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&amp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Binary AND Operator copies a bit to the result if it exists in both operands.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A &amp; B) will give 12 which is 0000 1100
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				|
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Binary OR Operator copies a bit if it exists in eather operand.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A | B) will give 61 which is 0011 1101
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				^
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Binary XOR Operator copies the bit if it is set in one operand but not both.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A ^ B) will give 49 which is 0011 0001
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				~
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Binary Ones Complement Operator is unary and has the efect of 'flipping' bits.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(~A ) will give -60 which is 1100 0011
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&lt;&lt;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				A &lt;&lt; 2 will give 240 which is 1111 0000
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&gt;&gt;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				A &gt;&gt; 2 will give 15 which is 1111
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&gt;&gt;&gt;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Shift right zero fill operator. The left operands value is moved right by the number of bits specified by the right operand and shifted values are filled up with zeros.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				A &gt;&gt;&gt;2 will give 15 which is 0000 1111
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<strong>逻辑运算符：</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	The following table lists the logical operators:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Assume boolean variables A holds true and variable B holds false then:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<a href="http://www.yiibai.com/java/java_logical_operators_examples.htm">查看实例</a> 
+</p>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;">
+	<tbody>
+		<tr>
+			<th width="10%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Operator
+			</th>
+			<th width="45%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Example
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&amp;&amp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Called Logical AND operator. If both the operands are non zero then then condition becomes true.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A &amp;&amp; B) is false.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				||
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Called Logical OR Operator. If any of the two operands are non zero then then condition becomes true.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				(A || B) is true.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				!
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false.
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				!(A &amp;&amp; B) is true.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	The Assignment Operators:
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	There are following assignment operators supported by Java language:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<a href="http://www.yiibai.com/java/java_assignment_operators_examples.html" target="_blank">查看实例</a> 
+</p>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;">
+	<tbody>
+		<tr>
+			<th width="10%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Operator
+			</th>
+			<th width="40%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Description
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Example
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Simple assignment operator, Assigns values from right side operands to left side operand
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C = A + B will assigne value of A + B into C
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				+=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Add AND assignment operator, It adds right operand to the left operand and assign the result to left operand
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C += A is equivalent to C = C + A
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				-=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Subtract AND assignment operator, It subtracts right operand from the left operand and assign the result to left operand
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C -= A is equivalent to C = C - A
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				*=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Multiply AND assignment operator, It multiplies right operand with the left operand and assign the result to left operand
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C *= A is equivalent to C = C * A
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				/=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Divide AND assignment operator, It divides left operand with the right operand and assign the result to left operand
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C /= A is equivalent to C = C / A
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				%=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Modulus AND assignment operator, It takes modulus using two operands and assign the result to left operand
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C %= A is equivalent to C = C % A
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&lt;&lt;=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left shift AND assignment operator
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C &lt;&lt;= 2 is same as C = C &lt;&lt; 2
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&gt;&gt;=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Right shift AND assignment operator
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C &gt;&gt;= 2 is same as C = C &gt;&gt; 2
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&amp;=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Bitwise AND assignment operator
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C &amp;= 2 is same as C = C &amp; 2
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				^=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				bitwise exclusive OR and assignment operator
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C ^= 2 is same as C = C ^ 2
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				|=
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				bitwise inclusive OR and assignment operator
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				C |= 2 is same as C = C | 2
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<strong>其他操作符</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	There are few other operators supported by Java Language.
+</p>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	Conditional Operator ( ? : ):
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Conditional operator is also known as the ternary operator. This operator consists of three operands and is used to evaluate boolean expressions. The goal of the operator is to decide which value should be assigned to the variable. The operator is written as :
+</p>
+<pre>variable x = (expression) ? value if true : value if false
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Following is the example:
+</p>
+<pre>public class Test {
+   public static void main(String args[]){
+      int a , b;
+      a = 10;
+      b = (a == 1) ? 20: 30;
+      System.out.println( "Value of b is : " +  b );
+
+      b = (a == 10) ? 20: 30;
+      System.out.println( "Value of b is : " + b );
+   }
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	This would produce following result:
+</p>
+<pre>Value of b is : 30
+Value of b is : 20
+</pre>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	instanceOf Operator:
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	This operator is used only for object reference variables. The operator checks whether the object is of a particular type(class type or interface type). instanceOf operator is wriiten as:
+</p>
+<pre>( Object reference variable ) instanceOf  (class/interface type)
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	If the object referred by the variable on the left side of the operator passes the IS-A check for the class/interface type on the right side then the result will be true. Following is the example:
+</p>
+<pre>String name = = 'James';
+boolean result = name instanceOf String;  
+// This will return true since name is type of String
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	This operator will still return true if the object being compared is the assignment compatible with the type on the right. Following is one more example:
+</p>
+<pre>class Vehicle {}
+
+public class Car extends Vehicle {
+   public static void main(String args[]){
+      Vehicle a = new Car();
+      boolean result =  a instanceof Car;
+      System.out.println( result);
+   }
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	This would produce following result:
+</p>
+<pre>true
+</pre>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	Precedence of Java Operators:
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Operator precedence determines the grouping of terms in an expression. This affects how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has higher precedence than the addition operator:
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	For example x = 7 + 3 * 2; Here x is assigned 13, not 20 because operator * has higher precedenace than + so it first get multiplied with 3*2 and then adds into 7.
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Here operators with the highest precedence appear at the top of the table, those with the lowest appear at the bottom. Within an expression, higher precedenace operators will be evaluated first.
+</p>
+<table border="1" width="100%" cellpadding="5" cellspacing="0" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;">
+	<tbody>
+		<tr>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Category&nbsp;
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Operator&nbsp;
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				Associativity&nbsp;
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Postfix&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				() [] . (dot operator)
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Unary&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				++ - - ! ~
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Right to left&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Multiplicative &nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				* / %&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Additive &nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				+ -&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Shift &nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&gt;&gt; &gt;&gt;&gt; &lt;&lt; &nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Relational &nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&gt; &gt;= &lt; &lt;= &nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Equality &nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				== !=&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Bitwise AND&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&amp;&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Bitwise XOR&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				^&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Bitwise OR&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				|&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Logical AND&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				&amp;&amp;&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Logical OR&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				||&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Conditional&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				?:&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Right to left&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Assignment&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				= += -= *= /= %= &gt;&gt;= &lt;&lt;= &amp;= ^= |=&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Right to left&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Comma&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				,&nbsp;
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Left to right&nbsp;
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	下一步学什么？
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Next chapter would explain about loop control in Java programming. The chapter will describe various types of loops and how these loops can be used in Java program development and for what purposes they are being used.
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl参考函数</title>
+		<meta name="Keywords" content="Perl参考函数，函数学习例子，函数实例代码，函数教程等 "/>
+		<meta name="Description" content="Perl参考函数，函数学习例子，函数实例代码，函数教程等"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl参考函数
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_function_references.html">Perl参考函数</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl参考函数</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl参考函数，函数学习例子，函数实例代码，函数教程等
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	这是标准的Perl解释器所支持的所有重要函数/功能的列表。在一个函数中找到它的详细信息。
+</p>
+<ul style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_abs.html" target="_blank">abs</a>&nbsp;- 绝对值函数
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_accept.html" target="_blank">accept</a>&nbsp;- 接受传入的socket连接
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_alarm.html" target="_blank">alarm</a>&nbsp;- 调度一个SIGALRM
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_atan2.html" target="_blank">atan2</a>&nbsp;-Y/X的反正切值，范围在-PI到PI
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_bind.html" target="_blank">bind</a>&nbsp;- 地址绑定到一个套接字
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_binmode.html" target="_blank">binmode</a>&nbsp;- 准备二进制文件I / O
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_bless.html" target="_blank">bless</a>&nbsp;- 创建一个对象
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_caller.html" target="_blank">caller</a>&nbsp;- 获取当前子程序调用的上下文
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_chdir.html" target="_blank">chdir</a>&nbsp;- 改变当前的工作目录
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_chmod.html" target="_blank">chmod</a>&nbsp;- 改变权限的文件列表
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_chomp.html" target="_blank">chomp</a>&nbsp;-&nbsp;从字符串中删除结尾的记录分隔符
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_chop.html" target="_blank">chop</a>&nbsp;- 删除一个字符串的最后一个字符
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_chown.html" target="_blank">chown</a>&nbsp;- 改变文件列表的所有权
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_chr.html" target="_blank">chr</a>&nbsp;- 这个数字代表获得字符
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_chroot.html" target="_blank">chroot</a>&nbsp;- 根目录下新建一个路径查找
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_close.html" target="_blank">close</a>&nbsp;- 关闭文件（或管道或套接字）处理
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_closedir.html" target="_blank">closedir</a>&nbsp;- 关闭目录句柄
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_connect.html" target="_blank">connect</a>&nbsp;- 连接到远程套接字
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_continue.html" target="_blank">continue</a>&nbsp;- 可选的结尾块在一段时间内或foreach
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_cos.html" target="_blank">cos</a>&nbsp;- 余弦函数
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_crypt.html" target="_blank">crypt</a>&nbsp;- 单向密码式加密
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_dbmclose.html" target="_blank">dbmclose</a>&nbsp;- 中断约束的一道排在并列dbm文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_dbmopen.html" target="_blank">dbmopen</a>&nbsp;- 创建绑定一道排在并列dbm文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_defined.html" target="_blank">defined</a>&nbsp;- 测试是否为一个值，变量或函数定义或
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_delete.html" target="_blank">delete</a>&nbsp;- 删除从哈希一个值
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_die.html" target="_blank">die</a>&nbsp;- 抛出一个异常，或摆脱困境（错误）
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_do.html" target="_blank">do</a>&nbsp;- 打开块转到一个TERM
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_dump.html" target="_blank">dump</a>&nbsp;- 立即创建一个核心转储<span></span> 
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_each.html" target="_blank">each</a>&nbsp;- 检索下一个键/值对从哈希
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_endgrent.html" target="_blank">endgrent</a>&nbsp;- 使用组文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_endhostent.html" target="_blank">endhostent</a>&nbsp;- 使用hosts文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_endnetent.html" target="_blank">endnetent</a>&nbsp;- 使用网络文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_endprotoent.html" target="_blank">endprotoent</a>&nbsp;- 使用协议文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_endpwent.html" target="_blank">endpwent</a>&nbsp;- 使用passwd文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_endservent.html" target="_blank">endservent</a>&nbsp;- 使用服务文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_eof.html" target="_blank">eof</a>&nbsp;- 测试是否为一个文件<span style="background-color:#FFFFFF;">结束</span>句柄
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_eval.html" target="_blank">eval</a>&nbsp;- 捕获异常或编译和运行代码
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_exec.html" target="_blank">exec</a>&nbsp;- 放弃此程序运行另一个
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_exists.html" target="_blank">exists</a>&nbsp;- 测试是否存在的哈希键
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_exit.html" target="_blank">exit</a>&nbsp;- 终止这个程序
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_exp.html" target="_blank">exp</a>&nbsp;- 提高I的幂
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_fcntl.html" target="_blank">fcntl</a>&nbsp;- 文件控制系统调用
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_fileno.html" target="_blank">fileno</a>&nbsp;- 从文件句柄，返回的文件描述符
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_flock.html" target="_blank">flock</a>&nbsp;-&nbsp;与咨询锁锁定整个文件
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_fork.html" target="_blank">fork</a>&nbsp;- 创建一个新的进程，就像这个
+	</li>
+	<li>
+		<a href="perl_format.html" target="_blank">format</a>&nbsp;- 使用write()函数声明的图片格式
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_formline.html" target="_blank">formline</a>&nbsp;- 内部功能的使用格式
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getc.html" target="_blank">getc</a>&nbsp;- 得到的下一个字符的文件句柄
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getgrent.html" target="_blank">getgrent</a>&nbsp;- 下一组记录
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getgrgid.html" target="_blank">getgrgid</a>&nbsp;- 组记录组用户ID
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getgrnam.html" target="_blank">getgrnam</a>&nbsp;- 组记录组的名称
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_gethostbyaddr.html" target="_blank">gethostbyaddr</a>&nbsp;- 主机记录其地址
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_gethostbyname.html" target="_blank">gethostbyname</a>&nbsp;- 主机记录给定的名称
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_gethostent.html" target="_blank">gethostent</a>&nbsp;- 获取下一个主机记录
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getlogin.html" target="_blank">getlogin</a>&nbsp;-返回谁在这个tty登录
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getnetbyaddr.html" target="_blank">getnetbyaddr</a>&nbsp;- 网络记录其地址
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getnetbyname.html" target="_blank">getnetbyname</a>&nbsp;- 网络记录给定的名称
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getnetent.html" target="_blank">getnetent</a>&nbsp;- 获得下一个的网络记录
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getpeername.html" target="_blank">getpeername</a>&nbsp;- 找到套接字连接的另一端
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getpgrp.html" target="_blank">getpgrp</a>&nbsp;- 获取进程组
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getppid.html" target="_blank">getppid</a>&nbsp;- 父进程ID
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getpriority.html" target="_blank">getpriority</a>&nbsp;- 目前的优先值
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getprotobyname.html" target="_blank">getprotobyname</a>&nbsp;- 协议记录给定的名称
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getprotobynumber.html" target="_blank">getprotobynumber</a>&nbsp;- 协议记录数字化协议
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getprotoent.html" target="_blank">getprotoent</a>&nbsp;- 获取下一个协议记录
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getpwent.html" target="_blank">getpwent</a>&nbsp;- passwd文件下一个记录
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getpwnam.html" target="_blank">getpwnam</a>&nbsp;- 获得passwd文件记录用户的登录名
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getpwuid.html" target="_blank">getpwuid</a>&nbsp;- 获取passwd文件记录用户ID
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getservbyname.html" target="_blank">getservbyname</a>&nbsp;- 服务记录给它的名字
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getservbyport.html" target="_blank">getservbyport</a>&nbsp;-&nbsp;服务记录给定的数字端口
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getservent.html" target="_blank">getservent</a>&nbsp;- 得到下一个服务记录
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getsockname.html" target="_blank">getsockname</a>&nbsp;- 对于给定的套接字检索的sockaddr
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_getsockopt.html" target="_blank">getsockopt</a>&nbsp;- 获得在一个给定的socket套接字选项
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_glob.html" target="_blank">glob</a>&nbsp;- 扩大使用通配符的文件名
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_gmtime.html" target="_blank">gmtime</a>&nbsp;-&nbsp;UNIX时间转换成记录或使用格林威治时间格式的字符串。
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_goto.html" target="_blank">goto</a>&nbsp;- 创建goto代码
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_grep.html" target="_blank">grep</a>&nbsp;-&nbsp;定位元素列表中的测试是对一个给定的标准
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_hex.html" target="_blank">hex</a>&nbsp;- 将字符串转换为一个十六进制数
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_import.html" target="_blank">import</a>&nbsp;- patch a module's namespace into your own
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_index.html" target="_blank">index</a>&nbsp;- find a substring within a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_int.html" target="_blank">int</a>&nbsp;- get the integer portion of a number
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_ioctl.html" target="_blank">ioctl</a>&nbsp;- system-dependent device control system call
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_join.html" target="_blank">join</a>&nbsp;- join a list into a string using a separator
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_keys.html" target="_blank">keys</a>&nbsp;- retrieve list of indices from a hash
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_kill.html" target="_blank">kill</a>&nbsp;- send a signal to a process or process group
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_last.html" target="_blank">last</a>&nbsp;- exit a block prematurely
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_lc.html" target="_blank">lc</a>&nbsp;- return lower-case version of a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_lcfirst.html" target="_blank">lcfirst</a>&nbsp;- return a string with just the next letter in lower case
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_length.html" target="_blank">length</a>&nbsp;- return the number of bytes in a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_link.html" target="_blank">link</a>&nbsp;- create a hard link in the filesytem
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_listen.html" target="_blank">listen</a>&nbsp;- register your socket as a server
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_local.html" target="_blank">local</a>&nbsp;- create a temporary value for a global variable (dynamic scoping)
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_localtime.html" target="_blank">localtime</a>&nbsp;- convert UNIX time into record or string using local time
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_lock.html" target="_blank">lock</a>&nbsp;- get a thread lock on a variable, subroutine, or method
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_log.html" target="_blank">log</a>&nbsp;- retrieve the natural logarithm for a number
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_lstat.html" target="_blank">lstat</a>&nbsp;- stat a symbolic link
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_m.html" target="_blank">m</a>&nbsp;- match a string with a regular expression pattern
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_map.html" target="_blank">map</a>&nbsp;- apply a change to a list to get back a new list with the changes
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_mkdir.html" target="_blank">mkdir</a>&nbsp;- create a directory
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_msgctl.html" target="_blank">msgctl</a>&nbsp;- SysV IPC message control operations
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_msgget.html" target="_blank">msgget</a>&nbsp;- get SysV IPC message queue
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_msgrcv.html" target="_blank">msgrcv</a>&nbsp;- receive a SysV IPC message from a message queue
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_msgsnd.html" target="_blank">msgsnd</a>&nbsp;- send a SysV IPC message to a message queue
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_my.html" target="_blank">my</a>&nbsp;- declare and assign a local variable (lexical scoping)
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_next.html" target="_blank">next</a>&nbsp;- iterate a block prematurely
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_no.html" target="_blank">no</a>&nbsp;- unimport some module symbols or semantics at compile time
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_oct.html" target="_blank">oct</a>&nbsp;- convert a string to an octal number
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_open.html" target="_blank">open</a>&nbsp;- open a file, pipe, or descriptor
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_opendir.html" target="_blank">opendir</a>&nbsp;- open a directory
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_ord.html" target="_blank">ord</a>&nbsp;- find a character's numeric representation
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_our.html" target="_blank">our</a>&nbsp;- declare and assign a package variable (lexical scoping)
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_pack.html" target="_blank">pack</a>&nbsp;- convert a list into a binary representation
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_package.html" target="_blank">package</a>&nbsp;- declare a separate global namespace
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_pipe.html" target="_blank">pipe</a>&nbsp;- open a pair of connected filehandles
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_pop.html" target="_blank">pop</a>&nbsp;- remove the last element from an array and return it
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_pos.html" target="_blank">pos</a>&nbsp;- find or set the offset for the last/next m//g search
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_print.html" target="_blank">print</a>&nbsp;- output a list to a filehandle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_printf.html" target="_blank">printf</a>&nbsp;- output a formatted list to a filehandle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_prototype.html" target="_blank">prototype</a>&nbsp;- get the prototype (if any) of a subroutine
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_push.html" target="_blank">push</a>&nbsp;- append one or more elements to an array
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_q.html" target="_blank">q</a>&nbsp;- singly quote a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_qq.html" target="_blank">qq</a>&nbsp;- doubly quote a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_qr.html" target="_blank">qr</a>&nbsp;- Compile pattern
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_quotemeta.html" target="_blank">quotemeta</a>&nbsp;- quote regular expression magic characters
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_qw.html" target="_blank">qw</a>&nbsp;- quote a list of words
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_qx.html" target="_blank">qx</a>&nbsp;- backquote quote a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_rand.html" target="_blank">rand</a>&nbsp;- retrieve the next pseudorandom number
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_read.html" target="_blank">read</a>&nbsp;- fixed-length buffered input from a filehandle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_readdir.html" target="_blank">readdir</a>&nbsp;- get a directory from a directory handle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_readline.html" target="_blank">readline</a>&nbsp;- fetch a record from a file
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_readlink.html" target="_blank">readlink</a>&nbsp;- determine where a symbolic link is pointing
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_readpipe.html" target="_blank">readpipe</a>&nbsp;- execute a system command and collect standard output
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_recv.html" target="_blank">recv</a>&nbsp;- receive a message over a Socket
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_redo.html" target="_blank">redo</a>&nbsp;- start this loop iteration over again
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_ref.html" target="_blank">ref</a>&nbsp;- find out the type of thing being referenced
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_rename.html" target="_blank">rename</a>&nbsp;- change a filename
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_require.html" target="_blank">require</a>&nbsp;- load in external functions from a library at runtime
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_reset.html" target="_blank">reset</a>&nbsp;- clear all variables of a given name
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_return.html" target="_blank">return</a>&nbsp;- get out of a function early
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_reverse.html" target="_blank">reverse</a>&nbsp;- flip a string or a list
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_rewinddir.html" target="_blank">rewinddir</a>&nbsp;- reset directory handle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_rindex.html" target="_blank">rindex</a>&nbsp;- right-to-left substring search
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_rmdir.html" target="_blank">rmdir</a>&nbsp;- remove a directory
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_s.html" target="_blank">s</a>&nbsp;- replace a pattern with a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_scalar.html" target="_blank">scalar</a>&nbsp;- force a scalar context
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_seek.html" target="_blank">seek</a>&nbsp;- reposition file pointer for random-access I/O
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_seekdir.html" target="_blank">seekdir</a>&nbsp;- reposition directory pointer
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_select.html" target="_blank">select</a>&nbsp;- reset default output or do I/O multiplexing
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_semctl.html" target="_blank">semctl</a>&nbsp;- SysV semaphore control operations
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_semget.html" target="_blank">semget</a>&nbsp;- get set of SysV semaphores
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_semop.html" target="_blank">semop</a>&nbsp;- SysV semaphore operations
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_send.html" target="_blank">send</a>&nbsp;- send a message over a socket
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_setgrent.html" target="_blank">setgrent</a>&nbsp;- prepare group file for use
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sethostent.html" target="_blank">sethostent</a>&nbsp;- prepare hosts file for use
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_setnetent.html" target="_blank">setnetent</a>&nbsp;- prepare networks file for use
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_setpgrp.html" target="_blank">setpgrp</a>&nbsp;- set the process group of a process
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_setpriority.html" target="_blank">setpriority</a>&nbsp;- set a process's nice value
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_setprotoent.html" target="_blank">setprotoent</a>&nbsp;- prepare protocols file for use
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_setpwent.html" target="_blank">setpwent</a>&nbsp;- prepare passwd file for use
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_setservent.html" target="_blank">setservent</a>&nbsp;- prepare services file for use
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_setsockopt.html" target="_blank">setsockopt</a>&nbsp;- set some socket options
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_shift.html" target="_blank">shift</a>&nbsp;- remove the first element of an array, and return it
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_shmctl.html" target="_blank">shmctl</a>&nbsp;- SysV shared memory operations
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_shmget.html" target="_blank">shmget</a>&nbsp;- get SysV shared memory segment identifier
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_shmread.html" target="_blank">shmread</a>&nbsp;- read SysV shared memory
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_shmwrite.html" target="_blank">shmwrite</a>&nbsp;- write SysV shared memory
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_shutdown.html" target="_blank">shutdown</a>&nbsp;- close down just half of a socket connection
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sin.html" target="_blank">sin</a>&nbsp;- return the sine of a number
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sleep.html" target="_blank">sleep</a>&nbsp;- block for some number of seconds
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_socket.html" target="_blank">socket</a>&nbsp;- create a socket
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_socketpair.html" target="_blank">socketpair</a>&nbsp;- create a pair of sockets
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sort.html" target="_blank">sort</a>&nbsp;- sort a list of values
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_splice.html" target="_blank">splice</a>&nbsp;- add or remove elements anywhere in an array
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_split.html" target="_blank">split</a>&nbsp;- split up a string using a regexp delimiter
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sprintf.html" target="_blank">sprintf</a>&nbsp;- formatted print into a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sqrt.html" target="_blank">sqrt</a>&nbsp;- square root function
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_srand.html" target="_blank">srand</a>&nbsp;- seed the random number generator
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_stat.html" target="_blank">stat</a>&nbsp;- get a file's status information
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_study.html" target="_blank">study</a>&nbsp;- optimize input data for repeated searches
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sub.html" target="_blank">sub</a>&nbsp;- declare a subroutine, possibly anonymously
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_substr.html" target="_blank">substr</a>&nbsp;- get or alter a portion of a stirng
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_symlink.html" target="_blank">symlink</a>&nbsp;- create a symbolic link to a file
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_syscall.html" target="_blank">syscall</a>&nbsp;- execute an arbitrary system call
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sysopen.html" target="_blank">sysopen</a>&nbsp;- open a file, pipe, or descriptor
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sysread.html" target="_blank">sysread</a>&nbsp;- fixed-length unbuffered input from a filehandle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_sysseek.html" target="_blank">sysseek</a>&nbsp;- position I/O pointer on handle used with sysread and syswrite
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_system.html" target="_blank">system</a>&nbsp;- run a separate program
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_syswrite.html" target="_blank">syswrite</a>&nbsp;- fixed-length unbuffered output to a filehandle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_tell.html" target="_blank">tell</a>&nbsp;- get current seekpointer on a filehandle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_telldir.html" target="_blank">telldir</a>&nbsp;- get current seekpointer on a directory handle
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_tie.html" target="_blank">tie</a>&nbsp;- bind a variable to an object class
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_tied.html" target="_blank">tied</a>&nbsp;- get a reference to the object underlying a tied variable
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_time.html" target="_blank">time</a>&nbsp;- return number of seconds since 1970
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_times.html" target="_blank">times</a>&nbsp;- return elapsed time for self and child processes
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_tr.html" target="_blank">tr</a>&nbsp;- transliterate a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_truncate.html" target="_blank">truncate</a>&nbsp;- shorten a file
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_uc.html" target="_blank">uc</a>&nbsp;- return upper-case version of a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_ucfirst.html" target="_blank">ucfirst</a>&nbsp;- return a string with just the next letter in upper case
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_umask.html" target="_blank">umask</a>&nbsp;- set file creation mode mask
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_undef.html" target="_blank">undef</a>&nbsp;- remove a variable or function definition
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_unlink.html" target="_blank">unlink</a>&nbsp;- remove one link to a file
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_unpack.html" target="_blank">unpack</a>&nbsp;- convert binary structure into normal perl variables
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_unshift.html" target="_blank">unshift</a>&nbsp;- prepend more elements to the beginning of a list
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_untie.html" target="_blank">untie</a>&nbsp;- break a tie binding to a variable
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_use.html" target="_blank">use</a>&nbsp;- load in a module at compile time
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_utime.html" target="_blank">utime</a>&nbsp;- set a file's last access and modify times
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_values.html" target="_blank">values</a>&nbsp;- return a list of the values in a hash
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_vec.html" target="_blank">vec</a>&nbsp;- test or set particular bits in a string
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_wait.html" target="_blank">wait</a>&nbsp;- wait for any child process to die
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_waitpid.html" target="_blank">waitpid</a>&nbsp;- wait for a particular child process to die
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_wantarray.html" target="_blank">wantarray</a>&nbsp;- get void vs scalar vs list context of current subroutine call
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_warn.html" target="_blank">warn</a>&nbsp;- print debugging info
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_write.html" target="_blank">write</a>&nbsp;- print a picture record
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_-X.html" target="_blank">-X</a>&nbsp;- a file test (-r, -x, etc)
+	</li>
+	<li>
+		<a href="http://www.yiibai.com/perl/perl_y.html" target="_blank">y</a>&nbsp;- transliterate a string&lt;
+	</li>
+</ul>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

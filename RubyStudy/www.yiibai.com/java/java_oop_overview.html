@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Java面向对象基本概念</title>
+		<meta name="Keywords" content="Java基本上是面向对象的程序设计语言， 除了一些简单类型(primitive) "/>
+		<meta name="Description" content="Java基本上是面向对象的程序设计语言， 除了一些简单类型(primitive)的变量以外，一切都是对象， 程序是对象的组合， 每个对象都有自己的空间， 并且每个对象都有一种类型， 同一类所有对象都能接受相同的消息。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../java">Java教程</a>  » Java面向对象基本概念
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../thinking">Java编程思想</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../javaio">java io类</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="java_overview.html#java_overview">Java概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_environment_setup.html#java_environment_setup">Java环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_syntax.html#java_basic_syntax">Java基本语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_object_classes.html#java_object_classes">Java对象和类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_datatypes.html#java_basic_datatypes">Java基础数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_variable_types.html#java_variable_types">Java变量类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_modifier_types.html#java_modifier_types">Java修饰符类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_operators.html#java_basic_operators">Java基本运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_loop_control.html#java_loop_control">Java循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_decision_making.html#java_decision_making">Java流程控制</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_numbers.html#java_numbers">Java Number类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_character.html#java_character">Java Character类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_string.html#java_string">Java String类</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="java_oop_overview.html">Java面向对象基本概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_system_class.html#java_system_class">Java System类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_String/StringBuffer.html#java_string/stringbuffer">Java String/StringBuffer用法比较</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ClassLoader.html#classloader">Java Class, ClassLoader用法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_javaio.html#java_javaio">Java IO系统</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_sets.html#java_sets">Java集合类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ResourceBundle.html#resourcebundle">Java ResourceBundle, Properties</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="Exceptions.html#exceptions">Java Exceptions异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_jdbc.html#java_jdbc">Java JDBC类库</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Java面向对象基本概念</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Java基本上是面向对象的程序设计语言， 除了一些简单类型(primitive)的变量以外，一切都是对象， 程序是对象的组合， 每个对象都有自己的空间， 并且每个对象都有一种类型， 同一类所有对象都能接受相同的消息。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<h3>
+	1.&nbsp;&nbsp;&nbsp;Java面向对象基本概念
+</h3>
+<p>
+	Java基本上是面向对象的程序设计语言，&nbsp;除了一些简单类型(primitive)的变量以外，一切都是对象，&nbsp;程序是对象的组合，&nbsp;每个对象都有自己的空间，&nbsp;并且每个对象都有一种类型，&nbsp;同一类所有对象都能接受相同的消息。&nbsp;下面只对Java中对象的结构作简单的说明：
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类（class）:&nbsp;&nbsp;class是定义类的关键字，&nbsp;&nbsp;类中包含类变量，&nbsp;方法，&nbsp;内部类，&nbsp;内部接口等。由class可以生成类的实例，&nbsp;即一个个对象。&nbsp;如果一个类的成员被定义成static的，则这个成员不专属于任何对象，&nbsp;而是属于这个类，&nbsp;所有的对象共享这个成员。
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;抽象类(abstract&nbsp;class):&nbsp;抽象类不能直接生成一个实例，&nbsp;抽象类中必需有方法是abstract的，抽象类的意思就是它实现了一部分的方法，&nbsp;而定义为abstract的方法则需要在它的字类中去实现。
+</p>
+<p style="margin-left:42pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接口(interface):&nbsp;接口可以理解为纯抽象的类，&nbsp;它的每个方法都是未实现的，&nbsp;它可以有成员变量，&nbsp;但必须是static的。&nbsp;&nbsp;一个类如果从这个接口继承（implements）则它必须实现这个接口的所有方法。
+</p>
+<p>
+	继承类用关键字：extends，继承接口用关键字：implements。&nbsp;一个类只能从一个类继承下来，&nbsp;但可以从多个接口继承（类似于C++的多重继承）。&nbsp;字类可以覆盖父类的方法(method)，&nbsp;但不能覆盖父类的成员变量(field)。&nbsp;如果父类的方法为final或static的则不能被覆盖。类的初始化顺序是，&nbsp;如果有父类，&nbsp;则先初始化父类的field，然后执行父类的构造函数，&nbsp;如果子类没有显式的去调父类的构造函数则缺省的会去调父类的无参数构造函数。&nbsp;然后是子类的field与构造函数的初始化。
+</p>
+
+<p style="text-indent:46.3pt;">
+	public&nbsp;interface&nbsp;SuperInterface&nbsp;{
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;staitc&nbsp;String&nbsp;SOME_FLAG&nbsp;=&nbsp;“1”;
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;someMethod();
+</p>
+
+<p style="text-indent:46.3pt;">
+	}
+</p>
+
+<p style="text-indent:46.3pt;">
+	public&nbsp;Class&nbsp;SuperClass&nbsp;{
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;System.out.println(“init&nbsp;SuperClass&nbsp;field”);}
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;SuperClass()&nbsp;{System.out.println(“init&nbsp;SuperClass&nbsp;Constructor”);&nbsp;}
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;runMethod()&nbsp;{&nbsp;System.out.println(“run&nbsp;SuperClass&nbsp;runMethod()”);&nbsp;}
+</p>
+
+<p style="text-indent:46.3pt;">
+	}
+</p>
+
+<p>
+	<br />
+
+</p>
+
+<p style="text-indent:46.3pt;">
+	public&nbsp;Class&nbsp;SubClass&nbsp;extends&nbsp;SuperClass&nbsp;implements&nbsp;SuperInterface&nbsp;{
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;System.out.println(“init&nbsp;SubClass&nbsp;field”);&nbsp;}
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;SubClass()&nbsp;{System.out.println(“init&nbsp;SubClass&nbsp;Constructor”);&nbsp;}
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;someMethod()&nbsp;{System.out.println(“run&nbsp;SubClass&nbsp;someMethod()”);&nbsp;}
+</p>
+
+<p style="text-indent:46.3pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;runMethod()&nbsp;{System.out.println(“run&nbsp;SubClass&nbsp;runMethod()”);&nbsp;}
+</p>
+
+<p style="text-indent:46.3pt;">
+	}
+</p>
+
+<p style="text-indent:35.9pt;">
+	有以下test代码：
+</p>
+<p style="text-indent:35.9pt;">
+	public&nbsp;class&nbsp;Test&nbsp;{
+</p>
+<p style="margin-left:42pt;text-indent:42pt;">
+	public&nbsp;void&nbsp;main(String[]&nbsp;args)&nbsp;{
+</p>
+<p style="margin-left:42pt;text-indent:42pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SubClass&nbsp;sub&nbsp;=&nbsp;new&nbsp;SubClass();
+</p>
+<p style="margin-left:42pt;text-indent:42pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub.&nbsp;runMethod();
+</p>
+<p style="margin-left:42pt;text-indent:42pt;">
+	}
+</p>
+<p style="text-indent:36pt;">
+	}
+</p>
+<p style="text-indent:36pt;">
+	则会输出：
+</p>
+<p style="text-indent:36pt;">
+	init&nbsp;SuperClass&nbsp;field
+</p>
+<p style="text-indent:36pt;">
+	init&nbsp;SuperClass&nbsp;Constructor
+</p>
+<p style="text-indent:36pt;">
+	init&nbsp;SubClass&nbsp;field
+</p>
+<p style="text-indent:36pt;">
+	init&nbsp;SubClass&nbsp;Constructor
+</p>
+<p style="text-indent:36pt;">
+	run&nbsp;SubClass&nbsp;runMethod()
+</p>
+<p>
+	以下章节所讲述到的常用的Java&nbsp;API就是一些Java自带的一些Class或Interface的用法。
+</p>
+<p>
+	<br />
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

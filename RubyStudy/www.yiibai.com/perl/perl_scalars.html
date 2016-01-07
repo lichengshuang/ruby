@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl标量</title>
+		<meta name="Keywords" content="Perl标量变量,实例，使用例子教程 "/>
+		<meta name="Description" content="Perl标量变量,实例，使用例子教程：标量变量简单变量只包含一个元素 - 一个字符串或数字。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl标量
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="perl_introduction.html#perl_introduction">Perl简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_syntax.html#perl_syntax">Perl语法概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_variables.html#perl_variables">Perl变量</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_scalars.html">Perl标量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_arrays.html#perl_arrays">Perl数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_hashes.html#perl_hashes">Perl哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_special_variables.html#perl_special_variables">Perl特殊变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_conditions.html#perl_conditions">Perl条件语句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_loops.html#perl_loops">Perl循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_operators.html#perl_operators">Perl内置操作符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_files.html#perl_files">Perl文件I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_regular_expression.html#perl_regular_expression">Perl正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_subroutines.html#perl_subroutines">Perl子例程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_format.html#perl_format">Perl格式-报表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_error_handeling.html#perl_error_handeling">Perl错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_coding_standard.html#perl_coding_standard">Perl编程标准</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl标量变量</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl标量变量,实例，使用例子教程：标量变量简单变量只包含一个元素 - 一个字符串或数字。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	标量变量简单变量只包含一个元素，一个字符串或一个数字。字符串可能包含任何符号，字母或数字。数字可能包含指数，整数或十进制值。这里标量变量的底线，他们的数据只包含一个单件。你看到的是你得到的标量变量。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	以下是标量变量的例子
+</p>
+<pre>#!/usr/bin/perl
+
+$number = "5";
+$exponent = "2 ** 8";
+$string = "Hello, PERL!";
+$float = 12.39;
+
+# We can also assign a scalar an empty (undefined) value:
+$nothing = undef;
+
+# Printing all the above values - by www.yiibai.com
+print "$number\n"; 
+print "$exponent\n";
+print "$string\n"; 
+print "$float\n"; 
+print "There is nothing: $nothing\n "; <b>This will give following result</b> 5
+2 ** 8
+Hello, PERL!
+12.39
+There is nothing:
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>标量字符串</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	字符串是标量，像我们前面提到的，字符串的大小是没有限制的，任何数量的字符，符号或文字，可以补足到字符串。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	当定义一个字符串，你可以使用单人或双人的引用，你也可以定义他们使用q子函数。以下是如何定义字符串的例子
+</p>
+<table style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;">
+	<tbody>
+		<tr>
+			<td style="text-align:left;vertical-align:top;border:1px solid #AAAAAA;">
+				<p style="text-align:justify;">
+					$single = 'This string is single quoted';<br />
+$double = "This string is double quoted";<br />
+$userdefined = q^Carrot is now our quote^;
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>格式化字符串W /格式化字符</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	格式化字符串可以根据自己的喜好使用格式字符。其中的一些字符，也可以在Perl中创建的格式文件，认为以下这些字符表示的功能。
+</p>
+<table border="0" style="font-size:12px;background-color:#FFFFFF;">
+	<tbody>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				<b>Character</b> 
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				<b>Description</b> 
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\L
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Transform all letters to lowercase
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\l
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Transform the next letter to lowercase
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\U
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Transform all letters to uppercase
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\u
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Transform the next letter to uppercase
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\n
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Begin on a new line
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\r
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Applys a carriage return
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\t
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Applys a tab to the string
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\f
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Applys a formfedd to the string
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\b
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Backspace
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\a
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Bell
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\e
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Escapes the next character
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\0nn
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Creates Octal formatted numbers
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\xnn
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Creates Hexideciamal formatted numbers
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\cX
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Control characters, x may be any character
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\Q
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Backslash (escape) all following non-alphanumeric characters.
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				\E
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				Ends \U, \L, or \Q functions
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是几个例子
+</p>
+<pre>#!/usr/bin/perl
+
+$newline = "Welcome to <span style="color:red;">\n</span>tutorialspoint.com!";
+$small = "<span style="color:red;">\u</span>this, Here t will become capital !"
+$ALLCAPS = "<span style="color:red;">\U</span>This completely will become capital!";
+$PARTIALCAPS = "<span style="color:red;">\U</span>This half will<span style="color:red;">/E</span> become capital!";
+$backslah = "<span style="color:red;">\Q</span>'Hello World'<span style="color:red;">\E</span>!";
+
+print "$newline\n";
+print "$small\n";
+print "$ALLCAPS\n";
+print "$PARTAILCAPS\n";
+print "$backslah\n"; <b>This will give following result</b> Welcome to 
+tutorialspoint.com!
+This, Here t will become capital !
+THIS COMPLETELY WILL BECOME CAPITAL!
+THIS HALF WILL become capital!
+\'Hello World\'!
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>Substr() 和String索引</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	substr()函数允许临时更换一个字符串中的字符。我们可以将字符串“Hello，Perl” 更变为 “Hello, World!”很容易的。这意味着我们可以根据索引在数字的字符串的任何字符的每个字符将被自动分配一个数值。 Perl的计数0开头的字符串每个字符的第一个字符和往下排列，直到它到达一个字符串的末尾。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	两个参数都必须传到substr()函数，需要要索引和索引号的字符串两个参考。如果两个参数传递，Perl如果要更换的每个字符的结束，那么要从该索引号。
+</p>
+<pre>#!/usr/bin/perl
+
+# Define a string to replace
+$mystring = "Hello, PERL!";
+
+print "Before replacement : $mystring\n";
+
+substr($mystring, 7) = "World! - www.yiibai.com";
+
+print "After replacement : $mystring\n"; <b>This will give following result</b> Before replacement : Hello, PERL!
+After replacement : Hello, World!
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	因为我们只指定一个字符串的数字参数，<span></span>我们希望新的字符串每个字符替换后第7个。如果在函数的第三个参数，我们可以更换一个新的字符串，只有我们的字符串一大块。
+</p>
+<pre>#!/usr/bin/perl
+$mystring = "Hello, PERL!";
+
+print "Before replacement : $mystring\n";
+
+substr($mystring, 3, 6) = "World!";
+
+print "After replacement : $mystring\n"; <b>This will give following result</b> Before replacement : Hello, PERL!
+After replacement : HelWorld!RL!
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>多行字符串</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果你想<span></span>程序中引入多行字符串，你可以使用标准的引号:
+</p>
+<pre>$string = 'This is
+a multiline
+string';
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	但是，这是混乱的，是插值和引号使用相同的基本规律。我们可以绕过它使用不同的分隔符Q//QQ//操作符.
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	另一个更好打印多行的办法
+</p>
+<pre>print &lt;<eof; this="" is="" a="" multiline="" string="" eof="" <="" pre="">
+</eof;></pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	V-Strings
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	V型字符串可以是一个有用的方式引入到Perl的版本号和IP地址。他们是任何文字与一个V开始，是由一个或多个圆点分隔的元素。例如:
+</p>
+<table cellpadding="5" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;">
+	<tbody>
+		<tr>
+			<td style="text-align:left;vertical-align:top;border:1px solid #AAAAAA;">
+				$name = v77.97.114.116.105.110;
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	数字标量
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Perl支持一个相当<span></span>基本的方法，用于指定一个十进制的数字文本:
+</p>
+<pre>$num = 123;      # integer
+$num = 123.45;   # floating point
+$num = 1.23e45;  # scientific notation
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	您也可以指定通过指定一个前面的字符的十六进制，八进制和二进制的文字突出显示的号码类型:
+</p>
+<pre>$num = 0xff;        # Hexadecimal
+$num = 0377;        # Octal
+$num = 0b0010_0000; # Binary
+</pre>
+<table style="font-size:12px;background-color:#FFFFFF;">
+	<tbody>
+		<tr>
+			<td style="text-align:left;vertical-align:top;">
+				<span><span><span><span><span><span><span><span><span><span><img src="http://www.yiibai.com/static/images/bulb.gif" /> </span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+			<td style="text-align:left;vertical-align:top;">
+				<span><span><span><span><span><span><span><span><span><span>您也可以指定通过指定一个前面的字符的十六进制，八进制和二进制的文字突出显示的号码类型。</span></span> </span></span> </span></span> </span></span> </span></span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

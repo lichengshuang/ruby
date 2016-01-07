@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl哈希</title>
+		<meta name="Keywords" content="Perl哈希变量 实例 使用例子教程 "/>
+		<meta name="Description" content="Perl哈希变量,实例，使用例子教程：哈希是一种先进的数组形式"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl哈希
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="perl_introduction.html#perl_introduction">Perl简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_syntax.html#perl_syntax">Perl语法概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_variables.html#perl_variables">Perl变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_scalars.html#perl_scalars">Perl标量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_arrays.html#perl_arrays">Perl数组</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_hashes.html">Perl哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_special_variables.html#perl_special_variables">Perl特殊变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_conditions.html#perl_conditions">Perl条件语句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_loops.html#perl_loops">Perl循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_operators.html#perl_operators">Perl内置操作符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_files.html#perl_files">Perl文件I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_regular_expression.html#perl_regular_expression">Perl正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_subroutines.html#perl_subroutines">Perl子例程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_format.html#perl_format">Perl格式-报表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_error_handeling.html#perl_error_handeling">Perl错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_coding_standard.html#perl_coding_standard">Perl编程标准</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl哈希变量</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl哈希变量,实例，使用例子教程：哈希是一种先进的数组形式
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	哈希是一种先进的数组形式。数组的限制之一是，它所包含的信息是很难获得的。例如，想象一下，你有一个人的名单和他们的年龄.
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	哈希解决了这个问题，非常整齐，让我们的访问，不是由一个指数，而是由一个标量的关键，@<strong>ages</strong>数组。例如使用不同的人的年龄，我们可以使用他们的名字作为重点来定义一个哈希.
+</p>
+<pre>%ages = ('Martin' =&gt; 28,
+         'Sharon' =&gt; 35,
+         'Rikke' =&gt; 29,);
+
+print "Rikke is $ages{Rikke} years old\n";
+
+This will produce following result
+Rikke is 29 years old
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>创建</strong><span style="background-color:#FFFFFF;"><strong>哈希</strong></span> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	哈希创建两种方式之一。在第一，你分配一个由一对一的基础上，以一个名为键的值:
+</p>
+<pre>$ages{Martin} = 28;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在第二种情况下，你使用的名单，这是由个人对从列表转换：对第一个元素被用作键和第二作为值。例如,
+</p>
+<pre>%hash = ('Fred' , 'Flintstone', 'Barney', 'Rubble');
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	为清楚起见，你可以使用=&gt;一个别名，表示键/值对:
+</p>
+<pre>%hash = ('Fred' =&gt; 'Flintstone',
+         'Barney' =&gt; 'Rubble');
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>提取单个元素</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	你可以从散列中提取单个元素，通过指定为你想要的值，括号内的关键字:
+</p>
+<pre>print $hash{Fred};
+
+This will print following result
+Flintstone
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>提取切片</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	您可以提取哈希片，就像你可以从一个数组中提取切片。然而，你需要使用@前缀，因为返回值将是一个对应值的列表:
+</p>
+<pre>#!/uer/bin/perl
+
+%hash = (-Fred =&gt; 'Flintstone', -Barney =&gt; 'Rubble');
+print join("\n",@hash{-Fred,-Barney});
+
+This will produce following result
+Flintstone
+Rubble
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<b>注</b>: 使用$hash{-Fred, -Barney} 将无任何返回.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>提取键和值</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	你可以通过使用密钥哈希键的列表:
+</p>
+<pre>#!/usr/bin/perl 
+
+%ages = ('Martin' =&gt; 28, 'Sharon' =&gt; 35, 'Rikke' =&gt; 29);
+print "The following are in the DB: ",join(', ',values %ages),"\n";
+
+This will produce following result
+The following are in the DB: 29, 28, 35
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这些可以是有用的循环中，当你想打印所有哈希的内容:
+</p>
+<pre>#!/usr/bin/perl
+
+%ages = ('Martin' =&gt; 28, 'Sharon' =&gt; 35, 'Rikke' =&gt; 29);
+foreach $key (%ages)
+{
+  print "$key is $ages{$key} years  old\n";
+}
+
+This will produce following result  - www.yiibai.com
+Rikke is 29 years  old
+29 is  years  old
+Martin is 28 years  old
+28 is  years  old
+Sharon is 35 years  old
+35 is  years  old
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这种方法的问题是，（%age）返回一个值的列表。因此，要解决这个问题，我们每个函数将返回键和值对,下面将给出
+</p>
+<pre>#!/usr/bin/perl
+
+%ages = ('Martin' =&gt; 28, 'Sharon' =&gt; 35, 'Rikke' =&gt; 29);
+while (($key, $value) = each %ages)
+{
+  print "$key is $ages{$key} years old\n";
+}
+
+This will produce following result
+Rikke is 29 years old
+Martin is 28 years old
+Sharon is 35 years old
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>检测存在</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果你尝试访问哈希未含存在的键/值对，你通常未定义的值，如果你有开启的警告，然后你在运行时产生的警告。通过使用存在的函数，返回true，如果存在命名的键，不论它的价值可能是什么，你可以解决这个问题:
+</p>
+<pre>#!/usr/bin/perl
+
+%ages = ('Martin' =&gt; 28, 'Sharon' =&gt; 35, 'Rikke' =&gt; 29);
+if (exists($ages{"mohammad"}))
+{
+  print "mohammad if $ages{$name} years old\n";
+}
+else
+{
+  print "I don't know the age of mohammad\n - by www.yiibai.com";
+}
+
+This will produce following result
+I don't know the age of mohammad
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>排序/排列哈希</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	没有办法简单地保证键，值，或键/值对列表的顺序将永远是相同的。事实上，它不是最好的甚至要依靠计算两个连续之间的顺序:
+</p>
+<pre>#!/usr/bin/perl
+
+print(join(', ',keys %hash),"\n");
+print(join(', ',keys %hash),"\n");
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果你想保证顺序，使用排序，例如:
+</p>
+<pre>  print(join(', ',sort keys %hash),"\n");
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果您正在访问哈希多次，要使用相同的顺序，考虑建立一个单一的数组来保存排序的序列，然后使用数组（这将留在排序顺序）遍历哈希。例如:
+</p>
+<pre>my @sortorder = sort keys %hash;
+foreach my $key (@sortorder)
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>哈希大小</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	你的大小 - 使用任一键或值的标量上下文从一个哈希 - 也就是说，元素的数目:
+</p>
+<pre>#!/usr/bin/perl
+
+%ages = ('Martin' =&gt; 28, 'Sharon' =&gt; 35, 'Rikke' =&gt; 29);
+print "Hash size: ",scalar keys %ages,"\n";
+
+This will produce following result
+Hash size: 3
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>在哈希表中添加和删除元素</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	可以做一个使用简单的赋值操作符的代码行添加一个新的键/值对。但是从哈希中删除一个元素，你需要使用删除功能.
+</p>
+<pre><span style="font-size:12px;line-height:18px;"><span>#!/usr/bin/perl
+
+%ages = ('Martin' =&gt; 28, 'Sharon' =&gt; 35, 'Rikke' =&gt; 29);
+
+# Add one more element in the hash
+$age{'John'} = 40;
+# Remove one element from the hash
+delete( $age{'Sharon'} );</span></span></pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

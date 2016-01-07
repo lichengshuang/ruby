@@ -1,0 +1,3 @@
+This is study log for
+20130409 29
+“向ruby之父学程序设计" 

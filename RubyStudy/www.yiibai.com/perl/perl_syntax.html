@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl语法概述</title>
+		<meta name="Keywords" content="Perl语法概述，Perl语法实例，Perl语法例子，Perl代码实例 "/>
+		<meta name="Description" content="Perl语法概述，Perl语法实例，Perl语法例子，Perl代码实例 -一个Perl脚本或程序，包括一个或多个语句。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl语法概述
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="perl_introduction.html#perl_introduction">Perl简介</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_syntax.html">Perl语法概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_variables.html#perl_variables">Perl变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_scalars.html#perl_scalars">Perl标量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_arrays.html#perl_arrays">Perl数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_hashes.html#perl_hashes">Perl哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_special_variables.html#perl_special_variables">Perl特殊变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_conditions.html#perl_conditions">Perl条件语句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_loops.html#perl_loops">Perl循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_operators.html#perl_operators">Perl内置操作符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_files.html#perl_files">Perl文件I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_regular_expression.html#perl_regular_expression">Perl正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_subroutines.html#perl_subroutines">Perl子例程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_format.html#perl_format">Perl格式-报表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_error_handeling.html#perl_error_handeling">Perl错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_coding_standard.html#perl_coding_standard">Perl编程标准</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl语法概述</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl语法概述，Perl语法实例，Perl语法例子，Perl代码实例 -一个Perl脚本或程序，包括一个或多个语句。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	一个Perl的脚本或程序由一个或多个语句，这些语句只是写在一个简单脚本，没有必要有一个main()函数或类似那种东西。<br />
+Perl语句以分号结束:
+</p>
+<pre>print "Hello, world";
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	注释开始与一个hash符号和运行到该行的末尾:
+</p>
+<pre># This is a comment
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	空白是无关紧要:
+</p>
+<pre>print      "Hello, world";
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	...除了内部引用的字符串:
+</p>
+<pre># this would print with a linebreak in the middle
+print "Hello
+          world";
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	围绕文字字符串可用于双引号或单引号:
+</p>
+<pre>print "Hello, world";
+print 'Hello, world';
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	然而，只有“插补”变量和特殊字符，如换行符（\ n）双引号:
+</p>
+<pre>print "Hello, $name\n";     # works fine
+
+print 'Hello, $name\n';     # prints $name\n literally
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	数字不需要引号:
+</p>
+<pre>print 42;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	您可以使用括号函数的参数或省略他们（根据您个人喜好），他们只偶尔需要区分优先性问题，以下两个语句产生同样的结果。
+</p>
+<pre>print("Hello, world\n");
+print "Hello, world\n";
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>Perl的文件扩展名</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Perl脚本可以使用任何简单文本编辑器。有几个方案可供不同类型的平台，有许多在网络上可供下载的程序设计。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	无论您选择使用的程序（<span style="background-color:#FFFFFF;">编辑器</span>），一个Perl文件必须以.pl<span style="background-color:#FFFFFF;">（perl等）</span>文件名<span style="background-color:#FFFFFF;">保存</span>，以文件的扩展名被承认作为一个正常运作的Perl脚本。文件名可以包含数字，符号和字母，但不能包含空格，使用下划线（_）代替空格也是可以的。
+</p>
+<hr />
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>第一个PERL程序</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	假设你已经在Unix提示符，现在hello.pl使用vi或vim编辑器打开一个文本文件和内部文件的以下行。
+</p>
+<pre>#!/usr/bin/perl
+
+# This will print "Hello, World - by www.yiibai.com" on the screen
+print "Hello, world ";
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	#!/usr/bin 是您已经安装了PERL的路径
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>执行</strong><strong>Perl脚本</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在你执行你的脚本时，是可能需要改变脚本文件的模式和执行权限，一般设定的0755。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	现在从Unix命令行运行hello.pl的Perl程序，发出以下命令在您的UNIX提示符$:
+</p>
+<pre>$perl hello.pl
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>Hello, World
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	Perl命令行标志:
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	命令行标志影响Perl如何运行程序.
+</p>
+<pre>$perl -v
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<span style="background-color:#FFFFFF;">这将产生以下结果:</span> 
+</p>
+<pre>This is perl, v5.001 built for i386-linux-thread-multi
+................
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	你可以在命令行使用-e选项，它可以让你的命令行执行Perl语句。
+</p>
+<pre><span><span style="font-size:12px;line-height:18px;">$perl -e 'print 4;\n'
+RESULT: 4
+$perl -e "print 'Hello World!\n - www.yiibai.com";'
+RESULT: Hello World!</span></span></pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

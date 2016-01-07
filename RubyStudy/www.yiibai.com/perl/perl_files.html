@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Perl文件I/O</title>
+		<meta name="Keywords" content="Perl文件I/O操作符实例，使用例子 教程 "/>
+		<meta name="Description" content="Perl文件I/O操作符，读写文件，修改文件，目录操作，实例，使用例子 教程，"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../perl">Perl</a>  » Perl文件I/O
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="advanced">Perl高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Perl参考文献</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">Perl教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="perl_introduction.html#perl_introduction">Perl简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_syntax.html#perl_syntax">Perl语法概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_variables.html#perl_variables">Perl变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_scalars.html#perl_scalars">Perl标量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_arrays.html#perl_arrays">Perl数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_hashes.html#perl_hashes">Perl哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_special_variables.html#perl_special_variables">Perl特殊变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_conditions.html#perl_conditions">Perl条件语句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_loops.html#perl_loops">Perl循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_operators.html#perl_operators">Perl内置操作符</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="perl_files.html">Perl文件I/O</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_regular_expression.html#perl_regular_expression">Perl正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_subroutines.html#perl_subroutines">Perl子例程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_format.html#perl_format">Perl格式-报表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_error_handeling.html#perl_error_handeling">Perl错误处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="perl_coding_standard.html#perl_coding_standard">Perl编程标准</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Perl文件I/O</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Perl文件I/O操作符，读写文件，修改文件，目录操作，实例，使用例子 教程，
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;">
+	处理文件的基本原理很简单：你关联与外部实体（通常是文件）的文件句柄，然后使用各种在Perl的运算符和函数内与句柄相关联的数据流中存储的数据读取和更新。
+</p>
+<p style="text-align:justify;">
+	一个句柄是一个名为Perl的内部结构，<span>关联</span>物理文件名称。所有的文件句柄是读/写访问，所以你可以读取和更新与句柄相关联的任何文件或设备的能力。然而，当你关联的文件句柄，你可以在被打开的文件句柄指定的模式。
+</p>
+<p style="text-align:justify;">
+	三个基本文件的句柄是：<b>STDIN</b>,&nbsp;<b>STDOUT&nbsp;</b>和&nbsp;<b>STDERR</b>.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>打开和关闭文件</strong> 
+</h1>
+<p style="text-align:justify;">
+	Per有以下两个函数以及多形式可以用来打开任何新的或现有的文件。
+</p>
+<pre>open FILEHANDLE, EXPR
+open FILEHANDLE
+sysopen FILEHANDLE, FILENAME, MODE, PERMS
+sysopen FILEHANDLE, FILENAME, MODE
+</pre>
+<p style="text-align:justify;">
+	这里的FILEHANDLE是由open函数返回的文件句柄和expr是打开文件的文件名和模式的表达式。<span></span> 
+</p>
+<p style="text-align:justify;">
+	以下是语法在只读模式打开file.txt的。这里比&lt;signe少表明该文件是只读模式打开
+</p>
+<pre>open(DATA, "&lt;file.txt");
+</pre>
+<p style="text-align:justify;">
+	这里DATA将用于读取文件的文件句柄。下面的例子，这将打开一个文件，将其内容打印在屏幕上。
+</p>
+<pre>#!/usr/bin/perl
+
+open(DATA, "&lt;file.txt");
+
+while(&lt;DATA&gt;)
+{
+   print "$_";
+}
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	Open函数
+</h1>
+<p style="text-align:justify;">
+	以下是语法打开file.txt写入模式。这里比&gt;signe少表示该文件是以写入模式打开。
+</p>
+<pre>open(DATA, "&gt;file.txt");
+</pre>
+<p style="text-align:justify;">
+	这个例子实际上截断（清空）文件打开前用于写入，这可能不是预期的效果。如果你想打开一个文件进行读取和写入，你可以把前一个加号&gt;或&lt;字符。
+</p>
+<p style="text-align:justify;">
+	例如，要为更新打开一个文件而不会截断它：
+</p>
+<pre>open(DATA, "+&lt;file.txt");
+</pre>
+<p style="text-align:justify;">
+	首先要截断该文件：
+</p>
+<pre>open DATA, "+&gt;file.txt" or die "Couldn't open file file.txt, $!";
+</pre>
+<p style="text-align:justify;">
+	您可以在追加模式打开一个文件。在这种模式下写入指向将被设置到文件的末尾。
+</p>
+<pre>open(DATA,"&gt;&gt;file.txt") || die "Couldn't open file file.txt, $!";
+</pre>
+<p style="text-align:justify;">
+	双重&gt;&gt;符号表示打开追加文件，文件指针放置在结尾，让你可以立即开始追加信息。然而，你不能读取它，除非你也将在它前面的加号：
+</p>
+<pre>open(DATA,"+&gt;&gt;file.txt") || die "Couldn't open file file.txt, $!";
+</pre>
+<p style="text-align:justify;">
+	以下是表了不同模式的可能值：
+</p>
+<pre><b>Entities	Definition</b> &lt; or r		Read Only Access - by www.yiibai.com
+&gt; or w		Creates, Writes, and Truncates
+&gt;&gt; or a		Writes, Appends, and Creates
++&lt; or r+	Reads and Writes
++&gt; or w+	Reads, Writes, Creates, and Truncates
++&gt;&gt; or a+	Reads, Writes, Appends, and Creates
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>Sysopen函数</strong> 
+</h1>
+<p style="text-align:justify;">
+	<b>sysopen</b>函数是<span>主要<strong>open</strong></span>函数相似，但它使用系统open()函数，使用系统<span>函数</span>的参数提供给它的参数：
+</p>
+<p style="text-align:justify;">
+	例如，要打开一个文件用于更新，从打开模拟+&lt;文件名格式：
+</p>
+<pre>sysopen(DATA, "file.txt", O_RDWR);
+</pre>
+<p style="text-align:justify;">
+	或截断，然后再更新文件：
+</p>
+<pre>sysopen(DATA, "file.txt", O_RDWR|O_TRUNC );
+</pre>
+<p style="text-align:justify;">
+	您可以使用O_CREAT创建一个新文件，O_WRONLY只写模式和O_RDONLY打开文件 - 打开文件在只读模式。
+</p>
+<p style="text-align:justify;">
+	<b>PERMS&nbsp;</b>参数指定指定的文件的权限，如果它要创建，默认情况下是<strong>0x666</strong>。
+</p>
+<pre><b>Value		Definition</b> O_RDWR		Read and Write
+O_RDONLY	Read Only
+O_WRONLY	Write Only
+O_CREAT		Create the file
+O_APPEND	Append the file
+O_TRUNC		Truncate the file
+O_EXCL		Stops if file already exists
+O_NONBLOCK	Non-Blocking usability
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>Close函数</strong> 
+</h1>
+<p style="text-align:justify;">
+	要关闭一个文件句柄，因此脱离了相应的文件句柄，你使用close函数刷新文件句柄的缓冲和关闭系统的文件描述符。
+</p>
+<pre>close FILEHANDLE
+close
+</pre>
+<p style="text-align:justify;">
+	如果没有指定的文件句柄（FILEHANDLE）的话关闭当前选择的文件句柄。只有当它能够成功地刷新缓冲区并关闭该文件，它返回true。
+</p>
+<pre>close(DATA) || die "Couldn't close file properly";
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>读取和写入的文件句柄</strong> 
+</h1>
+<p style="text-align:justify;">
+	当你有一个打开文件句柄，你需要能够读取和写入信息。也有一些不同的方式读取和写入文件的数据。
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:transparent;">
+	&lt;FILEHANDL&gt; 操作符
+</h2>
+<p style="text-align:justify;">
+	从一个打开文件句柄读取信息的主要方法是&lt;FILEHANDLE&gt;操作符，在标量上下文中，它返回一个文件句柄一行。例如：
+</p>
+<pre>#!/usr/bin/perl
+
+print "What is your name?\n";
+$name = &lt;STDIN&gt;;
+print "Hello $name\n";
+</pre>
+<p style="text-align:justify;">
+	当您使用&lt;FILEHANDLE&gt;操作符在一个列表上下文，它返回从指定的文件句柄的行列表。例如，导入到一个数组从一个文件的所有行：
+</p>
+<pre>#!/usr/bin/perl
+
+open(DATA,"&lt;import.txt") or die "Can't open data";
+@lines = &lt;DATA&gt;;
+close(DATA);
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	getc函数
+</h1>
+<p style="text-align:justify;">
+	getc函数返回从指定的文件句柄或STDIN，如果没有指定一个单一的字符：
+</p>
+<pre>getc FILEHANDLE
+getc
+</pre>
+<p style="text-align:justify;">
+	如果有错误，或者文件句柄在文件的末尾，然后返回UNDEF。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	read函数
+</h1>
+<p style="text-align:justify;">
+	read函数读取缓冲句柄的信息块：该函数用于从文件中读取的二进制数据。
+</p>
+<pre>read FILEHANDLE, SCALAR, LENGTH, OFFSET
+read FILEHANDLE, SCALAR, LENGTH
+</pre>
+<p style="text-align:justify;">
+	数据读取的长度定义的长度（<span>LENGTH</span>），如果没有偏移指定的数据放置在标量（<span>SCALAR</span>）开始。否则，数据将被放置在标量抵消后的字节。该函数返回零上读取文件结束成功的字节数，或者undef如果有一个错误。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	print函数
+</h1>
+<p style="text-align:justify;">
+	写入信息反馈的主要功能是为所有不同的方法用于从文件句柄读取信息的打印功能。
+</p>
+<pre>print FILEHANDLE LIST
+print LIST
+print
+</pre>
+<p style="text-align:justify;">
+	打印功能打印文件句柄，或当前输出句柄（默认为STDOUT），计算值列表。例如：
+</p>
+<pre>print "Hello World!\n";
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>拷贝文件</strong> 
+</h1>
+<p style="text-align:justify;">
+	这里是例如打开一个现有的文件file1.txt和读取一行行，并生成另一个副本file2.txt
+</p>
+<pre>#!/usr/bin/perl
+
+# Open file to read
+open(DATA1, "&lt;file1.txt");
+
+# Open new file to write
+open(DATA2, "&gt;file2.txt");
+
+# Copy data from one file to another.
+while(&lt;DATA1&gt;)
+{
+   print DATA2 $_;
+}
+close( DATA1 );
+close( DATA2 );
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>重命名一个文件</strong> 
+</h1>
+<p style="text-align:justify;">
+	下面是一个例子，它告诉我们如何重命名一个文件file1.txt为file2.txt。假设文件在/usr/test目录。
+</p>
+<pre>#!/usr/bin/perl
+
+rename ("/usr/test/file1.txt", "/usr/test/file2.txt" );
+
+</pre>
+<p style="text-align:justify;">
+	这个函数重命名需要两个参数，它只是重命名现有文件
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>删除一已存在的文件</strong> 
+</h1>
+<p style="text-align:justify;">
+	下面是一个例子，它展示了如何使用的unlink函数删除一个文件file1.txt。
+</p>
+<pre>#!/usr/bin/perl
+
+unlink ("/usr/test/file1.txt");
+
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>定位</strong><strong>文件中</strong><strong>位置</strong> 
+</h1>
+<p style="text-align:justify;">
+	你可以用它来<b>tell&nbsp;</b>函数知道一个文件的当前位置，<b>seek</b><span>&nbsp;</span>函数指向内部文件的特定位置。&nbsp;
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:transparent;">
+	tell 函数
+</h2>
+<p style="text-align:justify;">
+	第一个要求是在一个文件中，你使用TELL函数找到位置：
+</p>
+<pre>tell FILEHANDLE
+tell</pre>
+<p style="text-align:justify;">
+	这将返回文件指针的位置，以字节为单位，如果没有指定，在句柄指定或当前的默认选中的文件句柄，
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:transparent;">
+	seek 函数
+</h2>
+<p style="text-align:justify;">
+	<strong><em>seek </em></strong>寻求函数定位文件指针到指定的数字在一个文件中的字节：
+</p>
+<pre>seek FILEHANDLE, POSITION, WHENCE
+</pre>
+<p style="text-align:justify;">
+	该函数使用的fseek系统的功能，有同样的相对位置<span>功能</span>，以三个不同点：开始，结束，当前位置。您可以通过指定一个值自何处（<span>WHENCE</span>）。
+</p>
+<p style="text-align:justify;">
+	零设置相对定位文件开始。例如，该行设置文件指针在256个字节的文件。
+</p>
+<pre>seek DATA, 256, 0;
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>获取文件信息</strong> 
+</h1>
+<p style="text-align:justify;">
+	你可以测试在Perl中的某些功能使用统称为 - X测试的一系列测试运营商非常快速。
+</p>
+<p style="text-align:justify;">
+	例如，进行快速测试的各种文件的权限，你可能会使用这样的脚本：
+</p>
+<pre>#/usr/bin/perl
+
+my (@description,$size);
+if (-e $file)
+{
+   push @description, 'binary' if (-B _);
+   push @description, 'a socket' if (-S _);
+   push @description, 'a text file' if (-T _);
+   push @description, 'a block special file' if (-b _);
+   push @description, 'a character special file' if (-c _);
+   push @description, 'a directory' if (-d _); # by www.yiibai.com
+   push @description, 'executable' if (-x _);
+   push @description, (($size = -s _)) ? "$size bytes" : 'empty';
+   print "$file is ", join(', ',@description),"\n";
+}
+</pre>
+<p style="text-align:justify;">
+	这里是功能列表，你可以检查文件
+</p>
+<pre><b>Operator Description</b> -A 	Age of file (at script startup) in days since modification.
+-B 	Is it a binary file?
+-C 	Age of file (at script startup) in days since modification.
+-M 	Age of file (at script startup) in days since modification.
+-O 	Is the file owned by the real user ID?
+-R 	Is the file readable by the real user ID or real group?
+-S 	Is the file a socket?
+-T 	Is it a text file?
+-W 	Is the file writable by the real user ID or real group?
+-X 	Is the file executable by the real user ID or real group?
+-b 	Is it a block special file?
+-c 	Is it a character special file?
+-d 	Is the file a directory?
+-e 	Does the file exist?
+-f 	Is it a plain file? # by www.yiibai.com
+-g 	Does the file have the setgid bit set?
+-k 	Does the file have the sticky bit set?
+-l 	Is the file a symbolic link?
+-o 	Is the file owned by the effective user ID?
+-p 	Is the file a named pipe?
+-r 	Is the file readable by the effective user or group ID?
+-s 	Returns the size of the file, zero size = empty file. 
+-t 	Is the filehandle opened by a TTY (terminal)?
+-u 	Does the file have the setuid bit set?
+-w 	Is the file writable by the effective user or group ID?
+-x 	Is the file executable by the effective user or group ID?
+-z 	Is the file size zero?
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:transparent;">
+	<strong>在目录中工作</strong> 
+</h1>
+<p style="text-align:justify;">
+	以下是通常操作目录的标准功能。
+</p>
+<pre>opendir DIRHANDLE, EXPR  # To open a directory
+readdir DIRHANDLE        # To read a directory
+rewinddir DIRHANDLE      # Positioning pointer to the begining
+telldir DIRHANDLE        # Returns current position of the dir
+seekdir DIRHANDLE, POS   # Pointing pointer to POS inside dir
+closedir DIRHANDLE       # Closing a directory.
+</pre>
+<p style="text-align:justify;">
+	下面是一个例子，它打开一个目录，并列出此目录内的所有文件。
+</p>
+<pre>#!/usr/bin/perl
+
+opendir (DIR, '.') or die "Couldn't open directory, $!";
+while ($file = readdir DIR)
+{
+  print "$file\n";
+}
+closedir DIR;
+</pre>
+<p style="text-align:justify;">
+	另一个例子，打印C源代码文件列表，您可以使用：
+</p>
+<pre>#!/usr/bin/perl
+
+opendir(DIR, '.') or die "Couldn't open directory, $!";
+foreach (sort grep(/^.*\.c$/,readdir(DIR)))
+{
+   print "$_\n";
+}
+closedir DIR;
+</pre>
+<p style="text-align:justify;">
+	你可以创建一个新的目录，使用<b>mkdir</b><span>&nbsp;</span>函数：
+</p>
+<p style="text-align:justify;">
+	你可以删除一个目录，使用<b><b>rmdir</b><span>&nbsp;</span></b>函数<b>：</b> 
+</p>
+<p style="text-align:justify;">
+	<span>你可以改变一个</span><span>目录，使用</span><b>chdir</b>&nbsp;<span>函数。</span> 
+</p>
+<br />
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

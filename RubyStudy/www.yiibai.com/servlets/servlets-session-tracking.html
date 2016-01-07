@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<title>Servlet Session Tracking</title>
+		<meta name="Keywords" content="Servlets,Servlet Session Tracking,Servlets-"/>
+		<meta name="Description" content="Servlet Session Tracking"/>
+		<!--//tutorial/base.view.html-->
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<link rel="stylesheet" href="http://www.yiibai.com/static/redactor/css/redactor.css" />
+		<script src="http://www.yiibai.com/static/redactor/redactor.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var buttons = ['formatting', '|', 'bold', 'italic', '|', 'button1'];
+				$('#comment_textarea').redactor({
+					focus: false, 
+					buttons: buttons, 					
+				});
+			});
+		</script>
+		<style>
+			table {
+				border: 1px solid #DDD;
+				border-collapse: separate;
+				border-left: 0;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				max-width: 90%;
+				background-color: transparent;
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			thead {
+				display: table-header-group;
+				vertical-align: middle;
+				border-color: inherit;
+				border-left: 1px solid #DDD;
+			}
+			th {
+				font-weight: bold;
+				border-left: 1px solid #DDD;
+				line-height: 28px;
+			}
+			tbody {
+				display: table-row-group;
+				vertical-align: middle;
+				border-color: inherit;
+			}
+			tr {
+				display: table-row;
+				vertical-align: inherit;
+				border-color: inherit;
+				border-left: 1px solid #DDD;
+			}
+			td {
+				padding: 8px;
+				line-height: 20px;
+				text-align: left;
+				vertical-align: top;
+				border-top: 1px solid #DDD;
+				border-left: 1px solid #DDD;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a> » <a href="index.html">Servlet教程</a> » 
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+						<li class="">
+							<a href="index.html" style="font-size:12pt;">Servlet教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+														<a href="servlets-overview.html">Servlets 概述</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-environment-setup.html">Servlets环境设置</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-life-cycle.html">Servlets Life Cycle</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-first-example.html">Servlets First Examples</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-form-data.html">Servlets Form Data</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-client-reques.html">Servlets Client HTTP Request</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-server-response.html">Servlets Server HTTP Response</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-http-status-codes.html">Servlets HTTP 1.1 Status Codes</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-writing-filters.html">Servlets Filters</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-exception-handling.html">Servlet Exception Handling</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-cookies-handling.html">Servlets Cookies Handling</a>
+													</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+														<a href="servlets-session-tracking.html">Servlet Session Tracking</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-database-access.html">Servlets - Database Access</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-file-uploading.html">Servlet File Uploading</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-handling-date.html">Servlet Date Handling</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-page-redirec.html">Servlets Page Redirection</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-hits-counter.html">Servlets Page Hits Counter</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-auto-refres.html">Auto Page Refresh using Servlets</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-sending-email.html">Sending email using Servlets</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-packaging.html">Servlets Packaging</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-debugging.html">Servlets Debugging</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-internationalization.html">Servlets Internationalization| i18n| l10n| Servlets Localization</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="../index.html">Servlets Quick Guide</a>
+													</li>
+																								<li style="padding-left: 8px;">
+														<a href="servlets-useful-resources.html">Servlets Useful Resources, Sites and Books</a>
+													</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 760px;height:48px; padding: 2px 18px 2px 18px;text-align: left;border-bottom: 1px dashed #CCC;clear:both; ">
+						<h1 style="font-size: 13.5pt;width: 645px;float:left; overflow: hidden;">Servlets - Session Tracking</h1>
+						<span style="float:left;padding: 18px;margin-left: 12px;"><a href="servlets-session-tracking.html#comment" title="我要去评论">评论</a>&nbsp;&nbsp;<a href="http://www.yiibai.com/index.php?r=tutorial/updateVersion&id=3631" title="完善此教程实例">编辑</a></span>
+						<input type="hidden" id="tid" value="3631"/>
+					</div>
+
+					<!--
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+					<script type="text/javascript">
+					<!--
+					google_ad_client ="ca-pub-1090193214637198";
+					/* yiibai上方 */
+					google_ad_slot = "7899237394";
+					google_ad_width = 728;
+					google_ad_height = 90;
+					//->
+					</script>
+					<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					-->
+					<div id="baidu-ad" style="float:left;clear:both; width: 800px;padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+						/*文章详细页上方628*90*/
+						var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+						
+					</div>
+					<div style="padding:8px 22px 8px 24px;" id="content">
+						<p>HTTP is a "stateless" protocol which means each time a client retrieves a Web page, the client opens a separate connection to the Web server and the server automatically does not keep any record of previous client request.</p>
+<p>Still there are following three ways to maintain session between web client and web server:</p>
+<h2>Cookies:</h2>
+<p>A webserver can assign a unique session ID as a cookie to each web client and for subsequent requests from the client they can be recognized using the recieved cookie.</p>
+<p>This may not be an effective way because many time browser does not support a cookie, so I would not recommend to use this procedure to maintain the sessions.</p>
+<h2>Hidden Form Fields:</h2>
+<p>A web server can send a hidden HTML form field  along with a unique session ID as follows:</p>
+<pre class="prettyprint">
+&lt;input type="hidden" name="sessionid" value="12345"&gt;
+</pre>
+<p>This entry means that, when the form is submitted, the specified name and value are automatically included in the GET or POST data. Each time when web browser sends request back, then session_id value can be used to keep the track of different web browsers.</p>
+<p>This could be an effective way of keeping track of the session but clicking on a regular (&lt;A HREF...&gt;) hypertext link does not result in a form submission, so hidden form fields also cannot support general session tracking.</p>
+<h2>URL Rewriting:</h2>
+<p>You can append some extra data on the end of each URL that identifies the session, and the server can associate that session identifier with data it has stored about that session.</p>
+<p>For example, with http://yiibai.com/file.html;sessionid=12345, the session identifier is attached as sessionid=12345 which can be accessed at the web server to identify the client.</p>
+<p>URL rewriting is a better way to maintain sessions and works for the browsers when they don't support cookies but here drawback is that you would have generate every URL dynamically to assign a session ID though page is simple static HTML page.</p>
+<h2>The HttpSession Object:</h2>
+<p>Apart from the above mentioned three ways, servlet provides HttpSession Interface which provides a way to identify a user across more than one page request or visit to a Web site and to store information about that user.</p>
+<p>The servlet container uses this interface to create a session between an HTTP client and an HTTP server. The session persists for a specified time period, across more than one connection or page request from the user.</p>
+<p>You would get HttpSession object by calling the public method <b>getSession()</b> of HttpServletRequest, as below:</p>
+<pre class="prettyprint">
+HttpSession session = request.getSession();
+</pre>
+<p>You need to call <i>request.getSession()</i> before you send any document content to the client. Here is a summary of the important methods available through HttpSession object:</p>
+<table class="src">
+<tr><th style="width:5%">S.N.</th><th>Method &amp; Description</th></tr>
+<tr><td>1</td><td><b>public Object getAttribute(String name)</b><br />This method returns the object bound with the specified name in this session, or null if no object is bound under the name.</td></tr>
+<tr><td>2</td><td><b>public Enumeration getAttributeNames()</b><br />This method returns an Enumeration of String objects containing the names of all the objects bound to this session.</td></tr>
+<tr><td>3</td><td><b>public long getCreationTime()</b><br />This method returns the time when this session was created, measured in milliseconds since midnight January 1, 1970 GMT.</td></tr>
+<tr><td>4</td><td><b>public String getId()</b><br />This method returns a string containing the unique identifier assigned to this session.</td></tr>
+<tr><td>5</td><td><b>public long getLastAccessedTime()</b><br />This method returns the last time the client sent a request associated with this session, as the number of milliseconds since midnight January 1, 1970 GMT.</td></tr>
+<tr><td>6</td><td><b>public int getMaxInactiveInterval()</b><br />This method returns the maximum time interval, in seconds, that the servlet container will keep this session open between client accesses.</td></tr>
+<tr><td>7</td><td><b>public void invalidate()</b><br />This method  invalidates this session and unbinds any objects bound to it.</td></tr>
+<tr><td>8</td><td><b>public boolean isNew(</b><br />This method returns true if the client does not yet know about the session or if the client chooses not to join the session.</td></tr>
+<tr><td>9</td><td><b>public void removeAttribute(String name)</b><br />This method removes the object bound with the specified name from this session.</td></tr>
+<tr><td>10</td><td><b>public void setAttribute(String name, Object value) </b><br />This method  binds an object to this session, using the name specified.</td></tr>
+<tr><td>11</td><td><b>public void setMaxInactiveInterval(int interval)</b><br />This method specifies the time, in seconds, between client requests before the servlet container will invalidate this session.</td></tr>
+</table>
+<h2>Session Tracking Example:</h2>
+<p>This example describes how to use the HttpSession object to find out the creation time and the last-accessed time for a session. We would associate a new session with the request if one does not already exist.</p>
+<pre class="prettyprint">
+// Import required java libraries
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
+ 
+// Extend HttpServlet class
+public class SessionTrack extends HttpServlet {
+ 
+  public void doGet(HttpServletRequest request,
+                    HttpServletResponse response)
+            throws ServletException, IOException
+  {
+      // Create a session object if it is already not  created.
+      HttpSession session = request.getSession(true);
+      // Get session creation time.
+      Date createTime = new Date(session.getCreationTime());
+      // Get last access time of this web page.
+      Date lastAccessTime = 
+                        new Date(session.getLastAccessedTime());
+
+      String title = "Welcome Back to my website";
+      Integer visitCount = new Integer(0);
+      String visitCountKey = new String("visitCount");
+      String userIDKey = new String("userID");
+      String userID = new String("ABCD");
+
+      // Check if this is new comer on your web page.
+      if (session.isNew()){
+         title = "Welcome to my website";
+         session.setAttribute(userIDKey, userID);
+      } else {
+         visitCount = (Integer)session.getAttribute(visitCountKey);
+         visitCount = visitCount + 1;
+         userID = (String)session.getAttribute(userIDKey);
+      }
+      session.setAttribute(visitCountKey,  visitCount);
+
+      // Set response content type
+      response.setContentType("text/html");
+      PrintWriter out = response.getWriter();
+
+      String docType =
+      "&lt;!doctype html public \"-//w3c//dtd html 4.0 " +
+      "transitional//en\"&gt;\n";
+      out.println(docType +
+                "&lt;html&gt;\n" +
+                "&lt;head&gt;&lt;title&gt;" + title + "&lt;/title&gt;&lt;/head&gt;\n" +
+                "&lt;body bgcolor=\"#f0f0f0\"&gt;\n" +
+                "&lt;h1 align=\"center\"&gt;" + title + "&lt;/h1&gt;\n" +
+                 "&lt;h2 align=\"center\"&gt;Session Infomation&lt;/h2&gt;\n" +
+                "&lt;table border=\"1\" align=\"center\"&gt;\n" +
+                "&lt;tr bgcolor=\"#949494\"&gt;\n" +
+                "  &lt;th&gt;Session info&lt;/th&gt;&lt;th&gt;value&lt;/th&gt;&lt;/tr&gt;\n" +
+                "&lt;tr&gt;\n" +
+                "  &lt;td&gt;id&lt;/td&gt;\n" +
+                "  &lt;td&gt;" + session.getId() + "&lt;/td&gt;&lt;/tr&gt;\n" +
+                "&lt;tr&gt;\n" +
+                "  &lt;td&gt;Creation Time&lt;/td&gt;\n" +
+                "  &lt;td&gt;" + createTime + 
+                "  &lt;/td&gt;&lt;/tr&gt;\n" +
+                "&lt;tr&gt;\n" +
+                "  &lt;td&gt;Time of Last Access&lt;/td&gt;\n" +
+                "  &lt;td&gt;" + lastAccessTime + 
+                "  &lt;/td&gt;&lt;/tr&gt;\n" +
+                "&lt;tr&gt;\n" +
+                "  &lt;td&gt;User ID&lt;/td&gt;\n" +
+                "  &lt;td&gt;" + userID + 
+                "  &lt;/td&gt;&lt;/tr&gt;\n" +
+                "&lt;tr&gt;\n" +
+                "  &lt;td&gt;Number of visits&lt;/td&gt;\n" +
+                "  &lt;td&gt;" + visitCount + "&lt;/td&gt;&lt;/tr&gt;\n" +
+                "&lt;/table&gt;\n" +
+                "&lt;/body&gt;&lt;/html&gt;");
+  }
+}
+</pre>
+<p>Compile above servlet  <b>SessionTrack</b> and create appropriate entry in web.xml file. Now running <i>http://localhost:8080/SessionTrack</i> would display the following result when you would run for the first time:</p>
+<h1 align="center">Welcome to my website</h1>
+<h2 align="center">Session Infomation</h2>
+<table cellpadding="5" class="src">
+<tr bgcolor="#949494">
+  <th>Session info</th><th>value</th></tr>
+<tr>
+  <td>id</td>
+  <td>0AE3EC93FF44E3C525B4351B77ABB2D5</td></tr>
+<tr>
+  <td>Creation Time</td>
+  <td>Tue Jun 08 17:26:40 GMT+04:00 2010  </td></tr>
+<tr>
+  <td>Time of Last Access</td>
+  <td>Tue Jun 08 17:26:40 GMT+04:00 2010  </td></tr>
+<tr>
+  <td>User ID</td>
+  <td>ABCD  </td></tr>
+<tr>
+  <td>Number of visits</td>
+  <td>0</td></tr>
+</table>
+<p>Now try to run the same servlet for second time, it would display following result.</p>
+<h1 align="center">Welcome Back to my website</h1>
+<h2 align="center">Session Infomation</h2>
+<table cellpadding="5" class="src">
+<tr bgcolor="#949494">
+  <th>info type</th><th>value</th></tr>
+<tr>
+  <td>id</td>
+  <td>0AE3EC93FF44E3C525B4351B77ABB2D5</td></tr>
+<tr>
+  <td>Creation Time</td>
+  <td>Tue Jun 08 17:26:40 GMT+04:00 2010  </td></tr>
+<tr>
+  <td>Time of Last Access</td>
+  <td>Tue Jun 08 17:26:40 GMT+04:00 2010  </td></tr>
+<tr>
+  <td>User ID</td>
+  <td>ABCD  </td></tr>
+<tr>
+  <td>Number of visits</td>
+  <td>1</td></tr>
+</table>
+<h2>Deleting Session Data:</h2>
+<p>When you are done with a user's session data, you have several options:</p>
+<ul class="list">
+<li><p><b>Remove a particular attribute:</b>  You can call <i>public void removeAttribute(String name)</i> method to delete the value associated with a particular key.</p></li>
+<li><p><b>Delete the whole session:</b> You can call <i>public void invalidate()</i> method to discard an entire session.</p></li>
+<li><p><b>Setting Session timeout:</b> You can call <i>public void setMaxInactiveInterval(int interval)</i> method to set the timeout for a session individually.</p></li>
+<li><p><b>Log the user out:</b> The servers that support servlets 2.4, you can call <b>logout</b> to log the client out of the Web server and invalidate all sessions belonging to all the users.</p></li>
+<li><p><b>web.xml Configuration:</b> If you are using Tomcat, apart from the above mentioned methods, you can configure session time out in web.xml file as follows.</p></li>
+</ul>
+<pre class="prettyprint">
+  &lt;session-config&gt;
+    &lt;session-timeout&gt;15&lt;/session-timeout&gt;
+  &lt;/session-config&gt;
+</pre>
+<p>The timeout is expressed as minutes, and overrides the default timeout which is 30 minutes in Tomcat.</p>
+<p>The getMaxInactiveInterval( ) method in a servlet returns the timeout period for that session in seconds. So if your session is configured in web.xml for 15 minutes, getMaxInactiveInterval( ) returns 900.</p>
+					</div>
+					<!--// google ad -->
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+							<!--
+							google_ad_client ="ca-pub-1090193214637198";
+							/* yiibai下方 */
+							google_ad_slot = "6494738921";
+							google_ad_width = 728;
+							google_ad_height = 90;
+							//-->
+						</script>
+						<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+				</div><!--/span-->
+				<!--// demos -->
+				
+				<div class="span9" style="width:800px; margin:12px 8px 12px 12px; padding: 8px 22px 8px 24px; border: 1px solid #DDDDDD;float:right;">
+					<div style="width: 740px;height: 48px; margin:0px; padding: 0px; border-bottom: 1px solid #DDDDDD;">
+						<h2 style="float:left;font-size: 13pt;width:490px;">贡献/合作者</h2>
+					</div>
+					<div style="text-align: left;float:left;width:660px;">
+						正在开放中...
+					</div>
+				</div>
+
+				<div class="span9" style="width:800px; margin:12px 8px 12px 12px; padding:0px; float:right;">
+					<div style="float:left;width:780px;height: 160px;clear:both;">
+						<div style="float:left;width:40px;height: 160px;">
+							<img src="http://www.yiibai.com/static/ico/deault_user_icon.gif" width="32px;" height="32px;"/>
+						</div>
+						<div style="float:left;width:680px;height: 160px; margin-left:12px; clear:right;">
+							<form action="servlets-session-tracking.html" method="post">
+								<a name="comment"></a>
+								<textarea id="comment_textarea" name="comment_content" style="height: 120px;">&nbsp;</textarea>
+								<input type="button" class="btn btn-success" id="comment_submit" value="提交评论"/><span id="submit_tips" style="margin-left: 22px;padding-top: 2px;" class=""></span>
+							</form>
+						</div>
+					</div>
+					<div style="clear: both;padding:14px;">&nbsp;</div>
+					<h2 style="float:left;font-size: 13pt;width:780px;border-bottom: 1px solid #DDDDDD;">评论(0条)</h2>
+
+					<div style="width:780px;  float: left;">
+						<ul style="margin: 5px 0 15px 0;padding: 5px 0 5px 0px;">
+														<li style="border-bottom: 1px dashed #ddd; margin-top: 8px;margin-bottom: 8px;">
+								<p>
+									<span style="font-size: 10.5pt;">还没有评论！</span>
+								</p>
+							</li>
+														
+						</ul>
+					</div>
+				</div>
+
+			</div><!--/row-->
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		<!--
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+		-->
+	</body>
+	<script type="text/javascript" src="http://www.yiibai.com/static/js/tutorial.js"></script>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Java String/StringBuffer用法比较</title>
+		<meta name="Keywords" content="Java String/StringBuffer用法比较 "/>
+		<meta name="Description" content="Java String/StringBuffer用法比较-String可以说是我们最常用的一个类， 熟练掌握它的一些基本用法是很有用的。"/>
+		<script type="text/javascript" src="../../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../../static/js/analysis.js"></script>
+		<link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../../index.html" class="logo"> <img src="../../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../../index.php?r=login" class="user-login">登陆</a>
+	<a href="../../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../../index.html">首页</a>  » <a href="../../java">Java教程</a>  » Java String/StringBuffer用法比较
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../../thinking">Java编程思想</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../../javaio">java io类</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="../java_overview.html#java_overview">Java概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_environment_setup.html#java_environment_setup">Java环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_basic_syntax.html#java_basic_syntax">Java基本语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_object_classes.html#java_object_classes">Java对象和类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_basic_datatypes.html#java_basic_datatypes">Java基础数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_variable_types.html#java_variable_types">Java变量类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_modifier_types.html#java_modifier_types">Java修饰符类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_basic_operators.html#java_basic_operators">Java基本运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_loop_control.html#java_loop_control">Java循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_decision_making.html#java_decision_making">Java流程控制</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_numbers.html#java_numbers">Java Number类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_character.html#java_character">Java Character类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_string.html#java_string">Java String类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_oop_overview.html#java_oop_overview">Java面向对象基本概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_system_class.html#java_system_class">Java System类</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="StringBuffer.html">Java String/StringBuffer用法比较</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../ClassLoader.html#classloader">Java Class, ClassLoader用法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_javaio.html#java_javaio">Java IO系统</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_sets.html#java_sets">Java集合类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../ResourceBundle.html#resourcebundle">Java ResourceBundle, Properties</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../Exceptions.html#exceptions">Java Exceptions异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="../java_jdbc.html#java_jdbc">Java JDBC类库</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Java String/StringBuffer用法比较</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Java String/StringBuffer用法比较-String可以说是我们最常用的一个类， 熟练掌握它的一些基本用法是很有用的。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p>
+	String可以说是我们最常用的一个类，&nbsp;熟练掌握它的一些基本用法是很有用的。
+</p>
+<p>
+	String是由一组字符组成的字符串，&nbsp;下标由0开始。&nbsp;一旦有必要改变原来的内容，&nbsp;每个String方法都有返回了一个新的String对象。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char&nbsp;charAt(int&nbsp;index)&nbsp;返回指定位置的字符。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;compareTo(Object&nbsp;o)&nbsp;<br />
+int&nbsp;compareTo(String&nbsp;anotherString)&nbsp;<br />
+与另外一个对象进行比较。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;compareToIgnoreCase(String&nbsp;str)&nbsp;&nbsp;与另一个String进行比较，&nbsp;不区分大小写
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;concat(String&nbsp;str)&nbsp;连接两字符串，&nbsp;可以直接用+，&nbsp;因为Java给String覆盖了+
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;String&nbsp;copyValueOf(char[]&nbsp;data)&nbsp;<br />
+static&nbsp;String&nbsp;copyValueOf(char[]&nbsp;data,&nbsp;int&nbsp;offset,&nbsp;int&nbsp;count)&nbsp;<br />
+将data数组转换至String
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;endsWith(String&nbsp;suffix)&nbsp;测试此String是否以suffix结尾。&nbsp;<br />
+boolean&nbsp;startsWith(String&nbsp;prefix)&nbsp;测试此String是否以prefix开头。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;equals(Object&nbsp;anObject)&nbsp;<br />
+boolean&nbsp;equalsIgnoreCase(String&nbsp;anotherString)&nbsp;<br />
+比较两字符串的值。&nbsp;不相等则返回false
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;byte[]&nbsp;getBytes()&nbsp;根据缺省的字符编码将String转换成字节数组。<br />
+byte[]&nbsp;getBytes(String&nbsp;enc)&nbsp;根据指定的编码将String转换万字节数组。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;getChars(int&nbsp;srcBegin,&nbsp;int&nbsp;srcEnd,&nbsp;char[]&nbsp;dst,&nbsp;int&nbsp;dstBegin)&nbsp;拷贝字符至一数组中
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;indexOf(int&nbsp;ch)&nbsp;从字串的起始位置查找字符ch第一次出现的位置<br />
+int&nbsp;indexOf(int&nbsp;ch,&nbsp;int&nbsp;fromIndex)&nbsp;从指定的fromIndex位置向后查找第一次出现ch的位置，<br />
+int&nbsp;indexOf(String&nbsp;str)&nbsp;<br />
+int&nbsp;indexOf(String&nbsp;str,&nbsp;int&nbsp;fromIndex)&nbsp;<br />
+如果不存在ch或str都返回-1
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;lastIndexOf(int&nbsp;ch)&nbsp;从字串的最终位置往前查找第一次出现ch的位置<br />
+int&nbsp;lastIndexOf(int&nbsp;ch,&nbsp;int&nbsp;fromIndex)&nbsp;&nbsp;从指定的位置往前查找第一次出现ch的位置，<br />
+int&nbsp;lastIndexOf(String&nbsp;str)&nbsp;<br />
+int&nbsp;lastIndexOf(String&nbsp;str,&nbsp;int&nbsp;fromIndex)&nbsp;<br />
+如果不存在则返回-1
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;length()&nbsp;该字符串的字符长度（一个全角的汉字长度为1）
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;replace(char&nbsp;oldChar,&nbsp;char&nbsp;newChar)&nbsp;将字符oldChar全部替换为newChar，&nbsp;返回一个新的字符串。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;substring(int&nbsp;beginIndex)&nbsp;返回从beginIndex开始的字符串子集<br />
+String&nbsp;substring(int&nbsp;beginIndex,&nbsp;int&nbsp;endIndex)&nbsp;返回从beginIndex至endIndex结束的字符串的子集。&nbsp;其中endIndex&nbsp;–&nbsp;beginIndex等于子集的字符串长度
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char[]&nbsp;toCharArray()&nbsp;返回该字符串的内部字符数组
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;toLowerCase()&nbsp;转换至小写字母的字符串<br />
+String&nbsp;toLowerCase(Locale&nbsp;locale)&nbsp;<br />
+String&nbsp;toUpperCase()&nbsp;转换至大写字母的字符串<br />
+String&nbsp;toUpperCase(Locale&nbsp;locale)
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;toString()&nbsp;覆盖了Object的toString方法，&nbsp;返回本身。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;trim()&nbsp;将字符串两边的半角空白字符去掉，&nbsp;如果需要去掉全角的空白字符得要自己写。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;String&nbsp;valueOf(primitive&nbsp;p)&nbsp;将其它的简单类型的值转换为一个String
+</p>
+<p>
+	<br />
+</p>
+<p>
+	StingBuffer是一个可变的字符串，它可以被更改。同时StringBuffer是Thread&nbsp;safe的，&nbsp;你可以放心的使用，&nbsp;常用的方法如下：
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer&nbsp;append(param)&nbsp;&nbsp;在StringBuffer对象之后追加param(可以为所有的简单类型和Object)&nbsp;返回追加后的StringBuffer，&nbsp;与原来的对象是同一份。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char&nbsp;charAt(int&nbsp;index)&nbsp;返回指定位置index的字符。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer&nbsp;delete(int&nbsp;start,&nbsp;int&nbsp;end)&nbsp;删除指定区域start~end的字符。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer&nbsp;deleteCharAt(int&nbsp;index)&nbsp;删除指定位置index的字符。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;getChars(int&nbsp;srcBegin,&nbsp;int&nbsp;srcEnd,&nbsp;char[]&nbsp;dst,&nbsp;int&nbsp;dstBegin)&nbsp;同String的getChars方法
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer&nbsp;insert(int&nbsp;offset,&nbsp;boolean&nbsp;b)&nbsp;在指定位置offset插入param(为所有的简单类型与Object)
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;length()&nbsp;同String的length()
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer&nbsp;replace(int&nbsp;start,&nbsp;int&nbsp;end,&nbsp;String&nbsp;str)&nbsp;将指定区域start~end的字符串替换为str
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuffer&nbsp;reverse()&nbsp;反转字符的顺序
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;setCharAt(int&nbsp;index,&nbsp;char&nbsp;ch)&nbsp;设置字符ch至index位置。
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;substring(int&nbsp;start)
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;substring(int&nbsp;start,&nbsp;int&nbsp;end)&nbsp;同String的subString
+</p>
+<p style="margin-left:56.9pt;text-indent:-21pt;">
+	Ø&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;toString()&nbsp;返回一个String
+</p>
+<p>
+	<br />
+</p>
+<p>
+	大家可能已经注意到很多方法都返回了一个StringBuffer对象，&nbsp;但返回的这个对象与String的方法返回的String不一样，&nbsp;返回的StringBuffer对象与被操作的StringBuffer对象是同一份，&nbsp;而String的方法返回的String则肯定是重新生成的一个String。
+</p>
+<p>
+	3.2性能对比
+</p>
+<p>
+	因为String被设计成一种安全的字符串，&nbsp;避免了C/C++中的尴尬。因此在内部操作的时候会频繁的进行对象的交换，&nbsp;因此它的效率不如StringBuffer。&nbsp;如果需要频繁的进行字符串的增删操作的话最好用StringBuffer。&nbsp;比如拼SQL文，&nbsp;写共函。&nbsp;另：&nbsp;编绎器对String的+操作进行了一定的优化。
+</p>
+<p style="text-indent:35.9pt;">
+	x&nbsp;=&nbsp;"a"&nbsp;+&nbsp;4&nbsp;+&nbsp;"c"
+</p>
+<p>
+	会被编绎成
+</p>
+<p style="text-indent:35.9pt;">
+	x&nbsp;=&nbsp;new&nbsp;StringBuffer().append("a").append(4).append("c").toString()
+</p>
+<p>
+	但：
+</p>
+<p style="text-indent:35.9pt;">
+	x&nbsp;=&nbsp;“a”;
+</p>
+<p style="text-indent:35.9pt;">
+	x&nbsp;=&nbsp;x&nbsp;+&nbsp;4;
+</p>
+<p style="text-indent:35.9pt;">
+	x&nbsp;=&nbsp;x&nbsp;+&nbsp;“c”;
+</p>
+<p>
+	则不会被优化。&nbsp;可以看出如果在一个表达式里面进行String的多次+操作会被优化，&nbsp;而多个表达式的+操作不会被优化。
+</p>
+<p>
+	3.3技巧
+</p>
+<p style="margin-left:18pt;text-indent:-18pt;">
+	1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Servlet2.3与JSP1.1以前画面post到后台的数据是通过ISO88591格式进行编码的，&nbsp;则当遇到全角日文字的时候,&nbsp;在后台request得到的数据可能就是乱码,&nbsp;这个时候就得自己进行编码转换,&nbsp;通过String.getBytes(String&nbsp;enc)方法得到一个字节流,&nbsp;然后通过String(byte[]&nbsp;bytes,&nbsp;String&nbsp;enc)这个构造函数得到一个用新的编码生成的字符串.&nbsp;例如将ISO88591的字符串转换成Shift_JIS的字符串,&nbsp;方法如下:
+</p>
+<p style="text-indent:63pt;">
+	public&nbsp;static&nbsp;String&nbsp;convertString(String&nbsp;str)&nbsp;{
+</p>
+<p style="text-indent:63pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(str&nbsp;==&nbsp;null)&nbsp;{&nbsp;return&nbsp;null;&nbsp;}
+</p>
+<p style="text-indent:63pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</p>
+<p style="text-indent:63pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;byte[]&nbsp;buf&nbsp;=&nbsp;str.getBytes("ISO8859_1");
+</p>
+<p style="text-indent:63pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;String(buf,&nbsp;"Shift_JIS");
+</p>
+<p style="text-indent:63pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(Exception&nbsp;ex)&nbsp;{ex.printStackTrace();return&nbsp;null;&nbsp;}
+</p>
+<p style="text-indent:63pt;">
+	}
+</p>
+<p style="margin-left:23.1pt;">
+	不过在最新的Servlet2.3与Jsp1.2中可以通过request.setCharacterEncoding来进行设置取值的码制,&nbsp;不需要自己再做转换。
+</p>
+<p style="margin-left:23.1pt;">
+	<br />
+</p>
+<p>
+	2．因为Java在计算String的长度是以字符为单位的，&nbsp;因此一个全角与半角的字符长度是一样的，&nbsp;但是DB中往往是根据字节来计算长度的，&nbsp;因此我们在做Check的时候得要判断String的字节长，&nbsp;可以用以下的方法：
+</p>
+<p style="text-indent:63pt;">
+	public&nbsp;static&nbsp;String&nbsp;length(String&nbsp;str)&nbsp;{
+</p>
+<p style="text-indent:63pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(str&nbsp;==&nbsp;null)&nbsp;{&nbsp;return&nbsp;0;&nbsp;}
+</p>
+<p style="text-indent:63pt;">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;str.getBytes().length;
+</p>
+<p style="text-indent:63pt;">
+	}
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

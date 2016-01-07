@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>MySQL创建表</title>
+		<meta name="Keywords" content="MySQL创建表实例代码教程 "/>
+		<meta name="Description" content="MySQL创建表实例代码教程-PHP创建MySQL数据库表"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../mysql">MySQL</a>  » MySQL创建表
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../mysql">MySQL</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../mysql">MySQL教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="http://www.yiibai.com/mysqlfunction">MySQL函数</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../mysql">MySQL教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="mysql_introduction.html#mysql_introduction">MySQL介绍</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_installation.html#mysql_installation">MySQL安装(Window&Linux)</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_administration.html#mysql_administration">MySQL管理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_php_syntax.html#mysql_php_syntax">MySQL PHP语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_connection.html#mysql_connection">MySQL数据库连接</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_create_database.html#mysql_create_database">MySQL创建数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_drop_database.html#mysql_drop_database">MySQL删除数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_select_database.html#mysql_select_database">MySQL选择数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_data_types.html#mysql_data_types">MySQL数据类型</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="mysql_create_tables.html">MySQL创建表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_drop_tables.html#mysql_drop_tables">MySQL删除表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_insert_query.html#mysql_insert_query">MySQL插入查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_select_query.html#mysql_select_query">MySQL查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_where_clause.html#mysql_where_clause">MySQL WHERE子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_update_query.html#mysql_update_query">MySQL更新查询</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_delete_query.html#mysql_delete_query">MySQL删除DELETE</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_like_clause.html#mysql_like_clause">MySQL LIKE子句</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_sorting_results.html#mysql_sorting_results">MySQL结果集排序</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_using_joins.html#mysql_using_joins">MySQL连接Joins</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_null_values.html#mysql_null_values">MySQL处理NULL值</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_regexps.html#mysql_regexps">MySQL正则表达式</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_transactions.html#mysql_transactions">MySQL事务</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_alter_command.html#mysql_alter_command">MySQL ALTER命令</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_indexes.html#mysql_indexes">MySQL索引</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_temporary_tables.html#mysql_temporary_tables">MySQL临时表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_clone_tables.html#mysql_clone_tables">MySQL克隆表</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_database_info.html#mysql_database_info">MySQL数据库信息</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_using_sequences.html#mysql_using_sequences">MySQL序列</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_handling_duplicates.html#mysql_handling_duplicates">MySQL处理重复</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_sql_injection.html#mysql_sql_injection">MySQL&SQL注入</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_database_export.html#mysql_database_export">MySQL导出备份方法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="mysql_database_import.html#mysql_database_import">MySQL导入恢复方法</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">MySQL创建表</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						MySQL创建表实例代码教程-PHP创建MySQL数据库表
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	创建表的命令要求：<span></span> 
+</p>
+<ul style="background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			表的名称
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			表字段名称
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			每个字段的定义
+		</p>
+	</li>
+</ul>
+<h3 style="font-size:12px;background-color:#FFFFFF;">
+	语法：
+</h3>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是通用的SQL语法来创建一个MySQL表：
+</p>
+<pre>CREATE TABLE table_name (column_name column_type);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	现在，我们将创建下面的教程数据库表中。
+</p>
+<pre>tutorials_tbl(
+   tutorial_id INT NOT NULL AUTO_INCREMENT,
+   tutorial_title VARCHAR(100) NOT NULL,
+   tutorial_author VARCHAR(40) NOT NULL,
+   submission_date DATE,
+   PRIMARY KEY ( tutorial_id )
+);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这里几个项目需要说明：
+</p>
+<ul style="background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			使用字段属性<strong><em>NOT NULL</em></strong>，因为我们不希望此字段是NULL。因此如果用户试图创建一个与NULL值的记录，那么<a href="../mysql" target="_blank">MySQL</a>将产生一个错误。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			字段属性<em><strong>AUTO_INCREMENT</strong></em>告诉MySQL的继续递增，下一个可用编号的id字段。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			关键字<strong><em>PRIMARY KEY</em></strong>用于定义一个列作为主键。可以使用以逗号分隔的多个列定义一个主键。
+		</p>
+	</li>
+</ul>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	从命令提示符创建表：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这是很容易的，从mysql&gt;提示符下创建一个MySQL表。您将使用SQL<span style="background-color:#FFFFFF;">命令</span> <em><strong>CREATE TABLE&nbsp;</strong></em>创建一个表。
+</p>
+<h3 style="font-size:12px;background-color:#FFFFFF;">
+	例子:
+</h3>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是一个例子，它创建&nbsp;<b>tutorials_tbl</b>:
+</p>
+<pre>root@host# mysql -u root -p
+Enter password:*******
+mysql&gt; use TUTORIALS;
+Database changed
+mysql&gt; CREATE TABLE tutorials_tbl(
+   -&gt; tutorial_id INT NOT NULL AUTO_INCREMENT,
+   -&gt; tutorial_title VARCHAR(100) NOT NULL,
+   -&gt; tutorial_author VARCHAR(40) NOT NULL,
+   -&gt; submission_date DATE,
+   -&gt; PRIMARY KEY ( tutorial_id )
+   -&gt; );
+Query OK, 0 rows affected (0.16 sec)
+mysql&gt;
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<b>注:</b>&nbsp;MySQL终止命令，直到你给一个分号（;)结束时的SQL命令。
+</p>
+<h2 style="font-size:16px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	使用PHP脚本创建MySQL表:
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要创建新的表中的任何现有的数据库，需要使用PHP函数mysql_query()。将通过它的第二个参数，正确的SQL命令来创建一个表。
+</p>
+<h3 style="font-size:12px;background-color:#FFFFFF;">
+	例子:
+</h3>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是一个例子，使用<a href="../php" target="_blank">PHP脚本</a>来创建一个表：
+</p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Creating MySQL Tables - by www.yiibai.com&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+$dbhost = 'localhost:3036';
+$dbuser = 'root';
+$dbpass = 'rootpassword';
+$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+if(! $conn )
+{
+  die('Could not connect: ' . mysql_error());
+}
+echo 'Connected successfully&lt;br /&gt;';
+$sql = "CREATE TABLE tutorials_tbl( ".
+       "tutorial_id INT NOT NULL AUTO_INCREMENT, ".
+       "tutorial_title VARCHAR(100) NOT NULL, ".
+       "tutorial_author VARCHAR(40) NOT NULL, ".
+       "submission_date DATE, ".
+       "PRIMARY KEY ( tutorial_id )); ";
+mysql_select_db( 'TUTORIALS' );
+$retval = mysql_query( $sql, $conn );
+if(! $retval )
+{
+  die('Could not create table: ' . mysql_error());
+}
+echo "Table created successfully\n";
+mysql_close($conn);
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

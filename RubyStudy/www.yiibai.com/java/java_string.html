@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Java String类</title>
+		<meta name="Keywords" content="Java String类使用代码实例 "/>
+		<meta name="Description" content="Java String类使用代码实例 -字符串String，被广泛使用在Java编程中，一个字符序列。在Java编程语言中，字符串是对象。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../java">Java教程</a>  » Java String类
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../thinking">Java编程思想</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../javaio">java io类</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../java">Java教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="java_overview.html#java_overview">Java概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_environment_setup.html#java_environment_setup">Java环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_syntax.html#java_basic_syntax">Java基本语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_object_classes.html#java_object_classes">Java对象和类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_datatypes.html#java_basic_datatypes">Java基础数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_variable_types.html#java_variable_types">Java变量类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_modifier_types.html#java_modifier_types">Java修饰符类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_basic_operators.html#java_basic_operators">Java基本运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_loop_control.html#java_loop_control">Java循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_decision_making.html#java_decision_making">Java流程控制</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_numbers.html#java_numbers">Java Number类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_character.html#java_character">Java Character类</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="java_string.html">Java String类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_oop_overview.html#java_oop_overview">Java面向对象基本概念</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_system_class.html#java_system_class">Java System类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_String/StringBuffer.html#java_string/stringbuffer">Java String/StringBuffer用法比较</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ClassLoader.html#classloader">Java Class, ClassLoader用法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_javaio.html#java_javaio">Java IO系统</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_sets.html#java_sets">Java集合类</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ResourceBundle.html#resourcebundle">Java ResourceBundle, Properties</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="Exceptions.html#exceptions">Java Exceptions异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="java_jdbc.html#java_jdbc">Java JDBC类库</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Java String类</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Java String类使用代码实例 -字符串String，被广泛使用在Java编程中，一个字符序列。在Java编程语言中，字符串是对象。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	字符串，被广泛使用在Java编程中，一个字符序列。在Java编程语言中，字符串是对象。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Java平台提供了创建和操作字符串String类。
+</p>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<span></span><strong>创建String:</strong><span></span> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	最直接的方法来创建一个字符串是这样写：
+</p>
+<pre>String greeting = "Hello world!";
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	每当遇到一个字符串文字在你的代码中，编译器会创建一个String对象，它的值在本例中，“你好，世界！”。<br />
+任何其他对象，可以创建String对象使用new关键字和构造。 String类有11构造函数，可以提供不同的来源，如一个字符数组，字符串使用的初始值：
+</p>
+<pre>public class StringDemo{
+   public static void main(String args[]){
+      char[] helloArray = { 'h', 'e', 'l', 'l', 'o', '.'};
+      String helloString = new String(helloArray);  
+      System.out.println( helloString );
+   }
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这将产生以下结果：
+</p>
+<pre>hello
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<b>Note:</b>&nbsp;The String class is immutable, so that once it is created a String object cannot be changed. If there is a necessity to make alot of modifications to Strings of characters then you should use&nbsp;<a href="http://www.yiibai.com/java/java_string_buffer.html" target="_blank">String Buffer &amp; String Builder</a>&nbsp;Classes.
+</p>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<strong>String长度</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<span></span>被称为访问器方法使用的方法，以获得有关对象的信息。一个访问方法，可以使用字符串的&nbsp;length()&nbsp;方法，该方法返回String对象中包含的字符数。<br />
+在下面的两行代码被执行了，长度等于17：
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<span></span> 
+</p>
+<pre>public class StringDemo{
+   public static void main(String args[]){
+      String palindrome = "Dot saw I was Tod";
+      int len = palindrome.length();
+      System.out.println( "String Length is : " + len );
+   }
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这将产生以下结果：
+</p>
+<pre>String Length is : 17
+</pre>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<strong>连接字符串String：</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	String类包括连接两个字符串的方法：
+</p>
+<pre>string1.concat(string2);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	This returns a new string that is string1 with string2 added to it at the end. You can also use the concat() method with string literals, as in:
+</p>
+<pre>"My name is ".concat("Zara");
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Strings are more commonly concatenated with the + operator, as in:
+</p>
+<pre>"Hello," + " world" + "!"
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	which results in:
+</p>
+<pre>"Hello, world!"
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	Let us look at the followinge example:
+</p>
+<pre>public class StringDemo{
+   public static void main(String args[]){
+      String string1 = "saw I was ";
+      System.out.println("Dot " + string1 + "Tod");
+   }
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	This would produce following result:
+</p>
+<pre>Dot saw I was Tod
+</pre>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	<strong>创建格式字符串：</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	printf()和format()方法来打印输出格式的数字。 String类有一个等价类的方法，format()，该函数返回一个String对象，而不是一个PrintStream对象。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	使用String的静态format()方法允许你创建一个格式化字符串，可以重复使用，而不是一次性打印语句。例如：
+</p>
+<pre>System.out.printf("The value of the float variable is " +
+                  "%f, while the value of the integer " +
+                  "variable is %d, and the string " +
+                  "is %s", floatVar, intVar, stringVar);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	you can write:
+</p>
+<pre>String fs;
+fs = String.format("The value of the float variable is " +
+                   "%f, while the value of the integer " +
+                   "variable is %d, and the string " +
+                   "is %s", floatVar, intVar, stringVar);
+System.out.println(fs);
+</pre>
+<h1 style="font-weight:normal;font-size:18px;font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;background-color:#FFFFFF;">
+	String方法:
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面是String类所支持的列表的方法：
+</p>
+<table border="1" width="100%" cellpadding="5" cellspacing="0" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;">
+	<tbody>
+		<tr>
+			<th width="5%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:normal;line-height:18px;"><span>SN</span> </span> 
+			</th>
+			<th width="95%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				<span style="font-weight:normal;line-height:18px;"><span>Methods with Description</span> </span> 
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>1</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_charat.htm">char charAt(int index)</a>&nbsp;<br />
+Returns the character at the specified index.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>2</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_compareto.htm">int compareTo(Object o)&nbsp;</a><br />
+Compares this String to another Object.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>3</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_compareto.htm">int compareTo(String anotherString)</a><br />
+Compares two strings lexicographically.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>4</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_comparetoignorecase.htm">int compareToIgnoreCase(String str)</a>&nbsp;<br />
+Compares two strings lexicographically, ignoring case differences.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>5</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_concat.htm">String concat(String str)</a><br />
+Concatenates the specified string to the end of this string.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>6</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_contentequals.htm">boolean contentEquals(StringBuffer sb)&nbsp;</a><br />
+Returns true if and only if this String represents the same sequence of characters as the specified StringBuffer.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>7</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_copyvalueof.htm">static String copyValueOf(char[] data)&nbsp;</a><br />
+Returns a String that represents the character sequence in the array specified.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>8</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_copyvalueof.htm">static String copyValueOf(char[] data, int offset, int count)</a><br />
+Returns a String that represents the character sequence in the array specified.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>9</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_endswith.htm">boolean endsWith(String suffix)</a>&nbsp;<br />
+Tests if this string ends with the specified suffix.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>10</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_equals.htm">boolean equals(Object anObject)</a><br />
+Compares this string to the specified object.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>11</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_equalsignorecase.htm">boolean equalsIgnoreCase(String anotherString)</a><br />
+Compares this String to another String, ignoring case considerations.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>12</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_getbytes.htm">byte getBytes()</a>&nbsp;<br />
+Encodes this String into a sequence of bytes using the platform's default charset, storing the result into a new byte array.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>13</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_getbytes.htm">byte[] getBytes(String charsetName</a><br />
+Encodes this String into a sequence of bytes using the named charset, storing the result into a new byte array.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>14</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_getchars.htm">void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)</a><br />
+Copies characters from this string into the destination character array.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>15</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_hashcode.htm">int hashCode()</a><br />
+Returns a hash code for this string.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>16</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_indexof.htm">int indexOf(int ch)&nbsp;</a><br />
+Returns the index within this string of the first occurrence of the specified character.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>17</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_indexof.htm">int indexOf(int ch, int fromIndex)</a>&nbsp;<br />
+Returns the index within this string of the first occurrence of the specified character, starting the search at the specified index.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>18</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_indexof.htm">int indexOf(String str)</a><br />
+Returns the index within this string of the first occurrence of the specified substring.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>19</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_indexof.htm">int indexOf(String str, int fromIndex)</a><br />
+Returns the index within this string of the first occurrence of the specified substring, starting at the specified index.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>20</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_intern.htm">String intern()</a><br />
+Returns a canonical representation for the string object.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>21</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_lastindexof.htm">int lastIndexOf(int ch)</a>&nbsp;<br />
+Returns the index within this string of the last occurrence of the specified character.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>22</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_lastindexof.htm">int lastIndexOf(int ch, int fromIndex)</a>&nbsp;<br />
+Returns the index within this string of the last occurrence of the specified character, searching backward starting at the specified index.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>23</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_lastindexof.htm">int lastIndexOf(String str)</a><br />
+Returns the index within this string of the rightmost occurrence of the specified substring.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>24</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_lastindexof.htm">int lastIndexOf(String str, int fromIndex)</a>&nbsp;<br />
+Returns the index within this string of the last occurrence of the specified substring, searching backward starting at the specified index.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>25</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_length.htm">int length()</a>&nbsp;<br />
+Returns the length of this string.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>26</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_matches.htm">boolean matches(String regex)</a><br />
+Tells whether or not this string matches the given regular expression.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>27</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_regionmatches.htm">boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)&nbsp;</a><br />
+Tests if two string regions are equal.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>28</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_regionmatches.htm">boolean regionMatches(int toffset, String other, int ooffset, int len)</a><br />
+Tests if two string regions are equal.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>29</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_replace.htm">String replace(char oldChar, char newChar)</a><br />
+Returns a new string resulting from replacing all occurrences of oldChar in this string with newChar.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>30</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_replaceall.htm">String replaceAll(String regex, String replacement</a><br />
+Replaces each substring of this string that matches the given regular expression with the given replacement.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>31</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_replacefirst.htm">String replaceFirst(String regex, String replacement)</a>&nbsp;<br />
+Replaces the first substring of this string that matches the given regular expression with the given replacement.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>32</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_split.htm">String[] split(String regex)</a>&nbsp;<br />
+Splits this string around matches of the given regular expression.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>33</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_split.htm">String[] split(String regex, int limit)</a>&nbsp;<br />
+Splits this string around matches of the given regular expression.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>34</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_startswith.htm">boolean startsWith(String prefix)</a><br />
+Tests if this string starts with the specified prefix.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>35</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_startswith.htm">boolean startsWith(String prefix, int toffset)</a><br />
+Tests if this string starts with the specified prefix beginning a specified index.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>36</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_subsequence.htm">CharSequence subSequence(int beginIndex, int endIndex)</a><br />
+Returns a new character sequence that is a subsequence of this sequence.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>37</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_substring.htm">String substring(int beginIndex)</a><br />
+Returns a new string that is a substring of this string.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>38</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_substring.htm">String substring(int beginIndex, int endIndex)</a><br />
+Returns a new string that is a substring of this string.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>39</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_tochararray.htm">char[] toCharArray()</a>&nbsp;<br />
+Converts this string to a new character array.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>40</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_tolowercase.htm">String toLowerCase()</a><br />
+Converts all of the characters in this String to lower case using the rules of the default locale.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>41</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_tolowercase.htm">String toLowerCase(Locale locale)</a><br />
+将所有的在这个字符串中的字符为大写使用的默认语言环境的规则。</span></span></span></span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>42</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_tostring.htm">String toString()</a><br />
+This object (which is already a string!) is itself returned.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>43</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_touppercase.htm">String toUpperCase()</a>&nbsp;<br />
+Converts all of the characters in this String to upper case using the rules of the default locale.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>44</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_touppercase.htm">String toUpperCase(Locale locale)</a>&nbsp;<br />
+Converts all of the characters in this String to upper case using the rules of the given Locale.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>45</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_trim.htm">String trim()</a>&nbsp;<br />
+Returns a copy of the string, with leading and trailing whitespace omitted.</span></span> </span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span>46</span></span> </span> </span> 
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<span><span><span><span><a href="http://www.yiibai.com/java/java_string_valueof.htm">static String valueOf(primitive data type x)</a>&nbsp;<br />
+Returns the string representation of the passed data type argument.</span></span> </span> </span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

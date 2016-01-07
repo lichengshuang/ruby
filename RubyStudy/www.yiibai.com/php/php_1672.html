@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>PHP 能做什么？</title>
+		<meta name="Keywords" content="PHP 能做什么？ "/>
+		<meta name="Description" content="PHP 能做什么？实例代码教程 - PHP 能做任何事。PHP 主要是用于服务端的脚本程序，因此可以用 PHP 来完成任何其它的 CGI 程序能够完成的工作，例如收集表单数据，生成动态网页，或者发送/接收 Cookies。但 PHP 的功能远不局限于此。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../php">PHP教程</a>  » PHP 能做什么？
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="../php">PHP教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="../php">PHP入门指引</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="http://www.yiibai.com/install">PHP安装</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="http://www.yiibai.com/langref">PHP学习参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="http://www.yiibai.com/security">PHP安全/漏洞</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="http://www.yiibai.com/features">PHP特点</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="http://www.yiibai.com/funcref">PHP函数参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="../php">PHP入门指引</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="php_1672.html">PHP 能做什么？</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="php_1673.html#php_1673">PHP需要些什么？</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="php_1674.html#php_1674">第一个 PHP 页面</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="php_1675.html#php_1675">实用的脚本</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="php_1676.html#php_1676">处理表单</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="php_1677.html#php_1677">在新版本的 PHP 中使用旧的 PHP 代码</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="php_1678.html#php_1678">下一步做什么？</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">PHP 能做什么？</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						PHP 能做什么？实例代码教程 - PHP 能做任何事。PHP 主要是用于服务端的脚本程序，因此可以用 PHP 来完成任何其它的 CGI 程序能够完成的工作，例如收集表单数据，生成动态网页，或者发送/接收 Cookies。但 PHP 的功能远不局限于此。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<h2>
+	PHP 能做什么？
+</h2>
+<p>
+	PHP 能做任何事。PHP 主要是用于服务端的脚本程序，因此可以用
+    PHP 来完成任何其它的 CGI
+    程序能够完成的工作，例如收集表单数据，生成动态网页，或者发送/接收
+    Cookies。但 PHP 的功能远不局限于此。
+</p>
+<p>
+	PHP 脚本主要用于以下三个领域：
+</p>
+<ul>
+	<li>
+		<span> 服务端脚本。这是 PHP
+       最传统，也是最主要的目标领域。开展这项工作需要具备以下三点：PHP
+       解析器（CGI 或者服务器模块）、web
+       服务器和 web 浏览器。需要在运行 web 服务器时，安装并配置
+       PHP，然后，可以用 web 浏览器来访问 PHP 程序的输出，即浏览服务端的
+       PHP 页面。如果只是实验 PHP 编程，所有的这些都可以运行在自己家里的电脑中。请查阅<a href="http://www.yiibai.com/php/install" target="_blank">安装</a>一章以获取更多信息。 </span> 
+	</li>
+	<li>
+		<span> 命令行脚本。可以编写一段 PHP
+       脚本，并且不需要任何服务器或者浏览器来运行它。通过这种方式，仅仅只需要
+       PHP 解析器来执行。这种用法对于依赖
+       cron（Unix 或者 Linux 环境）或者 Task Scheduler（Windows
+       环境）的日常运行的脚本来说是理想的选择。这些脚本也可以用来处理简单的文本。请参阅 <a href="http://www.yiibai.com/php/features.commandline.html">PHP 的命令行模式</a>以获取更多信息。 </span> 
+	</li>
+	<li>
+		<span> 编写桌面应用程序。对于有着图形界面的桌面应用程序来说，PHP
+       或许不是一种最好的语言，但是如果用户非常精通
+       PHP，并且希望在客户端应用程序中使用 PHP
+       的一些高级特性，可以利用 PHP-GTK
+       来编写这些程序。用这种方法，还可以编写跨平台的应用程序。PHP-GTK
+       是 PHP 的一个扩展，在通常发布的 PHP 包中并不包含它。如果对 PHP-GTK
+       感兴趣，请访问其<a href="http://gtk.php.net/">»&nbsp;网站</a>以获取更多信息。 </span> 
+	</li>
+</ul>
+<p>
+	<br />
+</p>
+<p>
+	PHP 能够用在所有的主流操作系统上，包括 Linux、Unix
+    的各种变种（包括 HP-UX、Solaris 和 OpenBSD）、Microsoft
+    Windows、Mac OS X、RISC OS 等。今天，PHP已经支持了大多数的 web
+    服务器，包括 Apache、Microsoft Internet Information
+    Server（IIS）、Personal web Server（PWS）、Netscape 以及
+    iPlant server、Oreilly Website Pro Server、Caudium、Xitami、OmniHTTPd
+    等。对于大多数的服务器，PHP 提供了一个模块；还有一些
+    PHP 支持 CGI 标准，使得 PHP 能够作为 CGI 处理器来工作。
+</p>
+<p>
+	综上所述，使用 PHP，可以自由地选择操作系统和 web
+    服务器。同时，还可以在开发时选择使用面对过程和面对对象，或者两者混和的方式来开发。尽管
+    PHP 4 不支持 OOP 所有的标准，但很多代码仓库和大型的应用程序（包括
+    PEAR 库）仅使用 OOP 代码来开发。PHP 5 弥补了 PHP 4 的这一弱点，引入了完全的对象模型。
+</p>
+<p>
+	使用 PHP，并不局限于输出 HTML。PHP
+    还能被用来动态输出图像、PDF 文件甚至 Flash 动画（使用 libswf 和
+    Ming）。还能够非常简便的输出文本，例如 XHTML
+    以及任何其它形式的 XML 文件。PHP
+    能够自动生成这些文件，在服务端开辟出一块动态内容的缓存，可以直接把它们打印出来，或者将它们存储到文件系统中。
+</p>
+<p>
+	PHP 最强大最显著的特性之一，是它支持很大范围的数据库。用户会发现利用 PHP
+    编写数据库支持的网页简单得难以置信。目前，PHP 支持如下数据库：
+</p>
+<blockquote>
+	<ul>
+		<li>
+			Adabas D
+		</li>
+		<li>
+			dBase
+		</li>
+		<li>
+			Empress
+		</li>
+		<li>
+			FilePro（只读）
+		</li>
+		<li>
+			Hyperwave
+		</li>
+		<li>
+			IBM DB2
+		</li>
+		<li>
+			Informix
+		</li>
+		<li>
+			Ingres
+		</li>
+		<li>
+			InterBase
+		</li>
+		<li>
+			FrontBase
+		</li>
+		<li>
+			mSQL
+		</li>
+		<li>
+			Direct MS-SQL
+		</li>
+		<li>
+			MySQL
+		</li>
+		<li>
+			ODBC
+		</li>
+		<li>
+			Oracle（OCI7 和 OCI8）
+		</li>
+		<li>
+			Ovrimos
+		</li>
+		<li>
+			PostgreSQL
+		</li>
+		<li>
+			SQLite
+		</li>
+		<li>
+			Solid
+		</li>
+		<li>
+			Sybase
+		</li>
+		<li>
+			Velocis
+		</li>
+		<li>
+			Unix dbm
+		</li>
+	</ul>
+</blockquote>
+同时还有一个叫做 PDO
+    的数据库抽象扩展库使得可以自由地使用该扩展库支持的任何数据库。另外，PHP
+    还支持 ODBC，即 Open Database Connection
+    Standard（开放数据库连接标准），因此可以连接任何其它支持该世界标准的数据库。
+<p>
+	<br />
+</p>
+<p>
+	PHP 还支持利用诸如 LDAP、IMAP、SNMP、NNTP、POP3、HTTP、COM（Windows
+    环境）等不计其数的协议的服务。还可以开放原始网络端口，使得任何其它的协议能够协同工作。PHP
+    支持和所有 web 开发语言之间的 WDDX
+    复杂数据交换。关于相互连接，PHP 已经支持了对 Java
+    对象的即时连接，并且可以将他们自由的用作 PHP 对象。甚至可以用我们的
+    CORBA 扩展库来访问远程对象。
+</p>
+<p>
+	PHP 具有极其有效的文本处理特性，支持从 POSIX 扩展或者 Perl
+    正则表达式到 XML 文档解析。为了解析和访问 XML
+    文档，PHP 4 支持 SAX 和 DOM 标准，也可以使用
+    XSLT 扩展库来转换 XML 文档。PHP 5 基于强健的 libxm2 标准化了所有的
+    XML 扩展，并添加了 SimpleXML 和 XMLReader 支持，扩展了其在 XML 方面的功能。
+</p>
+<p>
+	另外，还有很多其它有趣的扩展库，他们根据<a href="http://www.yiibai.com/php/extensions.html">字母</a>和 <a href="http://www.yiibai.com/php/funcref.html">分类</a>归类列出。例如 mnoGoSearch
+    搜索引擎函数、IRC 网关函数、多种压缩工具（gzip、bz2、zip）、日历转换、翻译……。
+	还有一些第三方的PECL扩展没有在PHP手册中列出，例如 <a href="http://xdebug.org/">»&nbsp;XDebug</a> 
+</p>
+<p>
+	由于在这里无法列出 PHP
+    所有的特性和可提供的便利，请参阅<a href="http://www.yiibai.com/php/install">安装</a>以及<a href="http://www.yiibai.com/php/funcref">函数参考</a>有关章节以获取关于这里提到的扩展库更多的信息。
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

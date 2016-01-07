@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>Ruby异常处理</title>
+		<meta name="Keywords" content=" "/>
+		<meta name="Description" content="Ruby提供了一个很好的机制来处理异常。我们附上的代码可以在开始/结束块引发的异常，并使用救援条款告诉Ruby我们要处理的异常类型."/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../ruby.2">Ruby教程</a>  » Ruby异常处理
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="ruby_exceptions.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_exceptions.html">ruby IDE</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="ruby_exceptions.html">ruby高级教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="reference">Ruby参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">Ruby有用资源</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="ruby_exceptions.html">ruby教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="ruby_verview.html#ruby_verview">Ruby概述</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_environment_setup.html#ruby_environment_setup">Ruby环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_syntax.html#ruby_syntax">Ruby语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_classes.html#ruby_classes">Ruby类和对象</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_class_case_study.html#ruby_class_case_study">Ruby类实例</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_variables.html#ruby_variables">Ruby变量</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_operators.html#ruby_operators">Ruby运算符</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_omments.html#ruby_omments">Ruby注释</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_if_else.html#ruby_if_else">Ruby if else</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_loops.html#ruby_loops">Ruby循环</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_methods.html#ruby_methods">Ruby方法/函数</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_block.html#ruby_block">Ruby代码块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_modules.html#ruby_modules">Ruby模块</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_string.html#ruby_string">Ruby字符串</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_array.html#ruby_array">Ruby数组</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_hashes.html#ruby_hashes">Ruby哈希</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_date_time.html#ruby_date_time">Ruby日期和时间</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_ranges.html#ruby_ranges">Ruby范围</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_iterators.html#ruby_iterators">Ruby迭代器</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_input_output.html#ruby_input_output">Ruby文件 I/O</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="ruby_exceptions.html">Ruby异常处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="ruby_multithreading.html#ruby_multithreading">Ruby多线程</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">Ruby异常处理(Exception)</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						Ruby提供了一个很好的机制来处理异常。我们附上的代码可以在开始/结束块引发的异常，并使用救援条款告诉Ruby我们要处理的异常类型.
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	执行和异常总是要同时。如果您正在打开的文件不存在，那么，如果你没有正确处理这种情况，那么你的程序被认为是质量很差.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果发生异常，程序停止。所以异常被用来处理各种不同类型的程序的执行过程中可能出现的错误，并采取适当的行动，而不是完全停止程序的.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<a href="../ruby.2" target="_blank">Ruby</a>提供了一个很好的机制来处理异常。我们附上的代码可以在开始/结束块引发的异常，并使用救援条款告诉Ruby我们要处理的异常类型.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	语法 :
+</h2>
+<pre>begin  
+# -  
+rescue OneTypeOfException  
+# -  
+rescue AnotherTypeOfException  
+# -  
+else  
+# Other exceptions
+ensure
+# Always will be executed
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一切从开始拯救保护。如果在执行这个代码块中发生异常，控制传递给救援和结束之间的块<i></i>.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	对于每一个BEGIN块在拯救子句, Ruby比较依次对每一个参数引发的异常。匹配将成功拯救子句中命名的例外是如果目前抛出的异常的类型相同，或者是该异常的父类.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在异常不匹配任何指定的错误类型的事件后，我们被允许使用所有拯救子句的else子句.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<pre>#!/usr/bin/ruby
+
+begin
+   file = open("/unexistant_file")
+   if file
+      puts "File opened successfully"
+   end
+rescue
+      file = STDIN
+end
+print file, "==", STDIN, "\n"
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果。你可以看到，stdin是取代提交becauseopen失败.
+</p>
+<pre>#==#</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	使用&nbsp;<i>retry</i>&nbsp;语句:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	您可以使用拯救块捕获一个异常，然后使用重试要执行的语句从开头开始块.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	语法:
+</h2>
+<pre>begin
+    # Exceptions raised by this code will 
+	# be caught by the following rescue clause
+rescue
+    # This block will capture all types of exceptions
+    retry  # This will move control to the beginning of <i>begin</i> end
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<pre>#!/usr/bin/ruby
+
+begin
+   file = open("/unexistant_file")
+   if file
+      puts "File opened successfully"
+   end
+rescue
+   fname = "existant_file"
+   retry
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	以下是流程的过程:
+</p>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		发生异常时开放
+	</li>
+	<li>
+		前去营救, fname参数重新分配
+	</li>
+	<li>
+		通过试到开头begin
+	</li>
+	<li>
+		这次文件成功打开
+	</li>
+	<li>
+		持续的基本过程.
+	</li>
+</ul>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<b>注:</b>&nbsp;如果文件名称重新取代不存在这个例子的代码重试次数无限。要小心，如果您使用异常处理重试.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	使用&nbsp;<i>raise</i>&nbsp;语句:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	你可以使用raise语句抛出一个异常。下面的方法将引发异常时，它被触发调用。它的第二条消息将被打印出来.&nbsp;
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	语法:
+</h2>
+<pre>raise 
+
+OR
+
+raise "Error Message" 
+
+OR
+
+raise ExceptionType, "Error Message"
+
+OR
+
+raise ExceptionType, "Error Message" condition
+
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	第一种形式简单reraises当前异常（或一个RuntimeError，如果没有当前异常）。这是用在需要拦截异常的异常处理之前将它传递.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	第二种形式创建一个新的RuntimeError异常，给定的字符串设置它的消息。此异常然后提出了调用堆栈.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	第三种形式中使用的第一个参数创建一个异常，然后第二个参数设置相关的消息。<br />
+第四种形式第三种形式是类似的，但你可以添加任何条件语句likeunless引发异常.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<pre>#!/usr/bin/ruby
+
+begin  
+    puts 'I am before the raise.'  
+    raise 'An error has occurred.'  
+    puts 'I am after the raise.'  
+rescue  
+    puts 'I am rescued.'  
+end  
+puts 'I am after the begin block.'  
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>I am before the raise.  
+I am rescued.  
+I am after the begin block.  
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一个例子显示提高使用率<i></i>:
+</p>
+<pre>#!/usr/bin/ruby
+
+begin  
+  raise 'A test exception.'  
+rescue Exception =&gt; e  
+  puts e.message  
+  puts e.backtrace.inspect  
+end  
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">这将产生以下结果</span>:
+</p>
+<pre>A test exception.
+["test.rb:4"]
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	使用&nbsp;<i>ensure</i>&nbsp;语句:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	有时你需要做一些处理，保证在一个代码块结束时，无论是否引发异常。例如，你可能有一个文件打开进入块，你需要确保它被封闭块退出.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	ensure子句不只是这一点。确保后，最后的救援子句和包含块终止，将永远被执行的代码块。不要紧，如果退出该块通常，如果它引发和救援异常，或如果它是由一个未捕获的异常终止。<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">ensure</span>块将得到运行.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	语法:
+</h2>
+<pre>begin 
+   #.. process 
+   #..raise exception
+rescue 
+   #.. handle error 
+ensure 
+   #.. finally ensure execution
+   #.. This will always execute.
+end
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<pre>begin
+  raise 'A test exception.'
+rescue Exception =&gt; e
+  puts e.message
+  puts e.backtrace.inspect
+ensure
+  puts "Ensuring execution"
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>A test exception.
+["test.rb:4"]
+Ensuring execution
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	使用&nbsp;<i>else</i>&nbsp;语句:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	如果else子句存在，它到<i>rescue</i>子句<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">之后</span>和之前的任何保证<i></i>.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	一个else子句的身体也不例外，只有通过代码的主体提出执行.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	语法:
+</h2>
+<pre>begin 
+   #.. process 
+   #..raise exception
+rescue 
+   # .. handle error
+else
+   #.. executes if there is no exception
+ensure 
+   #.. finally ensure execution
+   #.. This will always execute.
+end
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<pre>begin
+ # raise 'A test exception.'
+ puts "I'm not raising exception"
+rescue Exception =&gt; e
+  puts e.message
+  puts e.backtrace.inspect
+else
+   puts "Congratulations-- no errors!"
+ensure
+  puts "Ensuring execution"
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这将产生以下结果:
+</p>
+<pre>I'm not raising exception
+Congratulations-- no errors!
+Ensuring execution
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	可以使用$!变量捕获引发的错误消息.
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	Catch 和&nbsp;Throw:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	虽然除了raise和rescue机制，是伟大的放弃执行出问题时，它有时很高兴能够跳出正常的处理过程中一些深嵌套结构。这是捕获并抛出派上用场.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在catch定义一个给定的名称（这可能是一个符号或一个字符串）标记的块。块被正常执行，直到遇到一个throw.
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	语法:
+</h2>
+<pre>throw :lablename
+#.. this will not be executed
+catch :lablename do
+#.. matching catch will be executed after a throw is encountered.
+end
+
+OR
+
+throw :lablename condition
+#.. this will not be executed
+catch :lablename do
+#.. matching catch will be executed after a throw is encountered.
+end
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	例子:
+</h2>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	下面的例子使用了抛出终止如果用户的互动“！”回应任何提示输入.
+</p>
+<pre>def promptAndGet(prompt)
+   print prompt
+   res = readline.chomp
+   throw :quitRequested if res == "!"
+   return res
+end
+
+catch :quitRequested do
+   name = promptAndGet("Name: ")
+   age = promptAndGet("Age: ")
+   sex = promptAndGet("Sex: ")
+   # ..
+   # process information
+end
+promptAndGet("Name:")
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">这将产生以下结果</span>:
+</p>
+<pre>Name: Ruby on Rails
+Age: 3
+Sex: !
+Name:Just Ruby
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	Exception类:
+</h1>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	Ruby的标准类和模块引发异常。所有的异常类，形成一个层次，在顶部的类异常。包含7种不同类型的一个新的水平:
+</p>
+<ul style="font-family:verdana, helvetica, arial, sans-serif;text-align:left;background-color:#FFFFFF;">
+	<li>
+		Interrupt（打断）
+	</li>
+	<li>
+		NoMemoryError
+	</li>
+	<li>
+		SignalException
+	</li>
+	<li>
+		ScriptError
+	</li>
+	<li>
+		StandardError
+	</li>
+	<li>
+		SystemExit
+	</li>
+</ul>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	在这个级别的，致命的是一个例外，但Ruby解释器只使用内部。<br />
+既ScriptError和StandardError有一个子类的数量，但我们并不需要去到的细节在这里。重要的是，如果我们创建自己的异常类，他们需要的任一类异常或其后裔之一的子类.
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<br />
+</p>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	让我们看一个例子:
+</p>
+<pre>class FileSaveError &lt; StandardError
+   attr_reader :reason
+   def initialize(reason)
+      @reason = reason
+   end
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	现在看看下面的例子将使用此异常:
+</p>
+<pre>File.open(path, "w") do |file|
+begin
+    # Write out the data ...
+rescue
+    # Something went wrong!
+    raise FileSaveError.new($!)
+end
+end
+</pre>
+<p style="text-align:justify;font-family:verdana, helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	这里最重要的行是：引发FileSaveError.new（$！）。我们呼吁提高信号发生异常，传递给它的存在的理由FileSaveError的一个新实例，具体的异常造成的数据写入失败.
+</p>
+<br />
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>

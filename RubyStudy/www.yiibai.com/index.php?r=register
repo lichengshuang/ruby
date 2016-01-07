@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+	<head>
+		<title>注册 - 易百教程</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="zh-CN" />
+		<meta name="keywords" content=""/>
+		<meta name="description" content="易百教程 - 专注于教程和实例" />
+		<script src="static/js/jquery.js"></script>
+		<link rel="stylesheet" href='static/css/bootstrap.css'/>
+		<link rel="stylesheet" href='static/css/tutorial.css'/>
+		<script src="static/js/register.js"></script>
+		<style type="text/css">
+			/* Custom container */
+			.container-narrow {
+				margin: 0 auto;
+				max-width: 700px;
+			}
+			.container-narrow > hr {
+				margin: 14px 0;
+			}
+
+			/* Main marketing message and sign up button */
+			.jumbotron {
+				margin: 60px 0;
+				text-align: center;
+			}
+
+			.jumbotron .btn {
+				font-size: 21px;
+				padding: 14px 24px;
+			}
+
+			/* Supporting marketing content */
+			.marketing {
+				margin: 60px 0;
+			}
+			.marketing p + h4 {
+				margin-top: 28px;
+			}
+			.form-signin {
+				max-width: 900px;
+				padding: 19px 29px 29px;
+				margin: 0 auto 20px;
+				background-color: #fff;
+				border: 1px solid #e5e5e5;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+				-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+				box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			}
+			.form-signin .form-signin-heading, .form-signin .checkbox {
+				margin-bottom: 10px;
+			}
+			.form-signin input[type="text"], .form-signin input[type="password"] {
+				font-size: 16px;
+				height: auto;
+				margin-bottom: 15px;
+				padding: 7px 9px;
+			}
+			.error-tips {
+				color: #B94A48;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-narrow">
+			<div class="masthead" style="margin-top: 16px;">
+				<ul class="nav-pills pull-right" style="margin-top:20px;">
+					<li>
+						<a href="index.php?r=login">登陆</a>
+					</li>
+					<li>
+						<a href="http://www.yiibai.com/index.php?r=login/findpasswd">忘记密码？</a>
+					</li>
+				</ul>
+				<a href="index.html"><img src="static/img/logo.png" title="易百教程首页"/></a>
+			</div>
+			<hr>
+			<form class="form-signin bs-docs-example form-horizontal" method="post" id="form">
+				<h3 class="form-signin-heading" style="padding-bottom: 12px;" id="top2">注册</h3>
+				
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">用户名：</label>
+					<div class="controls">
+						<input type="text" id="username" name="username" placeholder="如：test@163.com" value="如：test@163.com" class="input-large">
+												<span id="username_tips" class="help-block error-tips" style="display:none;"></span>
+											</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">昵&nbsp;&nbsp;称：</label>
+					<div class="controls">
+						<input type="text" id="nickname" name="nickname" placeholder="如：河马" value="如：小马哥" class="input-large">
+												<span id="nickname_tips" class="help-block error-tips" style="display:none;"></span>
+											</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword">密&nbsp;&nbsp;码：</label>
+					<div class="controls">
+						<input type="password" name="password" id="password" placeholder="Password" value="" class="input-large" style="font-weight: bold;">
+												<span id="password_tips" class="help-block error-tips" style="display:none;"></span>
+											</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<a href="index.php?r=register#top2" title="点击更换验证码"><img src="index.php?r=register%252Fcaptcha" id="img_captcha"/></a><span><a href="index.php?r=register#top2" id="changeCaptcha" title="点击更换验证码">更换一个?</a></span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword">验证码：</label>
+					<div class="controls">
+						<input type="text" name="captcha" id="captcha" placeholder="" style="width: 128px; font-weight: bold;">
+												<span id="password_tips" class="help-block error-tips" style="display:none;"></span>
+											</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<label class="checkbox">
+							<input type="checkbox" name="agreement" id="agreement" value="1" checked="checked">
+							我已经认真阅读并同意易百教程的《<a href="about/agreement" target="_blank">使用协议</a> 》</label>
+						<button type="submit" class="btn btn-success" id="submit" title="认真阅读并同意易百教程的《使用协议》方可注册使用！">
+							提交注册
+						</button>
+						<span style="padding-left: 28px;font-size: 14px; text-decoration: underline;"><a href="index.php?r=login" title="登陆网站">登陆</a></span>
+						<span id="submit_tips" style="color: red;"></span>
+					</div>
+				</div>
+				<!--<span style="margin-left: 24px;"><a href="">QQ登陆</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Weibo</a></span>-->
+			</form>
+			<div style="margin-top: 64px;"></div>
+			<!-- /container -->
+			<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="static/img/contact_mail.png"></span>	
+</div>
+
+		</div>
+	</body>
+	<script>
+		$(document).ready(function() {
+			// 提交
+			$("#submit").click(function() {
+				var username = $.trim($("#username").val());
+				var isValid = true;
+
+				if (username == '如：test@163.com' || username == '') {
+					$("#username_tips").html('用户名必须填写！');
+					$("#username_tips").show();
+					isValid = false;
+				} else {
+					$("#username_tips").hide();
+				}
+				
+				var nickname = $.trim($("#nickname").val());
+				if (nickname == '如：小马哥'||nickname=='') {
+					$("#nickname_tips").html('昵称必须填写！');
+					$("#nickname_tips").show();
+					isValid = false;
+				}else {
+					$("#nickname_tips").hide();
+				}
+
+				var password = $.trim($("#password").val());
+				if (password == '') {
+					$("#password_tips").html('密码必须填写！');
+					$("#password_tips").show();
+					isValid = false;
+				} else {
+					$("#password_tips").hide();
+				}
+				var captcha = $.trim($("#captcha").val());
+				if (captcha == '') {
+					$("#captcha_tips").html('验证码必须填写！');
+					$("#captcha_tips").show();
+					isValid = false;
+				} else {
+					$("#captcha_tips").hide();
+				}
+				var checked = $("#agreement").attr("checked");
+				if (checked != 'checked') {
+					alert('必须认真阅读并同意易百教程的《使用协议》方可注册使用！');
+					isValid = false;
+				}
+
+				if (isValid == true) {
+					$("#form").submit();
+				}
+				return false;
+			})
+		})
+	</script>
+	
+</html>

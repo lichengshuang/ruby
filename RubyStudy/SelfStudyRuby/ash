@@ -1,0 +1,3 @@
+#!/usr/bin/ruby
+
+puts "this is a ruby script"

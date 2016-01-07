@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Content-Language" content="zh-CN"/>
+		<meta name="robots" content="index, follow" />
+		<title>JDBC连接数据库</title>
+		<meta name="Keywords" content="JDBC连接数据库实例代码教程 "/>
+		<meta name="Description" content="JDBC连接数据库实例代码教程 - 使用标准的JDBC包，它允许执行select，insert，update和delete的SQL语句，更新表中的数据。"/>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+		<script type="text/javascript" src="../static/js/analysis.js"></script>
+		<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../static/css/tutorial.css" rel="stylesheet" type="text/css" />
+		<!--// view.html-->
+	</head>
+	<body>
+		<div class="header">
+	<a href="../index.html" class="logo"> <img src="../static/img/logo.png" /> </a>
+	<span class="input-append search" style="">
+	<form action="http://www.yiibai.com/search" method="get" style="margin: 0px;">
+		<input id="prependedDropdownButton" type="text" name="kw" class="span4 pub-share">
+		<button class="btn pub-share" type="submit">
+			搜 索
+		</button>
+	</form>
+	</span>
+	<a class="btn btn-success" href="../index.php?r=tutorial%252Fcreate">发起分享</a>
+		<a href="../index.php?r=login" class="user-login">登陆</a>
+	<a href="../index.php?r=register" class="user-register">注册</a>
+	
+		</span>
+</div>
+
+
+		<div class="header-nav">	<div id="menu" class="menu">		<div class="main-menu" style="clear:both;">			<ul>				<li class="">					<a href="../index.html" target="_self">首页</a>				</li>				<li id="all-category-e" class="all-category current">					<a href="http://www.yiibai.com/tutorial"  class="all-category current">教程</a>				</li>				<li>					<a href="http://www.yiibai.com/question">问题求助</a>				</li>				<li class="last">					<a class="last" href="http://www.yiibai.com/tag">标签</a>				</li>			</ul>		</div>	</div></div>
+		<div class="exp-category-container">
+	<ul class="exp-category-list clearfix">
+		<li>
+			<a href="../java" target="_blank" title="Java教程">Java</a>
+		</li>
+		<li>
+			<a href="../python" target="_blank" title="Python教程">Python</a>
+		</li>
+		<li>
+			<a href="../php" target="_blank" title="php教程">PHP</a>
+		</li>
+		<li>
+			<a href="../perl" target="_blank" title="perl教程">Perl</a>
+		</li>
+		<li>
+			<a href="../ruby.2" target="_blank" title="Ruby教程">Ruby</a>
+		</li>
+		<li>
+			<a href="../mysql" target="_blank" title="MySQL教程">MySQL</a>
+		</li>
+		<li>
+			<a href="../sql" target="_blank" title="SQL教程">SQL</a>
+		</li>
+		<li>
+			<a href="../jdbc" target="_blank" title="JDBC教程">JDBC</a>
+		</li>
+		<li>
+			<a href="../go" target="_blank" title="GO教程">Go语言</a>
+		</li>
+		
+	</ul>
+</div>
+		<div class="container-fluid" style="width: 1080px;margin: auto; margin-top: 16px;">
+			<div class="path" style="padding-top:2px; margin-top: 0px;margin-bottom: 14px;clear: both;">
+				当前位置：<a href="../index.html">首页</a>  » <a href="../jdbc">JDBC教程</a>  » JDBC连接数据库
+			</div>
+			<div class="row-fluid">
+				<div class="well span3" style="width:260px;">
+					<ul class="nav nav-list">
+												<li class="">
+							<a href="tutorial">JDBC教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="example">JDBC例子</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="references">JDBC实用参考</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="">
+							<a href="resources">JDBC有用资料</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+												<li class="nav-header" style="font-size:12pt;">
+							<a href="tutorial">JDBC教程</a>
+						</li>
+						<li class="divider" style="margin-top: 0px;"></li>
+																		<li style="padding-left: 8px;">
+							<a href="jdbc_introduction.html#jdbc_introduction">JDBC简介</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_sql_syntax.html#jdbc_sql_syntax">JDBC SQL语法</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_environment_setup.html#jdbc_environment_setup">JDBC环境设置</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_sample_code.html#jdbc_sample_code">JDBC简单代码例子</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_driver_types.html#jdbc_driver_types">JDBC驱动类型</a>
+						</li>
+																								<li class="active" style="font-size:11pt;padding-left: 8px;">
+							<a href="jdbc_db_connections.html">JDBC连接数据库</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_statements.html#jdbc_statements">JDBC Statements</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_result_sets.html#jdbc_result_sets">JDBC ResultSet</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_data_types.html#jdbc_data_types">JDBC数据类型</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_transactions.html#jdbc_transactions">JDBC事务</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_exceptions.html#jdbc_exceptions">JDBC异常</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_batch_processing.html#jdbc_batch_processing">JDBC批量处理</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_stored_procedure.html#jdbc_stored_procedure">JDBC存储过程</a>
+						</li>
+																								<li style="padding-left: 8px;">
+							<a href="jdbc_streaming_data.html#jdbc_streaming_data">JDBC数据流</a>
+						</li>
+																	</ul>
+				</div>
+				<div class="span9" style="width:800px; margin-left:12px; padding: 0px; border: 1px solid #DDDDDD;float:left;">
+					<div style="width: 770px;; padding: 2px 18px 2px 18px;text-align: center;">
+						<h1 style="font-size: 13.5pt;border-bottom: 1px dashed #CCC; padding-right: 32px;">JDBC连接数据库</h1>
+					</div>
+
+					<div id="description" style="padding-left: 24px;padding-right:26px; font-size: 12.5pt;">
+						JDBC连接数据库实例代码教程 - 使用标准的JDBC包，它允许执行select，insert，update和delete的SQL语句，更新表中的数据。
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+								<!--
+								google_ad_client ="ca-pub-1090193214637198";
+								/* yiibai上方 */
+								google_ad_slot = "7899237394";
+								google_ad_width = 728;
+								google_ad_height = 90;
+								//-->
+							</script>
+							<script type="text/javascript"
+							src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					<div id="baidu-ad" style="padding-left:24px; padding-top: 6px;padding-bottom: 24px;">
+						<script type="text/javascript">
+							/*文章详细页上方628*90*/
+							var cpro_id = "u1064372";
+						</script>
+						<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+					</div>
+					<div style="padding:8px 22px 8px 24px;">
+						<p style="text-align:justify;background-color:#FFFFFF;">
+	在您安装相应的驱动程序，是时候建立一个数据库连接和使用JDBC。<br />
+建立一个<a href="../jdbc" target="_blank">JDBC</a>连接的编程是相当简单的。下面这些简单的四个步骤：
+</p>
+<ol style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			<b>导入JDBC包:</b>&nbsp;import语句添加到Java程序在Java代码中导入所需的类。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>注册JDBC 驱动:</b>&nbsp;这一步使JVM加载所需的驱动程序执行到内存中以便它能够满足JDBC请求。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>数据库URL制定:</b>&nbsp;这是为了创建格式正确的地址，指向你要连接到的数据库。
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			<b>创建连接对象:</b>&nbsp;最后，代码调用的DriverManager对象的getConnection()方法建立实际的数据库连接。
+		</p>
+	</li>
+</ol>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	导入JDBC包:
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	import语句告诉Java编译器在哪里可以找到类，在代码中，一开始就被放置在源代码的头部。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	要使用标准的JDBC包，它允许执行select，insert，update和delete的SQL语句，更新表中的数据，添加以下导入到你的源代码：
+</p>
+<pre>import java.sql.* ;  // for standard JDBC programs
+import java.math.* ; // for BigDecimal and BigInteger support
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>注册</strong><strong>JDBC 驱动:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在程序中使用它之前，必须先注册驱动程序。注册驱动程序的过程如，Oracle驱动程序的类文件被加载到内存中以便它可以被用作JDBC接口的实现。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	需要在程序中只有一次注册。可以注册一个驱动程序选用以下两种方法之一。
+</p>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	方法(I) - Class.forName():
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	注册驱动程序的最常用的方法是使用Java的Class.forName()方法来动态加载驱动程序的类文件到内存中，它会自动将其注册。这种方法是可取的，因为它可让您配置和便携的驱动程序注册。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下面的示例使用Class.forName()注册Oracle驱动程序：
+</p>
+<pre>try {
+   Class.forName("oracle.jdbc.driver.OracleDriver");
+}
+catch(ClassNotFoundException ex) {
+   System.out.println("Error: unable to load driver class!");
+   System.exit(1);
+}
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	你可以使用getInstance()方法，以解决不符合要求的JVM，那么将有两个额外的例外情况如下代码：
+</p>
+<pre>try {
+   Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
+}
+catch(ClassNotFoundException ex) {
+   System.out.println("Error: unable to load driver class!");
+   System.exit(1);
+catch(IllegalAccessException ex) {
+   System.out.println("Error: access problem while loading!");
+   System.exit(2);
+catch(InstantiationException ex) {
+   System.out.println("Error: unable to instantiate driver!");
+   System.exit(3);
+}
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	方法(II) - DriverManager.registerDriver():
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	你可以用它来注册一个驱动程序的第二种方法，使用静态DriverManager.registerDriver()方法。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果使用的是一个不兼容的JDK JVM，如一个由Microsoft提供的应该使用registerDriver()方法。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	以下的的示例使用registerDriver()注册Oracle驱动程序：
+</p>
+<pre>try {
+   Driver myDriver = new oracle.jdbc.driver.OracleDriver();
+   DriverManager.registerDriver( myDriver );
+}
+catch(ClassNotFoundException ex) {
+   System.out.println("Error: unable to load driver class!");
+   System.exit(1);
+}
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	数据库URL制定：
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	已经加载了驱动程序后，就可以<span style="background-color:#FFFFFF;">使用DriverManager.getConnection()方法</span>建立一个连接。为了便于参考，让列举的三个重载DriverManager.getConnection（）方法：
+</p>
+<ol style="text-align:left;background-color:#FFFFFF;">
+	<li>
+		<p style="text-align:justify;">
+			getConnection(String url)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			getConnection(String url, Properties prop)
+		</p>
+	</li>
+	<li>
+		<p style="text-align:justify;">
+			getConnection(String url, String user, String password)
+		</p>
+	</li>
+</ol>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这里每一个表格都需要一个数据库URL。数据库的URL是指向数据库的地址。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	制定一个数据库URL建立连接时出现的问题。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	下表列出了比较常的JDBC驱动程序的名称和数据库URL。
+</p>
+<table border="1" cellpadding="5" cellspacing="0" width="100%" style="font-size:12px;border:1px solid #AAAAAA;width:552px;background-color:#F1F1F1;color:#000000;text-align:left;">
+	<tbody>
+		<tr>
+			<th width="10%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				RDBMS
+			</th>
+			<th width="35%" style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				JDBC驱动名称
+			</th>
+			<th style="background-color:#CDCDCD;border:1px solid #AAAAAA;">
+				URL 格式
+			</th>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				MySQL
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				com.mysql.jdbc.Driver
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<b>jdbc:mysql://</b>hostname/ databaseName
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				ORACLE
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				oracle.jdbc.driver.OracleDriver
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<b>jdbc:oracle:thin:@</b>hostname:port Number:databaseName
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				DB2
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				COM.ibm.db2.jdbc.net.DB2Driver
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<b>jdbc:db2:</b>hostname:port Number/databaseName
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				Sybase
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				com.sybase.jdbc.SybDriver
+			</td>
+			<td style="vertical-align:top;border:1px solid #AAAAAA;">
+				<b>jdbc:sybase:Tds:</b>hostname: port Number/databaseName
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	突出显示的部分是静态的URL格式为数据库设置，你需要更改仅剩余部分。
+</p>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>创建连接对象：</strong> 
+</h1>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	使用数据库URL，用户名和密码：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	这里列出了三种形式的DriverManager.getConnection()方法来创建一个连接对象。最常用getConnection()的形式要求您传递一个数据库URL，用户名和密码，
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	假设你正在使用Oracle Thin驱动程序，您将指定的数据库的URL部分host:port:databaseName的值。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	如果你有一台主机的TCP/IP地址192.0.0.1的主机名amrood，Oracle监听器配置为侦听端口1521上，数据库名称是EMP，然后完整的数据库URL将是：<span></span> 
+</p>
+<pre>jdbc:oracle:thin:@amrood:1521:EMP
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	现在，你必须调用getConnection()方法用正确的用户名和密码，以获得一个Connection对象，如下：
+</p>
+<pre>String URL = "jdbc:oracle:thin:@amrood:1521:EMP";
+String USER = "username";
+String PASS = "password"
+Connection conn = DriverManager.getConnection(URL, USER, PASS);
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	只使用一个数据库URL：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	DriverManager.getConnection()方法的第二种形式只需要一个数据库URL：
+</p>
+<pre>DriverManager.getConnection(String url);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	然而，在这种情况下，数据库URL包括用户名和密码，并具有下面的一般形式：
+</p>
+<pre>jdbc:oracle:driver:username/password@database
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	因此，上面的连接，可以创建如下：
+</p>
+<pre>String URL = "jdbc:oracle:thin:username/password@amrood:1521:EMP";
+Connection conn = DriverManager.getConnection(URL);
+</pre>
+<h2 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:16px;background-color:#FFFFFF;text-align:left;">
+	使用数据库URL和Properties对象：
+</h2>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	第三种形式的DriverManager.getConnection()方法需要一个数据库URL和一个Properties对象：
+</p>
+<pre>DriverManager.getConnection(String url, Properties info);
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	一个Properties对象，保存了一组关键字值对。用来传递驱动程序属性中的驱动程序在调用getConnection()方法<span style="background-color:#FFFFFF;">过程中</span>。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	为了使相同的连接由前面的例子中，使用下面的代码：
+</p>
+<pre>import java.util.*;
+
+String URL = "jdbc:oracle:thin:@amrood:1521:EMP";
+Properties info = new Properties( );
+info.put( "user", "username" );
+info.put( "password", "password" );
+
+Connection conn = DriverManager.getConnection(URL, info);
+</pre>
+<h1 style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;font-size:18px;font-weight:normal;background-color:#FFFFFF;text-align:left;">
+	<strong>关闭JDBC链接</strong><strong>:</strong> 
+</h1>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	在JDBC程序，<span style="background-color:#FFFFFF;">每个数据库会话结束</span>需要显式地关闭所有连接到数据库。但是如果忘记，<a href="../java" target="_blank">Java</a>的垃圾收集器将关闭连接时，它也会清除过时的对象。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	依托垃圾收集，特别是在数据库编程，是非常不好的编程实践。你应该总是<span style="background-color:#FFFFFF;">关闭</span>与连接对象close()方法连接，这是一个好习惯。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	为了保证连接被关闭，可以在你的代码中提供finally块。finally块总是会执行，无论是否发生异常或不。<br />
+关闭上面打开的连接，应该调用close()方法，如下所示：
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	<br />
+</p>
+<pre>conn.close();
+</pre>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	显式关闭的连接，节省DBMS资源。
+</p>
+<p style="text-align:justify;background-color:#FFFFFF;">
+	为了更好地理解，易百IT教程建议学习研究&nbsp;<a href="http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm">JDBC简</a><a href="http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm">单</a>程序
+</p>
+					</div>
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">
+						<script type="text/javascript">
+									<!--
+									google_ad_client ="ca-pub-1090193214637198";
+									/* yiibai下方 */
+									google_ad_slot = "6494738921";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+								</script>
+								<script type="text/javascript"
+								src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+
+					<div style="padding-left:24px; padding-top: 12px;padding-bottom: 2px;">						
+						<!-- Duoshuo Comment BEGIN -->
+							<div class="ds-thread"></div>
+							<script type="text/javascript">
+							var duoshuoQuery = {short_name:"yiibai"};
+								(function() {
+									var ds = document.createElement('script');
+									ds.type = 'text/javascript';ds.async = true;
+									ds.src = 'http://static.duoshuo.com/embed.js';
+									ds.charset = 'UTF-8';
+									(document.getElementsByTagName('head')[0] 
+									|| document.getElementsByTagName('body')[0]).appendChild(ds);
+								})();
+								</script>
+						<!-- Duoshuo Comment END -->						
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div>
+		<!--/yb_content-->
+<hr style="padding-top:0px;margin-top: 18px; border-bottom-color: #33;"/>
+<div style="margin:auto; width: 960px; text-align: center; margin: 12px 0px 36px 0;">
+	<span>Copyright 2012-2015 © www.yiibai.com	 粤ICP备12018498号-3</span>
+	<span style="padding-left:18px;">联系：<img title="联系Email" src="../static/img/contact_mail.png"></span>	
+</div>
+
+		
+		<script type="text/javascript">
+		/*文章右侧悬浮*/
+		var cpro_id = "u1167141";
+		</script>
+		<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+	</body>
+</html>
